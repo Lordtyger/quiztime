@@ -1,0 +1,492 @@
+[
+    {
+        "question": "How do you start writing in Flexbox within CSS?",
+        "correct_answer": "You start by setting the display property to either `flex` or `inline-flex` on a container element.",
+        "incorrect_answers": [
+            "You start by setting the position property to `flex`.",
+            "You start by setting the container's width and height to 100%.",
+            "You start by adding `flex` properties to each item inside the container."
+        ],
+        "explanation": "<p>In order to use Flexbox, you first need to create a flex container by setting its <code>display</code> property to <code>flex</code> or <code>inline-flex</code>.</p><pre><code>.container {\n  display: flex;\n}\n</code></pre><p>This makes the container a flex container, and its child elements become flex items that can be laid out according to the Flexbox model.</p>"
+    },
+    {
+        "question": "What is the difference between `display: inline-flex` and `display: flex`?",
+        "correct_answer": "`display: flex` makes the container a block-level element, while `display: inline-flex` makes it an inline-level element.",
+        "incorrect_answers": [
+            "`display: inline-flex` applies Flexbox only to text elements, while `display: flex` works for all elements.",
+            "`display: inline-flex` is used for rows, while `display: flex` is used for columns.",
+            "`display: flex` works with the `align-items` property, while `inline-flex` does not."
+        ],
+        "explanation": "<p>The main difference is in how the container behaves within the document flow:</p><ul><li><strong>display: flex</strong>: The container behaves like a block-level element, meaning it takes up the entire width and starts on a new line.</li><li><strong>display: inline-flex</strong>: The container behaves like an inline element, taking only the necessary width and can sit alongside other inline elements.</li></ul>"
+    },
+    {
+        "question": "What does the CSS property `flex-direction` do?",
+        "correct_answer": "`flex-direction` defines the direction in which flex items are placed within a flex container.",
+        "incorrect_answers": [
+            "`flex-direction` defines the size of each item in the flex container.",
+            "`flex-direction` defines the wrapping behavior of flex items.",
+            "`flex-direction` determines the order in which flex items appear in the container."
+        ],
+        "explanation": "<p>The <code>flex-direction</code> property is used to set the direction of the flex container's items. It can take values like <code>row</code>, <code>column</code>, <code>row-reverse</code>, or <code>column-reverse</code>.</p><pre><code>.container {\n  display: flex;\n  flex-direction: row;\n}\n</code></pre>"
+    },
+    {
+        "question": "When doing directional CSS—whether it is `align-items` or `justify-content`—what does it rely on in order to determine which direction to apply it?",
+        "correct_answer": "It relies on the `flex-direction` property to determine whether it applies to the horizontal or vertical axis.",
+        "incorrect_answers": [
+            "It relies on the `flex-wrap` property.",
+            "It relies on the container's width and height.",
+            "It relies on the order of the flex items in the HTML."
+        ],
+        "explanation": "<p>The direction of alignment properties like <code>align-items</code> and <code>justify-content</code> depends on the value of <code>flex-direction</code>. If <code>flex-direction</code> is set to <code>row</code>, <code>justify-content</code> affects the horizontal axis, and <code>align-items</code> affects the vertical axis.</p>"
+    },
+    {
+        "question": "What is the default property for `flex-direction`?",
+        "correct_answer": "`row` is the default value for `flex-direction`.",
+        "incorrect_answers": [
+            "`column` is the default value for `flex-direction`.",
+            "`row-reverse` is the default value for `flex-direction`.",
+            "`none` is the default value for `flex-direction`."
+        ],
+        "explanation": "<p>The default value for the <code>flex-direction</code> property is <code>row</code>, which means that flex items will be laid out horizontally in a row.</p>"
+    },
+    {
+        "question": "What are the four possible values for the `flex-direction` property?",
+        "correct_answer": "`row`, `row-reverse`, `column`, and `column-reverse`.",
+        "incorrect_answers": [
+            "`center`, `top`, `right`, `bottom`.",
+            "`horizontal`, `vertical`, `reverse-horizontal`, `reverse-vertical`.",
+            "`block`, `inline`, `wrap`, `nowrap`."
+        ],
+        "explanation": "<p>The four possible values for <code>flex-direction</code> are:</p><ul><li><strong>row</strong>: Flex items are arranged in a row (default).</li><li><strong>row-reverse</strong>: Flex items are arranged in a row, but in reverse order.</li><li><strong>column</strong>: Flex items are arranged in a column.</li><li><strong>column-reverse</strong>: Flex items are arranged in a column, but in reverse order.</li></ul>"
+    },
+    {
+        "question": "What happens if you give Flexbox items a width that exceeds the width of the screen?",
+        "correct_answer": "If the total width of the flex items exceeds the width of the container, they will overflow, unless <code>flex-wrap</code> is used.",
+        "incorrect_answers": [
+            "The items will automatically shrink to fit within the container.",
+            "The container will stretch to accommodate the items.",
+            "The items will stack vertically to fit within the container."
+        ],
+        "explanation": "<p>If the flex items exceed the container width, they will overflow. To prevent this, you can use <code>flex-wrap</code> to allow items to wrap onto the next line when necessary.</p>"
+    },
+    {
+        "question": "What do you apply the `flex-wrap` property to?",
+        "correct_answer": "You apply the `flex-wrap` property to the flex container to control whether items should wrap onto multiple lines or stay on a single line.",
+        "incorrect_answers": [
+            "You apply `flex-wrap` to individual flex items to control how they wrap.",
+            "You apply `flex-wrap` to the parent container to control the layout of all child elements.",
+            "You apply `flex-wrap` only if using `inline-flex`."
+        ],
+        "explanation": "<p>The <code>flex-wrap</code> property is applied to the flex container, and it controls whether the flex items should stay on one line or wrap to multiple lines when they exceed the container's width.</p>"
+    },
+    {
+        "question": "What is the default value of the `flex-wrap` property?",
+        "correct_answer": "`nowrap` is the default value of `flex-wrap`.",
+        "incorrect_answers": [
+            "`wrap` is the default value of `flex-wrap`.",
+            "`reverse` is the default value of `flex-wrap`.",
+            "`auto` is the default value of `flex-wrap`."
+        ],
+        "explanation": "<p>The default value of <code>flex-wrap</code> is <code>nowrap</code>, meaning that flex items will not wrap and will stay in a single line, even if they overflow the container.</p>"
+    },
+    {
+        "question": "What is the difference if we set the `flex-wrap` property to `wrap`?",
+        "correct_answer": "`wrap` allows flex items to move to the next line if there isn't enough space in the container.",
+        "incorrect_answers": [
+            "`wrap` stacks all the items vertically in the container.",
+            "`wrap` applies a padding around each flex item.",
+            "`wrap` forces the container to expand instead of wrapping the items."
+        ],
+        "explanation": "<p>Setting the <code>flex-wrap</code> property to <code>wrap</code> lets items wrap to the next line when they exceed the container's width. Without <code>wrap</code>, items stay in one line and may overflow the container.</p><pre><code>.container {\n  display: flex;\n  flex-wrap: wrap;\n}\n</code></pre>"
+    },
+    {
+        "question": "What happens if we set the `flex-wrap` property to `wrap-reverse`?",
+        "correct_answer": "Flex items will wrap to the next line, but the new lines will appear above the existing ones.",
+        "incorrect_answers": [
+            "Flex items will wrap in reverse order within the same line.",
+            "`wrap-reverse` reverses the flex-direction property automatically.",
+            "Flex items will stack horizontally instead of wrapping."
+        ],
+        "explanation": "<p>When <code>wrap-reverse</code> is set, flex items wrap to the next line, but the new lines appear above the previous ones, effectively reversing the wrapping direction.</p><pre><code>.container {\n  display: flex;\n  flex-wrap: wrap-reverse;\n}\n</code></pre>"
+    },
+    {
+        "question": "Is margin part of the box model?",
+        "correct_answer": "No, margin is not part of the box model.",
+        "incorrect_answers": [
+            "Yes, margin is part of the box model and contributes to the element's size.",
+            "Margin only becomes part of the box model if padding and borders are set.",
+            "Margin is part of the box model only for inline elements."
+        ],
+        "explanation": "<p>Margins are outside the box model and do not contribute to the element's width or height calculations. The box model consists of the content, padding, border, and optionally the scrollbar.</p>"
+    },
+    {
+        "question": "How can you get around the fact that margin is not part of the box model?",
+        "correct_answer": "You can use the CSS `box-sizing` property set to `border-box` to include padding and borders in width and height calculations, though margin remains outside.",
+        "incorrect_answers": [
+            "You cannot get around this as margins are fixed outside the box model.",
+            "By using the `margin-box` property, margins are included in the box model.",
+            "Using `box-collapse: true` will include margin in the box model."
+        ],
+        "explanation": "<p>Setting <code>box-sizing: border-box</code> ensures that padding and borders are included within the specified width and height of an element. However, margin is still calculated outside the box.</p>"
+    },
+    {
+        "question": "Are padding and border part of the box model?",
+        "correct_answer": "Yes, padding and border are part of the box model and affect the total size of an element.",
+        "incorrect_answers": [
+            "No, padding and border are calculated outside the box model.",
+            "Padding is part of the box model, but the border is not.",
+            "Border is part of the box model, but padding is not."
+        ],
+        "explanation": "<p>The box model includes the content, padding, and border of an element. These contribute to the total width and height unless <code>box-sizing: border-box</code> is used to adjust the calculations.</p>"
+    },
+    {
+        "question": "What does the Flexbox property `order` allow you to do?",
+        "correct_answer": "`order` allows you to change the visual order of flex items without altering the HTML structure.",
+        "incorrect_answers": [
+            "`order` forces the flex items to align by their natural document order.",
+            "`order` ensures that items are aligned based on their z-index.",
+            "`order` allows you to group items into different flex containers."
+        ],
+        "explanation": "<p>The <code>order</code> property changes the order in which flex items are visually displayed within the container. It does not affect the underlying HTML order.</p><pre><code>.item {\n  order: 1;\n}</code></pre>"
+    },
+    {
+        "question": "What is the default order for a flex item if it isn't set?",
+        "correct_answer": "The default order for a flex item is 0.",
+        "incorrect_answers": [
+            "The default order for a flex item is 1.",
+            "The default order for a flex item is -1.",
+            "The default order for a flex item is determined by its HTML position."
+        ],
+        "explanation": "<p>All flex items have a default <code>order</code> of 0, which means they follow the HTML order unless otherwise specified.</p>"
+    },
+    {
+        "question": "What's a prime example of where you may want to use the Flexbox `order` property?",
+        "correct_answer": "Reordering navigation links in a header for mobile vs desktop views.",
+        "incorrect_answers": [
+            "Aligning items to the center of a container.",
+            "Making flex items wrap onto new lines.",
+            "Changing the flex direction of a container."
+        ],
+        "explanation": "<p>The <code>order</code> property is particularly useful for responsive design, allowing you to change the order of elements, such as placing a menu at the top for mobile but on the side for desktop.</p>"
+    },
+    {
+        "question": "What happens if we give a negative value to the `order` property?",
+        "correct_answer": "Items with a negative order value appear before items with the default (or higher) order value.",
+        "incorrect_answers": [
+            "Items with a negative order value are ignored by the container.",
+            "Items with a negative order value stack on top of other items.",
+            "Negative values for the `order` property are not valid and throw an error."
+        ],
+        "explanation": "<p>Flex items are arranged in ascending order based on the <code>order</code> value. Negative values move items to the start of the flex container.</p><pre><code>.item {\n  order: -1;\n}</code></pre>"
+    },
+    {
+        "question": "What's the weird gotcha of the Flexbox `order` property?",
+        "correct_answer": "The visual order of items changes, but their DOM order remains the same.",
+        "incorrect_answers": [
+            "The `order` property overrides all other flex properties like `flex-grow` and `align-self`.",
+            "The `order` property is only supported in specific browsers.",
+            "Setting `order` affects other non-flexbox containers."
+        ],
+        "explanation": "<p>Using <code>order</code> changes the visual order of elements but does not change their DOM order. This can affect accessibility and screen reader behavior, as the reading order still follows the DOM structure.</p>"
+    },
+    {
+        "question": "What is the `justify-content` property that can be set on a flex container?",
+        "correct_answer": "The `justify-content` property controls the alignment of flex items along the main axis.",
+        "incorrect_answers": [
+            "`justify-content` aligns items along the cross axis.",
+            "`justify-content` adjusts the size of flex items.",
+            "`justify-content` defines the direction of the flex container."
+        ],
+        "explanation": "<p>The <code>justify-content</code> property is used to align flex items along the main axis of the container. The main axis is determined by the <code>flex-direction</code> property.</p><pre><code>.container {\n  display: flex;\n  justify-content: center;\n}</code></pre>"
+    },
+    {
+        "question": "What options does `justify-content` take?",
+        "correct_answer": "Options include `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, and `space-evenly`.",
+        "incorrect_answers": [
+            "`justify-content` only accepts `center`, `flex-start`, and `flex-end`.",
+            "`justify-content` aligns items with `left`, `right`, and `middle` values.",
+            "It depends on the `align-items` values applied to the flex container."
+        ],
+        "explanation": "<p>The <code>justify-content</code> property has several values that define how items are distributed along the main axis: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, and <code>space-evenly</code>.</p>"
+    },
+    {
+        "question": "What is the difference between the `space-between` and `space-around` values for the `justify-content` property?",
+        "correct_answer": "`space-between` distributes items with space only between them, while `space-around` adds equal space around each item.",
+        "incorrect_answers": [
+            "`space-between` and `space-around` are identical and add even spacing between items.",
+            "`space-around` centers all items with no space in between.",
+            "`space-between` adds space only at the start and end of the container."
+        ],
+        "explanation": "<p>With <code>space-between</code>, flex items are evenly distributed, but no space is added at the start or end of the container. <code>space-around</code> adds equal space around each item, resulting in some space at the edges of the container.</p><pre><code>.container {\n  display: flex;\n  justify-content: space-around;\n}</code></pre>"
+    },
+    {
+        "question": "If I change my `flex-direction` to column, why does it now ignore whatever I have set as the `justify-content`?",
+        "correct_answer": "It doesn't ignore `justify-content`; the main axis changes to vertical, so alignment happens along this axis.",
+        "incorrect_answers": [
+            "`justify-content` only works with horizontal alignment and is ignored otherwise.",
+            "Changing `flex-direction` to `column` disables `justify-content` entirely.",
+            "The `justify-content` property is overridden by `align-items` when `flex-direction` is set to `column`."
+        ],
+        "explanation": "<p>When you set <code>flex-direction: column</code>, the main axis becomes vertical. As a result, <code>justify-content</code> now controls vertical alignment, not horizontal alignment.</p><pre><code>.container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}</code></pre>"
+    },
+    {
+        "question": "How does `align-items` align things?",
+        "correct_answer": "`align-items` aligns flex items along the cross axis.",
+        "incorrect_answers": [
+            "`align-items` aligns items along the main axis.",
+            "`align-items` controls the spacing between items along the main axis.",
+            "`align-items` adjusts the size of flex items within the container."
+        ],
+        "explanation": "<p>The <code>align-items</code> property determines how flex items are aligned along the cross axis, which is perpendicular to the main axis.</p><pre><code>.container {\n  display: flex;\n  align-items: center;\n}</code></pre>"
+    },
+    {
+        "question": "When you vertically center items, what is crucial to remember?",
+        "correct_answer": "Set `align-items: center` if the main axis is horizontal, or `justify-content: center` if the main axis is vertical.",
+        "incorrect_answers": [
+            "Always use `justify-content: center`, regardless of the axis.",
+            "`align-items: center` centers items vertically on all axes.",
+            "Flexbox cannot vertically center items without using margins."
+        ],
+        "explanation": "<p>In Flexbox, the property you use to center items depends on the main axis. Use <code>align-items: center</code> for cross-axis alignment and <code>justify-content: center</code> for main-axis alignment.</p>"
+    },
+    {
+        "question": "What is `align-items` set to by default?",
+        "correct_answer": "The default value for `align-items` is `stretch`.",
+        "incorrect_answers": [
+            "The default value for `align-items` is `center`.",
+            "The default value for `align-items` is `flex-start`.",
+            "The default value for `align-items` is `baseline`."
+        ],
+        "explanation": "<p>The default value for <code>align-items</code> is <code>stretch</code>, which stretches flex items to fill the cross-axis of the container.</p><pre><code>.container {\n  display: flex;\n  align-items: stretch;\n}</code></pre>"
+    },
+    {
+        "question": "What properties does `align-items` take?",
+        "correct_answer": "`align-items` can take values like `flex-start`, `flex-end`, `center`, `baseline`, and `stretch`.",
+        "incorrect_answers": [
+            "`align-items` only works with `flex-start`, `center`, and `flex-end`.",
+            "`align-items` can take properties like `space-between` or `space-around`.",
+            "`align-items` adjusts spacing, so it only works with numeric values."
+        ],
+        "explanation": "<p>The <code>align-items</code> property accepts the following values: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, and <code>stretch</code>. These control how flex items align along the cross axis.</p>"
+    },
+    {
+        "question": "What does the `baseline` value for `align-items` do?",
+        "correct_answer": "It aligns items so their text baselines are aligned.",
+        "incorrect_answers": [
+            "`baseline` centers items vertically in the container.",
+            "`baseline` makes all items stretch to fit the container.",
+            "`baseline` positions items at the bottom of the container."
+        ],
+        "explanation": "<p>Setting <code>align-items: baseline</code> aligns flex items based on their text baselines, ensuring a consistent alignment for text-heavy elements.</p><pre><code>.container {\n  display: flex;\n  align-items: baseline;\n}</code></pre>"
+    },
+    {
+        "question": "How does `align-content` differ from `justify-content`?",
+        "correct_answer": "`align-content` aligns flex lines along the cross axis, while `justify-content` aligns items along the main axis.",
+        "incorrect_answers": [
+            "`align-content` and `justify-content` are identical and interchangeable.",
+            "`align-content` aligns items along the main axis, while `justify-content` aligns them along the cross axis.",
+            "`align-content` controls the spacing between flex items, while `justify-content` defines their size."
+        ],
+        "explanation": "<p>The <code>align-content</code> property aligns multiple lines of flex items along the cross axis. In contrast, <code>justify-content</code> aligns items along the main axis, regardless of whether they are in one line or multiple lines.</p><pre><code>.container {\n  display: flex;\n  flex-wrap: wrap;\n  align-content: center;\n}</code></pre>"
+    },
+    {
+        "question": "What is necessary for `align-content` to work?",
+        "correct_answer": "The flex container must have multiple lines of items.",
+        "incorrect_answers": [
+            "`align-content` works with single-line containers by default.",
+            "`align-content` is independent of whether the container has multiple lines.",
+            "`align-content` requires the `justify-content` property to be set first."
+        ],
+        "explanation": "<p>The <code>align-content</code> property only takes effect when there are multiple lines of flex items. If all items fit in a single line, this property has no effect.</p>"
+    },
+    {
+        "question": "What is the default value of `align-content`?",
+        "correct_answer": "The default value is `stretch`.",
+        "incorrect_answers": [
+            "The default value is `center`.",
+            "The default value is `space-between`.",
+            "The default value is `flex-start`."
+        ],
+        "explanation": "<p>The default value of <code>align-content</code> is <code>stretch</code>, which stretches the lines of items to fill the container's cross axis.</p>"
+    },
+    {
+        "question": "What values does `align-content` take?",
+        "correct_answer": "`align-content` can take values like `flex-start`, `flex-end`, `center`, `space-between`, `space-around`, `space-evenly`, and `stretch`.",
+        "incorrect_answers": [
+            "`align-content` only supports `flex-start`, `flex-end`, and `center`.",
+            "`align-content` takes numeric values for spacing.",
+            "`align-content` is limited to `baseline` and `stretch`."
+        ],
+        "explanation": "<p>The <code>align-content</code> property supports values such as <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>, and <code>stretch</code>. These control how flex lines are distributed along the cross axis.</p>"
+    },
+    {
+        "question": "What does using `justify-content: center` along with `align-content: center` do?",
+        "correct_answer": "Centers flex items in both the main and cross axes.",
+        "incorrect_answers": [
+            "Centers flex items along the main axis only.",
+            "Centers flex items along the cross axis only.",
+            "`justify-content` overrides `align-content`, so it centers only along the main axis."
+        ],
+        "explanation": "<p>Using <code>justify-content: center</code> and <code>align-content: center</code> together ensures that flex items (or lines) are centered both horizontally (main axis) and vertically (cross axis).</p>"
+    },
+    {
+        "question": "What does the `align-self` property do?",
+        "correct_answer": "`align-self` allows a single flex item to override the alignment specified by `align-items` for the container.",
+        "incorrect_answers": [
+            "`align-self` changes the alignment of all items in the flex container.",
+            "`align-self` modifies the size of the flex item.",
+            "`align-self` centers the flex container on the page."
+        ],
+        "explanation": "<p>The <code>align-self</code> property is used to override the <code>align-items</code> value for a specific flex item, allowing individual control over its alignment along the cross axis.</p><pre><code>.item {\n  align-self: center;\n}</code></pre>"
+    },
+    {
+        "question": "Which values can be used on the `align-self` property?",
+        "correct_answer": "`align-self` accepts `auto`, `flex-start`, `flex-end`, `center`, `baseline`, and `stretch`.",
+        "incorrect_answers": [
+            "`align-self` only accepts `flex-start`, `flex-end`, and `center`.",
+            "`align-self` uses numeric values to determine alignment.",
+            "`align-self` must match the value of `align-items`."
+        ],
+        "explanation": "<p>The <code>align-self</code> property supports values like <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, and <code>stretch</code>. The <code>auto</code> value inherits the container's <code>align-items</code> value.</p>"
+    },
+    {
+        "question": "Where do we place the `flex` property?",
+        "correct_answer": "The `flex` property is applied to individual flex items, not the container.",
+        "incorrect_answers": [
+            "The `flex` property is applied to the flex container.",
+            "The `flex` property must be used with `justify-content`.",
+            "`flex` is a shorthand for container direction and wrapping."
+        ],
+        "explanation": "<p>The <code>flex</code> property is a shorthand for setting the <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> properties on individual flex items.</p><pre><code>.item {\n  flex: 1;\n}</code></pre>"
+    },
+    {
+        "question": "What question does the `flex` property answer?",
+        "correct_answer": "How much space should a flex item take relative to other items?",
+        "incorrect_answers": [
+            "How should flex items be aligned along the cross axis?",
+            "What is the spacing between flex items?",
+            "What direction should the container flow in?"
+        ],
+        "explanation": "<p>The <code>flex</code> property defines how a flex item grows, shrinks, or bases its size relative to the available space and other items in the container.</p>"
+    },
+    {
+        "question": "What is the width of a flex item by default?",
+        "correct_answer": "By default, a flex item’s width is determined by its content or the width specified in the CSS.",
+        "incorrect_answers": [
+            "A flex item’s width is always equal to the width of the flex container.",
+            "A flex item’s width is determined by the `flex-grow` property, even if it's not set.",
+            "A flex item’s width is automatically set to 100% of the container."
+        ],
+        "explanation": "<p>By default, the width of a flex item is determined by its content unless overridden by properties like <code>width</code>, <code>flex-basis</code>, or the <code>flex</code> shorthand.</p>"
+    },
+    {
+        "question": "What happens if we set `flex: 1` for all items?",
+        "correct_answer": "All flex items will grow equally to fill the available space in the container.",
+        "incorrect_answers": [
+            "The flex items will shrink equally to fit within the container.",
+            "Each flex item will occupy the same width as the container.",
+            "Flex items will stack vertically."
+        ],
+        "explanation": "<p>Setting <code>flex: 1</code> gives all flex items equal proportions of the available space in the container, after accounting for padding and margins.</p>"
+    },
+    {
+        "question": "What does the `flex` property determine?",
+        "correct_answer": "It determines how a flex item grows, shrinks, and bases its size relative to other items.",
+        "incorrect_answers": [
+            "It determines the alignment of items along the cross axis.",
+            "It determines the spacing between flex items.",
+            "It fixes the width of all flex items."
+        ],
+        "explanation": "<p>The <code>flex</code> property is a shorthand for <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>, which collectively decide how flex items distribute available space.</p>"
+    },
+    {
+        "question": "If all items are set to `flex: 1` originally, what will setting an individual item to `flex: 2` do?",
+        "correct_answer": "That item will grow twice as much as the others to fill the available space.",
+        "incorrect_answers": [
+            "It will shrink twice as much as the others.",
+            "It will have a fixed width of twice the container size.",
+            "It will grow at the same rate as the other items."
+        ],
+        "explanation": "<p>Setting <code>flex: 2</code> means the flex item gets twice as much space as the others when growing to fill the container's available space.</p>"
+    },
+    {
+        "question": "How does the `flex` property work?",
+        "correct_answer": "It is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.",
+        "incorrect_answers": [
+            "It only controls the growth of items in the container.",
+            "It specifies the alignment of flex items within the container.",
+            "It sets the spacing between individual flex items."
+        ],
+        "explanation": "<p>The <code>flex</code> shorthand allows setting all three properties (<code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>) in one declaration, making it more concise and easier to use.</p>"
+    },
+    {
+        "question": "What are the three properties inherent in something like `flex: 1`?",
+        "correct_answer": "`flex-grow`, `flex-shrink`, and `flex-basis`.",
+        "incorrect_answers": [
+            "`align-self`, `align-items`, and `justify-content`.",
+            "`width`, `height`, and `margin`.",
+            "`flex-start`, `flex-end`, and `center`."
+        ],
+        "explanation": "<p>The <code>flex</code> shorthand covers <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>, which control how flex items grow, shrink, and are sized within the container.</p>"
+    },
+    {
+        "question": "What is the `flex-grow` property?",
+        "correct_answer": "It specifies how much a flex item will grow relative to the other items in the container.",
+        "incorrect_answers": [
+            "It specifies how much a flex item will shrink relative to the other items.",
+            "It determines the baseline alignment of flex items.",
+            "It sets the spacing between flex items."
+        ],
+        "explanation": "<p>The <code>flex-grow</code> property defines how much a flex item should grow relative to its siblings, using the available space in the container.</p>"
+    },
+    {
+        "question": "What is the `flex-shrink` property?",
+        "correct_answer": "It specifies how much a flex item will shrink relative to the other items in the container.",
+        "incorrect_answers": [
+            "It specifies how much a flex item will grow relative to the other items.",
+            "It determines the alignment of items in the cross axis.",
+            "It specifies the default size of a flex item."
+        ],
+        "explanation": "<p>The <code>flex-shrink</code> property defines how a flex item shrinks when the container's space is insufficient to fit all items.</p>"
+    },
+    {
+        "question": "What is the `flex-basis` property?",
+        "correct_answer": "It specifies the initial size of a flex item before any growing or shrinking occurs.",
+        "incorrect_answers": [
+            "It specifies the maximum size a flex item can grow to.",
+            "It determines the alignment of flex items along the main axis.",
+            "It specifies the margin applied to the flex item."
+        ],
+        "explanation": "<p>The <code>flex-basis</code> property sets the base size of a flex item, which is the starting point before <code>flex-grow</code> or <code>flex-shrink</code> adjustments.</p>"
+    },
+    {
+        "question": "What is the default value for `flex-grow`?",
+        "correct_answer": "The default value is 0.",
+        "incorrect_answers": [
+            "The default value is 1.",
+            "The default value is 100%.",
+            "The default value is `auto`."
+        ],
+        "explanation": "<p>The default value of <code>flex-grow</code> is <code>0</code>, meaning flex items do not grow by default and remain at their specified or intrinsic size.</p>"
+    },
+    {
+        "question": "What is the default of `flex-shrink`?",
+        "correct_answer": "The default value is 1.",
+        "incorrect_answers": [
+            "The default value is 0.",
+            "The default value is `auto`.",
+            "The default value is `none`."
+        ],
+        "explanation": "<p>The default value of <code>flex-shrink</code> is <code>1</code>, meaning flex items will shrink proportionally if the container is too small to fit all items.</p>"
+    },
+    {
+        "question": "What is the shorthand for setting the `flex-grow`, `flex-shrink`, and `flex-basis` properties?",
+        "correct_answer": "The shorthand is the `flex` property.",
+        "incorrect_answers": [
+            "The shorthand is the `align-items` property.",
+            "The shorthand is the `justify-content` property.",
+            "The shorthand is the `flex-wrap` property."
+        ],
+        "explanation": "<p>The <code>flex</code> property is the shorthand for setting <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> in one line, simplifying the CSS declaration.</p><pre><code>.item {\n  flex: 1 1 auto;\n}</code></pre>"
+    }
+]

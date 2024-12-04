@@ -1,0 +1,156 @@
+[
+    {
+        "question": "What does the <code>Promise.constructor</code> do in JavaScript?",
+        "correct_answer": "It creates a new Promise object that represents the eventual completion or failure of an asynchronous operation.",
+        "incorrect_answers": [
+            "It executes a function asynchronously.",
+            "It is used to resolve a promise immediately.",
+            "It converts a synchronous function into an asynchronous one.",
+            "It cancels the execution of an asynchronous operation."
+        ],
+        "explanation": "<p>The <code>Promise.constructor</code> is used to create a new <code>Promise</code> object. The constructor takes an executor function that is passed two arguments: <code>resolve</code> and <code>reject</code>. These are used to resolve or reject the promise depending on the outcome of the asynchronous operation.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  let success = true;<br>  if (success) resolve('Success!');<br>  else reject('Error!');<br>});<br>promise.then(result => console.log(result)).catch(error => console.log(error));</code></pre>"
+    },
+    {
+        "question": "How do you use the <code>Promise.constructor</code> to handle an asynchronous operation?",
+        "correct_answer": "By passing a function to the constructor that defines the logic for resolving or rejecting the promise.",
+        "incorrect_answers": [
+            "By passing an array of promises into the constructor.",
+            "By chaining <code>then()</code> immediately after creating the promise.",
+            "By providing an object that has <code>resolve</code> and <code>reject</code> methods.",
+            "By passing a synchronous function that returns a value."
+        ],
+        "explanation": "<p>The <code>Promise.constructor</code> is used to create a promise that handles asynchronous operations. Inside the constructor, you define the logic for resolving or rejecting the promise. This is usually done in an asynchronous operation or a function that needs to return a value in the future.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  setTimeout(() => {<br>    resolve('Data fetched!');<br>  }, 1000);<br>});<br>promise.then(data => console.log(data));</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>Promise.all()</code> in JavaScript?",
+        "correct_answer": "It waits for all promises to resolve, and returns a new promise with an array of all the resolved values.",
+        "incorrect_answers": [
+            "It resolves the first promise that completes and ignores the rest.",
+            "It executes the promises sequentially and waits for each to finish before moving to the next.",
+            "It rejects as soon as any one of the promises rejects.",
+            "It only works with synchronous operations."
+        ],
+        "explanation": "<p><code>Promise.all()</code> is used to execute multiple promises in parallel. It returns a new promise that resolves once all input promises have resolved, and the resolved values are returned in an array in the same order as they were passed.</p><pre><code>let promise1 = Promise.resolve('First');<br>let promise2 = Promise.resolve('Second');<br>Promise.all([promise1, promise2]).then(values => {<br>  console.log(values); // ['First', 'Second']<br>});</code></pre>"
+    },
+    {
+        "question": "How does <code>Promise.all()</code> behave if one of the promises is rejected?",
+        "correct_answer": "The entire promise returned by <code>Promise.all()</code> is rejected immediately with the error from the first rejected promise.",
+        "incorrect_answers": [
+            "It resolves with the value of the first resolved promise.",
+            "It resolves with an array containing both the resolved and rejected values.",
+            "It waits for the other promises to resolve before rejecting.",
+            "It automatically retries the failed promise."
+        ],
+        "explanation": "<p>If any promise passed to <code>Promise.all()</code> rejects, the resulting promise is immediately rejected with the reason of the first rejected promise, and the other promises are ignored.</p><pre><code>let promise1 = Promise.resolve('First');<br>let promise2 = Promise.reject('Error');<br>Promise.all([promise1, promise2]).catch(error => {<br>  console.log(error); // 'Error'<br>});</code></pre>"
+    },
+    {
+        "question": "What does <code>Promise.allSettled()</code> do in JavaScript?",
+        "correct_answer": "It waits for all promises to settle (either resolved or rejected) and returns an array of objects describing the outcome of each promise.",
+        "incorrect_answers": [
+            "It rejects as soon as any promise is rejected.",
+            "It resolves when the first promise resolves and ignores the rest.",
+            "It waits for all promises to resolve and returns their values.",
+            "It resolves or rejects based on the first promise that settles."
+        ],
+        "explanation": "<p><code>Promise.allSettled()</code> is used when you need to know the result of all promises, regardless of whether they resolve or reject. It returns an array of objects, each containing the <code>status</code> ('fulfilled' or 'rejected') and the corresponding <code>value</code> or <code>reason</code>.</p><pre><code>let promise1 = Promise.resolve('First');<br>let promise2 = Promise.reject('Error');<br>Promise.allSettled([promise1, promise2]).then(results => {<br>  console.log(results); // [{status: 'fulfilled', value: 'First'}, {status: 'rejected', reason: 'Error'}]<br>});</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>Promise.allSettled()</code> and <code>Promise.all()</code>?",
+        "correct_answer": "<code>Promise.allSettled()</code> waits for all promises to settle and returns their outcomes, while <code>Promise.all()</code> is rejected as soon as one promise is rejected.",
+        "incorrect_answers": [
+            "<code>Promise.allSettled()</code> is faster because it cancels the rejected promises.",
+            "<code>Promise.all()</code> waits for all promises to settle, while <code>Promise.allSettled()</code> returns the first resolved value.",
+            "<code>Promise.allSettled()</code> only resolves if all promises resolve, while <code>Promise.all()</code> always resolves.",
+            "<code>Promise.all()</code> returns an array of results, while <code>Promise.allSettled()</code> only returns the first resolved value."
+        ],
+        "explanation": "<p><code>Promise.allSettled()</code> ensures that all promises settle, whether they resolve or reject. In contrast, <code>Promise.all()</code> resolves only if all promises resolve, and rejects immediately if one promise fails.</p><pre><code>let promise1 = Promise.resolve('First');<br>let promise2 = Promise.reject('Error');<br>Promise.all([promise1, promise2]).catch(error => {<br>  console.log(error); // 'Error'<br>});<br>Promise.allSettled([promise1, promise2]).then(results => {<br>  console.log(results); // [{status: 'fulfilled', value: 'First'}, {status: 'rejected', reason: 'Error'}]<br>});</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>Promise.any()</code> in JavaScript?",
+        "correct_answer": "It returns a promise that resolves as soon as any one of the input promises resolves, or rejects if all promises are rejected.",
+        "incorrect_answers": [
+            "It waits for all promises to resolve and returns an array of their values.",
+            "It resolves with the first rejected promise.",
+            "It returns a resolved promise immediately without waiting for the others.",
+            "It resolves when all promises are rejected."
+        ],
+        "explanation": "<p><code>Promise.any()</code> is useful when you want to take action based on the first promise that resolves. It returns a single value, the result of the first resolved promise. If all promises are rejected, it rejects with an <code>AggregateError</code>.</p><pre><code>let promise1 = Promise.reject('Error 1');<br>let promise2 = Promise.resolve('Success');<br>Promise.any([promise1, promise2]).then(result => {<br>  console.log(result); // 'Success'<br>}).catch(error => {<br>  console.log(error);<br>});</code></pre>"
+    },
+    {
+        "question": "How does <code>Promise.any()</code> behave when all promises are rejected?",
+        "correct_answer": "It rejects with an <code>AggregateError</code> containing all rejection reasons.",
+        "incorrect_answers": [
+            "It resolves with an empty array.",
+            "It resolves with the first rejected promise.",
+            "It ignores the rejections and resolves with <code>null</code>.",
+            "It resolves with the last rejected promise."
+        ],
+        "explanation": "<p><code>Promise.any()</code> will reject with an <code>AggregateError</code> if all of the promises are rejected. This error contains an array of all the rejection reasons.</p><pre><code>let promise1 = Promise.reject('Error 1');<br>let promise2 = Promise.reject('Error 2');<br>Promise.any([promise1, promise2]).catch(error => {<br>  console.log(error instanceof AggregateError); // true<br>  console.log(error.errors); // ['Error 1', 'Error 2']<br>});</code></pre>"
+    },
+    {
+        "question": "How does the <code>catch()</code> method work with promises in JavaScript?",
+        "correct_answer": "It handles any rejections in a promise chain by specifying a rejection handler.",
+        "incorrect_answers": [
+            "It resolves the promise with a provided value.",
+            "It catches errors synchronously.",
+            "It only works with rejected promises.",
+            "It executes code when a promise is successfully resolved."
+        ],
+        "explanation": "<p><code>catch()</code> is used to handle promise rejections in a chain. It can be attached after a <code>then()</code> method to handle errors if the promise is rejected.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  reject('Failed');<br>});<br>promise.catch(error => {<br>  console.log(error); // 'Failed'<br>});</code></pre>"
+    },
+    {
+        "question": "When would you use <code>catch()</code> in a promise chain?",
+        "correct_answer": "You would use it to handle any errors or rejections in the promise chain after the <code>then()</code> methods.",
+        "incorrect_answers": [
+            "You would use it to resolve the promise.",
+            "You would use it to initiate a new promise.",
+            "You would use it to execute code before a promise resolves.",
+            "You would use it to convert a rejected promise to a resolved one."
+        ],
+        "explanation": "<p><code>catch()</code> is used for handling errors in a promise chain. It catches rejections from any promise in the chain, allowing you to handle them gracefully.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  reject('Error');<br>});<br>promise.then(result => {<br>  console.log(result);<br>}).catch(error => {<br>  console.log(error); // 'Error'<br>});</code></pre>"
+    },
+    {
+        "question": "What does <code>finally()</code> do in a promise chain?",
+        "correct_answer": "It runs code after the promise is either resolved or rejected, regardless of the outcome.",
+        "incorrect_answers": [
+            "It resolves the promise with a default value.",
+            "It only runs after the promise is rejected.",
+            "It can be used to chain additional promises.",
+            "It stops the promise from being rejected."
+        ],
+        "explanation": "<p><code>finally()</code> is used to execute code after a promise has been settled, regardless of whether it was resolved or rejected. This is useful for cleanup operations.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  resolve('Done');<br>});<br>promise.then(result => {<br>  console.log(result);<br>}).finally(() => {<br>  console.log('Cleanup');<br>});</code></pre>"
+    },
+    {
+        "question": "How does <code>finally()</code> behave in a promise chain when there is a rejection?",
+        "correct_answer": "It still executes after the promise is rejected, regardless of the rejection reason.",
+        "incorrect_answers": [
+            "It prevents the promise from rejecting.",
+            "It only executes after a promise resolves.",
+            "It halts further promise chaining.",
+            "It is ignored if the promise is rejected."
+        ],
+        "explanation": "<p><code>finally()</code> always executes after the promise has settled, whether it's resolved or rejected. It is often used to perform cleanup tasks.</p><pre><code>let promise = new Promise((resolve, reject) => {<br>  reject('Failed');<br>});<br>promise.catch(error => {<br>  console.log(error);<br>}).finally(() => {<br>  console.log('Cleanup');<br>});</code></pre>"
+    },
+    {
+        "question": "How does <code>Promise.race()</code> behave in JavaScript?",
+        "correct_answer": "It resolves or rejects as soon as the first promise in the array settles.",
+        "incorrect_answers": [
+            "It waits for all promises to resolve before returning.",
+            "It resolves with the first promise that rejects.",
+            "It resolves with the last promise that settles.",
+            "It ignores any rejected promises."
+        ],
+        "explanation": "<p><code>Promise.race()</code> returns a promise that settles as soon as the first input promise settles, whether it's resolved or rejected.</p><pre><code>let promise1 = new Promise(resolve => setTimeout(resolve, 1000, 'First'));<br>let promise2 = new Promise(resolve => setTimeout(resolve, 500, 'Second'));<br>Promise.race([promise1, promise2]).then(result => {<br>  console.log(result); // 'Second'<br>});</code></pre>"
+    },
+    {
+        "question": "How does <code>Promise.race()</code> behave when all promises are rejected?",
+        "correct_answer": "It rejects with the rejection reason of the first rejected promise.",
+        "incorrect_answers": [
+            "It resolves with an empty value.",
+            "It resolves with the first rejected promise.",
+            "It waits for the last promise to settle.",
+            "It returns a resolved promise."
+        ],
+        "explanation": "<p><code>Promise.race()</code> will resolve or reject based on the first promise that settles. If all promises are rejected, it will reject with the rejection reason of the first rejected promise.</p><pre><code>let promise1 = Promise.reject('Error 1');<br>let promise2 = Promise.reject('Error 2');<br>Promise.race([promise1, promise2]).catch(error => {<br>  console.log(error); // 'Error 1'<br>});</code></pre>"
+    }
+]

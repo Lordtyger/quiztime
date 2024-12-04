@@ -1,0 +1,123 @@
+[
+    {
+        "question": "How does the <code>super</code> keyword behave in JavaScript when used inside a subclass constructor?",
+        "correct_answer": "It refers to the parent class constructor and is used to call it from the subclass.",
+        "incorrect_answers": [
+            "It is used to create a new instance of the parent class.",
+            "It is used to define a static method in the subclass.",
+            "It refers to the prototype of the parent class.",
+            "It is used to invoke methods from the parent class only."
+        ],
+        "explanation": "<p>The <code>super</code> keyword is used in a subclass constructor to call the parent class constructor. It allows a subclass to inherit properties or behaviors from the parent class. When used outside a constructor, <code>super</code> is used to call methods from the parent class.</p><pre><code>class Animal {<br>  constructor(name) {<br>    this.name = name;<br>  }<br>}<br>class Dog extends Animal {<br>  constructor(name, breed) {<br>    super(name); // Calls the parent class constructor<br>    this.breed = breed;<br>  }<br>}<br>const dog = new Dog('Buddy', 'Golden Retriever');<br>console.log(dog.name); // 'Buddy'</code></pre>"
+    },
+    {
+        "question": "What does the <code>super</code> keyword refer to in the context of calling a method in a derived class?",
+        "correct_answer": "It refers to the parent class and is used to call a method from the parent class.",
+        "incorrect_answers": [
+            "It refers to the current instance of the class.",
+            "It is used to access private methods in the parent class.",
+            "It refers to the prototype chain of the class.",
+            "It refers to the child class constructor."
+        ],
+        "explanation": "<p>When using <code>super</code> in a method, it calls the corresponding method from the parent class. It can also be used to invoke the constructor of the parent class if used in a subclass constructor.</p><pre><code>class Animal {<br>  speak() {<br>    console.log('Animal speaks');<br>  }<br>}<br>class Dog extends Animal {<br>  speak() {<br>    super.speak(); // Calls the parent class method<br>    console.log('Dog barks');<br>  }<br>}<br>const dog = new Dog();<br>dog.speak(); // 'Animal speaks' and 'Dog barks'</code></pre>"
+    },
+    {
+        "question": "What does <code>yield</code> do in a JavaScript generator function?",
+        "correct_answer": "It pauses the execution of the generator function and returns a value to the caller.",
+        "incorrect_answers": [
+            "It terminates the generator function immediately.",
+            "It defines a variable in the generator scope.",
+            "It allows the generator to return multiple values in one execution.",
+            "It executes the generator function asynchronously."
+        ],
+        "explanation": "<p>The <code>yield</code> keyword is used inside a generator function to pause the execution of the function and return a value to the caller. The generator can then be resumed from where it left off, allowing multiple values to be returned one by one.</p><pre><code>function* numbers() {<br>  yield 1;<br>  yield 2;<br>  yield 3;<br>}<br>const gen = numbers();<br>console.log(gen.next().value); // 1<br>console.log(gen.next().value); // 2<br>console.log(gen.next().value); // 3</code></pre>"
+    },
+    {
+        "question": "In a generator function, what happens when <code>yield</code> is called multiple times?",
+        "correct_answer": "It pauses the function each time and returns a value, allowing the generator to produce a sequence of values.",
+        "incorrect_answers": [
+            "It causes the generator to stop and return a single value.",
+            "It throws a syntax error.",
+            "It creates an infinite loop of values.",
+            "It executes the function asynchronously without pausing."
+        ],
+        "explanation": "<p>Each time <code>yield</code> is called, it pauses the generator function and returns the specified value. The generator function can then be resumed on the next call to <code>next()</code>, allowing it to produce a sequence of values. This is useful for situations where you need to lazily iterate over a series of values.</p><pre><code>function* countUpTo(max) {<br>  let count = 1;<br>  while (count <= max) {<br>    yield count;<br>    count++;<br>  }<br>}<br>const counter = countUpTo(3);<br>console.log(counter.next().value); // 1<br>console.log(counter.next().value); // 2<br>console.log(counter.next().value); // 3</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>yield</code> and <code>yield*</code> in JavaScript generator functions?",
+        "correct_answer": "While <code>yield</code> returns a single value, <code>yield*</code> delegates to another generator, yielding all its values.",
+        "incorrect_answers": [
+            "There is no difference between <code>yield</code> and <code>yield*</code>.",
+            "The <code>yield*</code> keyword is used to pause the function without returning a value.",
+            "The <code>yield*</code> keyword allows the function to execute asynchronously.",
+            "The <code>yield*</code> keyword is used inside a normal function, not a generator."
+        ],
+        "explanation": "<p><code>yield*</code> is used to delegate to another generator function. It yields all the values produced by the delegated generator, essentially flattening multiple generator calls into one sequence.</p><pre><code>function* innerGenerator() {<br>  yield 1;<br>  yield 2;<br>}<br>function* outerGenerator() {<br>  yield* innerGenerator();<br>  yield 3;<br>}<br>const gen = outerGenerator();<br>console.log(gen.next().value); // 1<br>console.log(gen.next().value); // 2<br>console.log(gen.next().value); // 3</code></pre>"
+    },
+    {
+        "question": "What does the <code>instanceof</code> operator do in JavaScript?",
+        "correct_answer": "It checks whether an object is an instance of a particular class or constructor function.",
+        "incorrect_answers": [
+            "It checks if an object is an instance of a primitive value.",
+            "It checks if an object is an instance of a class in the prototype chain.",
+            "It checks if an object has a specific property.",
+            "It checks whether an object is callable."
+        ],
+        "explanation": "<p><code>instanceof</code> is used to check whether an object is an instance of a specific class or constructor function. It checks the object's prototype chain and returns <code>true</code> if the object was created from the class or function.</p><pre><code>class Animal {}<br>const dog = new Animal();<br>console.log(dog instanceof Animal); // true</code></pre>"
+    },
+    {
+        "question": "How is the <code>instanceof</code> operator used with a constructor function in JavaScript?",
+        "correct_answer": "It checks if an object was created using the constructor function's prototype.",
+        "incorrect_answers": [
+            "It checks if the object is an instance of a primitive type.",
+            "It checks if the object is callable.",
+            "It throws an error when used with a constructor function.",
+            "It checks if the constructor function exists in the object's prototype chain."
+        ],
+        "explanation": "<p>The <code>instanceof</code> operator is used to check whether an object is an instance of a specific constructor function. It checks if the object inherits from the constructor's prototype.</p><pre><code>function Animal() {}<br>const dog = new Animal();<br>console.log(dog instanceof Animal); // true</code></pre>"
+    },
+    {
+        "question": "What does the <code>??</code> operator do in JavaScript?",
+        "correct_answer": "It returns the right-hand operand when the left-hand operand is <code>null</code> or <code>undefined</code>.",
+        "incorrect_answers": [
+            "It returns the left-hand operand if it's truthy.",
+            "It returns <code>false</code> if the left-hand operand is falsy.",
+            "It returns <code>undefined</code> if the left-hand operand is falsy.",
+            "It throws an error when both operands are <code>null</code>."
+        ],
+        "explanation": "<p>The <code>??</code> (nullish coalescing) operator is used to return the right-hand operand when the left-hand operand is <code>null</code> or <code>undefined</code>. It differs from <code>||</code>, which returns the right-hand operand for any falsy value.</p><pre><code>let value = null;<br>console.log(value ?? 'Default'); // 'Default'<br>value = 0;<br>console.log(value ?? 'Default'); // 0</code></pre>"
+    },
+    {
+        "question": "When would you use the <code>??</code> (nullish coalescing) operator in JavaScript?",
+        "correct_answer": "You would use it to assign a default value only when the variable is <code>null</code> or <code>undefined</code>, not when it's any falsy value.",
+        "incorrect_answers": [
+            "You would use it to check if a value is a number.",
+            "You would use it to handle all falsy values like <code>0</code>, <code>false</code>, or <code>NaN</code>.",
+            "You would use it to check if a variable is an empty string.",
+            "You would use it to check if a value is an object."
+        ],
+        "explanation": "<p>The <code>??</code> operator is specifically used to handle <code>null</code> or <code>undefined</code> values, which are considered 'nullish'. It's useful when you want to provide a fallback value for these specific cases and not for other falsy values like <code>0</code> or <code>''</code>.</p><pre><code>let foo = null;<br>let bar = foo ?? 'Fallback';<br>console.log(bar); // 'Fallback'</code></pre>"
+    },
+    {
+        "question": "What does the <code>?.</code> (optional chaining) operator do in JavaScript?",
+        "correct_answer": "It allows you to safely access properties or methods on an object that may be <code>null</code> or <code>undefined</code>.",
+        "incorrect_answers": [
+            "It throws an error if the property or method does not exist.",
+            "It returns <code>false</code> if the property does not exist.",
+            "It returns the first non-falsy value in a chain of properties.",
+            "It only works with arrays, not objects."
+        ],
+        "explanation": "<p>The <code>?.</code> (optional chaining) operator allows you to safely access nested properties or methods of an object without causing an error if the object or any part of the chain is <code>null</code> or <code>undefined</code>.</p><pre><code>let user = { profile: { name: 'John' } };<br>console.log(user.profile?.name); // 'John'<br>console.log(user.profile?.age); // undefined (no error)</code></pre>"
+    },
+    {
+        "question": "When would you use the <code>?.</code> (optional chaining) operator in JavaScript?",
+        "correct_answer": "You would use it when accessing deeply nested properties where any part of the chain might be <code>null</code> or <code>undefined</code>.",
+        "incorrect_answers": [
+            "You would use it when checking if a value is truthy.",
+            "You would use it when defining default values for undefined properties.",
+            "You would use it to execute a method conditionally based on the value.",
+            "You would use it to loop through all properties in an object."
+        ],
+        "explanation": "<p>The <code>?.</code> operator is especially useful when working with deeply nested objects where parts of the chain may not be defined. It prevents runtime errors by ensuring the code does not try to access properties on <code>null</code> or <code>undefined</code> values.</p><pre><code>let user = { profile: { name: 'John' } };<br>console.log(user.profile?.name); // 'John'<br>console.log(user.profile?.age); // undefined (no error)</code></pre>"
+    }
+]

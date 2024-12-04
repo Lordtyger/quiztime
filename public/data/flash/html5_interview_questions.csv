@@ -1,0 +1,825 @@
+Question,Answer
+basics,basics
+Describe any two new features of HTML5.,HTML 5 comes up with many new features including video/audio elements for media playback and better support for local offline storage.
+What does a <hgroup> tag do?,"It is used for heading sections. Header tags used are from <h1> to <h6>. The largest is the main heading of the section, and the others are sub-headings."
+Which video formats are used for the video element?,"Ogg, MPEG4, WebM"
+How can we embed video in HTML5?,"<video src=""movie.ogg"" controls=""controls""></video>"
+Which video format is supported by IE?,IE supports MPEG4 and WebM.
+Name the audio formats supported in HTML5.,"Ogg Vorbis, MP3, WAV"
+"What will the following code do?<audio src=""song.ogg"" controls=""controls""></audio>",It will play the audio file named song.ogg.
+How will you define canvas with reference to HTML5?,"It is a rectangular area, where we can control every pixel."
+Give an example of adding canvas in HTML5?,"<canvas id=""myCanvas"" width=""200"" height=""100""></canvas>"
+Which methods/approaches are available in HTML5 to store data?,"Local Storage persists
+
+| Session Storage is lost on window close etc"
+Write a code snippet in HTML or Javascript that can count how many times a user visited the page.,"We can code the counter in Javascript and can call it from our web page written in HTML.<script type=""text/javascript"">
+if (sessionStorage.pagecount)
+{
+sessionStorage.pagecount=Number(sessionStorage.pagecount) +1; }
+Else
+{
+sessionStorage.pagecount=1;
+}
+document.write(""Visits ""+sessionStorage.pagecount+"" time(s) this session.""); </script>"
+How can you test your browser's HTML5 compatibility?,Visiting http://html5test.com checks the browser's HTML5 compatibility and shows scores.
+
+Question,Answer
+semantic tags,semantic tags
+aside,"The  tag defines some content aside from the content it is placed in.
+
+The aside content should be related to the surrounding content.
+
+<p>My family and I visited The Epcot center this summer.</p>
+
+<aside>
+  <h4>Epcot Center</h4>
+  <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+</aside>"
+Details,"The  tag specifies additional details that the user can view or hide on demand.
+The  tag can be used to create an interactive widget that the user can open and close. Any sort of content can be put inside the  tag.
+The content of a  element should not be visible unless the open attribute is set.
+<details>
+  <summary>Copyright 1999-2014.</summary>
+  <p> - by Refsnes Data. All Rights Reserved.</p>
+  <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+</details>
+
+<p><b>Note:</b> The details tag is currently only supported in Opera, Chrome, and in Safari 6.</p>"
+figcaption,"The  tag defines a caption for a  element.
+The  element can be placed as the first or last child of the  element.
+<figure>
+  <img src=""img_pulpit.jpg"" alt=""The Pulpit Rock"" width=""304"" height=""228"">
+  <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+</figure>"
+figure,"The  tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+
+While the content of the  element is related to the main flow, its position is independent of the main flow, and if removed it should not affect the flow of the document."
+article,"The  tag specifies independent, self-contained content.
+
+An article should make sense on its own and it should be possible to distribute it independently from the rest of the site.
+
+Potential sources for the  element:
+
+Forum post
+Blog post
+News story
+Comment"
+footer,"A  element should contain information about its containing element.
+
+A  element typically contains:
+
+```
+ authorship information
+copyright information
+contact information
+sitemap
+back to top links
+related documents
+You can have several  elements in one document.
+```"
+header,"The  element represents a container for introductory content or a set of navigational links.
+
+A  element typically contains:
+
+one or more heading elements (<h1> - <h6>)
+logo or icon
+authorship information
+You can have several  elements in one document.
+
+Note: A  tag cannot be placed within a , <address> or another  element.</address></h6></h1>"
+main,"The  tag specifies the main content of a document.
+
+The content inside the  element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms.
+
+Note: There must not be more than one  element in a document. The  element must NOT be a descendant of an , , , , or  element."
+mark,"The  tag defines marked text.
+
+Use the  tag if you want to highlight parts of your text."
+nav,"The  tag defines a set of navigation links.
+
+Notice that NOT all links of a document should be inside a  element. The  element is intended only for major block of navigation links.
+
+Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content."
+section,"The  tag defines sections in a document, such as chapters, headers, footers, or any other sections of the document."
+summary,The  tag defines a visible heading for the  element. The heading can be clicked to view/hide the details.
+time,"The  tag defines a human-readable date/time.
+
+This element can also be used to encode dates and times in a machine-readable way so that user agents can offer to add birthday reminders or scheduled events to the user's calendar, and search engines can produce smarter search results."
+"Address
+
+| Not strictly html5","The <address> tag defines the contact information for the author/owner of a document or an article.
+If the <address> element is inside the <body> element, it represents contact information for the document.
+If the <address> element is inside an <article> element, it represents contact information for that article.
+The text in the <address> element usually renders in italic. Most browsers will add a line break before and after the address element."
+"Address
+
+| Not strictly html5","The <address> tag defines the contact information for the author/owner of a document or an article.
+If the <address> element is inside the <body> element, it represents contact information for the document.
+If the <address> element is inside an <article> element, it represents contact information for that article.
+The text in the <address> element usually renders in italic. Most browsers will add a line break before and after the address element."
+
+Question,Answer
+attributes, attributes
+autofocus,"The autofocus attribute is a boolean attribute.
+
+When present, it specifies that an <input> element should automatically get focus when the page loads.
+
+Example
+
+Let the ""First name"" input field automatically get focus when the page loads:
+
+First name:<input type=""text"" name=""fname"" autofocus>"
+form,"The form attribute specifies one or more forms an <input> element belongs to.
+
+Tip: To refer to more than one form, use a space-separated list of form ids.
+
+Example
+
+An input field located outside the HTML form (but still a part of the form):
+
+<form action=""action_page.php"" id=""form1"">
+  First name: <input type=""text"" name=""fname""><br>
+  <input type=""submit"" value=""Submit"">
+</form>
+
+Last name: <input type=""text"" name=""lname"" form=""form1"">"
+formaction,"The formaction attribute specifies the URL of a file that will process the input control when the form is submitted.
+
+The formaction attribute overrides the action attribute of the <form> element.
+
+The formaction attribute is used with type=""submit"" and type=""image"".
+
+Example
+
+An HTML form with two submit buttons, with different actions:
+
+<form action=""action_page.php"">
+  First name: <input type=""text"" name=""fname""><br>
+  Last name: <input type=""text"" name=""lname""><br>
+  <input type=""submit"" value=""Submit""><br>
+  <input type=""submit"" formaction=""demo_admin.asp""
+  value=""Submit as admin"">
+</form>"
+formenctype,"The formenctype attribute specifies how the form-data should be encoded when submitting it to the server (only for forms with method=""post"").
+
+The formenctype attribute overrides the enctype attribute of the <form> element.
+
+The formenctype attribute is used with type=""submit"" and type=""image"".
+
+Example
+
+Send form-data that is default encoded (the first submit button), and encoded as ""multipart/form-data"" (the second submit button):
+
+<form action=""demo_post_enctype.asp"" method=""post"">
+  First name: <input type=""text"" name=""fname""><br>
+  <input type=""submit"" value=""Submit"">
+  <input type=""submit"" formenctype=""multipart/form-data""
+  value=""Submit as Multipart/form-data"">
+</form>"
+formmethod,"The formmethod attribute defines the HTTP method for sending form-data to the action URL.
+
+The formmethod attribute overrides the method attribute of the <form> element.
+
+The formmethod attribute can be used with type=""submit"" and type=""image"".
+
+Example
+
+The second submit button overrides the HTTP method of the form:
+
+<form action=""action_page.php"" method=""get"">
+  First name: <input type=""text"" name=""fname""><br>
+  Last name: <input type=""text"" name=""lname""><br>
+  <input type=""submit"" value=""Submit"">
+  <input type=""submit"" formmethod=""post"" formaction=""demo_post.asp""
+  value=""Submit using POST"">
+</form>"
+autocomplete,"The autocomplete attribute specifies whether a form or input field should have autocomplete on or off.
+
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+Tip: It is possible to have autocomplete ""on"" for the form, and ""off"" for specific input fields, or vice versa.
+
+The autocomplete attribute works with <form> and the following <input> types: text, search, url, tel, email, password, datepickers, range, and color.
+
+Example
+
+An HTML form with autocomplete on (and off for one input field):
+
+<form action=""action_page.php"" autocomplete=""on"">
+  First name:<input type=""text"" name=""fname""><br>
+  Last name: <input type=""text"" name=""lname""><br>
+  E-mail: <input type=""email"" name=""email"" autocomplete=""off""><br>
+  <input type=""submit"">
+</form>"
+formnovalidate,"The novalidate attribute is a boolean attribute.
+
+When present, it specifies that the <input> element should not be validated when submitted.
+
+The formnovalidate attribute overrides the novalidate attribute of the <form> element.
+
+The formnovalidate attribute can be used with type=""submit"".
+
+Example
+
+A form with two submit buttons (with and without validation):
+
+<form action=""action_page.php"">
+  E-mail: <input type=""email"" name=""userid""><br>
+  <input type=""submit"" value=""Submit""><br>
+  <input type=""submit"" formnovalidate value=""Submit without validation"">
+</form>"
+formtarget,"The formtarget attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.
+
+The formtarget attribute overrides the target attribute of the <form> element.
+
+The formtarget attribute can be used with type=""submit"" and type=""image"".
+
+Example
+
+A form with two submit buttons, with different target windows:
+
+<form action=""action_page.php"">
+  First name: <input type=""text"" name=""fname""><br>
+  Last name: <input type=""text"" name=""lname""><br>
+  <input type=""submit"" value=""Submit as normal"">
+  <input type=""submit"" formtarget=""_blank""
+  value=""Submit to a new window"">
+</form>"
+height and width,"The height and width attributes specify the height and width of an <input> element.
+
+The height and width attributes are only used with <input type=""image"">.
+
+Note	Always specify the size of images. If the browser does not know the size, the page will flicker while images load.
+
+Example
+
+Define an image as the submit button, with height and width attributes:
+
+<input type=""image"" src=""img_submit.gif"" alt=""Submit"" width=""48"" height=""48"">"
+list,"The list attribute refers to a <datalist> element that contains pre-defined options for an <input> element.
+
+Example
+
+An <input> element with pre-defined values in a <datalist>:
+
+<input list=""browsers"">
+
+```
+<datalist id=""browsers"">
+  <option value=""Internet Explorer"">
+  <option value=""Firefox"">
+  <option value=""Chrome"">
+  <option value=""Opera"">
+  <option value=""Safari"">
+</datalist>
+```"
+min and max,"The min and max attributes specify the minimum and maximum value for an <input> element.
+
+The min and max attributes work with the following input types: number, range, date, datetime, datetime-local, month, time and week.
+
+Example
+
+<input> elements with min and max values:
+
+Enter a date before 1980-01-01:
+<input type=""date"" name=""bday"" max=""1979-12-31"">
+
+Enter a date after 2000-01-01:
+<input type=""date"" name=""bday"" min=""2000-01-02"">
+
+Quantity (between 1 and 5):
+<input type=""number"" name=""quantity"" min=""1"" max=""5"">"
+multiple,"The multiple attribute is a boolean attribute.
+
+When present, it specifies that the user is allowed to enter more than one value in the <input> element.
+
+The multiple attribute works with the following input types: email, and file.
+
+Example
+
+A file upload field that accepts multiple values:
+
+Select images: <input type=""file"" name=""img"" multiple>"
+pattern,"The pattern attribute specifies a regular expression that the <input> element's value is checked against.
+
+The pattern attribute works with the following input types: text, search, url, tel, email, and password.
+
+Tip: Use the global title attribute to describe the pattern to help the user.
+Tip: Learn more about regular expressions in our JavaScript tutorial.
+
+Example
+
+An input field that can contain only three letters (no numbers or special characters):
+
+Country code: <input type=""text"" name=""country_code"" pattern=""<A-Za-z>{3}"" title=""Three letter country code"">"
+placeholder,"The placeholder attribute specifies a hint that describes the expected value of an input field (a sample value or a short description of the format).
+
+The hint is displayed in the input field before the user enters a value.
+
+The placeholder attribute works with the following input types: text, search, url, tel, email, and password.
+
+Example
+
+An input field with a placeholder text:
+
+<input type=""text"" name=""fname"" placeholder=""First name"">"
+required,"The required attribute is a boolean attribute.
+
+When present, it specifies that an input field must be filled out before submitting the form.
+
+The required attribute works with the following input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.
+
+Example
+
+A required input field:
+
+Username: <input type=""text"" name=""usrname"" required>"
+step,"The step attribute specifies the legal number intervals for an <input> element.
+
+Example: if step=""3"", legal numbers could be -3, 0, 3, 6, etc.
+
+Tip: The step attribute can be used together with the max and min attributes to create a range of legal values.
+
+The step attribute works with the following input types: number, range, date, datetime, datetime-local, month, time and week.
+
+Example
+
+An input field with a specified legal number intervals:
+
+<input type=""number"" name=""points"" step=""3"">"
+value,"The value attribute specifies the initial value for an input field:
+
+Example
+
+```
+<form action="""">
+First name:<br>
+<input type=""text"" name=""firstname"" value=""John"">
+<br>
+Last name:<br>
+<input type=""text"" name=""lastname"">
+</form>
+```"
+readonly,"The readonly attribute specifies that the input field is read only (cannot be changed):
+
+Example
+
+```
+<form action="""">
+First name:<br>
+<input type=""text"" name=""firstname"" value=""John"" readonly>
+<br>
+Last name:<br>
+<input type=""text"" name=""lastname"">
+</form>
+```"
+disabled,"The disabled attribute specifies that the input field is disabled.
+
+A disabled element is un-usable and un-clickable.
+
+Disabled elements will not be submitted.
+
+Example
+
+```
+<form action="""">
+First name:<br>
+<input type=""text"" name=""firstname"" value=""John"" disabled>
+<br>
+Last name:<br>
+<input type=""text"" name=""lastname"">
+</form>
+```"
+size,"The size attribute specifies the size (in characters) for the input field:
+
+Example
+
+```
+<form action="""">
+First name:<br>
+<input type=""text"" name=""firstname"" value=""John"" size=""40"">
+<br>
+Last name:<br>
+<input type=""text"" name=""lastname"">
+</form>
+```"
+maxlength,"The maxlength attribute specifies the maximum allowed length for the input field:
+
+Example
+
+```
+<form action="""">
+First name:<br>
+<input type=""text"" name=""firstname"" maxlength=""10"">
+<br>
+Last name:<br>
+<input type=""text"" name=""lastname"">
+</form>
+```"
+
+Question,Answer
+input types, input types
+Which input types are available in HTML5 forms?,"email, url, number, range, Date pickers, search and color"
+Which form input type will you use if you wish to take an email as input from the user?,"HTML5 form provides input field of type 'email' that can be used to take email address as input. The benefit is that email validation is done automatically.
+e.g. <input type=""email"" name=""email""/>"
+Name any three types of date picker.,"a) month - selects month and year
+b) week - selects week and year
+c) time - selects time (hour and minute)"
+Which HTML5 input type will allow you to select color?,"Color type can be used to get color input from the user. The user experience may vary depending upon the browser.
+e.g. Select color: <input type=""color"" name=""user_color"" />"
+What is the default video format for HTML5?,Ogg Theora is the default video format in HTML5.
+How do you differentiate HTML5 and Flash when playing videos?,HTML5 has built-in support for audio and video codecs whereas Flash plugin has to load them which makes it slower than HTML5.
+What does HTML5 use to access and store data?,HTML5 uses Javascript to access and store data.
+Is there any time limit for the localstorage object's data storage?,There is no time limit.
+When does the session storage data get deleted?,"As soon as the user closes the browser, the session storage data is removed or deleted."
+What does datalist element do?,A list of options for an input field can be specified using datalist element.
+What HTML5 element provides a secure way to authenticate users?,"```
+The keygen element.
+e.g.
+<form action=""page.asp"" method=""get""> Username: <input type=""text"" name=""location"" /> Encryption: <keygen name=""security"" />
+<input type=""submit"" />
+</form>
+```"
+Define private and public keygen elements.,"The keygen element is a key-pair generator and when a form is submitted, public key and private key are generated. Private key is used for encrypting the data and public key is used for decrypting the data."
+Where is the private key stored?,The private key is stored on the client and is never shared.
+Where is the public key stored?,The public key is stored on the server.
+What does a public key do?,The public key could be used to generate a client certificate to authenticate the user in the future.
+Which element is used for calculations and script output?,"```
+The output element
+e.g.
+<input name=""n1"" type=""number""> +
+<input name=""n2"" type=""number""> =
+<output name=""result""
+onforminput=""value=n1.valueAsNumber + n2.valueAsNumber""></output>
+```"
+Write the syntax of output element.,"<output id=""result"" onforminput=""resCalc()""></output>"
+
+Question,Answer
+forms,forms
+Name the attributes of form in HTML5.,autocomplete and novalidate
+Give any three input attributes’ names.,"```
+autocomplete
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height and width
+list
+min and max
+multiple
+pattern (regexp)
+placeholder
+required
+step
+```"
+"Is input attribute ""form"" supported in IE?",It is not supported in IE.
+"Which web browsers support the input attribute ""autofocus""?","Input attribute ""autofocus"" is supported by Firefox, Opera and Chrome."
+"Does Opera support the input attribute ""novalidate""?","Starting from version 11, Opera supports the input attribute ""novalidate""."
+What does autocomplete attribute do?,he autocomplete attribute specifies that the form or input field should have an autocomplete function.
+You have a form with multiple fields. You wish to automatically get focus on a field when a page gets loaded. Which field attribute will you use?,"The autofocus attribute will be used.
+e.g. <form>
+<input name=""q"" autofocus>
+<input type=""submit"" value=""Search""> </form>"
+Does autofocus attribute work with all input types?,"Yes, autofocus attribute works with all input types."
+What does form attribute do?,The form attribute is used to specify one or more forms.
+Give an example of form attribute.,"<form action=""from1.asp"" method=""get"" id=""form1"">
+
+| First name:<input type=""text"" name=""fname"" /> <input type=""submit"" />"
+What does form override attribute do?,Some of the attributes set for the form element can be overridden using override attribute.
+Explain the types of override attributes.,"a) formaction - overrides the form action attribute
+b) formenctype - overrides the form enctype attribute
+c) formmethod - overrides the form method attribute
+d) formnovalidate - overrides the form novalidate attribute e) formtarget - overrides the form target attribute"
+What is the main function of the override attribute types?,Override attribute types are helpful for creating different submit buttons.
+Which attributes can be used to specify the dimensions of an image used for the input type image?,The height and width attributes specify the height and width of the image used for the input type image.
+Give an example of input type image using width and height attributes.,"<input type=""image"" src=""img_submit.gif"" width=""24"" height=""24"" />"
+What does a list attribute do?,"The list attribute specifies a datalist for an input field.
+
+<input list=""browsers"">
+
+```
+<datalist id=""browsers"">
+  <option value=""Internet Explorer"">
+  <option value=""Firefox"">
+  <option value=""Chrome"">
+  <option value=""Opera"">
+  <option value=""Safari"">
+</datalist>
+```"
+"Name the input attribute’s types with which the attribute ""list"" works.","The list attribute works with the input types namely text, search, url, telephone, email, date pickers, number, range, and color."
+How can you specify minimum and maximum value for an input field?,"The min and max attributes of input field can be used to specify the minimum and maximum value for input field.
+<form action=""demo_form.asp"">
+  Enter a date before 1980-01-01:
+  <input type=""date"" name=""bday"" max=""1979-12-31"">
+  Enter a date after 2000-01-01:
+  <input type=""date"" name=""bday"" min=""2000-01-02"">
+  Quantity (between 1 and 5):
+  <input type=""number"" name=""quantity"" min=""1"" max=""5"">
+  <input type=""submit"">
+
+</form>"
+Which datatypes are compatible with input tag's min and max attributes?,input tag's min and max attributes work with numbers or dates.
+What does step attribute do?,The step attribute is used to specify legal number intervals for the input field.
+"What will be the legal allowed values for the following?<input type=""number"" name=""points"" min=""0"" max=""10"" step=""3"" />","0, 3, 6.9"
+"Give an example which shows a numeric field that accepts values between 0 and 10, with a step of 3.","Points: <input type=""number"" name=""test"" min=""0"" max=""10"" step=""3"" />"
+Which attribute specifies that multiple values can be selected for an input field?,The multiple attribute
+With which input types does the multiple attribute work?,"The multiple attribute works with the input type file and email. e.g. Select: <input type=""file"" name=""img"" multiple=""multiple"" />"
+You have a form and you do not want any form validation over it. Which HTML5 attribute is to be used?,The novalidate attribute is used to submit not validated form data.
+Will you prefer HTML5 form validation over JavaScript form validation? Why?,"Yes. There are two reasons for this:
+
+a) I have to write and maintain JavaScript form validation script.
+b) If a user has disabled JavaScript on his web browser, then JavaScript form validation will be bypassed."
+Will HTM5 form validation work on a compatible web browser if scripting is disabled?,Yes. The browser will do RFC-compliant email validation on form submission.
+Given an example of a form that submits unvalidated data.,"<form action=""demo_form.asp"" novalidate=""novalidate"">
+E-mail: <input type=""email"" name=""user_email"" />
+<input type=""submit"" /> </form>"
+What does a pattern attribute do?,The pattern attribute specifies a pattern used to validate an input field. A valid regular expression needs to be provided when using pattern attribute.
+"Name the input attribute types with which the attribute ""pattern"" works.","The pattern attribute works with the types: text, search, url, telephone, email, and password."
+Give an example of pattern attribute.,"In the following example, country code pattern is specified for validation. Country code: <input type=""text"" name=""country_code"" pattern=""<A-z>{3}"" title=""Three letter country code"" />"
+What does a placeholder attribute do?,The placeholder attribute is used to provide a hint to the user about the expected value of an input field.
+"Name the input attribute types with which the attribute ""placeholder"" works.","The placeholder attribute works with the following types: text, search, url, telephone, email, and password."
+What does a required attribute do?,A required attribute is a way to make a form field mandatory. User has to fill it in order to successfully submit the form.
+"Name the input attribute types with which the attribute ""required"" works.","The required attribute works with the following types: text, search, url, telephone, email, password, date pickers, number, checkbox, radio, and file."
+Give an example to show the usage of required attribute.,"The following example makes the input field mandatory.
+
+| You name: <input type=""text"" name=""usr_name"" required=""required"" />"
+
+Question,Answer
+general events, general events
+What does the attribute “onmessage” do?,This attribute is generally applied to body tag and is introduced in HTML5. It allows a script to be executed when message is triggered.
+Define form event.,Form events are triggered by actions inside a HTML form.
+"What does a form ""onReset"" event do?",onReset event runs a script when the user resets the form. It is not supported in HTML5.
+How many keyboard events exist in HTML5?,There are only three keyboard events in HTML5.
+Name the keyboard events.,"onkeydown, onkeypress, onkeyup"
+What does onkeyup event do?,It is a keyboard event and allows a script to be executed when a key is pressed.
+What does onkeypress event do?,It is a keyboard event and allows a script to be executed when a key is pressed and released.
+Which keyboard event will you use to execute a script when a key is released?,onkeyup
+How many mouse events are there in HTML5?,There are sixteen mouse events in HTML5.
+How do you differentiate between onmouseout and onmousewheel events?,Both are mouse events. onmouseout event allows a script to be executed when the mouse pointer moves out of an element whereas onmousewheel event allows a script to be executed when the mouse wheel is being rotated.
+Name the mouse events that are introduced in HTML5.,"ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, onmousewheel, onscroll"
+
+Question,Answer
+media elements and events, media elements and events
+Name the media element attributes.,"scr, preload, autoplay, mediagroup, loop, muted and controls are the media element attributes."
+When are the pending events and callbacks for media element discarded?,The pending events and callbacks for media element are discarded when the media element starts loading a new resource.
+When is a media element potentially playing?,A media element is said to be potentially playing when its paused attribute is false.
+How many tracklist objects of a media element are there?,There are two tracklist objects namely: multipletracklist object and exclusivetracklist object.
+What are media events?,"Media events are those events which are triggered by media like videos, images and audio."
+What does media event oncanplay do?,"This event allows the script to be executed when media can start play, but might have to stop for buffering."
+What does media event oncanplaythrough do?,"This event allows the script to be executed when media can be played to the end, without stopping for buffering."
+What does media event onemptied do?,"This event allows the script to be run when a media resource element suddenly becomes empty (network errors, errors on load etc.)"
+What does media event onloadedmetadata do?,This event allows the script to be run when the duration and other media data of a media element is loaded.
+What does media event onstalled do?,This event allows a script to be executed when there is an error in fetching media data.
+What does media event onvolumechange do?,"This event allows a script to be executed when media changes the volume, also when volume is set to ""mute""."
+What does media event onwaiting do?,"This event allows a script to be executed when media has stopped playing, but is expected to resume."
+
+Question,Answer
+tables, tables
+Which tag will you use to define table header?,"<thead> is used to define table header.
+
+| And <th> for the actual headings"
+How will you group columns in a table for formatting?,"```
+The <colgroup> tag can be used for the same. e.g.
+<table>
+<colgroup span=""2"" align=""left""></colgroup> <colgroup align=""right""></colgroup>
+<tr> <th>Id</th>
+<th>Name</th>
+<th>Location</th> </tr>
+<tr>
+<td>1</td> <td>Ben</td>
+<td>Sydney</td> </tr>
+</table>
+```"
+Can <colgroup> be nested with other tags apart from table element?,No. The <colgroup> tag can only be used inside a table element.
+How will you create columns in a table?,"To create columns, we must specify td elements within a tr element. e.g.<tr><td>Col1</td><td>Col2</td></tr>"
+Name the tags with which tfoot tag should be used in conjunction with.,The tfoot element should be used in conjunction with the thead and tbody tags.
+Where will you place <tfoot> tag in your HTML page?,"```
+The <tfoot> tag must appear before <tbody> within a table, so that a browser can render the footer before receiving all the rows of data. e.g.
+<table border=""1"">
+<thead>
+<tr> <th>Subject</th> <th>Marks</th> </tr>
+</thead>
+<tfoot>
+<tr> <td>Total</td>
+<td>150</td>
+</tr> </tfoot> <tbody>
+<tr> <td>English</td>
+<td>100</td> </tr>
+<tr> <td>Maths</td>
+<td>50</td> </tr>
+</tbody> </table>
+```"
+
+Question,Answer
+general elements and attributes, general elements and attributes
+What does <tt> tag do in HTML5?,<tt> is not supported in HTML5.
+What does <summary> tag do in HTML5?,"It is used to define the header of a ""detail"" element. It is only supported in Chrome. e.g.
+<details>
+<summary>Copyright 2000-2011.</summary>
+<p>ABC Company</p> </details>"
+What does <ul> tag do in HTML5?,<ul> tag defines an unordered list.
+What does <wbr> tag do in HTML5?,<wbr> tag defines a possible line-break.
+What does <sup> tag do in HTML5?,<sup> is used to define superscripted text. e.g. <sub> superscripted text goes here </sub>
+What does <xmp> tag do in HTML5?,This tag does not work in HTML5.
+What does the hidden attribute do?,It is used to specify that the element is not relevant. Hidden elements are not displayed.
+Which attribute is used to specify language code for the content in an element?,The lang attribute
+Name the five events which apply to the <body> tag.,"onafterprint, onbeforeprint, onebeforeonload, onblur and onfocus."
+Is <del> tag supported in all major browsers?,The <del> tag defines text that has been deleted from a document and it is supported in all major web browsers.
+Give an example of <del> tag.,<p>My favorite car is <del>Mazda</del> <ins>red</ins>!</p>
+What is the purpose of using <!DOCTYPE> in HTML5?,<!DOCTYPE> is an instruction to the web browser which informs the browser about the version of the markup language the page is written in.
+Give an example of DOCTYPE that you will use in your HTML page if you wish to refer to DTD that does not include presentational or deprecated elements.,"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01//EN"" ""http://www.w3.org/TR/html4/strict.dtd"">"
+Is <!DOCTYPE> case sensitive?,"NO, <!DOCTYPE> is not case sensitive."
+How to you define hyperlinks in HTML?,"Hyperlinks are defined using the <a> tag, which is used to link from one page to another."
+How do you differentiate between HTML4's <a> tag and HTML5's <a> tag?,"In HTML 4, the <a> tag could be either a hyperlink or an anchor. In HTML5, the <a> tag is always a hyperlink.
+Well, it's very simple and has been supported by most browsers for several versions, you give the anchor/bookmark an ID and target that in your link.
+
+<h1 id=""top"">My web page</h1>
+with the 'top of page' link being
+<a href=""#top"">Top of page</a>"
+What is the purpose of anchor tag's href attribute?,It is used to specify the destination of the target URL.
+Which tag is used instead of <acronym> in HTML5?,The tag <abbr> is used instead of <acronym> in HTML5.
+What does <applet> tag do in HTML5?,The <applet> tag is not supported in HTML5.
+Which tag is used instead of <applet> tag in HTML5?,The <object> tag is used instead of <applet> tag in HTML5.
+What does <audio> tag do in HTML5?,"The <audio> tag defines sound, such as music or other audio streams."
+Is <basefont> tag supported in HTML5?,"No, <basefont> tag is not supported in HTML5."
+Which tag replaces <basefont> tag in HTML5?,CSS is used instead of <basefont> in HTML5.
+What does <bdo> tag do?,The <bdo> tag allows you to specify the text direction and override the bidirectional algorithm.
+What does bdo stand for?,bdo stands for bidirectional override.
+Which tag will you use to reference to a quotation that is taken from another source?,The <blockquote> tag
+How will you cite reference using blockquote tag?,"cite attribute is used to give the reference. e.g. <blockquote> is the tag has an attribute called ""cite"". <blockquote cite=""http://www.abc.com"">
+Unity, Faith, Decipline </blockquote>"
+Name the attributes of the <button> tag.,"There are eleven attributes of the <button> tag namely: autofocus, disabled, form, formaction, formenctype, formmethod, formnovalidate, formtarget, type, name and value."
+What does the <canvas> tag do?,The <canvas> tag is used as container for graphics.
+What does the <fieldset> tag do?,The <fieldset> tag draws a box around the related form elements.
+Write a code to refresh page every 3 seconds.,"<meta http-equiv=""refresh"" content=""3"" />."
+How will you define a description of your web page using meta tags?,"<meta name=""description"" content=""Java Test"" />"
+Which tag is used instead of <xmp> in HTML5?,<pre> tag is used instead of <xmp> in HTML5.
+Which values can you put as button tag's type attribute?,"submit, button, reset"
+How will you highlight parts of your text?,The <mark> tag is used to highlight parts of your text.
+What is the purpose of mark tag? Give Example.,"It is used to mark text. e.g.
+
+| <p>Update <mark>Windows</mark> today.</p>"
+What is the default value of button tag's type attribute?,"It defaults to submit, though different browsers may use different default values for the type attribute."
+I wish to add rows in colgroup element. How can this be done?,Not possible. Only columns can be added in the colgroup element.
+What does <ol> stand for?,<ol> stands for ordered list.
+What does <li> stand for?,<li> stands for list.
+Write a code of a simple HTML form with two input fields and one submit button.,"<form action=""form_action.asp"">
+First name: <input type=""text"" name=""fname"" value=""Test1"" /><br /> Last name:<input type=""text"" name=""lname"" value=""Test2"" /><br /> <input type=""submit"" value=""Submit"" />
+</form>"
+What is the purpose of accept-charset attribute in form tag?,It is used to specify the character-sets the server can handle for form-data.
+Write an HTML code snippet to insert an image in web page.,"<img src=""computer.gif"" alt=""Computer"" />"
+Name the two attributes of <img> tag?,The <img> tag has two required attributes: src and alt. The alt attribute specifies an alternate text for an image and the src specifies the URL of an image.
+Which <img> tag attributes are not supported in HTML5?,"Align, border, hspace and vspace are not supported in HTML5."
+What is the use of ismap attribute in <img> tag?,smap specifies an image as a server-side image-map.
+Which attribute of <img> tag is used to specify a client-side image-map?,usemap specifies an image as a client-side image-map.
+What is the role of web worker in HTML5?,"The web worker allows JavaScript code to be set to run in a background process i.e. it helps in the development of multi-threaded applications.
+The advantage of web workers is that intensive calculations can be processed in the background without adversely affecting the speed of the user interface."
+What do you know about geolocation API in HTML5?,It is used to support geographical based services by allowing a Web application to determine user's current geographical location.
+"Name the HTML5 feature that allows documents in different windows (and iframes, for that matter) to send and receive messages to one another?",It is referred to as cross-document messaging feature.
+Which feature of HTML5 is useful for the development of widgets and applications that are hosted on servers other than the primary Web page's server?,The Cross-document messaging
+What is the general syntax to draw an outline rectangle on canvas in HTML5?,"strokeRect(x,y,width,height)"
+Which tag is useful to block the quotation that is taken from another source?,The <blockquote> tag is useful to block the quotation that is taken from another source.
+Name the tag in which the event onbeforeprint applies.,onbeforeprint event works in the <body> tag.
+What is the use of an <optgroup> tag?,The <optgroup> tag is used to group related options in a drop-down list.
+Give syntax example of <optgroup>.,"<select>
+<optgroup label=""white Cars"">
+<option value=""volvo"">Volvo</option> <option value=""suzzuki"">Saab</option> </optgroup>
+<optgroup label=""Green Cars"">
+<option value=""vw"">VW</option> <option value=""audi"">Audi</option> </optgroup>
+</select>"
+Which HTML tag defines a multi-line text input control?,The <textarea> tag
+How to set a parameter for the object element? Write code snippet.,"<object data=""song.ogg"">
+
+| <param name=""autoplay"" value=""false"" /> </object>"
+Which attributes of <pram> tags are not supported in HTML5?,Only two attributes type and typevalue are not supported in HTML5.
+Write code snippet that will set focus to keygen field when the page gets loaded.,"<form action=""demo_keygen.asp"" method=""get"">
+Username: <input type=""text"" name=""usr_name"" />
+Encryption: <keygen name=""security"" autofocus=""autofocus"" /> <input type=""submit"" />
+</form>"
+Which coding flexibilities are provided by HTML5?,"a) Uppercase tag names,
+b) Quotes are optional for attributes,
+c) Attribute values are optional,
+d) Closing empty elements are optional."
+Give an example to show the use of itemprop and itemscope.,"Support for the Microdata API has just been removed from Webkit (Apple Safari). Support for the Microdata API was also removed from Blink (Google Chrome) a few months ago. This means that Apple Safari and Google Chrome will no longer support the Microdata API. Removal of the feature from a browser also shows us a likely future for Microdata, which is less and less support.
+<div itemscope><p>I am going to <span itemprop=""name"">England</span>.</p> </div>"
+Which browsers do not have support for getitems()?,"Support for the Microdata API has just been removed from Webkit (Apple Safari). Support for the Microdata API was also removed from Blink (Google Chrome) a few months ago. This means that Apple Safari and Google Chrome will no longer support the Microdata API. Removal of the feature from a browser also shows us a likely future for Microdata, which is less and less support.
+
+Any browser that supports the HTML5 microdata API, will have support for getItems() function on the global document object. If a browser doesn't support microdata, the getItems() function will be undefined."
+Name the sementic elements in HTML5.,"```
+header
+nav
+section
+article
+aside
+figure
+figcaption
+footer
+details
+summary
+mark
+time
+```"
+What is DOM?,"DOM (Document Object Model) defines relationships, attributes & methods of objects."
+What is meant by HTML Serialization?,The HTML serialization refers to the syntax of an HTML document defined in the HTML specification.
+Which MIME type does HTML use?,The HTML serialization must be served using the text/html MIME type.
+How do we specify character encoding?,"We specify the encoding using HTTP Content-Type header.
+
+<meta http-equiv=""Content-Type"" content=""text/html;charset=ISO-8859-8"">"
+What is the restriction on character coding?,The character encoding declaration must be serialized without the use of character references or character escapes of any kind.
+What does <sub> tag do?,The <sub> tag is used to define subscript text. Subscript text appears half a character below the baseline.
+Which HTML tag will you use to write superscript text in your web page?,"The <sup> tag defines superscript text and hence it will be used. e.g.
+<sup>This is superscript text.</sup>"
+Which property is used to specify the tab order of an element?,tabindex is used to specify the tab order of an element. e.g. HTMLElementObject.tabIndex=tabIndex
+"In which browser min, max and step attributes work?","Opera 9.5 (and above) and Chrome 3.0 (and above) are the only browsers supporting min, max and step attributes."
+What are the valid values of canvas's globalalpha property?,Valid values of canvas's globalalpha property range from 0 and 1. Real values are allowed.
+"In canvas's globalalpha property, what do 0 and 1 mean?",In canvas's globalalpha property 0 means no opacity and 1 means full opacity.
+How do you rotate a canvas and what is its unit of measurement?,"To rotate the HTML5 Canvas, we use rotate() method. The rotate transformation is defined by an angle in radians."
+"Using HTML5 canvas, how will you invert colors of an image?","We can iterate over all of the pixels in the image and invert the red, green, and blue components by subtracting each component from the max color value, 255."
+How can we create oscillation animation using HTML5 canvas?,This is possible using the KineticJS library. We need to use the equation for a simple harmonic oscillator in the updateStage() method of the Stage object.
+What is KineticJS in HTML5?,KineticJS is an HTML5 canvas library that extends the canvas API by providing support for animation and event handling.
+What is the purpose of body tag's attribute onoffline?,Execute a JavaScript function when the browser starts to work offline.
+What can an audio element contain?,"An audio element contains a src attribute or one or more source element, which may be followed by wither text or embedded content or text content enclosed by markup."
+Which elements can contain audio element?,Any element which can contain text or embedded content or text content enclosed by markup can contain audio element.
+Which browser supports the Semantic <progress> functionality?,Only Chrome and Opera support the Semantic <progress> functionality.
+How can you show an object's downloading progress using HTML5?,"HTML5 provides the <progress> tag to show work-in-progress. e.g.
+Progress: <progress value=""60"" max=""100"">60%</progress>"
+How secure is the HTML5 storage database?,"Within the browser, a web site can read/write in its own storage database i.e. other sites cannot access my sites database. HTML5 storage database is therefore secure."
+What is the purpose of <kbd> tag in HTML5?,"It is used for indicating the text to be entered by the user.
+
+<p>Type the following in the Run dialog: <kbd>cmd</kbd><br />Then click the OK button.</p>"
+Name few Event Handler Content Attributes.,"ondragenter, ondrop, onselect, onstalled, onwaiting"
+What can HTML5 do that Flash cannot?,"HTML5 can run on Apple mobile devices like iPhones and iPads whereas Flash plugin is not directly supported on Apple mobile devices. HTML5 runs just as part of the browser, so there's no separate plugin."
+What does the tag <noframes> do?,The <noframes> tag is used to display text for browsers that do not handle frames.
+What is CSS? How does it work?,CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation semantics (the look and formatting) of a document written in a markup language.
+
+Question,Answer
+cache manifest, cache manifest
+Which software storage feature is introduced in HTML5? What is its purpose?,The cache manifest is introduced in HTML5 which is a software storage feature that provides the ability to access a web application even without a network connection.
+What is the role of manifest file in cache manifest software storage feature?,"A cache manifest file contains the sources that are required by a web application e.g. HTML pages, images, CSS, JS etc. On the very first user visit to a HTML site with cache manifest feature, his web browser will read the HTML5 manifest file, download the resources given and store them locally. In the absence of a network connection, his web browser will shift to the local copies and hence web application will be available to him even without a network connection."
+Which content type must be served by the cache manifest file?,text/cache-manifest
+Assume that you intend to use cache manifest feature and your web application exceeds on HTML page. Can all the pages share same manifest file?,"Yes. Each web page must have a manifest attribute that points to the cache manifest. e.g. <!DOCTYPE HTML>
+<html manifest=""/cache.manifest""> <body>
+</body> </html>"
+Write an HTML page that refers to a cache manifest file called mymanifest.manifest.,"```
+<!DOCTYPE HTML>
+<html manifest=""mymanifest.manifest"">
+<head> <title>Hello</title>
+<script src=""myjs.js""></script>
+<link rel=""mystylesheet"" href=""test.css""> </head>
+<body>
+Hello World.
+</body> </html>
+```"
+Should cache manifest files use absolute paths or absolute URLs?,"Cache manifests can also use absolute paths or even absolute URLs as shown below:
+CACHE MANIFEST
+/js/myjs.js /main/css/mycss.css http://test/images/img1.jpg"
+How do you comment a line in cache manifest file?,"```
+Hash character (#) is used to comment a single line in cache manifest file. e.g. CACHE MANIFEST
+# this is a comment
+```"
+How are spaces and blank lines handled in cache manifest file?,Spaces and blank lines are ignored in cache manifest file.
+Name the cache manifest file headers.,"Cache manifest file consists of 3 headers namely: a) CACHE (to cache the resources)
+
+b) NETWORK (not to cache the resources)
+c) FALLBACK (to substitute online resources that cannot be cached / were not cached)"
+Give an example of cache manifest file that uses manifest file headers.,"CACHE MANIFEST
+FALLBACK:
+/ /offlinepage.html NETWORK: /rates.html CACHE:
+/css.css /js.js /image.png"
+"```
+Review the given cache manifest file. What does a single character (/) before ‘offlinepage.html’ refer to?
+CACHE MANIFEST
+FALLBACK:
+/ /offlinepage.html NETWORK:
+.....
+```","The fallback section consists of a single line. i.e. / /offlinepage.html. The single character (/) before ‘offlinepage’ will match any URL pattern on your site. If the browser does not find the page in the appcache, the application will display the page /offlinepage.html."
+"If you have a cache manifest file that has no section headers, how will the resources be treated?","All manifest files are divided into three parts: the “explicit” section, the “fallback” section, and the “online whitelist” section. Each section has a header, on its own line. If the manifest file doesn’t have any section headers, by default all the listed resources are in the “explicit” section, hence they will be downloaded and cached locally."
+"If your browser has visited the web page (cache manifest enabled) before and recognizes the manifest file, will all the resources mentioned in the manifest be downloaded again?","If the manifest file has not changed, the downloading of resources will not occur."
+
+Question,Answer
+misc, misc
+"Set a view port, what are the options?","<meta name=""viewport"" content=""width=device-width, initial-scale=1.0""/>
+
+initial-scale=1.0 fits the viewport to the dimensions of the device (device-width and device-height values), which is a good idea because the size of the viewport fits the dimensions of the device regardless of its orientation.
+
+width=device-width size the viewport to always corresponds to the (fixed value) width of the device, and thus is distorted in landscape orientation because que right value should be “device-height” not “device-width” in landscape (and it’s worse on iPhone5 whose device-height value is 568px, compared to its 320px device-width).
+
+Therefore, I would rather recommend to use initial-scale alone, not associated width=device-width. Because the combination of the two is problematic, and moreover I think than even only width=device-width is problematic."
+"```
+make the p so it shows one line and 3 dots
+p{
+        display: block;
+        width: 100px;
+  }
+```","```
+p{
+       display: block;
+        width: 100px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+ }
+```"

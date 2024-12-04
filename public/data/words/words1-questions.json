@@ -1,0 +1,38 @@
+[{
+    "question": "In React, what is the purpose of the `useReducer` hook?",
+    "correct_answer": "To manage complex state logic by using a reducer function.",
+    "incorrect_answers": [
+      "To replace the `useState` hook entirely in functional components.",
+      "To optimize performance by memoizing state updates.",
+      "To handle side effects such as API calls or subscriptions."
+    ],
+    "explanation": "`useReducer` is a React hook used for managing state that involves complex logic, such as multiple sub-values or when the next state depends on the previous one. It provides an alternative to `useState`, particularly in scenarios where state logic becomes difficult to manage. \n\nThe hook takes two arguments: a reducer function and an initial state. The reducer function determines how the state should change in response to actions dispatched by the component. \n\nExample:\n\n```javascript\nimport React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      throw new Error('Unknown action');\n  }\n}\n\nfunction Counter() {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>\n      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>\n    </div>\n  );\n}\n\nexport default Counter;\n```\n\nIn this example, `useReducer` is used to manage a counter with `increment` and `decrement` actions. It is particularly useful when there are multiple actions or complex logic, offering a more structured approach than using multiple `useState` calls."
+  },
+    {
+        "question": "What does 'empirical' mean?",
+        "correct_answer": "based on observation or experience rather than theory or pure logic.",
+        "incorrect_answers": [
+            "related to abstract reasoning or speculation.",
+            "focused on moral or ethical teaching.",
+            "derived from mathematical models or computations."
+        ]
+    },
+    {
+        "question": "What does 'didactic' mean?",
+        "correct_answer": "intended to teach, often with a moral or instructive purpose.",
+        "incorrect_answers": [
+            "intended to entertain or amuse.",
+            "focused on scientific observation and experimentation.",
+            "characterized by strict adherence to rules or authority."
+        ]
+    },
+    {
+        "question": "What does 'austere' mean?",
+        "correct_answer": "severe or strict in manner, attitude, or appearance.",
+        "incorrect_answers": [
+            "marked by luxury or extravagant decoration.",
+            "characterized by humor and lightheartedness.",
+            "focused on practical application and utility."
+        ]
+    }
+]

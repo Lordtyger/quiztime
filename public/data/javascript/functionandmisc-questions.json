@@ -1,0 +1,162 @@
+[
+    {
+        "question": "What does the `apply()` method do in JavaScript?",
+        "correct_answer": "The `apply()` method calls a function with a given `this` value and arguments provided as an array (or array-like object).",
+        "incorrect_answers": [
+            "The `apply()` method is used to define new functions based on existing ones.",
+            "The `apply()` method is used to bind a function to a specific object.",
+            "The `apply()` method immediately invokes the function, passing the arguments as separate values."
+        ],
+        "explanation": "<p>The <strong>apply()</strong> method in JavaScript allows you to call a function with a specific <code>this</code> value and arguments passed as an array. This is useful when you want to pass arguments dynamically, without knowing how many arguments there are ahead of time.</p><pre><code>function sum(a, b) {\n  return a + b;\n}\n\nlet numbers = [5, 10];\nconsole.log(sum.apply(null, numbers));  // 15</code></pre>"
+    },
+    {
+        "question": "How does <code>apply()</code> differ from <code>call()</code> in JavaScript?",
+        "correct_answer": "The <code>apply()</code> method passes arguments as an array, while <code>call()</code> passes arguments individually.",
+        "incorrect_answers": [
+            "The <code>apply()</code> method is used to bind a function to a specific object.",
+            "The <code>call()</code> method passes arguments as an array, while <code>apply()</code> passes them individually.",
+            "There is no difference between <code>apply()</code> and <code>call()</code>."
+        ],
+        "explanation": "<p><strong>apply()</strong> and <strong>call()</strong> both allow you to invoke a function with a specific <code>this</code> value, but the difference lies in how arguments are passed. <strong>apply()</strong> expects the arguments to be passed as an array, while <strong>call()</strong> takes individual arguments.</p><pre><code>function greet(name, age) {\n  console.log(`Hello ${name}, you are ${age} years old`);\n}\n\ngreet.apply(null, ['Alice', 30]);\n// vs\n\ngreet.call(null, 'Alice', 30);</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the `bind()` method in JavaScript?",
+        "correct_answer": "The `bind()` method creates a new function that, when called, has its `this` value set to a specified object and allows optional arguments to be preset.",
+        "incorrect_answers": [
+            "The `bind()` method immediately invokes the function with a specified `this` value.",
+            "The `bind()` method creates a function with a modified prototype.",
+            "The `bind()` method is used to assign methods to an object."
+        ],
+        "explanation": "<p>The <strong>bind()</strong> method creates a new function that, when invoked, has its <code>this</code> value set to a specified object, and it allows you to preset arguments for the function. This is useful when you need to ensure a function always runs with the same <code>this</code> context.</p><pre><code>function greet() {\n  console.log(`Hello, my name is ${this.name}`);\n}\n\nconst person = { name: 'Alice' };\nconst greetPerson = greet.bind(person);\n\ngreetPerson();  // 'Hello, my name is Alice'</code></pre>"
+    },
+    {
+        "question": "How does the `bind()` method differ from `apply()` and `call()`?",
+        "correct_answer": "While `bind()` creates a new function with a fixed `this` value and optionally preset arguments, `apply()` and `call()` invoke the function immediately with a specified `this` value and arguments.",
+        "incorrect_answers": [
+            "`bind()` also invokes the function immediately like `apply()` and `call()`.",
+            "`bind()` cannot accept arguments, unlike `apply()` and `call()`.",
+            "`bind()` is used to define static methods for an object."
+        ],
+        "explanation": "<p><strong>bind()</strong> differs from <strong>apply()</strong> and <strong>call()</strong> in that it does not invoke the function immediately. Instead, it returns a new function with a fixed <code>this</code> value and optionally preset arguments. In contrast, <strong>apply()</strong> and <strong>call()</strong> invoke the function right away.</p><pre><code>function greet(name) {\n  console.log(`Hello, ${name}`);\n}\n\nconst greetBind = greet.bind(null, 'Alice');\ngreetBind();  // 'Hello, Alice'</code></pre>"
+    },
+    {
+        "question": "What does the `call()` method do in JavaScript?",
+        "correct_answer": "The `call()` method calls a function with a specified `this` value and individual arguments passed as parameters.",
+        "incorrect_answers": [
+            "The `call()` method defines methods on an object.",
+            "The `call()` method immediately invokes the function with arguments passed as an array.",
+            "The `call()` method returns a bound function with a fixed `this` value."
+        ],
+        "explanation": "<p>The <strong>call()</strong> method in JavaScript allows you to invoke a function with a specific <code>this</code> value and arguments passed as individual values. It is similar to <strong>apply()</strong> but differs in how the arguments are passed.</p><pre><code>function sum(a, b) {\n  return a + b;\n}\n\nconsole.log(sum.call(null, 5, 10));  // 15</code></pre>"
+    },
+    {
+        "question": "How does the `call()` method differ from the `apply()` method in JavaScript?",
+        "correct_answer": "The `call()` method passes arguments individually, while `apply()` passes arguments as an array.",
+        "incorrect_answers": [
+            "The `call()` method invokes a function asynchronously, while `apply()` invokes it synchronously.",
+            "The `call()` method passes arguments as an array, while `apply()` passes them individually.",
+            "There is no difference between the two methods."
+        ],
+        "explanation": "<p>The difference between <strong>call()</strong> and <strong>apply()</strong> lies in how arguments are passed. <strong>call()</strong> passes arguments individually, while <strong>apply()</strong> passes them as an array.</p><pre><code>function greet(name, age) {\n  console.log(`Hello ${name}, you are ${age} years old`);\n}\n\n// Using call\ngreet.call(null, 'Alice', 30);\n\n// Using apply\ngreet.apply(null, ['Alice', 30]);</code></pre>"
+    },
+    {
+        "question": "What does the `toString()` method do in JavaScript?",
+        "correct_answer": "The `toString()` method returns a string representing the object, usually in a human-readable form.",
+        "incorrect_answers": [
+            "The `toString()` method converts an object into a number.",
+            "The `toString()` method serializes an object into a JSON string.",
+            "The `toString()` method is used to define custom string methods for an object."
+        ],
+        "explanation": "<p>The <strong>toString()</strong> method is used to return a string representation of an object. It is often called automatically when an object is used in a string context, but can also be called explicitly. The default behavior for most objects is to return the object type, but you can override it for custom objects.</p><pre><code>let num = 123;\nconsole.log(num.toString());  // '123'</code></pre>"
+    },
+    {
+        "question": "What is the behavior of the `toString()` method when used on a function in JavaScript?",
+        "correct_answer": "The `toString()` method returns the source code of the function as a string.",
+        "incorrect_answers": [
+            "The `toString()` method returns an empty string for functions.",
+            "The `toString()` method returns the function's name only.",
+            "The `toString()` method returns a JSON string representation of the function."
+        ],
+        "explanation": "<p>When the <strong>toString()</strong> method is called on a function, it returns the source code of the function as a string, including the function's definition and its parameters.</p><pre><code>function greet() {\n  console.log('Hello');\n}\n\nconsole.log(greet.toString());</code></pre>"
+    },
+    {
+        "question": "What is the primary purpose of the `fetch()` API in JavaScript?",
+        "correct_answer": "The `fetch()` API is used to make network requests, returning a promise that resolves to the response of the request.",
+        "incorrect_answers": [
+            "The `fetch()` API is used to manipulate the DOM by fetching specific elements.",
+            "The `fetch()` API is a deprecated method to make AJAX calls.",
+            "The `fetch()` API is used to parse JSON data from an HTTP response."
+        ],
+        "explanation": "<p>The <strong>fetch()</strong> API is a modern way to make asynchronous HTTP requests. It returns a <code>Promise</code> that resolves with the <code>Response</code> object representing the response to the request. <strong>fetch()</strong> is typically used to make API calls, load resources, and retrieve data from a server.</p><pre><code>fetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));</code></pre>"
+    },
+    {
+        "question": "How do you handle errors in the `fetch()` API, and why might `fetch()` not throw an error even when the HTTP response is not successful?",
+        "correct_answer": "The `fetch()` API does not throw an error for non-2xx HTTP status codes. You need to manually check the response's `ok` property or `status` to handle errors.",
+        "incorrect_answers": [
+            "The `fetch()` API throws an error for all HTTP responses with status codes over 400.",
+            "You can use a `try-catch` block to handle errors with the `fetch()` API.",
+            "The `fetch()` API always throws an error when the network is unreachable."
+        ],
+        "explanation": "<p>The <strong>fetch()</strong> API does not automatically reject the promise for non-2xx HTTP responses (e.g., 404 or 500). To handle such cases, you need to manually check the <code>response.ok</code> property or the status code. If the response is not successful, you can throw an error manually.</p><pre><code>fetch('https://api.example.com/data')\n  .then(response => {\n    if (!response.ok) {\n      throw new Error('Network response was not ok');\n    }\n    return response.json();\n  })\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));</code></pre>"
+    },
+    {
+        "question": "What is the difference between `for...of` and `for...in` in JavaScript?",
+        "correct_answer": "`for...of` iterates over the values of iterable objects like arrays, while `for...in` iterates over the keys (indexes) of objects.",
+        "incorrect_answers": [
+            "`for...of` iterates over the properties of an object, while `for...in` iterates over array elements.",
+            "`for...in` iterates over values of iterable objects, while `for...of` iterates over keys of objects.",
+            "`for...in` and `for...of` are interchangeable and perform the same iteration process."
+        ],
+        "explanation": "<p>The <strong>for...of</strong> loop is used to iterate over the values of iterable objects (such as arrays or strings). On the other hand, <strong>for...in</strong> is used to iterate over the keys (or indices) of an object. Understanding the difference is important when deciding which loop to use for different scenarios.</p><pre><code>const arr = [10, 20, 30];\nfor (const value of arr) {\n  console.log(value);  // 10, 20, 30\n}\n\nfor (const index in arr) {\n  console.log(index);  // 0, 1, 2\n}</code></pre>"
+    },
+    {
+        "question": "In what situation would you use `for...in` instead of `for...of` when iterating over arrays?",
+        "correct_answer": "`for...in` should be used when you need to iterate over the indices (keys) of an array, but it's generally not recommended for arrays due to potential iteration over non-array properties.",
+        "incorrect_answers": [
+            "`for...in` should be used for iterating over the values of arrays instead of `for...of`.",
+            "`for...in` is faster than `for...of` when iterating over arrays.",
+            "`for...in` should be used exclusively for arrays and `for...of` for objects."
+        ],
+        "explanation": "<p>While <strong>for...in</strong> can be used to iterate over an array's indices, it is typically not recommended for arrays due to its potential to iterate over inherited properties or non-array properties if the array is extended. Use <strong>for...of</strong> for iterating over values in arrays to avoid unexpected behavior.</p><pre><code>const arr = [1, 2, 3];\narr.foo = 'bar';\nfor (const index in arr) {\n  console.log(index);  // 0, 1, 2, foo (unintended key)\n}</code></pre>"
+    },
+    {
+        "question": "What does the nullish coalescing operator (??) do in JavaScript?",
+        "correct_answer": "The nullish coalescing operator (??) returns the right-hand operand when the left-hand operand is null or undefined.",
+        "incorrect_answers": [
+            "The nullish coalescing operator returns the left-hand operand if it is falsy.",
+            "The nullish coalescing operator is the same as the logical OR (||) operator.",
+            "The nullish coalescing operator throws an error if the left-hand operand is null or undefined."
+        ],
+        "explanation": "<p>The <strong>nullish coalescing operator (??)</strong> is used to provide a default value when the left-hand operand is either <code>null</code> or <code>undefined</code>. It differs from the logical OR (<code>||</code>) operator, which returns the right-hand operand for any falsy value (e.g., <code>0</code>, <code>''</code>, <code>false</code>).</p><pre><code>const name = null;\nconst username = name ?? 'Guest';  // 'Guest'</code></pre>"
+    },
+    {
+        "question": "How does the nullish coalescing operator (??) differ from the logical OR (||) operator?",
+        "correct_answer": "The nullish coalescing operator (??) only checks for null or undefined, while the logical OR (||) operator checks for any falsy value.",
+        "incorrect_answers": [
+            "The nullish coalescing operator (??) returns the left-hand operand if it's falsy, while the OR operator (||) returns the right-hand operand for any truthy value.",
+            "The nullish coalescing operator (??) behaves the same as the logical AND (&&) operator.",
+            "The nullish coalescing operator (??) is a newer version of the logical OR (||) operator and is not fully supported."
+        ],
+        "explanation": "<p>The difference between <strong>??</strong> and <strong>||</strong> is in how they treat falsy values. While <strong>||</strong> will return the right-hand operand for any falsy value (<code>0</code>, <code>false</code>, <code>''</code>, etc.), <strong>??</strong> only returns the right-hand operand when the left-hand side is <code>null</code> or <code>undefined</code>.</p><pre><code>const value1 = 0;\nconst result1 = value1 ?? 'default';  // 0\nconst result2 = value1 || 'default';  // 'default'</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the `structuredClone()` method in JavaScript?",
+        "correct_answer": "The `structuredClone()` method creates a deep clone of a given object, supporting more types than `JSON.parse(JSON.stringify())`.",
+        "incorrect_answers": [
+            "The `structuredClone()` method creates a shallow copy of an object, similar to `Object.assign()`.",
+            "The `structuredClone()` method only works with primitive types and arrays.",
+            "The `structuredClone()` method is used to clone a function."
+        ],
+        "explanation": "<p>The <strong>structuredClone()</strong> method is used to create a deep clone of an object, meaning that nested objects are copied as well. It supports a broader range of types compared to traditional cloning methods, like <code>JSON.parse(JSON.stringify())</code>, which does not handle special types like <code>Map</code>, <code>Set</code>, or <code>Date</code>.</p><pre><code>const obj = { a: 1, b: { c: 2 } };\nconst clonedObj = structuredClone(obj);\nclonedObj.b.c = 3;\nconsole.log(obj.b.c);  // 2 (original object is not affected)</code></pre>"
+    },
+    {
+        "question": "How does `structuredClone()` handle circular references, and what are its limitations?",
+        "correct_answer": "`structuredClone()` can handle circular references and will clone them correctly, but it does not clone functions or properties like `undefined`.",
+        "incorrect_answers": [
+            "`structuredClone()` throws an error when it encounters a circular reference.",
+            "`structuredClone()` cannot clone arrays, Maps, or Sets.",
+            "`structuredClone()` clones all types including functions and `undefined`."
+        ],
+        "explanation": "<p>The <strong>structuredClone()</strong> method can handle circular references by preserving the references correctly during the cloning process. However, it does not clone functions, <code>undefined</code>, or <code>Symbol</code> properties. This makes it a more powerful alternative to traditional deep cloning methods.</p><pre><code>const obj = { a: 1 }; obj.b = obj;  // circular reference\nconst clonedObj = structuredClone(obj);\nconsole.log(clonedObj.b === clonedObj);  // true</code></pre>"
+    }
+]

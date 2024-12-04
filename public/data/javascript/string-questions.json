@@ -1,0 +1,552 @@
+[
+    {
+        "question": "How do <code>at()</code> and <code>charAt()</code> differ when accessing characters in a string?",
+        "correct_answer": "<code>at()</code> can access characters with negative indices, while <code>charAt()</code> does not support negative indices.",
+        "incorrect_answers": [
+            "They are identical in behavior.",
+            "Only <code>at()</code> works with strings.",
+            "Only <code>charAt()</code> works with strings.",
+            "Both methods return the Unicode value of the character."
+        ],
+        "explanation": "<p><code>charAt()</code> and <code>at()</code> are similar methods, but <code>at()</code> allows negative indices, whereas <code>charAt()</code> does not. Negative indices in <code>at()</code> count from the end of the string. <code>charAt()</code> returns the character at a specific index in the string.</p><pre><code>let str = 'JavaScript';<br>console.log(str.charAt(2)); // 'v'<br>console.log(str.at(-2));  // 'p'</code></pre>"
+    },
+    {
+        "question": "How does <code>at()</code> handle negative indices in JavaScript?",
+        "correct_answer": "It counts backwards from the end of the string, where <code>-1</code> represents the last character.",
+        "incorrect_answers": [
+            "It returns <code>undefined</code> for negative indices.",
+            "It only works with positive indices.",
+            "It returns the character at the first index when given negative numbers.",
+            "Negative indices are ignored and the string is accessed normally."
+        ],
+        "explanation": "<p><code>at()</code> allows negative indexing, which can be useful when working with the end of a string. It counts backwards from the end, with <code>-1</code> being the last character. This method provides a more modern and flexible way to access characters from both ends of a string.</p><pre><code>let str = 'JavaScript';<br>console.log(str.at(-1)); // 't'<br>console.log(str.at(-3)); // 'r'</code></pre>"
+    },
+    {
+        "question": "What does <code>charCodeAt()</code> return in JavaScript?",
+        "correct_answer": "It returns the Unicode value (character code) of the character at a specified index.",
+        "incorrect_answers": [
+            "It returns the character at the specified index.",
+            "It returns a string representation of the character.",
+            "It returns the index of the first occurrence of the character.",
+            "It returns the ASCII value of the character."
+        ],
+        "explanation": "<p><code>charCodeAt()</code> returns the Unicode character code at a given index in a string. This method can be helpful when you need the numeric value of a character, such as when dealing with encoding or performing character-related calculations.</p><pre><code>let str = 'JavaScript';<br>console.log(str.charCodeAt(0)); // 74 (Unicode for 'J')</code></pre>"
+    },
+    {
+        "question": "How does <code>charCodeAt()</code> behave when accessing an index out of range?",
+        "correct_answer": "It returns <code>NaN</code> if the index is out of range.",
+        "incorrect_answers": [
+            "It returns <code>undefined</code> for out-of-range indices.",
+            "It throws an error for invalid indices.",
+            "It wraps around and returns the first character.",
+            "It returns <code>0</code> for out-of-range indices."
+        ],
+        "explanation": "<p><code>charCodeAt()</code> will return <code>NaN</code> if the index provided is outside the valid range of the string. It's important to ensure that the index is within the bounds of the string to avoid this.</p><pre><code>let str = 'JavaScript';<br>console.log(str.charCodeAt(20)); // NaN</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>codePointAt()</code> and <code>charCodeAt()</code>?",
+        "correct_answer": "<code>codePointAt()</code> handles characters that are represented by surrogate pairs in UTF-16, while <code>charCodeAt()</code> only returns the code unit for the character at a given index.",
+        "incorrect_answers": [
+            "There is no difference; both methods behave the same.",
+            "Both methods return the Unicode character code.",
+            "Only <code>codePointAt()</code> supports negative indices.",
+            "Both methods work only with ASCII characters."
+        ],
+        "explanation": "<p><code>codePointAt()</code> returns the full Unicode code point for characters that may be represented by surrogate pairs, while <code>charCodeAt()</code> returns the 16-bit code unit of the character. <code>codePointAt()</code> is necessary for characters that fall outside the Basic Multilingual Plane (BMP), such as emoji or certain rare characters.</p><pre><code>let str = 'A𠜎';<br>console.log(str.codePointAt(0)); // 65 (for 'A')<br>console.log(str.codePointAt(1)); // 134071 (for '𠜎')</code></pre>"
+    },
+    {
+        "question": "How does <code>codePointAt()</code> handle surrogate pairs in JavaScript?",
+        "correct_answer": "It returns the full Unicode code point, properly accounting for surrogate pairs.",
+        "incorrect_answers": [
+            "It returns the code unit for the first surrogate pair only.",
+            "It throws an error for surrogate pairs.",
+            "It ignores surrogate pairs and returns only the first unit.",
+            "It returns <code>NaN</code> for surrogate pairs."
+        ],
+        "explanation": "<p><code>codePointAt()</code> correctly handles surrogate pairs in UTF-16 encoding. When a character is represented by a surrogate pair (such as some emoji or historic characters), <code>codePointAt()</code> returns the full Unicode code point for the character, unlike <code>charCodeAt()</code>, which only returns the first 16-bit code unit of the pair.</p><pre><code>let str = '𠜎';<br>console.log(str.codePointAt(0)); // 134071</code></pre>"
+    },
+    {
+        "question": "What does <code>endsWith()</code> check in a string?",
+        "correct_answer": "It checks if the string ends with a specified substring, returning a boolean value.",
+        "incorrect_answers": [
+            "It checks if the string contains the specified substring anywhere.",
+            "It checks if the string starts with the specified substring.",
+            "It checks if the string includes the specified substring anywhere.",
+            "It compares the string to the specified substring and returns the longer one."
+        ],
+        "explanation": "<p><code>endsWith()</code> is a method that checks whether a string ends with a specific substring. It returns <code>true</code> if the string ends with the given substring, otherwise <code>false</code>.</p><pre><code>let str = 'JavaScript';<br>console.log(str.endsWith('Script')); // true<br>console.log(str.endsWith('java')); // false</code></pre>"
+    },
+    {
+        "question": "How can <code>endsWith()</code> be used to check file extensions in JavaScript?",
+        "correct_answer": "You can use <code>endsWith()</code> to check if a filename ends with a specific extension, such as '.jpg'.",
+        "incorrect_answers": [
+            "It checks if the filename starts with the extension.",
+            "It checks if the filename contains the extension anywhere.",
+            "It verifies the entire filename matches the extension.",
+            "It only works for images or files with specific extensions."
+        ],
+        "explanation": "<p><code>endsWith()</code> is useful when you need to check if a string (like a filename) ends with a certain substring. For example, you could use it to check if a file has a specific extension.</p><pre><code>let filename = 'image.jpg';<br>console.log(filename.endsWith('.jpg')); // true</code></pre>"
+    },
+    {
+        "question": "What does <code>fromCharCode()</code> do in JavaScript?",
+        "correct_answer": "It creates a string from one or more Unicode values provided as arguments.",
+        "incorrect_answers": [
+            "It returns the Unicode value of the given string.",
+            "It returns a character based on the ASCII value.",
+            "It splits a string into individual characters.",
+            "It converts a string to its binary representation."
+        ],
+        "explanation": "<p><code>fromCharCode()</code> is used to create a string from one or more Unicode values. Each argument represents a Unicode code point, and the method returns a string made up of the characters corresponding to those code points.</p><pre><code>console.log(String.fromCharCode(72, 101, 108, 108, 111)); // 'Hello'</code></pre>"
+    },
+    {
+        "question": "What is a typical use case for <code>fromCharCode()</code> in JavaScript?",
+        "correct_answer": "It is typically used when working with encoded character data or constructing strings from Unicode code points.",
+        "incorrect_answers": [
+            "It is used for string manipulation by adding characters to the beginning of a string.",
+            "It is used to parse JSON strings into objects.",
+            "It is used to reverse the order of characters in a string.",
+            "It is used to compare two strings character by character."
+        ],
+        "explanation": "<p><code>fromCharCode()</code> is useful when you need to construct strings from a series of Unicode code points, such as when dealing with encoded data or converting numbers into characters.</p><pre><code>console.log(String.fromCharCode(65, 66, 67)); // 'ABC'</code></pre>"
+    },
+    {
+        "question": "What does <code>includes()</code> check in a string?",
+        "correct_answer": "It checks if the string contains a specified substring, returning a boolean value.",
+        "incorrect_answers": [
+            "It checks if the string starts with the specified substring.",
+            "It checks if the string ends with the specified substring.",
+            "It compares the string to the specified substring.",
+            "It checks if the substring is at any position in the string."
+        ],
+        "explanation": "<p><code>includes()</code> is a method that checks if a string contains a certain substring. It returns <code>true</code> if the substring is found, otherwise <code>false</code>.</p><pre><code>let str = 'JavaScript';<br>console.log(str.includes('Java')); // true<br>console.log(str.includes('python')); // false</code></pre>"
+    },
+    {
+        "question": "How does <code>includes()</code> behave with case-sensitive strings?",
+        "correct_answer": "It performs a case-sensitive check, meaning 'abc' is different from 'ABC'.",
+        "incorrect_answers": [
+            "It performs a case-insensitive check.",
+            "It returns <code>false</code> for empty strings.",
+            "It always returns <code>true</code> if the substring exists.",
+            "It ignores any special characters in the string."
+        ],
+        "explanation": "<p><code>includes()</code> is case-sensitive, meaning it differentiates between uppercase and lowercase characters in the string. For example, 'abc' is different from 'ABC'.</p><pre><code>let str = 'Hello World';<br>console.log(str.includes('hello')); // false<br>console.log(str.includes('Hello')); // true</code></pre>"
+    },
+    {
+        "question": "How does <code>indexOf()</code> work in JavaScript?",
+        "correct_answer": "It returns the index of the first occurrence of a specified substring, or <code>-1</code> if the substring is not found.",
+        "incorrect_answers": [
+            "It returns the last index of the substring.",
+            "It returns a boolean indicating whether the substring exists.",
+            "It finds the index of the last character in the string.",
+            "It returns the total number of occurrences of the substring."
+        ],
+        "explanation": "<p><code>indexOf()</code> searches a string for a given substring and returns the index of the first occurrence. If the substring is not found, it returns <code>-1</code>.</p><pre><code>let str = 'JavaScript';<br>console.log(str.indexOf('Script')); // 4<br>console.log(str.indexOf('Python')); // -1</code></pre>"
+    },
+    {
+        "question": "What happens when <code>indexOf()</code> is called on a string without the substring?",
+        "correct_answer": "It returns <code>-1</code> to indicate that the substring was not found.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns <code>0</code>.",
+            "It returns <code>NaN</code>.",
+            "It returns <code>undefined</code>."
+        ],
+        "explanation": "<p><code>indexOf()</code> returns <code>-1</code> if the specified substring is not found in the string. This is a standard way of indicating that the search was unsuccessful.</p><pre><code>let str = 'JavaScript';<br>console.log(str.indexOf('Java')); // 0<br>console.log(str.indexOf('Node')); // -1</code></pre>"
+    },
+    {
+        "question": "How does <code>isWellFormed()</code> check a string in JavaScript?",
+        "correct_answer": "It checks if the string consists of well-formed Unicode code points, ensuring no broken surrogate pairs.",
+        "incorrect_answers": [
+            "It checks if the string is a valid UTF-16 encoded string.",
+            "It checks if the string contains only alphabetic characters.",
+            "It checks if the string is empty.",
+            "It checks if the string can be converted to a number."
+        ],
+        "explanation": "<p><code>isWellFormed()</code> checks whether a string is well-formed, meaning it does not contain broken surrogate pairs. This is useful for validating UTF-16 strings before processing or manipulation.</p><pre><code>let str = '𠜎';<br>console.log(str.isWellFormed()); // true</code></pre>"
+    },
+    {
+        "question": "What does <code>isWellFormed()</code> return when encountering broken surrogate pairs?",
+        "correct_answer": "It returns <code>false</code> if the string contains broken surrogate pairs.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns <code>NaN</code>.",
+            "It ignores the broken surrogate pairs.",
+            "It returns <code>true</code>."
+        ],
+        "explanation": "<p><code>isWellFormed()</code> will return <code>false</code> if the string contains broken surrogate pairs, which occur when a Unicode character is split across two code units. This method helps validate UTF-16 strings.</p><pre><code>let str = '𠜎';<br>console.log(str.isWellFormed()); // true<br>let brokenStr = '𠜎abc';<br>console.log(brokenStr.isWellFormed()); // false</code></pre>"
+    },
+    {
+        "question": "How does <code>lastIndexOf()</code> work when searching for a substring in a string?",
+        "correct_answer": "It returns the index of the last occurrence of the substring, or <code>-1</code> if the substring is not found.",
+        "incorrect_answers": [
+            "It returns the first occurrence of the substring.",
+            "It returns the total number of occurrences of the substring.",
+            "It throws an error if the substring is not found.",
+            "It only works for the first character of the string."
+        ],
+        "explanation": "<p><code>lastIndexOf()</code> searches for the last occurrence of a specified substring in a string. It returns the index of the last match or <code>-1</code> if the substring is not found. You can also provide an optional starting index to limit the search.</p><pre><code>let str = 'JavaScript is fun, JavaScript is cool';<br>console.log(str.lastIndexOf('JavaScript')); // 27<br>console.log(str.lastIndexOf('is', 20)); // 5</code></pre>"
+    },
+    {
+        "question": "How does <code>lastIndexOf()</code> behave when the search starts at a higher index than the last occurrence?",
+        "correct_answer": "It returns the index of the last occurrence within the specified range, or <code>-1</code> if no match is found.",
+        "incorrect_answers": [
+            "It returns <code>NaN</code>.",
+            "It returns the index of the first occurrence instead.",
+            "It throws an error if the index is too high.",
+            "It starts from the beginning of the string regardless of the index."
+        ],
+        "explanation": "<p><code>lastIndexOf()</code> allows you to specify an optional second parameter to set the starting index for the search. If the start index is beyond the last occurrence of the substring, it will return <code>-1</code>. This is useful when you want to limit the search to a specific part of the string.</p><pre><code>let str = 'Hello world, hello world';<br>console.log(str.lastIndexOf('world', 12)); // 6<br>console.log(str.lastIndexOf('hello', 5)); // -1</code></pre>"
+    },
+    {
+        "question": "What does <code>localeCompare()</code> return when comparing two strings that are the same?",
+        "correct_answer": "It returns <code>0</code> to indicate the strings are equal.",
+        "incorrect_answers": [
+            "It returns <code>-1</code> to indicate equality.",
+            "It throws an error.",
+            "It returns the length of the string.",
+            "It returns <code>1</code> to indicate equality."
+        ],
+        "explanation": "<p><code>localeCompare()</code> compares two strings according to the current locale. If the strings are identical, it returns <code>0</code>. If the first string is lexicographically smaller, it returns a negative number, and if larger, it returns a positive number. This method is useful for string sorting based on locale-specific rules.</p><pre><code>let str1 = 'apple';<br>let str2 = 'apple';<br>console.log(str1.localeCompare(str2)); // 0</code></pre>"
+    },
+    {
+        "question": "How does <code>localeCompare()</code> behave with locale-specific characters?",
+        "correct_answer": "It compares the strings based on local language rules, considering special characters and accents.",
+        "incorrect_answers": [
+            "It compares the strings based only on ASCII values.",
+            "It ignores case and accent differences.",
+            "It always returns <code>0</code> for equal strings.",
+            "It throws an error if special characters are present."
+        ],
+        "explanation": "<p><code>localeCompare()</code> is sensitive to locale-specific rules and will compare strings in a way that accounts for language-specific sorting. This is useful for correctly sorting strings in languages that have special characters or accents.</p><pre><code>let str1 = 'resume';<br>let str2 = 'résumé';<br>console.log(str1.localeCompare(str2)); // -1 (depends on the locale)</code></pre>"
+    },
+    {
+        "question": "What does <code>match()</code> return when used with a regular expression and no matches found?",
+        "correct_answer": "It returns <code>null</code> when no matches are found.",
+        "incorrect_answers": [
+            "It returns an empty array.",
+            "It returns <code>undefined</code>.",
+            "It throws an error.",
+            "It returns the original string."
+        ],
+        "explanation": "<p><code>match()</code> searches a string for a pattern defined by a regular expression. If no matches are found, it returns <code>null</code>. If matches are found, it returns an array of matched substrings.</p><pre><code>let str = 'JavaScript';<br>console.log(str.match(/python/)); // null<br>console.log(str.match(/Java/)); // ['Java']</code></pre>"
+    },
+    {
+        "question": "How does <code>match()</code> behave with the <code>g</code> flag in the regular expression?",
+        "correct_answer": "It returns an array of all matches found in the string, without any additional metadata.",
+        "incorrect_answers": [
+            "It returns only the first match.",
+            "It returns an array with match details like indices.",
+            "It throws an error.",
+            "It returns an empty string for multiple matches."
+        ],
+        "explanation": "<p><code>match()</code> with the <code>g</code> flag will return an array of all matches of the pattern in the string. It does not include additional match information like indices or capturing groups, just the matched substrings.</p><pre><code>let str = 'JavaScript is fun';<br>console.log(str.match(/is/g)); // ['is']</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>matchAll()</code> in JavaScript?",
+        "correct_answer": "It returns an iterator of all matches, including capturing groups, when used with a regular expression that has the <code>g</code> flag.",
+        "incorrect_answers": [
+            "It returns only the first match.",
+            "It returns an array with no capturing groups.",
+            "It returns a single match as a string.",
+            "It returns all characters in the string."
+        ],
+        "explanation": "<p><code>matchAll()</code> is similar to <code>match()</code>, but it returns an iterator containing all matches, including detailed match information such as capturing groups. This is particularly useful when you need to extract multiple parts of each match.</p><pre><code>let str = 'JavaScript is fun';<br>let regex = /is/g;<br>let matches = str.matchAll(regex);<br>for (let match of matches) {<br>    console.log(match);<br>}<br>/* [ 'is', index: 12, input: 'JavaScript is fun', groups: undefined ] */</code></pre>"
+    },
+    {
+        "question": "How does <code>normalize()</code> handle Unicode strings with decomposed characters?",
+        "correct_answer": "It converts the string to a normalized form, either decomposed or composed, to ensure consistency in encoding.",
+        "incorrect_answers": [
+            "It removes any non-ASCII characters.",
+            "It throws an error when decomposed characters are detected.",
+            "It replaces characters with their ASCII equivalents.",
+            "It only works with ASCII characters."
+        ],
+        "explanation": "<p><code>normalize()</code> is used to convert a string to a specific Unicode normalization form. It can handle decomposed characters, ensuring that they are represented in a consistent way. This is useful for ensuring that strings are treated equally, regardless of how they were originally encoded.</p><pre><code>let str = 'é';<br>console.log(str.normalize('NFD')); // 'é' (decomposed)<br>console.log(str.normalize('NFC')); // 'é' (composed)</code></pre>"
+    },
+    {
+        "question": "What is the effect of <code>normalize()</code> on characters with different normalization forms?",
+        "correct_answer": "It ensures the string is in the specified normalization form, potentially transforming characters to a composed or decomposed form.",
+        "incorrect_answers": [
+            "It removes all diacritic marks from the string.",
+            "It replaces characters with their equivalent Unicode code points.",
+            "It converts the string to uppercase.",
+            "It checks for string equality."
+        ],
+        "explanation": "<p><code>normalize()</code> helps ensure that characters are consistently represented by converting them to either a composed or decomposed form. This method is important when comparing strings with different Unicode representations of the same characters.</p><pre><code>let str = 'é';<br>console.log(str.normalize('NFC')); // 'é' (composed form)</code></pre>"
+    },
+    {
+        "question": "How does <code>padEnd()</code> work in JavaScript?",
+        "correct_answer": "It pads the current string with another string until the target length is reached, adding padding to the end of the string.",
+        "incorrect_answers": [
+            "It pads the string at the beginning.",
+            "It truncates the string to a specific length.",
+            "It adds padding only if the string is shorter than the target length.",
+            "It removes spaces from the end of the string."
+        ],
+        "explanation": "<p><code>padEnd()</code> is used to pad a string with another string until it reaches the desired length. It adds the padding at the end of the string and does not affect the original content if the string is already long enough.</p><pre><code>let str = 'Java';<br>console.log(str.padEnd(10, '-')); // 'Java------'</code></pre>"
+    },
+    {
+        "question": "How does <code>padStart()</code> work in JavaScript?",
+        "correct_answer": "It pads the current string with another string until the target length is reached, adding padding to the start of the string.",
+        "incorrect_answers": [
+            "It pads the string at the end.",
+            "It truncates the string to a specific length.",
+            "It replaces characters in the string.",
+            "It checks the string's length and modifies it accordingly."
+        ],
+        "explanation": "<p><code>padStart()</code> is used to pad a string with another string until it reaches the desired length. It adds the padding at the beginning of the string, making it useful for formatting numbers or aligning text.</p><pre><code>let str = '42';<br>console.log(str.padStart(5, '0')); // '00042'</code></pre>"
+    },
+    {
+        "question": "What does the <code>raw()</code> method do in JavaScript?",
+        "correct_answer": "It returns a raw string representation of a template literal, without processing escape sequences.",
+        "incorrect_answers": [
+            "It processes escape sequences in the string.",
+            "It removes whitespace from the string.",
+            "It converts a string to a template literal.",
+            "It escapes all special characters in the string."
+        ],
+        "explanation": "<p><code>raw()</code> is a method available on template literals in JavaScript. It returns the raw version of a string, meaning that it does not process escape sequences (like <code>\n</code> or <code>\t</code>), returning the string as it is written in the template literal.</p><pre><code>let str = String.raw`Hello\nWorld`; <br>console.log(str); // 'Hello\\nWorld'</code></pre>"
+    },
+    {
+        "question": "How does <code>repeat()</code> work in JavaScript when the argument is negative?",
+        "correct_answer": "It throws a <code>RangeError</code> because the number of repetitions cannot be negative.",
+        "incorrect_answers": [
+            "It repeats the string a random number of times.",
+            "It returns an empty string.",
+            "It repeats the string once.",
+            "It throws a <code>SyntaxError</code>."
+        ],
+        "explanation": "<p><code>repeat()</code> is used to repeat a string a specified number of times. If the argument is negative, zero, or infinity, it throws a <code>RangeError</code>.</p><pre><code>let str = 'abc';<br>console.log(str.repeat(3)); // 'abcabcabc'<br>console.log(str.repeat(-1)); // Throws RangeError</code></pre>"
+    },
+    {
+        "question": "What does <code>repeat()</code> do when called with a large number?",
+        "correct_answer": "It repeats the string the specified number of times, but with a practical limit depending on the implementation of JavaScript engines.",
+        "incorrect_answers": [
+            "It throws an error for very large numbers.",
+            "It repeats the string indefinitely.",
+            "It truncates the string to a maximum length.",
+            "It ignores the large number and returns the original string."
+        ],
+        "explanation": "<p><code>repeat()</code> repeats a string a specified number of times. However, there's a practical limit imposed by JavaScript engines. If you pass a very large number (greater than <code>2^32 - 1</code>), it may either throw an error or repeat the string a limited number of times.</p><pre><code>let str = 'abc';<br>console.log(str.repeat(100000)); // Will repeat 'abc' 100,000 times</code></pre>"
+    },
+    {
+        "question": "What does the <code>replace()</code> method do when used with a regular expression without the <code>g</code> flag?",
+        "correct_answer": "It replaces only the first occurrence of the matched substring.",
+        "incorrect_answers": [
+            "It replaces all occurrences of the matched substring.",
+            "It returns an array of replaced substrings.",
+            "It replaces the entire string.",
+            "It returns <code>undefined</code>."
+        ],
+        "explanation": "<p><code>replace()</code> replaces the first match of a substring or regular expression. If the regular expression doesn't have the <code>g</code> flag, only the first occurrence will be replaced. If the <code>g</code> flag is added, all occurrences are replaced.</p><pre><code>let str = 'I have apples and apples';<br>console.log(str.replace(/apples/, 'oranges')); // 'I have oranges and apples'</code></pre>"
+    },
+    {
+        "question": "What happens when <code>replace()</code> is called with a function as the second argument?",
+        "correct_answer": "The function is called for each match, and the return value of the function is used to replace the match.",
+        "incorrect_answers": [
+            "The function is ignored.",
+            "The function replaces the string entirely.",
+            "It throws an error.",
+            "The function modifies the original string."
+        ],
+        "explanation": "<p><code>replace()</code> can take a function as the second argument. This function is called for each match, and its return value is used to replace the matched substring. This allows for dynamic replacement based on the match.</p><pre><code>let str = 'hello world';<br>console.log(str.replace(/world/, (match) => match.toUpperCase())); // 'hello WORLD'</code></pre>"
+    },
+    {
+        "question": "What does <code>replaceAll()</code> do in JavaScript?",
+        "correct_answer": "It replaces all occurrences of a substring or pattern in the string.",
+        "incorrect_answers": [
+            "It replaces only the first occurrence.",
+            "It throws an error when a regular expression is used.",
+            "It returns the original string.",
+            "It only works with regular expressions."
+        ],
+        "explanation": "<p><code>replaceAll()</code> replaces all occurrences of a substring or pattern in the string. Unlike <code>replace()</code>, which only replaces the first match, <code>replaceAll()</code> replaces every match found in the string.</p><pre><code>let str = 'I like apples and apples';<br>console.log(str.replaceAll('apples', 'oranges')); // 'I like oranges and oranges'</code></pre>"
+    },
+    {
+        "question": "How does <code>replaceAll()</code> behave when given a regular expression with the <code>g</code> flag?",
+        "correct_answer": "It works similarly to <code>replace()</code> with the <code>g</code> flag, replacing all occurrences of the match.",
+        "incorrect_answers": [
+            "It throws an error if a regular expression is passed.",
+            "It replaces only the first match.",
+            "It works only with strings, not regular expressions.",
+            "It replaces everything in the string."
+        ],
+        "explanation": "<p><code>replaceAll()</code> can also accept a regular expression with the <code>g</code> flag to replace all matches found in the string. This makes it more powerful than <code>replace()</code>, which only replaces the first match by default.</p><pre><code>let str = 'JavaScript is fun, JavaScript is cool';<br>console.log(str.replaceAll(/JavaScript/g, 'Python')); // 'Python is fun, Python is cool'</code></pre>"
+    },
+    {
+        "question": "How does <code>search()</code> behave when no match is found in a string?",
+        "correct_answer": "It returns <code>-1</code> if no match is found.",
+        "incorrect_answers": [
+            "It returns <code>null</code>.",
+            "It throws an error.",
+            "It returns the input string.",
+            "It returns <code>undefined</code>."
+        ],
+        "explanation": "<p><code>search()</code> searches the string for a match to the regular expression passed as an argument. If no match is found, it returns <code>-1</code>. If a match is found, it returns the index of the first match.</p><pre><code>let str = 'Hello World';<br>console.log(str.search('World')); // 6<br>console.log(str.search('JavaScript')); // -1</code></pre>"
+    },
+    {
+        "question": "How does <code>search()</code> differ from <code>match()</code>?",
+        "correct_answer": "<code>search()</code> returns the index of the first match, whereas <code>match()</code> returns the matched substring(s) or <code>null</code>.",
+        "incorrect_answers": [
+            "They behave the same way.",
+            "<code>search()</code> returns an array of matches.",
+            "<code>match()</code> only works with regular expressions.",
+            "<code>search()</code> only works with strings."
+        ],
+        "explanation": "<p><code>search()</code> returns the index of the first match, whereas <code>match()</code> returns an array of all matches (if the <code>g</code> flag is used) or the first match. <code>search()</code> is useful when you need the position of a match, while <code>match()</code> is more useful for extracting matched substrings.</p><pre><code>let str = 'The quick brown fox';<br>console.log(str.search('quick')); // 4<br>console.log(str.match('quick')); // ['quick']</code></pre>"
+    },
+    {
+        "question": "What does <code>slice()</code> do when called with negative indices?",
+        "correct_answer": "It extracts a portion of the string starting from the end of the string, based on the negative indices.",
+        "incorrect_answers": [
+            "It throws an error for negative indices.",
+            "It always extracts from the beginning of the string.",
+            "It returns a substring of the entire string.",
+            "It reverses the string."
+        ],
+        "explanation": "<p><code>slice()</code> can accept negative indices, which count from the end of the string. A negative index represents the position counting from the end of the string, with <code>-1</code> being the last character.</p><pre><code>let str = 'JavaScript';<br>console.log(str.slice(-6)); // 'Script'<br>console.log(str.slice(-3, -1)); // 'ri'</code></pre>"
+    },
+    {
+        "question": "How does <code>slice()</code> behave when the start index is greater than the end index?",
+        "correct_answer": "It returns an empty string.",
+        "incorrect_answers": [
+            "It returns the string reversed.",
+            "It throws an error.",
+            "It returns the string starting from the start index.",
+            "It returns the substring starting from the start index to the end of the string."
+        ],
+        "explanation": "<p><code>slice()</code> returns a substring starting from the given start index to the end index. If the start index is greater than the end index, it returns an empty string.</p><pre><code>let str = 'Hello World';<br>console.log(str.slice(5, 2)); // ''</code></pre>"
+    },
+    {
+        "question": "How does <code>substring()</code> behave when the start index is greater than the end index?",
+        "correct_answer": "It swaps the indices and returns the substring from the smaller index to the larger index.",
+        "incorrect_answers": [
+            "It returns an empty string.",
+            "It throws an error.",
+            "It returns the string from the start index to the end of the string.",
+            "It returns the entire string."
+        ],
+        "explanation": "<p><code>substring()</code> extracts characters from a string between two specified indices. If the start index is greater than the end index, it swaps the indices and extracts the substring from the smaller index to the larger index.</p><pre><code>let str = 'Hello, World!';<br>console.log(str.substring(5, 2)); // 'llo'</code></pre>"
+    },
+    {
+        "question": "What happens when you pass negative indices to <code>substring()</code>?",
+        "correct_answer": "It treats the negative indices as 0.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns an empty string.",
+            "It counts from the end of the string.",
+            "It returns the string reversed."
+        ],
+        "explanation": "<p><code>substring()</code> does not accept negative indices. If a negative index is provided, it is treated as 0, meaning the method will start from the beginning of the string.</p><pre><code>let str = 'Hello, World!';<br>console.log(str.substring(-5, -1)); // 'Hello'</code></pre>"
+    },
+    {
+        "question": "What does <code>toLocaleLowerCase()</code> do in JavaScript?",
+        "correct_answer": "It returns the string with all characters converted to lowercase according to the locale-specific case mappings.",
+        "incorrect_answers": [
+            "It returns the string in uppercase.",
+            "It removes all characters except for lowercase letters.",
+            "It converts characters to lowercase, ignoring locale.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>toLocaleLowerCase()</code> returns a new string with all characters converted to lowercase based on the rules of the current locale. This method is useful when you need to perform locale-aware case conversions.</p><pre><code>let str = 'Hello, World!';<br>console.log(str.toLocaleLowerCase()); // 'hello, world!'</code></pre>"
+    },
+    {
+        "question": "How does <code>toLocaleLowerCase()</code> differ from <code>toLowerCase()</code>?",
+        "correct_answer": "The difference is that <code>toLocaleLowerCase()</code> takes into account locale-specific case mappings, whereas <code>toLowerCase()</code> does not.",
+        "incorrect_answers": [
+            "There is no difference; they behave the same.",
+            "<code>toLowerCase()</code> is for uppercase strings only.",
+            "<code>toLocaleLowerCase()</code> throws an error in non-locale contexts.",
+            "<code>toLocaleLowerCase()</code> only works for alphabetic characters."
+        ],
+        "explanation": "<p><code>toLocaleLowerCase()</code> is similar to <code>toLowerCase()</code>, but it takes into account locale-specific case mappings. This is useful when working with languages that have different rules for case conversion.</p><pre><code>let str = 'Istanbul';<br>console.log(str.toLocaleLowerCase('tr-TR')); // 'istanbul'</code></pre>"
+    },
+    {
+        "question": "What does <code>toLocaleUpperCase()</code> do in JavaScript?",
+        "correct_answer": "It returns the string with all characters converted to uppercase according to the locale-specific case mappings.",
+        "incorrect_answers": [
+            "It returns the string in lowercase.",
+            "It removes all uppercase characters.",
+            "It converts characters to uppercase, ignoring locale.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>toLocaleUpperCase()</code> converts all characters in a string to uppercase according to the current locale's case conversion rules. It's especially useful for languages with special uppercase rules.</p><pre><code>let str = 'hello, world!';<br>console.log(str.toLocaleUpperCase()); // 'HELLO, WORLD!'</code></pre>"
+    },
+    {
+        "question": "How does <code>toLocaleUpperCase()</code> differ from <code>toUpperCase()</code>?",
+        "correct_answer": "The difference is that <code>toLocaleUpperCase()</code> considers locale-specific case rules, while <code>toUpperCase()</code> does not.",
+        "incorrect_answers": [
+            "There is no difference.",
+            "<code>toUpperCase()</code> is used for uppercase strings only.",
+            "<code>toLocaleUpperCase()</code> throws an error.",
+            "<code>toUpperCase()</code> only works with alphabetic characters."
+        ],
+        "explanation": "<p><code>toLocaleUpperCase()</code> works similarly to <code>toUpperCase()</code>, but it also considers locale-specific rules for case conversion. This can be crucial when dealing with languages that have unique uppercase conventions.</p><pre><code>let str = 'istanbul';<br>console.log(str.toLocaleUpperCase('tr-TR')); // 'ISTANBUL'</code></pre>"
+    },
+    {
+        "question": "What does <code>trim()</code> do in JavaScript?",
+        "correct_answer": "It removes whitespace from both ends of a string.",
+        "incorrect_answers": [
+            "It removes all whitespace from the string.",
+            "It only removes spaces from the beginning of the string.",
+            "It removes spaces from the end of the string.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>trim()</code> removes any whitespace characters (spaces, tabs, line breaks, etc.) from both the beginning and the end of a string. It does not modify the whitespace inside the string.</p><pre><code>let str = '  Hello World!  ';<br>console.log(str.trim()); // 'Hello World!'</code></pre>"
+    },
+    {
+        "question": "How does <code>trim()</code> behave when called on a string without leading or trailing whitespace?",
+        "correct_answer": "It returns the original string unchanged.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns an empty string.",
+            "It removes all characters from the string.",
+            "It trims the string to a fixed length."
+        ],
+        "explanation": "<p>If <code>trim()</code> is called on a string without any leading or trailing whitespace, it simply returns the original string unchanged.</p><pre><code>let str = 'Hello';<br>console.log(str.trim()); // 'Hello'</code></pre>"
+    },
+    {
+        "question": "What does <code>trimStart()</code> do in JavaScript?",
+        "correct_answer": "It removes whitespace from the beginning of the string.",
+        "incorrect_answers": [
+            "It removes whitespace from both ends of the string.",
+            "It removes all characters except whitespace.",
+            "It removes whitespace from the end of the string.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>trimStart()</code> removes any whitespace characters (spaces, tabs, line breaks) from the beginning of the string, leaving the rest of the string unchanged.</p><pre><code>let str = '  Hello World!';<br>console.log(str.trimStart()); // 'Hello World!'</code></pre>"
+    },
+    {
+        "question": "How does <code>trimEnd()</code> behave in JavaScript?",
+        "correct_answer": "It removes whitespace from the end of the string.",
+        "incorrect_answers": [
+            "It removes whitespace from the beginning of the string.",
+            "It removes whitespace from both ends of the string.",
+            "It trims characters other than whitespace.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>trimEnd()</code> removes whitespace characters from the end of the string, but does not affect the beginning of the string.</p><pre><code>let str = 'Hello World!  ';<br>console.log(str.trimEnd()); // 'Hello World!'</code></pre>"
+    },
+    {
+        "question": "What does <code>valueOf()</code> return when called on a string?",
+        "correct_answer": "It returns the string itself.",
+        "incorrect_answers": [
+            "It returns the length of the string.",
+            "It throws an error.",
+            "It returns the string as a number.",
+            "It returns a character code."
+        ],
+        "explanation": "<p><code>valueOf()</code> returns the primitive value of a string, which is the string itself. This method is often used internally by JavaScript and is not commonly called directly.</p><pre><code>let str = 'Hello';<br>console.log(str.valueOf()); // 'Hello'</code></pre>"
+    },
+    {
+        "question": "Why would you use <code>valueOf()</code> in JavaScript?",
+        "correct_answer": "It is primarily used to return the primitive value of the string, though it is typically called automatically in most operations.",
+        "incorrect_answers": [
+            "To modify the string.",
+            "To convert the string to uppercase.",
+            "To get the string length.",
+            "To check if the string is empty."
+        ],
+        "explanation": "<p><code>valueOf()</code> returns the primitive value of the string, which in this case is the string itself. It is often used automatically in JavaScript operations, such as string concatenation.</p><pre><code>let str = 'Hello';<br>console.log(str.valueOf()); // 'Hello'</code></pre>"
+    }
+]

@@ -1,0 +1,225 @@
+[
+    {
+        "question": "What does <code>Map.prototype[@@iterator]()</code> return when called on a Map?",
+        "correct_answer": "It returns an iterator object that can be used to loop through the Map's entries (key-value pairs).",
+        "incorrect_answers": [
+            "It returns an array containing all key-value pairs of the Map.",
+            "It returns an array of keys in the Map.",
+            "It returns only the values in the Map.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>Map.prototype[@@iterator]()</code> is an internal method that returns an iterator for the Map object. The iterator allows you to loop through all the Map's entries (key-value pairs). This can be useful in a <code>for...of</code> loop or when you want to manually iterate through the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);<br>let iterator = myMap[Symbol.iterator]();<br>console.log(iterator.next().value); // [1, 'a']</code></pre>"
+    },
+    {
+        "question": "How can you use <code>Map.prototype[@@iterator]()</code> in a <code>for...of</code> loop?",
+        "correct_answer": "You can use it to loop through the Map’s entries (key-value pairs) using the <code>for...of</code> loop.",
+        "incorrect_answers": [
+            "It only allows iteration over the keys in the Map.",
+            "It iterates over the values in the Map.",
+            "It iterates over the keys and values but in reverse order.",
+            "It throws an error if used in a loop."
+        ],
+        "explanation": "<p><code>Map.prototype[@@iterator]()</code> returns an iterator that is automatically called in a <code>for...of</code> loop. This will iterate through the Map's entries, returning each key-value pair.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);<br>for (let [key, value] of myMap) {<br>  console.log(key, value);<br>} // 1 'a', 2 'b', 3 'c'</code></pre>"
+    },
+    {
+        "question": "What does the <code>clear()</code> method do in a Map?",
+        "correct_answer": "It removes all the entries (key-value pairs) from the Map.",
+        "incorrect_answers": [
+            "It removes a specific entry from the Map.",
+            "It resets the Map to its original state.",
+            "It returns the size of the Map.",
+            "It clears all the values but keeps the keys."
+        ],
+        "explanation": "<p><code>clear()</code> is used to remove all entries from a Map. This empties the Map, leaving it with a size of 0. It does not return any value.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>myMap.clear();<br>console.log(myMap.size); // 0</code></pre>"
+    },
+    {
+        "question": "What happens when you call <code>clear()</code> on an empty Map?",
+        "correct_answer": "Nothing happens, and the Map remains empty.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It resets the Map to its initial state.",
+            "It removes all keys and values from the Map.",
+            "It returns an empty Map."
+        ],
+        "explanation": "<p>Calling <code>clear()</code> on an already empty Map has no effect. The Map remains empty, and no error is thrown.</p><pre><code>let myMap = new Map();<br>myMap.clear();<br>console.log(myMap.size); // 0</code></pre>"
+    },
+    {
+        "question": "What does <code>delete()</code> do in a Map?",
+        "correct_answer": "It removes a specific entry (key-value pair) from the Map.",
+        "incorrect_answers": [
+            "It removes all entries from the Map.",
+            "It removes only the keys from the Map.",
+            "It removes the first entry in the Map.",
+            "It throws an error if the entry does not exist."
+        ],
+        "explanation": "<p><code>delete()</code> is used to remove a specific entry from the Map, identified by its key. It returns <code>true</code> if the entry was successfully deleted, and <code>false</code> if the key did not exist in the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>myMap.delete(1);<br>console.log(myMap.size); // 1</code></pre>"
+    },
+    {
+        "question": "What does <code>delete()</code> return when the key does not exist in a Map?",
+        "correct_answer": "It returns <code>false</code> if the key is not found in the Map.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns <code>null</code>.",
+            "It returns <code>true</code>.",
+            "It returns the value of the key."
+        ],
+        "explanation": "<p>If the key you're trying to delete does not exist in the Map, <code>delete()</code> will return <code>false</code>, indicating that no deletion occurred.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>console.log(myMap.delete(3)); // false</code></pre>"
+    },
+    {
+        "question": "What does the <code>entries()</code> method return in a Map?",
+        "correct_answer": "It returns an iterator that contains an array of [key, value] pairs for each entry in the Map.",
+        "incorrect_answers": [
+            "It returns an array of values in the Map.",
+            "It returns an iterator of keys in the Map.",
+            "It returns an array of keys and values in reverse order.",
+            "It removes all entries from the Map."
+        ],
+        "explanation": "<p><code>entries()</code> returns an iterator object that allows you to loop through the Map’s entries (key-value pairs). This can be used in a <code>for...of</code> loop to access both the keys and values.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>let iterator = myMap.entries();<br>console.log(iterator.next().value); // [1, 'a']</code></pre>"
+    },
+    {
+        "question": "How does <code>entries()</code> work in a <code>for...of</code> loop?",
+        "correct_answer": "You can use <code>entries()</code> to access both keys and values for each entry in the Map.",
+        "incorrect_answers": [
+            "It only returns the values.",
+            "It only returns the keys.",
+            "It iterates over the Map in reverse order.",
+            "It throws an error if used in a loop."
+        ],
+        "explanation": "<p><code>entries()</code> returns an iterator for the Map's entries, which can be used in a <code>for...of</code> loop to access both the keys and values in the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>for (let [key, value] of myMap.entries()) {<br>  console.log(key, value);<br>} // 1 'a', 2 'b'</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>forEach()</code> in a Map?",
+        "correct_answer": "It executes a given function for each entry in the Map (key-value pair).",
+        "incorrect_answers": [
+            "It returns a new Map with modified entries.",
+            "It clears all entries from the Map.",
+            "It iterates over only the values of the Map.",
+            "It returns an iterator over the Map."
+        ],
+        "explanation": "<p><code>forEach()</code> executes the provided function once for each entry in the Map. It is similar to <code>Array.prototype.forEach()</code>, but specifically for Maps. It does not return a new Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>myMap.forEach((value, key) => {<br>  console.log(key, value);<br>}); // 1 'a', 2 'b'</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>forEach()</code> and <code>for...of</code> when iterating over a Map?",
+        "correct_answer": "Both iterate over Map entries, but <code>forEach()</code> takes a callback and does not return anything, while <code>for...of</code> gives more control over iteration.",
+        "incorrect_answers": [
+            "<code>forEach()</code> does not iterate over all entries, while <code>for...of</code> does.",
+            "<code>forEach()</code> is slower than <code>for...of</code> for large Maps.",
+            "<code>forEach()</code> allows modification of entries during iteration.",
+            "<code>forEach()</code> only iterates over keys, while <code>for...of</code> iterates over values."
+        ],
+        "explanation": "<p><code>forEach()</code> iterates over Map entries and executes a callback for each. <code>for...of</code> gives more control and can be used with <code>entries()</code>, <code>keys()</code>, or <code>values()</code> iterators for custom iteration.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>myMap.forEach((value, key) => {<br>  console.log(key, value);<br>}); // 1 'a', 2 'b'</code></pre>"
+    }
+    ,
+        {
+            "question": "What does the <code>has()</code> method do in a Map?",
+            "correct_answer": "It checks if a Map contains a specific key.",
+            "incorrect_answers": [
+                "It checks if a Map contains a specific value.",
+                "It removes a key from the Map.",
+                "It checks if a Map is empty.",
+                "It returns the key associated with the value."
+            ],
+            "explanation": "<p><code>has()</code> is used to check if a Map contains a specific key. It returns <code>true</code> if the key exists, and <code>false</code> if it does not. This is useful for verifying the existence of a key before performing operations on it.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>console.log(myMap.has(1)); // true<br>console.log(myMap.has(3)); // false</code></pre>"
+        },
+        {
+            "question": "How does <code>has()</code> behave when checking for a key that has been deleted from the Map?",
+            "correct_answer": "It returns <code>false</code> if the key has been deleted.",
+            "incorrect_answers": [
+                "It throws an error.",
+                "It returns <code>null</code> if the key is missing.",
+                "It returns the value associated with the key.",
+                "It returns <code>true</code> even after the key is deleted."
+            ],
+            "explanation": "<p>If you call <code>has()</code> for a key that has been deleted from the Map, it will return <code>false</code>, indicating that the key no longer exists in the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>myMap.delete(1);<br>console.log(myMap.has(1)); // false</code></pre>"
+        },
+        {
+            "question": "What does the <code>keys()</code> method return in a Map?",
+            "correct_answer": "It returns an iterator object that contains all the keys in the Map.",
+            "incorrect_answers": [
+                "It returns an array of all the values in the Map.",
+                "It returns an array of key-value pairs.",
+                "It returns an iterator for all the values in the Map.",
+                "It returns the first key in the Map."
+            ],
+            "explanation": "<p><code>keys()</code> returns an iterator object containing all the keys in the Map, in insertion order. This can be useful when you want to loop through the keys, for example, with a <code>for...of</code> loop.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>let keysIterator = myMap.keys();<br>console.log(keysIterator.next().value); // 1</code></pre>"
+        },
+        {
+            "question": "How can you use <code>keys()</code> in a <code>for...of</code> loop to access all keys in a Map?",
+            "correct_answer": "You can use the <code>keys()</code> iterator to loop through all the keys in the Map.",
+            "incorrect_answers": [
+                "It only allows access to values.",
+                "It only allows access to the first key.",
+                "It throws an error in a <code>for...of</code> loop.",
+                "It accesses the keys and values together."
+            ],
+            "explanation": "<p>In a <code>for...of</code> loop, <code>keys()</code> allows you to iterate over all the keys in the Map. This is useful when you need to perform an operation on just the keys.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>for (let key of myMap.keys()) {<br>  console.log(key);<br>} // 1, 2</code></pre>"
+        },
+        {
+            "question": "What does the <code>values()</code> method do in a Map?",
+            "correct_answer": "It returns an iterator object that contains all the values in the Map.",
+            "incorrect_answers": [
+                "It returns an array of key-value pairs.",
+                "It returns an array of keys in the Map.",
+                "It returns the value for the first key in the Map.",
+                "It removes the values from the Map."
+            ],
+            "explanation": "<p><code>values()</code> returns an iterator object that contains all the values in the Map, in insertion order. This is useful when you need to perform operations on just the values of the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>let valuesIterator = myMap.values();<br>console.log(valuesIterator.next().value); // 'a'</code></pre>"
+        },
+        {
+            "question": "How can you use <code>values()</code> in a <code>for...of</code> loop to access all values in a Map?",
+            "correct_answer": "You can use the <code>values()</code> iterator to loop through all the values in the Map.",
+            "incorrect_answers": [
+                "It only allows access to keys.",
+                "It only allows access to the first value.",
+                "It throws an error in a <code>for...of</code> loop.",
+                "It accesses the keys and values together."
+            ],
+            "explanation": "<p>In a <code>for...of</code> loop, <code>values()</code> allows you to iterate over all the values in the Map. This is useful when you need to perform an operation on just the values.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>for (let value of myMap.values()) {<br>  console.log(value);<br>} // 'a', 'b'</code></pre>"
+        },
+        {
+            "question": "What does the <code>Map()</code> constructor do?",
+            "correct_answer": "It creates a new Map object.",
+            "incorrect_answers": [
+                "It creates an array from key-value pairs.",
+                "It adds a new entry to the Map.",
+                "It removes all entries from the Map.",
+                "It checks if a key exists in the Map."
+            ],
+            "explanation": "<p>The <code>Map()</code> constructor is used to create a new Map object. You can optionally pass an array of key-value pairs to initialize the Map. The Map will store the keys and values in insertion order.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>console.log(myMap); // Map { 1 => 'a', 2 => 'b' }</code></pre>"
+        },
+        {
+            "question": "How does <code>Map()</code> behave when passed an empty array?",
+            "correct_answer": "It creates an empty Map with no entries.",
+            "incorrect_answers": [
+                "It throws an error.",
+                "It creates a Map with default keys and values.",
+                "It creates a Map with null entries.",
+                "It creates a Map with undefined keys and values."
+            ],
+            "explanation": "<p>If the <code>Map()</code> constructor is passed an empty array, it creates an empty Map with no key-value pairs.</p><pre><code>let myMap = new Map([]);<br>console.log(myMap.size); // 0</code></pre>"
+        },
+        {
+            "question": "What does the <code>get()</code> method do in a Map?",
+            "correct_answer": "It retrieves the value associated with a specific key.",
+            "incorrect_answers": [
+                "It removes a key-value pair from the Map.",
+                "It checks if a key exists in the Map.",
+                "It sets a value for a specific key.",
+                "It creates a new key-value pair."
+            ],
+            "explanation": "<p><code>get()</code> is used to retrieve the value associated with a specific key in the Map. If the key is not found, it returns <code>undefined</code>.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>console.log(myMap.get(1)); // 'a'</code></pre>"
+        },
+        {
+            "question": "What happens if you call <code>get()</code> with a key that doesn't exist in the Map?",
+            "correct_answer": "It returns <code>undefined</code> if the key doesn't exist.",
+            "incorrect_answers": [
+                "It throws an error.",
+                "It returns null if the key doesn't exist.",
+                "It returns false if the key is missing.",
+                "It returns an empty Map."
+            ],
+            "explanation": "<p>If the key you pass to <code>get()</code> does not exist in the Map, it will return <code>undefined</code>. This can be useful for checking whether a key is present in the Map.</p><pre><code>let myMap = new Map([[1, 'a'], [2, 'b']]);<br>console.log(myMap.get(3)); // undefined</code></pre>"
+        }
+    
+    
+]

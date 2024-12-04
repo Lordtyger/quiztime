@@ -1,0 +1,178 @@
+[
+    {
+        "question": "What does <code>Set.prototype[@@iterator]()</code> return when called on a set?",
+        "correct_answer": "It returns a new iterator object that allows you to loop through the values in the set.",
+        "incorrect_answers": [
+            "It returns an array containing all values of the set.",
+            "It returns the first value of the set.",
+            "It returns a string representation of the set.",
+            "It throws an error."
+        ],
+        "explanation": "<p><code>Set.prototype[@@iterator]()</code> is a built-in method that returns an iterator for a set. The iterator allows you to loop through all the values in the set. This is often used in for...of loops to access each value in the set.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>let iterator = mySet[Symbol.iterator]();<br>console.log(iterator.next().value); // 1</code></pre>"
+    },
+    {
+        "question": "How does <code>Set.prototype[@@iterator]()</code> work with a for...of loop?",
+        "correct_answer": "The iterator allows you to loop through all the elements of a set one by one.",
+        "incorrect_answers": [
+            "It allows you to loop through only the first element of the set.",
+            "It returns all values as an array.",
+            "It only loops through keys of the set.",
+            "It throws an error if used in a loop."
+        ],
+        "explanation": "<p><code>Set.prototype[@@iterator]()</code> is automatically called when a set is used in a for...of loop. The loop then iterates through all values in the set. This iterator is useful for accessing each element of the set in order.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>for (let value of mySet) {<br>  console.log(value);<br>} // 1 2 3</code></pre>"
+    },
+    {
+        "question": "What does <code>add()</code> do in a Set?",
+        "correct_answer": "It adds a new element to the Set, if the element is not already present.",
+        "incorrect_answers": [
+            "It adds multiple elements to the Set at once.",
+            "It replaces the existing elements in the Set.",
+            "It adds an element if it is not present but throws an error if it is.",
+            "It returns the size of the Set."
+        ],
+        "explanation": "<p><code>add()</code> is used to add a new element to a Set. If the element is already present, it will not be added again since Sets do not allow duplicates.</p><pre><code>let mySet = new Set();<br>mySet.add(1);<br>mySet.add(2);<br>console.log(mySet); // Set { 1, 2 }</code></pre>"
+    },
+    {
+        "question": "What will happen if you call <code>add()</code> with an existing element in a Set?",
+        "correct_answer": "The Set will remain unchanged as Sets do not allow duplicate elements.",
+        "incorrect_answers": [
+            "It will throw an error.",
+            "The Set will contain duplicate values.",
+            "The element will be replaced with a new one.",
+            "It will return the element added."
+        ],
+        "explanation": "<p><code>add()</code> ensures that no duplicate values exist in the Set. If an element is already in the Set, it will not be added again, and the Set remains unchanged.</p><pre><code>let mySet = new Set([1, 2]);<br>mySet.add(2);<br>console.log(mySet); // Set { 1, 2 }</code></pre>"
+    },
+    {
+        "question": "What does the <code>clear()</code> method do in a Set?",
+        "correct_answer": "It removes all elements from the Set.",
+        "incorrect_answers": [
+            "It removes a specific element from the Set.",
+            "It clears the Set and returns the last element.",
+            "It throws an error if the Set is empty.",
+            "It resets the Set to its original state."
+        ],
+        "explanation": "<p><code>clear()</code> removes all elements from the Set, leaving it empty. It does not return anything.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>mySet.clear();<br>console.log(mySet); // Set { }</code></pre>"
+    },
+    {
+        "question": "What happens when you call <code>clear()</code> on an empty Set?",
+        "correct_answer": "Nothing happens; the Set remains empty.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns an empty Set.",
+            "It resets the Set to its original state.",
+            "It clears the Set and returns the last element."
+        ],
+        "explanation": "<p>Calling <code>clear()</code> on an already empty Set has no effect. The Set remains empty, and no error is thrown.</p><pre><code>let mySet = new Set();<br>mySet.clear();<br>console.log(mySet); // Set { }</code></pre>"
+    },
+    {
+        "question": "What does <code>delete()</code> do in a Set?",
+        "correct_answer": "It removes a specific element from the Set, if present.",
+        "incorrect_answers": [
+            "It clears the entire Set.",
+            "It returns all the elements except the one specified.",
+            "It removes a random element from the Set.",
+            "It does nothing if the element is not present."
+        ],
+        "explanation": "<p><code>delete()</code> removes a specific element from the Set. If the element exists, it is removed, and <code>delete()</code> returns <code>true</code>. If the element doesn't exist, it returns <code>false</code>.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>mySet.delete(2);<br>console.log(mySet); // Set { 1, 3 }</code></pre>"
+    },
+    {
+        "question": "What is returned when an element does not exist in a Set and you call <code>delete()</code>?",
+        "correct_answer": "It returns <code>false</code>.",
+        "incorrect_answers": [
+            "It throws an error.",
+            "It returns <code>null</code>.",
+            "It returns <code>true</code>.",
+            "It removes all elements from the Set."
+        ],
+        "explanation": "<p>If the element you're trying to delete doesn't exist in the Set, <code>delete()</code> will return <code>false</code> to indicate that no removal occurred.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>console.log(mySet.delete(4)); // false</code></pre>"
+    },
+    {
+        "question": "What does <code>entries()</code> return in a Set?",
+        "correct_answer": "It returns a new iterator object that contains an array of [value, value] pairs for each element in the Set.",
+        "incorrect_answers": [
+            "It returns an array of values in the Set.",
+            "It returns a list of keys in the Set.",
+            "It returns an array with the size of the Set.",
+            "It returns an iterator with only the first value."
+        ],
+        "explanation": "<p><code>entries()</code> returns an iterator that contains an array of [value, value] pairs for each element in the Set. Since Sets are collections of unique values, the key and value in each pair are the same.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>let iterator = mySet.entries();<br>console.log(iterator.next().value); // [1, 1]</code></pre>"
+    },
+    {
+        "question": "How can you use <code>entries()</code> to loop through a Set in a <code>for...of</code> loop?",
+        "correct_answer": "You can use <code>entries()</code> to get both keys and values for each element in the Set, but in a Set, both are the same.",
+        "incorrect_answers": [
+            "You can only loop through the keys.",
+            "You will only get the values.",
+            "It throws an error.",
+            "It loops through elements in reverse order."
+        ],
+        "explanation": "<p><code>entries()</code> returns an iterator of [key, value] pairs, but since a Set doesn't have keys (it only has values), both the key and value are the same. You can use <code>for...of</code> to loop through them.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>for (let [key, value] of mySet.entries()) {<br>  console.log(key, value);<br>} // 1 1, 2 2, 3 3</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>forEach()</code> in a Set?",
+        "correct_answer": "It executes a provided function once for each value in the Set.",
+        "incorrect_answers": [
+            "It returns a new Set with modified values.",
+            "It removes elements from the Set.",
+            "It returns an iterator over the Set.",
+            "It only loops through the keys in the Set."
+        ],
+        "explanation": "<p><code>forEach()</code> is used to execute a given function on each element in the Set. Unlike <code>for...of</code>, <code>forEach()</code> does not return anything and only executes the function once per element.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>mySet.forEach(value => {<br>  console.log(value);<br>}); // 1 2 3</code></pre>"
+    },
+    {
+        "question": "What is the behavior of <code>has()</code> in a Set?",
+        "correct_answer": "It checks if a value exists in the Set and returns <code>true</code> if present, otherwise <code>false</code>.",
+        "incorrect_answers": [
+            "It adds a value to the Set.",
+            "It removes a value from the Set.",
+            "It throws an error if the value is not found.",
+            "It returns the size of the Set."
+        ],
+        "explanation": "<p><code>has()</code> is used to check whether a specific element exists in the Set. It returns <code>true</code> if the value is present, and <code>false</code> if it is not.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>console.log(mySet.has(2)); // true<br>console.log(mySet.has(4)); // false</code></pre>"
+    },
+    {
+        "question": "How does <code>has()</code> work with primitive values and objects in a Set?",
+        "correct_answer": "It returns <code>true</code> for primitive values if they are in the Set, and for objects, it checks reference equality.",
+        "incorrect_answers": [
+            "It returns <code>false</code> for primitive values.",
+            "It always returns <code>false</code> for objects.",
+            "It compares values using deep equality for objects.",
+            "It returns <code>true</code> for both primitive values and objects, regardless of reference."
+        ],
+        "explanation": "<p><code>has()</code> checks whether a value exists in a Set. For primitive values, it uses strict equality. For objects, it checks reference equality, meaning two different objects with the same content are considered different in a Set.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>console.log(mySet.has(2)); // true<br>let obj1 = {a: 1};<br>let obj2 = {a: 1};<br>let objSet = new Set([obj1]);<br>console.log(objSet.has(obj2)); // false</code></pre>"
+    },
+    {
+        "question": "What does <code>keys()</code> return in a Set?",
+        "correct_answer": "It returns an iterator with the same values as <code>values()</code>, since Sets do not have keys.",
+        "incorrect_answers": [
+            "It returns an array of keys in the Set.",
+            "It returns an array of values.",
+            "It returns the size of the Set.",
+            "It returns an iterator with key-value pairs."
+        ],
+        "explanation": "<p><code>keys()</code> returns an iterator with the same values as <code>values()</code>. Since Sets do not have keys, the keys and values are the same.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>let keysIterator = mySet.keys();<br>console.log(keysIterator.next().value); // 1</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>values()</code> and <code>keys()</code> in a Set?",
+        "correct_answer": "There is no difference; both return the same iterator in a Set, as Sets only store unique values.",
+        "incorrect_answers": [
+            "<code>values()</code> returns the size of the Set, and <code>keys()</code> returns the elements.",
+            "<code>keys()</code> returns the values and <code>values()</code> returns the keys.",
+            "<code>values()</code> returns key-value pairs, and <code>keys()</code> only returns keys.",
+            "<code>values()</code> returns the values, and <code>keys()</code> is deprecated."
+        ],
+        "explanation": "<p>In a Set, <code>keys()</code> and <code>values()</code> are essentially the same since a Set only stores values and does not have keys. Both methods return an iterator over the values in the Set.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>let valuesIterator = mySet.values();<br>console.log(valuesIterator.next().value); // 1</code></pre>"
+    },
+    {
+        "question": "What does <code>values()</code> return in a Set?",
+        "correct_answer": "It returns an iterator containing all the values in the Set.",
+        "incorrect_answers": [
+            "It returns an array of all elements in the Set.",
+            "It returns a string representation of the Set.",
+            "It returns an iterator with key-value pairs.",
+            "It removes all elements from the Set."
+        ],
+        "explanation": "<p><code>values()</code> returns an iterator containing all the unique values in the Set. It is similar to <code>keys()</code> since Sets do not have keys.</p><pre><code>let mySet = new Set([1, 2, 3]);<br>let valuesIterator = mySet.values();<br>console.log(valuesIterator.next().value); // 1</code></pre>"
+    }
+]

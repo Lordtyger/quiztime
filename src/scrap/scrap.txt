@@ -1,0 +1,85 @@
+Using this format create questions for the following question:
+    {
+        "question": "What does arbitrary mean?",
+        "correct_answer": "something is based on chance, whim, or personal preference, rather than reason or necessity.",
+        "incorrect_answers": [
+            "The `apply()` method is used to define new functions based on existing ones.",
+            "The `apply()` method is used to bind a function to a specific object.",
+            "The `apply()` method immediately invokes the function, passing the arguments as separate values."
+        ],
+        "explanation": "<p>The <strong>apply()</strong> method in JavaScript allows you to call a function with a specific <code>this</code> value and arguments passed as an array. This is useful when you want to pass arguments dynamically, without knowing how many arguments there are ahead of time.</p><pre><code>function sum(a, b) {\n  return a + b;\n}\n\nlet numbers = [5, 10];\nconsole.log(sum.apply(null, numbers));  // 15</code></pre>"
+    },
+
+
+    Create 1 advanced React-related questions in the following format:
+
+1. A question about React concepts or features.
+2. A correct answer that is accurate and precise.
+3. Three incorrect answers that are plausible but wrong.
+4. A detailed explanation that explains the correct answer and provides examples or context where necessary.
+
+The response should be a JSON array with 1 objects. Each object must have:
+- question: The question text.
+- correct_answer: The correct answer text.
+- incorrect_answers: An array of three incorrect answers.
+- explanation: A detailed explanation.
+
+Do not repeat the JSON structure in the response. Start directly with the JSON array.
+Questions and answers can include code examples and all must be formatted using markdown markup language.
+
+
+
+checkbox
+radio
+select options
+
+What Are the Main Scripts in Next.js?
+How do you start writing in Flexbox within CSS?
+What is the difference between display: inline-flex and display: flex?
+What does the CSS property flex-direction do?
+When doing directional css - whether it is align-items or justify-content - what does it rely on in order to determine which direction to apply it?
+What is the default property for flex-direction?
+What are the four possible values for the flex-direction property?
+What happens if you give flex-box items a width that exceeds the width of the screen?
+What do you apply the 'flex-wrap' property to?
+What is the default of the flex-wrap property?
+What is the difference if we set the flex-wrap property to a value or 'wrap'?
+What happens if we set the flex-wrap property to 'wrap-reverse'?
+Is margin part of the box-model?
+How can you get around the fact that margin is not part of the box-model?
+Are padding and border part of the box model?
+What does the flexbox property of 'order' allow you to do?
+What is the default order for a flex-item if it isn't set?
+What's a prime example of where you may want to use the flexbox: order property?
+What happens if we give a negative value to the order property?
+What's the weird gotcha of the flexbox order property?
+What is the justify-content property that can be set on a flex container?
+What options does justify-content take?
+What is the difference between the space-between and space-around values for the justify-content property?
+If I change my flex-direction to column - why does it now ignore whatever I have set as the justify-content?
+How does align-items align things?
+When you vertically center items, what is crucial to remember?
+What is align-items set to by default?
+What properties does align-items take?
+What does the baseline value for align-items do?
+How does align-content differ from justify-content?
+What is necessary for align-content to work?
+What is the default value of align-content?
+What values does align-content take?
+What does using justify-content center along with align-content center do?
+What does the align-self property do?
+Which values can be used on the align-self property?
+Where do we place the flex property?
+What question does the flex property answer?
+What is the width of a flex item by default?
+What happens if we set flex: 1 for all items
+What does the flex property determine?
+If all items are set to flex 1 originally, what will setting an individual item to flex: 2 do?
+How does the flex property work?
+What are the three properties inherent in something like flex: 1
+What is the flex-grow property?
+What is the flex-shrink property?
+What is the flex-basis property?
+What is the default value for flex-grow?
+What is the default of flex-shrink?
+What is the shorthand for setting the flex-grow, flex-shrink and flex-basis properties?

@@ -1,0 +1,57 @@
+Question,Answer
+flexbox,flexbox
+How do you start writing in Flexbox within CSS?,Simply define a container element as display: flex within your CSS - automatically any children elements will become flex items
+What is the difference between display: inline-flex and display: flex?,"display: inline-flex will make the container element as wide as its children need, whereas display: flex will default to 100 and have its width independent of the combined width of its children"
+What does the CSS property flex-direction do?,"It sets the main axis, and thus, also the cross axis for flexbox."
+When doing directional css - whether it is align-items or justify-content - what does it rely on in order to determine which direction to apply it?,"The primary axis and the cross axis, as set by the flex-direction property."
+What is the default property for flex-direction?,row
+What are the four possible values for the flex-direction property?,"row, column, row-reverse, column-reverse"
+What happens if you give flex-box items a width that exceeds the width of the screen?,It will evenly distribute the width throughout the children - or using the 'flex' property you can assign more or less space to some.
+What do you apply the 'flex-wrap' property to?,The container - not the flex items
+What is the default of the flex-wrap property?,nowrap
+What is the difference if we set the flex-wrap property to a value or 'wrap'?,"The widths we have assigned now matter - if they are more than the width of the screen, it will output as many as can fit, and then wrap to the next line. The browser will determine how many rows to have and distribute the highet evenly between them."
+What happens if we set the flex-wrap property to 'wrap-reverse'?,"The flex-items will be displayed in reverse of the cross-axis (so if set to default, it will display your last items at the top, and first items at the bottom)"
+Is margin part of the box-model?,"No, so if you have a margin, and a width that is more than the width of the screen, it will break and either wrap or just distribute the widths evenly."
+How can you get around the fact that margin is not part of the box-model?,"You can set your widths using calc. For instance, something like ' width: calc(33.3333% - 20px) will account for a 10px margin all around, and calculate how much width to take off to allow all the items to appear on one line."
+Are padding and border part of the box model?,"Yes, so they will be included within whatever width you have set for an item - unlike margin."
+What does the flexbox property of 'order' allow you to do?,"With it, you can move the order of your DOM elements without actually moving them within the DOM"
+What is the default order for a flex-item if it isn't set?,"0 - so if you set anything to something greater than 0, it will be placed at the end of the main axis."
+What's a prime example of where you may want to use the flexbox: order property?,"When you have content that needs to be re-positioned within a mobile layout - for instance, if some content needs to be moved to the footer."
+What happens if we give a negative value to the order property?,This also works - just like z-index. It will move the flex item ahead of all the others to the front of the main axis.
+What's the weird gotcha of the flexbox order property?,"When you go to select with your cursor, as if to copy and paste - it will still follow the order the elements were originally in - not the order they are displayed in. This will make copy and pasting a headache."
+What is the justify-content property that can be set on a flex container?,It tells us how the items are aligned along the main axis.
+What options does justify-content take?,"```
+flex-start
+flex-end
+center
+space-between
+space-around
+```"
+What is the difference between the space-between and space-around values for the justify-content property?,space-around will add half of an equal margin to both the left and right sides.
+If I change my flex-direction to column - why does it now ignore whatever I have set as the justify-content?,"More than likely because you do not have a height on your element. it can't work without a specified height. Otherwise, it may be that the height is more than the full height of the screen, in which case, flexbox also can't work its distributional magic."
+How does align-items align things?,It works by aligning items along the cross axis.
+"When you vertically center items, what is crucial to remember?","That your container must have a height, or it has nothing to do the computation off of."
+What is align-items set to by default?,stretch - which will start your items at the top of the container and stretch them all the way to the bottom.
+What properties does align-items take?,"stretch, center, flex-start, flex-end and baseline"
+What does the baseline value for align-items do?,It will center your items by aligning them based off of the text within - making sure that the bottom of each text is even all the way across.
+How does align-content differ from justify-content?,"Justify content looks at what happens to the extra space on the main axis, align-content looks at the extra space on the cross axis."
+What is necessary for align-content to work?,"There must be some sort of wrap. You must have multiple lines, which the align-content property can then position within the container."
+What is the default value of align-content?,stretch
+What values does align-content take?,"flex-start, flex-end, space-between, space-around, center, stretch"
+What does using justify-content center along with align-content center do?,It will center all the items horizontally as well as vertically.
+What does the align-self property do?,It overwrites the container-level alignment for just the single item which it is applied directly to.
+Which values can be used on the align-self property?,"All the same ones as align-content: center, baseline, flex-start, flex-end, stretch"
+Where do we place the flex property?,"On individual flex items, as opposed to on the container."
+What question does the flex property answer?,"What do I do with the extra space  or, what do I do when I don't have enough space?"
+What is the width of a flex item by default?,Auto - it will just have the same width as the content within it.
+What happens if we set flex: 1 for all items,Then all items will take up the exact same amount of space.
+What does the flex property determine?,"At what proportion should flex items be scaled up or down if we have too much space, or not enough space."
+"If all items are set to flex 1 originally, what will setting an individual item to flex: 2 do?",Give that item twice the width of all the others - whcih will remain true no matter the view size.
+How does the flex property work?,Off of proportion - not off of pixels or percentages.
+What are the three properties inherent in something like flex: 1,"flex-grow, flex-shrink, flex-basis"
+What is the flex-grow property?,"When there is extra space, how should we divide it among every item on the same line?"
+What is the flex-shrink property?,"When there isn't enough space, how should we divvy up what space there is among every item on the line."
+What is the flex-basis property?,"If the world was ideal, how big should this element be?"
+What is the default value for flex-grow?,"0 - if you have extra room, leave it alone, don't do anything."
+What is the default of flex-shrink?,"1 - so, if there isn't enough space, evenly divide how much to trim off among each element in the row."
+"What is the shorthand for setting the flex-grow, flex-shrink and flex-basis properties?",flex: 10 5 400px

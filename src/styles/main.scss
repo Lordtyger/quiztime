@@ -1,0 +1,18 @@
+@import './abstracts/variables.scss';
+@import './abstracts/mixins.scss';
+@import './base/reset.scss';
+@import './base/globals.scss';
+
+@import './layout/content.scss';
+
+@import './components/startMenu.scss';
+@import './components/startQuiz.scss';
+@import './components/Checkbox.scss';
+@import './components/question.scss';
+@import './components/answer-buttons.scss';
+
+//Pages
+@import './pages/quiz-questions.scss';
+
+
+

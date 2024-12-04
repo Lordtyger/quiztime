@@ -1,0 +1,838 @@
+[
+    {
+        "question": "What does `[1, 2, 3].at(-1);` return?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "-1",
+            "[3]",
+            "undefined",
+            "null"
+        ],
+        "explanation": "<p>The <code>at()</code> method allows you to access elements from the end of an array. It accepts a single index as a parameter, and if the index is negative, it starts counting from the end of the array, where <code>-1</code> refers to the last element.</p><p>For example, in <code>[1, 2, 3].at(-1);</code>, <code>-1</code> returns the last element, which is <code>3</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.at(-1));  // Output: 3</code></pre>"
+    },
+    {
+        "question": "What is the output of `[1, 2, 3].at(10);`?",
+        "correct_answer": "undefined",
+        "incorrect_answers": [
+            "3",
+            "null",
+            "[undefined]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>at()</code> method returns <code>undefined</code> if the index is out of bounds. If the index exceeds the array length (positive or negative), it will return <code>undefined</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.at(10));  // Output: undefined</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2].concat([3, 4]);` return?",
+        "correct_answer": "[1, 2, 3, 4]",
+        "incorrect_answers": [
+            "[[1, 2], [3, 4]]",
+            "[1, 2, [3, 4]]",
+            "[1, 2, 3]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>concat()</code> method combines two or more arrays or values into a new array. It does not modify the original arrays. This method can accept multiple arguments of arrays or values.</p><p>For example, in <code>[1, 2].concat([3, 4]);</code>, it merges two arrays into a single array: <code>[1, 2, 3, 4]</code>.</p><pre><code>let arr1 = [1, 2];\nlet arr2 = [3, 4];\nconsole.log(arr1.concat(arr2));  // Output: [1, 2, 3, 4]</code></pre>"
+    },
+    {
+        "question": "How does `concat()` handle non-array arguments? `[1, 2].concat(3, [4, 5]);`",
+        "correct_answer": "[1, 2, 3, 4, 5]",
+        "incorrect_answers": [
+            "[1, 2, [3, 4, 5]]",
+            "[1, 2, [3], [4, 5]]",
+            "[1, 2, [3], 4, 5]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>concat()</code> method also accepts non-array arguments. When a non-array argument (like a number) is passed, it is added as a value and not as a new array.</p><pre><code>let arr1 = [1, 2];\nconsole.log(arr1.concat(3, [4, 5]));  // Output: [1, 2, 3, 4, 5]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].copyWithin(1, 2);` return?",
+        "correct_answer": "[1, 3, 3]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[3, 2, 3]",
+            "[1, 1, 3]",
+            "[1, 3, 2]"
+        ],
+        "explanation": "<p>The <code>copyWithin()</code> method copies a portion of the array to another location within the same array. It takes 3 optional arguments: the target index (where to copy to), the start index (from where to copy), and the end index (which is exclusive).</p><p>For example, in <code>[1, 2, 3].copyWithin(1, 2);</code>, it copies the element at index <code>2</code> (which is <code>3</code>) to index <code>1</code>, so the result is <code>[1, 3, 3]</code>.</p><pre><code>let arr = [1, 2, 3];\narr.copyWithin(1, 2);\nconsole.log(arr);  // Output: [1, 3, 3]</code></pre>"
+    },
+    {
+        "question": "What happens if `copyWithin()` is called with no arguments? `[1, 2, 3].copyWithin();`",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[undefined, undefined, undefined]",
+            "[0, 0, 0]",
+            "An error is thrown",
+            "[1, 2, undefined]"
+        ],
+        "explanation": "<p>If <code>copyWithin()</code> is called without any arguments, it simply returns the original array without any changes.</p><pre><code>let arr = [1, 2, 3];\narr.copyWithin();\nconsole.log(arr);  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "What does `Object.entries({a: 1, b: 2});` return?",
+        "correct_answer": "[['a', 1], ['b', 2]]",
+        "incorrect_answers": [
+            "{a: 1, b: 2}",
+            "[['a', 'b'], [1, 2]]",
+            "[1, 2, 'a', 'b']",
+            "[{'a': 1}, {'b': 2}]"
+        ],
+        "explanation": "<p>The <code>Object.entries()</code> method returns an array of the object's own enumerable string-keyed property pairs. Each pair is an array with the key as the first element and the value as the second.</p><pre><code>let obj = {a: 1, b: 2};\nconsole.log(Object.entries(obj));  // Output: [['a', 1], ['b', 2]]</code></pre>"
+    },
+    {
+        "question": "What happens if you call `entries()` on an array with sparse elements? `[1, , 3].entries();`",
+        "correct_answer": "The sparse elements are treated as `undefined` in iteration.",
+        "incorrect_answers": [
+            "The sparse elements are skipped.",
+            "An error is thrown.",
+            "Sparse elements are converted to `null`.",
+            "The method returns `undefined`."
+        ],
+        "explanation": "<p>The <code>entries()</code> method returns an iterator for the key-value pairs in an array. Sparse elements (those that are missing) are included in the iteration, but are treated as <code>undefined</code>.</p><pre><code>let arr = [1, , 3];\nlet iterator = arr.entries();\nconsole.log([...iterator]);  // Output: [[0, 1], [1, undefined], [2, 3]]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].every(x => x > 0);` return?",
+        "correct_answer": "true",
+        "incorrect_answers": [
+            "false",
+            "[true, true, true]",
+            "undefined",
+            "null"
+        ],
+        "explanation": "<p>The <code>every()</code> method checks whether all elements in an array pass a specified test. It returns <code>true</code> if all elements meet the condition, otherwise it returns <code>false</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.every(x => x > 0));  // Output: true</code></pre>"
+    },
+    {
+        "question": "What happens if `every()` is called on an empty array? `[].every(x => x > 0);`",
+        "correct_answer": "true",
+        "incorrect_answers": [
+            "false",
+            "undefined",
+            "null",
+            "An error is thrown"
+        ],
+        "explanation": "<p>The <code>every()</code> method returns <code>true</code> when called on an empty array. Since there are no elements to fail the test, the condition is trivially satisfied.</p><pre><code>let arr = [];\nconsole.log(arr.every(x => x > 0));  // Output: true</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].fill(0);` return?",
+        "correct_answer": "[0, 0, 0]",
+        "incorrect_answers": [
+            "[1, 0, 3]",
+            "[0, 2, 3]",
+            "[1, 2, 0]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>fill()</code> method modifies the elements of an array in place, replacing them with a specified value. It takes two optional parameters: the value to fill the array with, and an optional start index and end index to define the range of elements to be filled.</p><p>For example, in <code>[1, 2, 3].fill(0);</code>, it fills all elements with <code>0</code>, resulting in <code>[0, 0, 0]</code>.</p><pre><code>let arr = [1, 2, 3];\narr.fill(0);\nconsole.log(arr);  // Output: [0, 0, 0]</code></pre>"
+    },
+    {
+        "question": "How does `fill()` behave with negative indices? `[1, 2, 3].fill(4, -2);`",
+        "correct_answer": "[1, 4, 4]",
+        "incorrect_answers": [
+            "[4, 4, 3]",
+            "[4, 2, 3]",
+            "[1, 4, 3]",
+            "[4, 4, 4]"
+        ],
+        "explanation": "<p>The <code>fill()</code> method also accepts negative indices for the <code>start</code> and <code>end</code> parameters. A negative index counts backwards from the end of the array.</p><p>For example, in <code>[1, 2, 3].fill(4, -2);</code>, it fills from index <code>-2</code> (the second-to-last element) to the end of the array with <code>4</code>, resulting in <code>[1, 4, 4]</code>.</p><pre><code>let arr = [1, 2, 3];\narr.fill(4, -2);\nconsole.log(arr);  // Output: [1, 4, 4]</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].filter(x => x > 1);`?",
+        "correct_answer": "[2, 3]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[1]",
+            "[2]",
+            "[3]"
+        ],
+        "explanation": "<p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function. It does not modify the original array.</p><p>In <code>[1, 2, 3].filter(x => x > 1);</code>, the function filters out all values less than or equal to <code>1</code>, resulting in <code>[2, 3]</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.filter(x => x > 1));  // Output: [2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `filter()` handle sparse arrays? `[1, , 3].filter(Boolean);`",
+        "correct_answer": "[1, 3]",
+        "incorrect_answers": [
+            "[1, undefined, 3]",
+            "[1, null, 3]",
+            "[1, 3, undefined]",
+            "[1, , 3]"
+        ],
+        "explanation": "<p>The <code>filter()</code> method does not skip sparse elements but treats them as <code>undefined</code> in the callback function. Non-iterable elements such as <code>undefined</code> are excluded based on the filter condition.</p><p>For example, in <code>[1, , 3].filter(Boolean);</code>, the sparse element (empty slot) is treated as <code>undefined</code>, which fails the <code>Boolean</code> test, leaving only <code>[1, 3]</code>.</p><pre><code>let arr = [1, , 3];\nconsole.log(arr.filter(Boolean));  // Output: [1, 3]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].find(x => x > 1);` return?",
+        "correct_answer": "2",
+        "incorrect_answers": [
+            "[2, 3]",
+            "3",
+            "undefined",
+            "null"
+        ],
+        "explanation": "<p>The <code>find()</code> method returns the first element in the array that satisfies the provided testing function. If no elements satisfy the condition, it returns <code>undefined</code>.</p><p>For example, in <code>[1, 2, 3].find(x => x > 1);</code>, the first element that is greater than <code>1</code> is <code>2</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.find(x => x > 1));  // Output: 2</code></pre>"
+    },
+    {
+        "question": "What happens if `find()` doesn’t match any element? `[1, 2, 3].find(x => x > 5);`",
+        "correct_answer": "undefined",
+        "incorrect_answers": [
+            "null",
+            "An error is thrown",
+            "false",
+            "[]"
+        ],
+        "explanation": "<p>If no element satisfies the condition in <code>find()</code>, the method returns <code>undefined</code>. It does not throw an error, and it does not return an empty array.</p><p>For example, in <code>[1, 2, 3].find(x => x > 5);</code>, since there is no element greater than <code>5</code>, the return value is <code>undefined</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.find(x => x > 5));  // Output: undefined</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].findIndex(x => x > 2);`?",
+        "correct_answer": "2",
+        "incorrect_answers": [
+            "-1",
+            "1",
+            "[2]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>findIndex()</code> method returns the index of the first element in the array that satisfies the provided testing function. If no element matches, it returns <code>-1</code>.</p><p>For example, in <code>[1, 2, 3].findIndex(x => x > 2);</code>, the element <code>3</code> at index <code>2</code> is the first value greater than <code>2</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.findIndex(x => x > 2));  // Output: 2</code></pre>"
+    },
+    {
+        "question": "How does `findIndex()` handle sparse arrays? `[1, , 3].findIndex(x => x === undefined);`",
+        "correct_answer": "1",
+        "incorrect_answers": [
+            "-1",
+            "undefined",
+            "null",
+            "0"
+        ],
+        "explanation": "<p>The <code>findIndex()</code> method works with sparse arrays and treats missing elements as <code>undefined</code> during iteration. It returns the index of the first element that satisfies the condition.</p><p>In <code>[1, , 3].findIndex(x => x === undefined);</code>, the second element is sparse, so it is treated as <code>undefined</code>, and the method returns <code>1</code>.</p><pre><code>let arr = [1, , 3];\nconsole.log(arr.findIndex(x => x === undefined));  // Output: 1</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].findLast(x => x > 1);` return?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "1",
+            "2",
+            "[3]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>findLast()</code> method returns the last element in the array that satisfies the provided testing function. If no elements match, it returns <code>undefined</code>.</p><p>For example, in <code>[1, 2, 3].findLast(x => x > 1);</code>, the last element greater than <code>1</code> is <code>3</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.findLast(x => x > 1));  // Output: 3</code></pre>"
+    },
+    {
+        "question": "How does `findLast()` behave with negative values? `[1, -2, -3].findLast(x => x < 0);`",
+        "correct_answer": "-3",
+        "incorrect_answers": [
+            "-2",
+            "-1",
+            "undefined",
+            "0"
+        ],
+        "explanation": "<p>The <code>findLast()</code> method works similarly to <code>find()</code> but searches from the end of the array. If there are multiple elements matching the condition, it returns the last one.</p><p>In <code>[1, -2, -3].findLast(x => x < 0);</code>, the last negative number in the array is <code>-3</code>.</p><pre><code>let arr = [1, -2, -3];\nconsole.log(arr.findLast(x => x < 0));  // Output: -3</code></pre>"
+    },
+    {
+        "question": "What does `[1, [2, [3]]].flat();` return?",
+        "correct_answer": "[1, 2, [3]]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[1, [2], [3]]",
+            "[1, 2, 3, undefined]",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>flat()</code> method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth. By default, the method only flattens one level deep.</p><p>In the case of <code>[1, [2, [3]]].flat();</code>, the array is flattened by one level, resulting in <code>[1, 2, [3]]</code>. Note that <code>[3]</code> is still an array.</p><pre><code>let arr = [1, [2, [3]]];\nconsole.log(arr.flat());  // Output: [1, 2, [3]]</code></pre>"
+    },
+    {
+        "question": "What does `[1, [2, [3]]].flat(2);` return?",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[1, 2, [3]]",
+            "[1, [2, 3]]",
+            "[1, 2, 3, 4]",
+            "[1, 2, [3, undefined]]"
+        ],
+        "explanation": "<p>The <code>flat()</code> method can also accept a depth argument, which controls how deep the array should be flattened. When <code>flat(2)</code> is used, the array is flattened two levels deep, resulting in a completely flat array <code>[1, 2, 3]</code>.</p><pre><code>let arr = [1, [2, [3]]];\nconsole.log(arr.flat(2));  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does the `flatMap()` method work in JavaScript? `[1, 2].flatMap(x => [x, x * 2]);`",
+        "correct_answer": "[1, 2, 2, 4]",
+        "incorrect_answers": [
+            "[1, 2, [2, 4]]",
+            "[1, 4, 2, 4]",
+            "[1, 2, 4]",
+            "[undefined]"
+        ],
+        "explanation": "<p>The <code>flatMap()</code> method first maps each element using a mapping function, then flattens the result into a new array. It combines <code>map()</code> and <code>flat()</code> in a single call, flattening the resulting array by one level.</p><p>For example, in <code>[1, 2].flatMap(x => [x, x * 2]);</code>, each element is mapped to an array with the element and its double, and the result is flattened to produce <code>[1, 2, 2, 4]</code>.</p><pre><code>let arr = [1, 2];\nconsole.log(arr.flatMap(x => [x, x * 2]));  // Output: [1, 2, 2, 4]</code></pre>"
+    },
+    {
+        "question": "How would you use `flatMap()` with nested arrays? `[1, [2, 3]].flatMap(x => x);`",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[1, [2, 3]]",
+            "[1, 2, 3, undefined]",
+            "[1, 2]",
+            "[2, 3]"
+        ],
+        "explanation": "<p>When <code>flatMap()</code> is used with nested arrays, it flattens them by one level while applying the mapping function to each element.</p><p>For example, in <code>[1, [2, 3]].flatMap(x => x);</code>, the array is flattened one level, and the result is <code>[1, 2, 3]</code>.</p><pre><code>let arr = [1, [2, 3]];\nconsole.log(arr.flatMap(x => x));  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `forEach()` iterate over an array in JavaScript? `[1, 2, 3].forEach((item, index) => console.log(item, index));`",
+        "correct_answer": "It logs each item with its index.",
+        "incorrect_answers": [
+            "It returns a new array.",
+            "It only iterates over non-empty elements.",
+            "It modifies the original array.",
+            "It throws an error."
+        ],
+        "explanation": "<p>The <code>forEach()</code> method executes a provided function once for each element in the array. The function takes three parameters: the current element, the index of the element, and the array itself.</p><p>In the case of <code>[1, 2, 3].forEach((item, index) => console.log(item, index));</code>, it logs each item with its index. The output will be:</p><pre><code>1 0\n2 1\n3 2</code></pre>"
+    },
+    {
+        "question": "What happens if you try to modify the array during a `forEach()` loop? `[1, 2, 3].forEach((item, index) => arr[index] = item * 2);`",
+        "correct_answer": "The array is modified in place.",
+        "incorrect_answers": [
+            "An error is thrown.",
+            "The loop is stopped.",
+            "It creates a new array.",
+            "The array is not modified."
+        ],
+        "explanation": "<p>While using <code>forEach()</code>, you can modify the array in place. Since the method iterates over each element in the array, changes made during the iteration will affect the original array.</p><p>In <code>[1, 2, 3].forEach((item, index) => arr[index] = item * 2);</code>, the array is modified, and the result will be <code>[2, 4, 6]</code>.</p><pre><code>let arr = [1, 2, 3];\narr.forEach((item, index) => arr[index] = item * 2);\nconsole.log(arr);  // Output: [2, 4, 6]</code></pre>"
+    },
+    {
+        "question": "How does `from()` work with a Set? `Array.from(new Set([1, 2, 2, 3]));`",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[1, 2, 2, 3]",
+            "[Set(3) {1, 2, 3}]",
+            "[undefined]",
+            "[1, 3]"
+        ],
+        "explanation": "<p>The <code>from()</code> method creates a new array instance from an array-like or iterable object, including <code>Set</code> objects.</p><p>In <code>Array.from(new Set([1, 2, 2, 3]));</code>, <code>Set</code> removes duplicates, resulting in <code>[1, 2, 3]</code>.</p><pre><code>let arr = Array.from(new Set([1, 2, 2, 3]));\nconsole.log(arr);  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `from()` handle a string input? `Array.from('hello');`",
+        "correct_answer": "['h', 'e', 'l', 'l', 'o']",
+        "incorrect_answers": [
+            "'hello'",
+            "[hello]",
+            "['h', 'e', 'l', 'o']",
+            "['h', 'e', 'l']"
+        ],
+        "explanation": "<p>The <code>from()</code> method can also convert a string into an array of its characters. Each character is treated as an individual element in the resulting array.</p><p>In <code>Array.from('hello');</code>, the string is converted to an array of characters: <code>['h', 'e', 'l', 'l', 'o']</code>.</p><pre><code>let arr = Array.from('hello');\nconsole.log(arr);  // Output: ['h', 'e', 'l', 'l', 'o']</code></pre>"
+    },
+    {
+        "question": "What does `fromAsync()` do in JavaScript? `Array.fromAsync([1, 2, 3], async x => x * 2);`",
+        "correct_answer": "It returns a promise with the transformed values.",
+        "incorrect_answers": [
+            "It creates an asynchronous array.",
+            "It immediately returns a new array.",
+            "It throws an error.",
+            "It resolves all values at once."
+        ],
+        "explanation": "<p>The <code>fromAsync()</code> method is used to create an array asynchronously from an iterable object. It accepts an asynchronous callback function to transform the elements.</p><p>In the example <code>Array.fromAsync([1, 2, 3], async x => x * 2);</code>, each element is asynchronously doubled, and the method returns a promise.</p><pre><code>Array.fromAsync([1, 2, 3], async x => x * 2)\n  .then(result => console.log(result));  // Output: [2, 4, 6]</code></pre>"
+    },
+    {
+        "question": "How does `includes()` behave with negative indices? `[1, 2, 3].includes(2, -1);`",
+        "correct_answer": "false",
+        "incorrect_answers": [
+            "true",
+            "undefined",
+            "null",
+            "Error"
+        ],
+        "explanation": "<p>The <code>includes()</code> method checks if a given element is present in the array, starting at the specified index. Negative indices count from the end of the array.</p><p>In <code>[1, 2, 3].includes(2, -1);</code>, the search starts at index -1, so <code>2</code> is not found, and the result is <code>false</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.includes(2, -1));  // Output: false</code></pre>"
+    },
+    {
+        "question": "What does `includes()` return when checking for a non-existing element? `[1, 2, 3].includes(4);`",
+        "correct_answer": "false",
+        "incorrect_answers": [
+            "true",
+            "undefined",
+            "null",
+            "Error"
+        ],
+        "explanation": "<p>The <code>includes()</code> method returns <code>true</code> if the specified element is found in the array, and <code>false</code> if it is not.</p><p>In <code>[1, 2, 3].includes(4);</code>, <code>4</code> is not present, so the result is <code>false</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.includes(4));  // Output: false</code></pre>"
+    },
+    {
+        "question": "What does `indexOf()` return for a value in the middle of the array? `[1, 2, 3].indexOf(2);`",
+        "correct_answer": "1",
+        "incorrect_answers": [
+            "0",
+            "2",
+            "-1",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>indexOf()</code> method returns the index of the first occurrence of a specified value in the array, or <code>-1</code> if the value is not found.</p><p>In <code>[1, 2, 3].indexOf(2);</code>, the value <code>2</code> is located at index 1.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.indexOf(2));  // Output: 1</code></pre>"
+    },
+    {
+        "question": "How does `indexOf()` behave when the value is not found? `[1, 2, 3].indexOf(4);`",
+        "correct_answer": "-1",
+        "incorrect_answers": [
+            "0",
+            "undefined",
+            "null",
+            "Error"
+        ],
+        "explanation": "<p>If the value is not found, <code>indexOf()</code> returns <code>-1</code>.</p><p>In <code>[1, 2, 3].indexOf(4);</code>, since <code>4</code> is not present in the array, the result is <code>-1</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.indexOf(4));  // Output: -1</code></pre>"
+    },
+    {
+        "question": "What does `isArray()` return when checking a non-array object? `Array.isArray({});`",
+        "correct_answer": "false",
+        "incorrect_answers": [
+            "true",
+            "undefined",
+            "null",
+            "Error"
+        ],
+        "explanation": "<p>The <code>Array.isArray()</code> method checks whether the provided value is an array. If it is, it returns <code>true</code>; otherwise, it returns <code>false</code>.</p><p>In <code>Array.isArray({});</code>, the value is an object, not an array, so the result is <code>false</code>.</p><pre><code>console.log(Array.isArray({}));  // Output: false</code></pre>"
+    },
+    {
+        "question": "What does `['a', 'b', 'c'].join('-');` return?",
+        "correct_answer": "'a-b-c'",
+        "incorrect_answers": [
+            "'abc'",
+            "'a,b,c'",
+            "'a b c'",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>join()</code> method creates and returns a new string by concatenating all the elements of an array. The elements are separated by a specified separator string.</p><p>In <code>['a', 'b', 'c'].join('-');</code>, the separator is <code>'-'</code>, so the result is <code>'a-b-c'</code>.</p><pre><code>let arr = ['a', 'b', 'c'];\nconsole.log(arr.join('-'));  // Output: 'a-b-c'</code></pre>"
+    },
+    {
+        "question": "What happens when `join()` is called without a separator? `['a', 'b', 'c'].join();`",
+        "correct_answer": "'a,b,c'",
+        "incorrect_answers": [
+            "'abc'",
+            "'a b c'",
+            "'undefined'",
+            "'null'"
+        ],
+        "explanation": "<p>If no separator is provided, the <code>join()</code> method uses a comma (<code>,</code>) as the default separator.</p><p>For example, in <code>['a', 'b', 'c'].join();</code>, the result is <code>'a,b,c'</code>.</p><pre><code>let arr = ['a', 'b', 'c'];\nconsole.log(arr.join());  // Output: 'a,b,c'</code></pre>"
+    },
+    {
+        "question": "What does `Object.keys({ a: 1, b: 2, c: 3 });` return?",
+        "correct_answer": "['a', 'b', 'c']",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "['a: 1', 'b: 2', 'c: 3']",
+            "undefined",
+            "null"
+        ],
+        "explanation": "<p>The <code>keys()</code> method for objects (via <code>Object.keys()</code>) returns an array of the object's own enumerable property names, in the same order as they would appear in a loop.</p><p>For example, in <code>Object.keys({ a: 1, b: 2, c: 3 });</code>, the result is <code>['a', 'b', 'c']</code>.</p><pre><code>let obj = { a: 1, b: 2, c: 3 };\nconsole.log(Object.keys(obj));  // Output: ['a', 'b', 'c']</code></pre>"
+    },
+    {
+        "question": "How does `keys()` behave with sparse arrays? `Array(3).keys();`",
+        "correct_answer": "An iterator for indices [0, 1, 2]",
+        "incorrect_answers": [
+            "An array of indices [0, 1, 2]",
+            "[undefined, undefined, undefined]",
+            "Error",
+            "[]"
+        ],
+        "explanation": "<p>When used on an array, the <code>keys()</code> method returns an array iterator containing the keys (indices) of the array.</p><p>For sparse arrays, it still returns the indices, even if the elements are undefined. In <code>Array(3).keys();</code>, it returns an iterator for indices <code>[0, 1, 2]</code>. You can spread the iterator into an array for viewing: <code>[...Array(3).keys()]</code>.</p><pre><code>let arr = Array(3);\nconsole.log([...arr.keys()]);  // Output: [0, 1, 2]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3, 2, 4].lastIndexOf(2);` return?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "1",
+            "-1",
+            "2",
+            "4"
+        ],
+        "explanation": "<p>The <code>lastIndexOf()</code> method returns the last index at which a given element can be found in the array, or <code>-1</code> if it is not present. It searches the array backward from the end.</p><p>In <code>[1, 2, 3, 2, 4].lastIndexOf(2);</code>, the last occurrence of <code>2</code> is at index <code>3</code>.</p><pre><code>let arr = [1, 2, 3, 2, 4];\nconsole.log(arr.lastIndexOf(2));  // Output: 3</code></pre>"
+    },
+    {
+        "question": "How does `lastIndexOf()` behave with a start index? `[1, 2, 3, 2, 4].lastIndexOf(2, 2);`",
+        "correct_answer": "1",
+        "incorrect_answers": [
+            "3",
+            "-1",
+            "2",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>lastIndexOf()</code> method can accept an optional second argument, which specifies the index to start searching backward. If the value is not found before this index, the method returns <code>-1</code>.</p><p>In <code>[1, 2, 3, 2, 4].lastIndexOf(2, 2);</code>, the search starts at index 2 (inclusive) and finds <code>2</code> at index <code>1</code>.</p><pre><code>let arr = [1, 2, 3, 2, 4];\nconsole.log(arr.lastIndexOf(2, 2));  // Output: 1</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].map(x => x * 2);` return?",
+        "correct_answer": "[2, 4, 6]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[undefined, undefined, undefined]",
+            "[1, 4, 9]",
+            "[2, 4]"
+        ],
+        "explanation": "<p>The <code>map()</code> method creates a new array populated with the results of calling a provided function on every element in the calling array.</p><p>In <code>[1, 2, 3].map(x => x * 2);</code>, each element is multiplied by 2, resulting in <code>[2, 4, 6]</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.map(x => x * 2));  // Output: [2, 4, 6]</code></pre>"
+    },
+    {
+        "question": "How does `map()` handle sparse arrays? `[1, , 3].map(x => x * 2);`",
+        "correct_answer": "[2, , 6]",
+        "incorrect_answers": [
+            "[2, undefined, 6]",
+            "[2, 0, 6]",
+            "Error",
+            "[2, 6]"
+        ],
+        "explanation": "<p>The <code>map()</code> method skips over empty slots in sparse arrays and retains them in the resulting array.</p><p>In <code>[1, , 3].map(x => x * 2);</code>, the <code>undefined</code> slot is preserved, so the result is <code>[2, , 6]</code>.</p><pre><code>let arr = [1, , 3];\nconsole.log(arr.map(x => x * 2));  // Output: [2, , 6]</code></pre>"
+    },
+    {
+        "question": "How does `findLastIndex()` behave with a predicate? `[1, 2, 3, 4].findLastIndex(x => x % 2 === 0);`",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "1",
+            "0",
+            "2",
+            "-1"
+        ],
+        "explanation": "<p>The <code>findLastIndex()</code> method returns the index of the last element in an array that satisfies a provided testing function. If no element satisfies the function, it returns <code>-1</code>.</p><p>In <code>[1, 2, 3, 4].findLastIndex(x => x % 2 === 0);</code>, the predicate matches even numbers, and the last even number (4) is at index <code>3</code>.</p><pre><code>let arr = [1, 2, 3, 4];\nconsole.log(arr.findLastIndex(x => x % 2 === 0));  // Output: 3</code></pre>"
+    },
+    {
+        "question": "How does `findLastIndex()` handle sparse arrays? `[1, , 3, 4].findLastIndex(x => x === undefined);`",
+        "correct_answer": "1",
+        "incorrect_answers": [
+            "-1",
+            "0",
+            "2",
+            "Error"
+        ],
+        "explanation": "<p>The <code>findLastIndex()</code> method treats empty slots in sparse arrays as <code>undefined</code>. The method searches from the end of the array for the first match.</p><p>In <code>[1, , 3, 4].findLastIndex(x => x === undefined);</code>, the empty slot at index <code>1</code> is treated as <code>undefined</code>, so the result is <code>1</code>.</p><pre><code>let arr = [1, , 3, 4];\nconsole.log(arr.findLastIndex(x => x === undefined));  // Output: 1</code></pre>"
+    },
+    {
+        "question": "What does `Array.of(1, 2, 3);` return?",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "1, 2, 3",
+            "undefined",
+            "[[1, 2, 3]]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>Array.of()</code> method creates a new array instance with the given arguments as elements.</p><p>In <code>Array.of(1, 2, 3);</code>, the arguments <code>1</code>, <code>2</code>, and <code>3</code> become the elements of the array.</p><pre><code>let arr = Array.of(1, 2, 3);\nconsole.log(arr);  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `Array.of()` differ from `Array()`? `Array.of(5)` vs. `Array(5)`",
+        "correct_answer": "[5] vs. array of length 5",
+        "incorrect_answers": [
+            "Both create [5]",
+            "Both create an array of length 5",
+            "Error",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>Array.of()</code> method always creates an array with the provided arguments as elements, even a single number. In contrast, <code>Array()</code> creates an empty array with the specified length if passed a single numeric argument.</p><p>For example:</p><pre><code>console.log(Array.of(5));  // Output: [5]\nconsole.log(Array(5));     // Output: [empty x 5]</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].pop();`?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "[1, 2]",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>pop()</code> method removes the last element from an array and returns it. It also modifies the original array.</p><p>In <code>[1, 2, 3].pop();</code>, the last element <code>3</code> is removed and returned.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.pop());  // Output: 3\nconsole.log(arr);        // Output: [1, 2]</code></pre>"
+    },
+    {
+        "question": "What happens when `pop()` is called on an empty array? `[].pop();`",
+        "correct_answer": "undefined",
+        "incorrect_answers": [
+            "null",
+            "Error",
+            "[]",
+            "0"
+        ],
+        "explanation": "<p>The <code>pop()</code> method returns <code>undefined</code> if called on an empty array and does not throw an error.</p><pre><code>let arr = [];\nconsole.log(arr.pop());  // Output: undefined\nconsole.log(arr);        // Output: []</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2].push(3);` return?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>push()</code> method adds one or more elements to the end of an array and returns the new length of the array.</p><p>In <code>[1, 2].push(3);</code>, the new length of the array is <code>3</code>.</p><pre><code>let arr = [1, 2];\nconsole.log(arr.push(3));  // Output: 3\nconsole.log(arr);          // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "What happens when multiple arguments are passed to `push()`? `[1, 2].push(3, 4, 5);`",
+        "correct_answer": "5",
+        "incorrect_answers": [
+            "[1, 2, 3, 4, 5]",
+            "undefined",
+            "Error",
+            "3"
+        ],
+        "explanation": "<p>The <code>push()</code> method can accept multiple arguments, adding all of them to the array in the order provided. The method returns the new length of the array.</p><p>In <code>[1, 2].push(3, 4, 5);</code>, the new length is <code>5</code>.</p><pre><code>let arr = [1, 2];\nconsole.log(arr.push(3, 4, 5));  // Output: 5\nconsole.log(arr);                // Output: [1, 2, 3, 4, 5]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].reduce((sum, x) => sum + x, 0);` return?",
+        "correct_answer": "6",
+        "incorrect_answers": [
+            "0",
+            "[1, 2, 3]",
+            "undefined",
+            "Error"
+        ],
+        "explanation": "<p>The <code>reduce()</code> method executes a reducer function on each element of the array, resulting in a single output value. The method can accept an optional initial value as the second parameter.</p><p>In <code>[1, 2, 3].reduce((sum, x) => sum + x, 0);</code>, the elements are summed up starting with the initial value <code>0</code>, resulting in <code>6</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.reduce((sum, x) => sum + x, 0));  // Output: 6</code></pre>"
+    },
+    {
+        "question": "How does `reduceRight()` differ from `reduce()`? `[1, 2, 3].reduceRight((sum, x) => sum - x, 0);`",
+        "correct_answer": "-6",
+        "incorrect_answers": [
+            "2",
+            "6",
+            "undefined",
+            "Error"
+        ],
+        "explanation": "<p>The <code>reduceRight()</code> method is similar to <code>reduce()</code>, but it processes the array from right to left instead of left to right.</p><p>In <code>[1, 2, 3].reduceRight((sum, x) => sum - x, 0);</code>, the computation proceeds as: <code>0 - 3 - 2 - 1</code>, resulting in <code>-2</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.reduceRight((sum, x) => sum - x, 0));  // Output: -6</code></pre>"
+    },
+    {
+        "question": "What is the result of `[3, 2, 1].reverse();`?",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[3, 2, 1]",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>reverse()</code> method reverses the elements of an array in place and returns the modified array.</p><p>In <code>[3, 2, 1].reverse();</code>, the array becomes <code>[1, 2, 3]</code>.</p><pre><code>let arr = [3, 2, 1];\nconsole.log(arr.reverse());  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `reverse()` behave with sparse arrays? `[1, , 3].reverse();`",
+        "correct_answer": "[3, , 1]",
+        "incorrect_answers": [
+            "[1, , 3]",
+            "Error",
+            "[3, undefined, 1]",
+            "[undefined, undefined, undefined]"
+        ],
+        "explanation": "<p>The <code>reverse()</code> method preserves empty slots in sparse arrays. The positions of the empty slots are reversed, but they remain empty.</p><p>In <code>[1, , 3].reverse();</code>, the array becomes <code>[3, , 1]</code>.</p><pre><code>let arr = [1, , 3];\nconsole.log(arr.reverse());  // Output: [3, , 1]</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].shift();`?",
+        "correct_answer": "1",
+        "incorrect_answers": [
+            "[2, 3]",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>shift()</code> method removes the first element from an array and returns it. This operation modifies the original array by reducing its length by one.</p><p>In <code>[1, 2, 3].shift();</code>, the first element <code>1</code> is removed and returned.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.shift());  // Output: 1\nconsole.log(arr);          // Output: [2, 3]</code></pre>"
+    },
+    {
+        "question": "What happens when `shift()` is called on an empty array? `[].shift();`",
+        "correct_answer": "undefined",
+        "incorrect_answers": [
+            "[]",
+            "Error",
+            "null",
+            "0"
+        ],
+        "explanation": "<p>The <code>shift()</code> method returns <code>undefined</code> when called on an empty array and does not throw an error.</p><pre><code>let arr = [];\nconsole.log(arr.shift());  // Output: undefined\nconsole.log(arr);          // Output: []</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3, 4].slice(1, 3);`?",
+        "correct_answer": "[2, 3]",
+        "incorrect_answers": [
+            "[1, 2]",
+            "[3, 4]",
+            "[2, 3, 4]",
+            "[1, 2, 3]"
+        ],
+        "explanation": "<p>The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array. It takes two parameters: <code>start</code> (inclusive) and <code>end</code> (exclusive).</p><p>In <code>[1, 2, 3, 4].slice(1, 3);</code>, the slice starts at index <code>1</code> and ends at index <code>3</code>, resulting in <code>[2, 3]</code>.</p><pre><code>let arr = [1, 2, 3, 4];\nconsole.log(arr.slice(1, 3));  // Output: [2, 3]</code></pre>"
+    },
+    {
+        "question": "What happens when `slice()` is called with a negative `start` index? `[1, 2, 3, 4].slice(-3, -1);`",
+        "correct_answer": "[2, 3]",
+        "incorrect_answers": [
+            "[3, 4]",
+            "[1, 2, 3]",
+            "[]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>slice()</code> method supports negative indices, which count from the end of the array. A <code>start</code> of <code>-3</code> and an <code>end</code> of <code>-1</code> mean slicing from the third-to-last to the second-to-last element.</p><pre><code>let arr = [1, 2, 3, 4];\nconsole.log(arr.slice(-3, -1));  // Output: [2, 3]</code></pre>"
+    },
+    {
+        "question": "What does `[1, 2, 3].some(x => x > 2);` return?",
+        "correct_answer": "true",
+        "incorrect_answers": [
+            "false",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>some()</code> method tests whether at least one element in the array satisfies a provided testing function. It returns <code>true</code> if any element passes the test, and <code>false</code> otherwise.</p><p>In <code>[1, 2, 3].some(x => x > 2);</code>, the test <code>x > 2</code> is true for <code>3</code>, so the result is <code>true</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.some(x => x > 2));  // Output: true</code></pre>"
+    },
+    {
+        "question": "How does `some()` behave with an empty array? `[ ].some(x => true);`",
+        "correct_answer": "false",
+        "incorrect_answers": [
+            "true",
+            "undefined",
+            "Error",
+            "null"
+        ],
+        "explanation": "<p>The <code>some()</code> method always returns <code>false</code> for an empty array because there are no elements to test.</p><pre><code>let arr = [];\nconsole.log(arr.some(x => true));  // Output: false</code></pre>"
+    },
+    {
+        "question": "What is the result of `[3, 1, 2].sort();`?",
+        "correct_answer": "[1, 2, 3]",
+        "incorrect_answers": [
+            "[3, 2, 1]",
+            "[2, 1, 3]",
+            "[1, 3, 2]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>sort()</code> method sorts the elements of an array in place and returns the array. By default, it sorts elements as strings in ascending Unicode order.</p><p>In <code>[3, 1, 2].sort();</code>, the numbers are converted to strings and sorted, resulting in <code>[1, 2, 3]</code>.</p><pre><code>let arr = [3, 1, 2];\nconsole.log(arr.sort());  // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "How does `sort()` behave with a custom comparator? `[3, 1, 2].sort((a, b) => b - a);`",
+        "correct_answer": "[3, 2, 1]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[2, 3, 1]",
+            "[1, 3, 2]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>sort()</code> method can take a custom comparator function to define the sorting order. The function should return a negative value, zero, or a positive value depending on the desired order of two compared elements.</p><p>In <code>[3, 1, 2].sort((a, b) => b - a);</code>, the comparator sorts the elements in descending order, resulting in <code>[3, 2, 1]</code>.</p><pre><code>let arr = [3, 1, 2];\nconsole.log(arr.sort((a, b) => b - a));  // Output: [3, 2, 1]</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].splice(1, 1);`?",
+        "correct_answer": "[2]",
+        "incorrect_answers": [
+            "[1, 3]",
+            "[2, 3]",
+            "undefined",
+            "[1]"
+        ],
+        "explanation": "<p>The <code>splice()</code> method changes the contents of an array by removing or replacing elements and optionally adding new elements. It returns the removed elements as a new array.</p><p>In <code>[1, 2, 3].splice(1, 1);</code>, the element at index <code>1</code> (<code>2</code>) is removed, resulting in <code>[2]</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.splice(1, 1));  // Output: [2]\nconsole.log(arr);              // Output: [1, 3]</code></pre>"
+    },
+    {
+        "question": "How does `splice()` behave with replacement? `[1, 2, 3].splice(1, 1, 'a', 'b');`",
+        "correct_answer": "[2]",
+        "incorrect_answers": [
+            "[1, 'a', 'b', 3]",
+            "[1, 'a', 3]",
+            "[1, 2, 3]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>splice()</code> method can replace removed elements by including additional arguments after the removal parameters. These arguments are inserted at the specified index.</p><p>In <code>[1, 2, 3].splice(1, 1, 'a', 'b');</code>, the element <code>2</code> is removed and replaced with <code>'a'</code> and <code>'b'</code>, so the return value is <code>[2]</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.splice(1, 1, 'a', 'b'));  // Output: [2]\nconsole.log(arr);                        // Output: [1, 'a', 'b', 3]</code></pre>"
+    },
+    {
+        "question": "How does `toSorted()` behave when used on an array with strings? `['banana', 'apple', 'cherry'].toSorted();`",
+        "correct_answer": "['apple', 'banana', 'cherry']",
+        "incorrect_answers": [
+            "['banana', 'cherry', 'apple']",
+            "['cherry', 'banana', 'apple']",
+            "['banana', 'apple', 'cherry']",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toSorted()</code> method creates a shallow copy of an array, sorted in ascending order without modifying the original array. By default, it sorts elements as strings in Unicode order.</p><p>In <code>['banana', 'apple', 'cherry'].toSorted();</code>, the strings are sorted alphabetically, resulting in <code>['apple', 'banana', 'cherry']</code>.</p><pre><code>let arr = ['banana', 'apple', 'cherry'];\nlet sortedArr = arr.toSorted();\nconsole.log(sortedArr);  // Output: ['apple', 'banana', 'cherry']\nconsole.log(arr);        // Output: ['banana', 'apple', 'cherry']</code></pre>"
+    },
+    {
+        "question": "What is the result of `toSorted()` with a custom comparator? `[3, 1, 2].toSorted((a, b) => b - a);`",
+        "correct_answer": "[3, 2, 1]",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "[2, 3, 1]",
+            "[1, 3, 2]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toSorted()</code> method can accept a custom comparator function to define the sorting order. The comparator returns a negative value, zero, or a positive value depending on the desired order of two compared elements.</p><p>In <code>[3, 1, 2].toSorted((a, b) => b - a);</code>, the comparator sorts the elements in descending order, resulting in <code>[3, 2, 1]</code>.</p><pre><code>let arr = [3, 1, 2];\nlet sortedArr = arr.toSorted((a, b) => b - a);\nconsole.log(sortedArr);  // Output: [3, 2, 1]</code></pre>"
+    },
+    {
+        "question": "What does `toSpliced()` return when removing two elements? `[1, 2, 3, 4].toSpliced(1, 2);`",
+        "correct_answer": "[1, 4]",
+        "incorrect_answers": [
+            "[1, 2, 3, 4]",
+            "[2, 3]",
+            "[1, 2, 4]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toSpliced()</code> method creates a shallow copy of an array with specified elements removed and optionally replaced. It does not modify the original array.</p><p>In <code>[1, 2, 3, 4].toSpliced(1, 2);</code>, two elements are removed starting from index <code>1</code>, resulting in <code>[1, 4]</code>.</p><pre><code>let arr = [1, 2, 3, 4];\nlet newArr = arr.toSpliced(1, 2);\nconsole.log(newArr);  // Output: [1, 4]\nconsole.log(arr);     // Output: [1, 2, 3, 4]</code></pre>"
+    },
+    {
+        "question": "What happens when `toSpliced()` is called with replacement elements? `[1, 2, 3].toSpliced(1, 1, 'a', 'b');`",
+        "correct_answer": "[1, 'a', 'b', 3]",
+        "incorrect_answers": [
+            "[1, 3]",
+            "[1, 2, 3]",
+            "[2, 'a', 'b', 3]",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toSpliced()</code> method replaces the removed elements with additional arguments provided after the removal parameters.</p><p>In <code>[1, 2, 3].toSpliced(1, 1, 'a', 'b');</code>, the element <code>2</code> is removed and replaced with <code>'a'</code> and <code>'b'</code>, resulting in <code>[1, 'a', 'b', 3]</code>.</p><pre><code>let arr = [1, 2, 3];\nlet newArr = arr.toSpliced(1, 1, 'a', 'b');\nconsole.log(newArr);  // Output: [1, 'a', 'b', 3]</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].toString();`?",
+        "correct_answer": "'1,2,3'",
+        "incorrect_answers": [
+            "[1,2,3]",
+            "'[1, 2, 3]'",
+            "'123'",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toString()</code> method returns a string representation of the array, where the elements are joined with commas.</p><p>In <code>[1, 2, 3].toString();</code>, the array is converted to the string <code>'1,2,3'</code>.</p><pre><code>let arr = [1, 2, 3];\nconsole.log(arr.toString());  // Output: '1,2,3'</code></pre>"
+    },
+    {
+        "question": "How does `toString()` behave with nested arrays? `[[1, 2], [3, 4]].toString();`",
+        "correct_answer": "'1,2,3,4'",
+        "incorrect_answers": [
+            "'[[1,2],[3,4]]'",
+            "'1,2,3,4,'",
+            "'1, 2, 3, 4'",
+            "Error"
+        ],
+        "explanation": "<p>The <code>toString()</code> method flattens nested arrays into a single string, separating all elements with commas.</p><p>In <code>[[1, 2], [3, 4]].toString();</code>, the nested elements are joined into the string <code>'1,2,3,4'</code>.</p><pre><code>let arr = [[1, 2], [3, 4]];\nconsole.log(arr.toString());  // Output: '1,2,3,4'</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2].unshift(0);`?",
+        "correct_answer": "3",
+        "incorrect_answers": [
+            "[0, 1, 2]",
+            "2",
+            "Error",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>unshift()</code> method adds one or more elements to the beginning of an array and returns the new length of the array.</p><p>In <code>[1, 2].unshift(0);</code>, the element <code>0</code> is added to the beginning, and the new length <code>3</code> is returned.</p><pre><code>let arr = [1, 2];\nconsole.log(arr.unshift(0));  // Output: 3\nconsole.log(arr);             // Output: [0, 1, 2]</code></pre>"
+    },
+    {
+        "question": "What happens when multiple elements are passed to `unshift()`? `[1, 2].unshift('a', 'b');`",
+        "correct_answer": "4",
+        "incorrect_answers": [
+            "2",
+            "[1, 2, 'a', 'b']",
+            "Error",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>unshift()</code> method can add multiple elements to the beginning of an array in the order they are provided. The method returns the new length of the array.</p><p>In <code>[1, 2].unshift('a', 'b');</code>, the elements <code>'a'</code> and <code>'b'</code> are added, resulting in a new length of <code>4</code>.</p><pre><code>let arr = [1, 2];\nconsole.log(arr.unshift('a', 'b'));  // Output: 4\nconsole.log(arr);                    // Output: ['a', 'b', 1, 2]</code></pre>"
+    },
+    {
+        "question": "What does `Array.prototype.values` return when called on `[1, 2, 3]`?",
+        "correct_answer": "An iterator object",
+        "incorrect_answers": [
+            "[1, 2, 3]",
+            "undefined",
+            "An error",
+            "A generator"
+        ],
+        "explanation": "<p>The <code>values()</code> method returns a new iterator object that contains the values of the array in insertion order.</p><p>For example, calling <code>values()</code> on <code>[1, 2, 3]</code> creates an iterator, which can be used with <code>next()</code> or a <code>for...of</code> loop.</p><pre><code>let arr = [1, 2, 3];\nlet iterator = arr.values();\nconsole.log(iterator.next().value);  // Output: 1\nconsole.log(iterator.next().value);  // Output: 2</code></pre>"
+    },
+    {
+        "question": "What is the output of iterating through `[4, 5, 6].values()` using `for...of`?",
+        "correct_answer": "4, 5, 6",
+        "incorrect_answers": [
+            "[4, 5, 6]",
+            "undefined",
+            "An error",
+            "6, 5, 4"
+        ],
+        "explanation": "<p>The <code>values()</code> method returns an iterator that can be used with <code>for...of</code> to loop through array elements in order.</p><p>For example:</p><pre><code>let arr = [4, 5, 6];\nfor (let value of arr.values()) {\n  console.log(value);\n}\n// Output: 4, 5, 6</code></pre>"
+    },
+    {
+        "question": "What is the result of `[1, 2, 3].with(1, 99);`?",
+        "correct_answer": "[1, 99, 3]",
+        "incorrect_answers": [
+            "[99, 2, 3]",
+            "[1, 2, 3]",
+            "Error",
+            "undefined"
+        ],
+        "explanation": "<p>The <code>with()</code> method creates a shallow copy of an array with a specified element replaced at a given index. The original array remains unchanged.</p><p>In <code>[1, 2, 3].with(1, 99);</code>, the element at index <code>1</code> is replaced with <code>99</code>, resulting in <code>[1, 99, 3]</code>.</p><pre><code>let arr = [1, 2, 3];\nlet newArr = arr.with(1, 99);\nconsole.log(newArr);  // Output: [1, 99, 3]\nconsole.log(arr);     // Output: [1, 2, 3]</code></pre>"
+    },
+    {
+        "question": "What happens if `with()` is called with an out-of-bounds index? `[1, 2, 3].with(5, 99);`",
+        "correct_answer": "Error",
+        "incorrect_answers": [
+            "[1, 2, 3, , , 99]",
+            "[1, 2, 3]",
+            "undefined",
+            "[99, 2, 3]"
+        ],
+        "explanation": "<p>The <code>with()</code> method throws an error if the index is out of bounds. It does not create sparse arrays or add elements outside the existing bounds of the array.</p><p>For example, <code>[1, 2, 3].with(5, 99);</code> results in an error because the index <code>5</code> is beyond the bounds of the array.</p><pre><code>let arr = [1, 2, 3];\ntry {\n  let newArr = arr.with(5, 99);\n} catch (e) {\n  console.error(e);  // Error: Index out of bounds\n}</code></pre>"
+    }
+]

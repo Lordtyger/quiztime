@@ -1,0 +1,35 @@
+.quiz-container {
+    width: 90%;
+    // margin: 0 auto;
+    // transform: translate(-50%, -50%)    ;
+    // -webkit-transform: translate(-50%, -50%)    ;
+    // -moz-transform: translate(-50%, -50%)    ;
+    // -ms-transform: translate(-50%, -50%)    ;
+    // -o-transform: translate(-50%, -50%)    ;
+    h1 {
+        font-size: 1.6em;
+        margin: 1em 0 1em 0;
+    }
+
+    .control-buttons {
+        margin-top: 10px;
+        button {
+            font: inherit;
+            font-size: 1.2em;
+            display: block;
+            width: 40%;
+        }
+        .quiz-in-progress-btns {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .quiz-finished-btns {
+            margin-top: 10px;
+            button {
+                width: 100%;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,1170 @@
+[
+    {
+        "question": "What does furtive mean?",
+        "correct_answer": "Attempting to avoid notice or attention, typically because of guilt or a belief that discovery would lead to trouble.",
+        "incorrect_answers": [
+            "Covered in a layer of fine dust or powder.",
+            "Extremely bold or confident in behavior.",
+            "Characterized by having a very short duration."
+        ]
+    },
+    {
+        "question": "What does gingerbread mean?",
+        "correct_answer": "Elaborate or ornate decoration, often unnecessary or excessive.",
+        "incorrect_answers": [
+            "A type of spicy root used in cooking.",
+            "A method of preserving food with sugar.",
+            "A hard, brittle confection made from caramelized sugar."
+        ]
+    },
+    {
+        "question": "What does halcyon mean?",
+        "correct_answer": "Denoting a period of time in the past that was idyllically happy and peaceful.",
+        "incorrect_answers": [
+            "Pertaining to turbulent or chaotic situations.",
+            "Having a tendency to be sharp or harsh.",
+            "Related to periods of extreme cold or ice."
+        ]
+    },
+    {
+        "question": "What does Zeitgeist mean?",
+        "correct_answer": "The defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time.",
+        "incorrect_answers": [
+            "A philosophical belief system based on realism.",
+            "A sudden and unexplained shift in popular opinion.",
+            "The natural cycle of economic and political trends."
+        ]
+    },
+    {
+        "question": "What does idiomatic mean?",
+        "correct_answer": "Using expressions that are natural to a native speaker.",
+        "incorrect_answers": [
+            "Conforming strictly to formal grammar rules.",
+            "Based entirely on literal meanings of words.",
+            "Referring to a regional dialect of a language."
+        ]
+    },
+    {
+        "question": "What does jalopy mean?",
+        "correct_answer": "An old car in a dilapidated condition.",
+        "incorrect_answers": [
+            "A type of traditional handcart used for transport.",
+            "A small watercraft used in rivers or lakes.",
+            "A high-performance vehicle used for racing."
+        ]
+    },
+    {
+        "question": "What does laconic mean?",
+        "correct_answer": "Using very few words; concise to the point of seeming rude or mysterious.",
+        "incorrect_answers": [
+            "Speaking in an overly elaborate or flowery style.",
+            "Having a tendency to avoid conversations entirely.",
+            "Displaying an inability to form coherent sentences."
+        ]
+    },
+    {
+        "question": "What does lambent mean?",
+        "correct_answer": "Softly glowing or flickering light.",
+        "incorrect_answers": [
+            "Extremely bright and blinding light.",
+            "Light that is constantly changing colors.",
+            "Light that is harsh and glaring."
+        ]
+    },
+    {
+        "question": "What does imperious mean?",
+        "correct_answer": "Assuming power or authority without justification; arrogant and domineering.",
+        "incorrect_answers": [
+            "Having a calm and composed demeanor.",
+            "Displaying a tendency to avoid authority.",
+            "Inclined to follow orders without question."
+        ]
+    },
+    {
+        "question": "What does incipient mean?",
+        "correct_answer": "In an initial stage; beginning to happen or develop.",
+        "incorrect_answers": [
+            "Fully developed or matured.",
+            "Occurring repeatedly over time.",
+            "Happening in quick succession."
+        ]
+    },
+    {
+        "question": "What does lazarette mean?",
+        "correct_answer": "A small compartment on a ship used for storing supplies.",
+        "incorrect_answers": [
+            "The captain's quarters on a ship.",
+            "A lifeboat used in emergency situations.",
+            "A large dining area on board a vessel."
+        ]
+    },
+    {
+        "question": "What does hauteur mean?",
+        "correct_answer": "Haughtiness of manner; disdainful pride.",
+        "incorrect_answers": [
+            "A strong sense of compassion or empathy.",
+            "An unassuming and modest demeanor.",
+            "A complete lack of interest or enthusiasm."
+        ]
+    },
+    {
+        "question": "What does 'adduce' mean?",
+        "correct_answer": "To bring forward evidence or reasons in support of an argument or claim.",
+        "incorrect_answers": [
+            "To avoid or dismiss an argument or claim.",
+            "To summarize or present an idea briefly.",
+            "To remove any doubts or objections from an argument."
+        ],
+        "explanation": "'Adduce' means to provide or present evidence, arguments, or reasons in support of something. It's commonly used in legal or academic contexts when someone is trying to strengthen their position or argument by citing relevant facts or examples."
+    },
+    {
+        "question": "What does 'adroit' mean?",
+        "correct_answer": "Skillful or clever, particularly in physical or mental tasks.",
+        "incorrect_answers": [
+            "Clumsy or awkward in movement or behavior.",
+            "Slow or hesitant in decision-making.",
+            "Having a lack of expertise in a particular area."
+        ],
+        "explanation": "'Adroit' refers to someone who is skillful, especially when performing tasks that require dexterity or clever thinking. For example, an 'adroit' negotiator is one who skillfully manages difficult discussions to reach favorable outcomes."
+    },
+    {
+        "question": "What does 'anomalous' mean?",
+        "correct_answer": "Deviating from what is standard, normal, or expected.",
+        "incorrect_answers": [
+            "Completely predictable or routine.",
+            "Conforming to all common laws or rules.",
+            "Not differing from the average or typical outcome."
+        ],
+        "explanation": "'Anomalous' refers to something that is irregular or out of the ordinary, often standing in contrast to the usual or expected pattern. For example, an anomalous temperature reading might indicate an unexpected fluctuation in weather patterns."
+    },
+    {
+        "question": "What does 'catalepsy' mean?",
+        "correct_answer": "A medical condition characterized by rigidity and loss of voluntary motion.",
+        "incorrect_answers": [
+            "A condition involving excessive movement or restlessness.",
+            "A form of sleep disorder causing frequent waking.",
+            "A type of seizure disorder causing complete paralysis."
+        ],
+        "explanation": "'Catalepsy' is a neurological condition marked by an inability to move or respond to external stimuli. It often results in a person assuming a fixed, rigid posture, and can occur in conditions like Parkinson's disease or as a side effect of certain medications."
+    },
+    {
+        "question": "What does 'delectable' mean?",
+        "correct_answer": "Delicious, especially in reference to food.",
+        "incorrect_answers": [
+            "Dull or unappetizing in appearance.",
+            "Unpleasant in taste or texture.",
+            "Highly spiced or overly flavored."
+        ],
+        "explanation": "'Delectable' is used to describe something that is highly pleasing to the taste, particularly in terms of food or drink. For example, a 'delectable' dessert might be one that is rich in flavor and visually appealing."
+    },
+    {
+        "question": "What does 'disingenuous' mean?",
+        "correct_answer": "Not being sincere or straightforward; pretending to be unaware or less knowledgeable than one really is.",
+        "incorrect_answers": [
+            "Having genuine feelings of warmth and affection.",
+            "Being extremely honest and transparent.",
+            "Offering clear and open communication."
+        ],
+        "explanation": "'Disingenuous' refers to someone who is not honest or sincere in their actions or words. It implies that the person is pretending to be more naive or ignorant than they actually are, often in an attempt to mislead others."
+    },
+    {
+        "question": "What does 'acrimonious' mean?",
+        "correct_answer": "Characterized by bitterness or harshness, particularly in speech or behavior.",
+        "incorrect_answers": [
+            "Polite or respectful in nature.",
+            "Friendly and warm in tone.",
+            "Calm and rational in approach."
+        ],
+        "explanation": "'Acrimonious' is used to describe situations or interactions that are marked by bitterness, anger, or sharp words. An acrimonious debate, for example, is one where participants are hostile and engage in harsh arguments."
+    },
+    {
+        "question": "What does 'debutante' mean?",
+        "correct_answer": "A young woman making her formal entrance into society, typically through a debutante ball.",
+        "incorrect_answers": [
+            "A person who is retiring from society to live in isolation.",
+            "A mature woman who has significant societal influence.",
+            "A formal announcement of someone's retirement."
+        ],
+        "explanation": "'Debutante' refers to a young woman, typically from an upper-class background, who is introduced to society through a formal event known as a debutante ball. It marks her transition from adolescence to adulthood."
+    },
+    {
+        "question": "What does 'ectogenesis' mean?",
+        "correct_answer": "The development of an embryo outside the womb, typically in an artificial environment.",
+        "incorrect_answers": [
+            "A condition where embryos fail to develop due to external factors.",
+            "A method for growing artificial organs for medical use.",
+            "A procedure for genetically altering embryos before conception."
+        ],
+        "explanation": "'Ectogenesis' refers to the process of growing or developing an embryo outside the natural environment of the womb, usually in a controlled, artificial setting. It is often discussed in the context of future reproductive technologies."
+    },
+    {
+        "question": "What does 'edifying' mean?",
+        "correct_answer": "Providing moral or intellectual instruction; enlightening.",
+        "incorrect_answers": [
+            "Causing confusion or misunderstanding.",
+            "Unpleasant or disturbing in nature.",
+            "Being overly simplistic or shallow."
+        ],
+        "explanation": "'Edifying' refers to something that enlightens or educates, typically in a moral, intellectual, or spiritual sense. For example, an edifying book might teach important life lessons and provide insightful perspectives."
+    },
+    {
+        "question": "What does 'ambit' mean?",
+        "correct_answer": "The scope, range, or boundary of something, especially a specific field or area.",
+        "incorrect_answers": [
+            "A formal approval or endorsement of a proposal.",
+            "A point of conflict or disagreement between parties.",
+            "A physical boundary or edge of a piece of land."
+        ],
+        "explanation": "'Ambit' refers to the scope or range of something, such as a subject, jurisdiction, or responsibility. It is commonly used in legal or formal contexts to describe the limits or extent of authority or influence."
+    },
+    {
+        "question": "What does 'bourgeois' mean?",
+        "correct_answer": "Referring to the middle class, often with an emphasis on materialistic values and conventional attitudes.",
+        "incorrect_answers": [
+            "A member of the aristocracy or nobility.",
+            "A person who lives in poverty and practices minimalist values.",
+            "A political ideology that opposes capitalism."
+        ],
+        "explanation": "'Bourgeois' typically refers to the middle class, especially in a social or economic sense, often with connotations of materialism, conservatism, and a focus on wealth accumulation and traditional values."
+    },
+    {
+        "question": "What does 'bucolic' mean?",
+        "correct_answer": "Relating to the countryside, rural life, or the idyllic aspects of nature.",
+        "incorrect_answers": [
+            "Pertaining to urban life and city environments.",
+            "Relating to scientific advancements and technological progress.",
+            "Characterized by industrial development and manufacturing."
+        ],
+        "explanation": "'Bucolic' is often used to describe things that are related to rural life, nature, or the peaceful countryside. For example, a 'bucolic landscape' might evoke a tranquil, picturesque rural setting."
+    },
+    {
+        "question": "What does 'confluence' mean?",
+        "correct_answer": "The coming together or merging of two or more things, such as rivers, ideas, or events.",
+        "incorrect_answers": [
+            "The divergence or splitting of two paths or ideas.",
+            "The state of complete isolation from other entities.",
+            "The process of separating elements from a mixture."
+        ],
+        "explanation": "'Confluence' refers to the point at which two or more things merge or come together. It is commonly used in the context of rivers or streams meeting, but can also refer to the merging of ideas, events, or people."
+    },
+    {
+        "question": "What does 'duplicity' mean?",
+        "correct_answer": "Deceitfulness or double-dealing, especially by pretending to have one set of beliefs or feelings while acting with opposing intentions.",
+        "incorrect_answers": [
+            "Honesty and transparency in dealings.",
+            "The act of truthfully expressing one's thoughts and feelings.",
+            "A form of artistic expression through visual media."
+        ],
+        "explanation": "'Duplicity' refers to deceit or dishonesty, especially in the form of double standards or misleading others. For example, a politician might be accused of duplicity if they publicly advocate for a policy while secretly undermining it."
+    },
+    {
+        "question": "What does 'capricious' mean?",
+        "correct_answer": "Characterized by unpredictable or sudden changes in behavior or mood, often without a clear reason.",
+        "incorrect_answers": [
+            "Steady and consistent in behavior and decision-making.",
+            "Easily influenced by external pressures or arguments.",
+            "Predictable and logical in every action."
+        ],
+        "explanation": "'Capricious' describes behavior that is erratic or impulsive, with little regard for stability or reason. Someone who is capricious might change their mind frequently or act without a clear pattern or explanation."
+    },
+    {
+        "question": "What does 'approbation' mean?",
+        "correct_answer": "Approval or praise, especially formal approval for an action or behavior.",
+        "incorrect_answers": [
+            "A public expression of disapproval or criticism.",
+            "An official request or demand for action.",
+            "A formal rejection of an idea or suggestion."
+        ],
+        "explanation": "'Approbation' refers to approval, praise, or sanction, often from an official or authoritative source. For example, a project might receive approbation from a board of directors if it meets the necessary criteria."
+    },
+    {
+        "question": "What does 'cur' mean?",
+        "correct_answer": "A mongrel or undesirable dog, often one that is aggressive or untrustworthy.",
+        "incorrect_answers": [
+            "A highly trained and noble breed of dog.",
+            "A type of domesticated pet animal, commonly kept as a companion.",
+            "A wild animal known for its hunting abilities."
+        ],
+        "explanation": "'Cur' is an old term that refers to a mixed-breed or stray dog, particularly one that is considered aggressive or untrustworthy. It can also be used metaphorically to describe a contemptible person."
+    },
+    {
+        "question": "What does 'eaves' mean?",
+        "correct_answer": "The overhanging part of a roof that extends beyond the walls of a building.",
+        "incorrect_answers": [
+            "A type of tree or plant that grows near buildings.",
+            "The space directly above the interior ceiling of a room.",
+            "A decorative feature used in interior design."
+        ],
+        "explanation": "'Eaves' refers to the lower edges of a roof that overhang the sides of a building. It helps to direct rainwater away from the structure. The term can also be used in the phrase 'eavesdropping,' meaning to secretly listen to conversations."
+    },
+    {
+        "question": "What does 'emphatic' mean?",
+        "correct_answer": "Expressing something with emphasis, force, or conviction.",
+        "incorrect_answers": [
+            "Being nonchalant or indifferent in expression.",
+            "Communicating in a vague or unclear manner.",
+            "Indicating a lack of interest or importance."
+        ],
+        "explanation": "'Emphatic' refers to speaking or acting with strong emphasis or conviction, often to ensure clarity or assertiveness. For example, an emphatic statement is one delivered with strong feelings to make it clear that the speaker is serious."
+    },
+    {
+        "question": "What does 'earnest' mean?",
+        "correct_answer": "Serious, sincere, and showing deep intention or commitment.",
+        "incorrect_answers": [
+            "Casual and carefree, lacking serious consideration.",
+            "Uncertain or hesitant about a decision or action.",
+            "Playful and lighthearted in behavior or attitude."
+        ],
+        "explanation": "'Earnest' refers to someone who is sincere, serious, and fully committed to what they say or do. It can describe an attitude or approach that reflects genuine concern and deep purpose, such as in an 'earnest attempt' to succeed."
+    },
+    {
+        "question": "What does 'askance' mean?",
+        "correct_answer": "With suspicion, doubt, or a sideways glance.",
+        "incorrect_answers": [
+            "With open approval or admiration.",
+            "In a straightforward and honest manner.",
+            "Without concern or regard for the situation."
+        ],
+        "explanation": "'Askance' refers to looking at something or someone with suspicion or disapproval, often by glancing sideways. It can also suggest a feeling of doubt or mistrust in a situation or person."
+    },
+    {
+        "question": "What does 'audacious' mean?",
+        "correct_answer": "Bold, daring, or lacking respect for authority or norms.",
+        "incorrect_answers": [
+            "Reserved and cautious in behavior.",
+            "Polite and respectful in manner or attitude.",
+            "Careful and respectful of traditional boundaries."
+        ],
+        "explanation": "'Audacious' describes someone or something that is bold, daring, or even reckless. It can also refer to actions that challenge social conventions or defy expectations, like an audacious idea that disrupts the norm."
+    },
+    {
+        "question": "What does 'amanuensis' mean?",
+        "correct_answer": "A person who writes down or transcribes what someone else dictates.",
+        "incorrect_answers": [
+            "A type of secretary who handles office logistics.",
+            "A physician who diagnoses and prescribes medications.",
+            "A teacher who provides lessons and academic instruction."
+        ],
+        "explanation": "'Amanuensis' refers to someone who writes down or transcribes spoken words, such as a secretary or scribe. It is often used in historical contexts where a person recorded information dictated by another individual."
+    },
+    {
+        "question": "What does 'aorta' mean?",
+        "correct_answer": "The main artery that carries oxygenated blood from the heart to the rest of the body.",
+        "incorrect_answers": [
+            "A vein that carries deoxygenated blood to the heart.",
+            "A small vessel that supplies oxygen to the brain.",
+            "A muscle that contracts to pump blood to the lungs."
+        ],
+        "explanation": "'Aorta' is the large artery that emerges from the heart and carries oxygen-rich blood throughout the body. It is the primary conduit for blood flow from the heart to various organs and tissues."
+    },
+    {
+        "question": "What does 'dilettante' mean?",
+        "correct_answer": "A person who dabbles in an art or field without serious commitment or expertise.",
+        "incorrect_answers": [
+            "An expert or professional in a particular field.",
+            "A person who has a deep, well-rounded knowledge of multiple subjects.",
+            "A mentor who provides guidance and instruction to others."
+        ],
+        "explanation": "'Dilettante' refers to someone who engages in an activity, especially the arts, without deep knowledge or commitment. This term is often used in a somewhat disparaging way to describe a person who lacks expertise."
+    },
+    {
+        "question": "What does 'dispossessed' mean?",
+        "correct_answer": "Having been deprived of property, rights, or status, especially through force or injustice.",
+        "incorrect_answers": [
+            "Owning or possessing something of value.",
+            "Being in a state of wealth or prosperity.",
+            "Being granted new rights or privileges."
+        ],
+        "explanation": "'Dispossessed' refers to the loss of something valuable, such as land, property, or rights, often due to unfair treatment, force, or societal upheaval. A 'dispossessed' person is one who no longer possesses what they once had."
+    },
+    {
+        "question": "What does 'confabulation' mean?",
+        "correct_answer": "The act of talking informally or engaging in casual conversation, or in psychology, the creation of false memories without intent to deceive.",
+        "incorrect_answers": [
+            "A formal agreement between two parties.",
+            "A type of technical jargon used in scientific discussions.",
+            "A process of recognizing and correcting past mistakes."
+        ],
+        "explanation": "'Confabulation' can refer to casual conversation or informal talk. In psychological terms, it refers to the creation of false memories that occur without the intention to deceive, often due to memory dysfunction."
+    },
+    {
+        "question": "What does 'fickle' mean?",
+        "correct_answer": "Changing frequently, especially with regard to one's loyalties, interests, or affections.",
+        "incorrect_answers": [
+            "Steady, consistent, and dependable in behavior.",
+            "Strongly loyal or committed to a specific cause or idea.",
+            "Unchanging in one's preferences or desires."
+        ],
+        "explanation": "'Fickle' describes someone whose behavior, feelings, or preferences change frequently, often in an unpredictable or unreliable way. For example, a fickle friend might change their opinion or mood without warning."
+    },
+    {
+        "question": "What does 'catechism' mean?",
+        "correct_answer": "A summary or explanation of the principles of a religion, often in the form of questions and answers.",
+        "incorrect_answers": [
+            "A ritual or ceremony performed during religious worship.",
+            "A philosophical theory about the nature of existence.",
+            "A historical account of religious conflicts and wars."
+        ],
+        "explanation": "'Catechism' refers to a religious instructional guide, often in the form of a series of questions and answers designed to teach the principles of faith. It is most commonly associated with Christianity, particularly in Catholic and Protestant traditions."
+    },
+    {
+        "question": "What does 'ambulate' mean?",
+        "correct_answer": "To walk or move about.",
+        "incorrect_answers": [
+            "To sit or remain still.",
+            "To jump or leap.",
+            "To crawl or drag oneself."
+        ],
+        "explanation": "'Ambulate' is a formal or literary term meaning to walk or move around. It is derived from the Latin word 'ambulare,' meaning to walk. This term is less commonly used in everyday speech but might appear in literature or medical contexts."
+    },
+    {
+        "question": "What does 'anachronism' mean?",
+        "correct_answer": "Something that is out of its proper time period, often placed in an inappropriate historical context.",
+        "incorrect_answers": [
+            "A new and innovative technology.",
+            "A random occurrence with no clear pattern.",
+            "A timeless object that transcends generations."
+        ],
+        "explanation": "'Anachronism' refers to something that is not in its correct historical or chronological time. For example, a character in a film set in the 18th century using a smartphone would be an anachronism, as smartphones did not exist at that time."
+    },
+    {
+        "question": "What does 'burlesque' mean?",
+        "correct_answer": "A form of entertainment or performance that humorously exaggerates or mocks something, often in a satirical or absurd manner.",
+        "incorrect_answers": [
+            "A serious and dramatic form of storytelling.",
+            "A type of classical music performance.",
+            "A refined form of ballet dance."
+        ],
+        "explanation": "'Burlesque' is a genre of theatrical performance known for its comedic exaggeration, satire, and mockery. It often includes elements of parody, physical comedy, and provocative humor, historically blending dance and comedy into a single act."
+    },
+    {
+        "question": "What does 'calvary' mean?",
+        "correct_answer": "The place where Jesus was crucified, or a unit of soldiers mounted on horseback.",
+        "incorrect_answers": [
+            "A term used to describe a naval battle formation.",
+            "A type of ancient Roman chariot.",
+            "A form of artillery used during the medieval period."
+        ],
+        "explanation": "'Calvary' refers to both a biblical location where Jesus Christ was crucified and a military term for troops that fight on horseback. The two meanings are distinct but share historical significance in religious and military contexts."
+    },
+    {
+        "question": "What does 'clapboard' mean?",
+        "correct_answer": "A type of wooden siding used on buildings, typically made of narrow planks with edges that overlap.",
+        "incorrect_answers": [
+            "A type of roofing material used for protection from rain.",
+            "A metal tool used in carpentry for shaping wood.",
+            "A large flatboard used in painting large surfaces."
+        ],
+        "explanation": "'Clapboard' is a term used for a type of wooden siding or exterior wall covering, commonly found on houses. The planks are installed horizontally, with each board slightly overlapping the one below it to protect against weather."
+    },
+    {
+        "question": "What does 'dogmatic' mean?",
+        "correct_answer": "Stubbornly adhering to a set of principles or beliefs, often without considering other perspectives.",
+        "incorrect_answers": [
+            "Flexible and open-minded in considering new ideas.",
+            "Lacking any clear principles or guiding beliefs.",
+            "Easily influenced by the opinions of others."
+        ],
+        "explanation": "'Dogmatic' refers to someone who rigidly adheres to their beliefs or principles, often without room for doubt or change. A dogmatic person might insist that their way of thinking is the only correct one, disregarding alternative viewpoints."
+    },
+    {
+        "question": "What does 'aesthete' mean?",
+        "correct_answer": "A person who has a deep appreciation for art, beauty, or good taste.",
+        "incorrect_answers": [
+            "A person who seeks to avoid art and culture.",
+            "A person who is indifferent to artistic expression.",
+            "A person who values utility over aesthetics."
+        ],
+        "explanation": "'Aesthete' refers to someone who is highly sensitive to, or appreciative of, art and beauty. They tend to have refined tastes and value artistic expression in all forms, such as in visual art, literature, music, or design."
+    },
+    {
+        "question": "What does 'debonair' mean?",
+        "correct_answer": "Charming, suave, and sophisticated in appearance and manner.",
+        "incorrect_answers": [
+            "Rough and uncaring in behavior.",
+            "Extremely shy or withdrawn.",
+            "Unkempt and disorderly in appearance."
+        ],
+        "explanation": "'Debonair' refers to someone who is elegant, graceful, and charming, often in a confident and carefree manner. The term is frequently used to describe men with sophisticated charm and social ease."
+    },
+    {
+        "question": "What does 'ennui' mean?",
+        "correct_answer": "A feeling of weariness and dissatisfaction arising from a lack of interest or excitement.",
+        "incorrect_answers": [
+            "An intense sense of joy and satisfaction.",
+            "A temporary state of physical exhaustion.",
+            "A sense of contentment and inner peace."
+        ],
+        "explanation": "'Ennui' refers to a state of boredom or dissatisfaction caused by a lack of excitement or novelty. It is often used to describe a more existential feeling of listlessness, where life feels dull and uninteresting."
+    },
+    {
+        "question": "What does 'entreaty' mean?",
+        "correct_answer": "An earnest or urgent request or plea.",
+        "incorrect_answers": [
+            "A command or order given to someone.",
+            "A casual suggestion or recommendation.",
+            "A formal announcement or declaration."
+        ],
+        "explanation": "'Entreaty' refers to a serious, heartfelt plea or request, often made with urgency. It is typically used in the context of asking for something deeply or emotionally, like a desperate entreaty for help."
+    },
+    {
+        "question": "What does 'equanimity' mean?",
+        "correct_answer": "Mental calmness, composure, and evenness of temper, especially in difficult situations.",
+        "incorrect_answers": [
+            "A state of agitation or nervousness.",
+            "A condition of extreme sadness or grief.",
+            "An unorganized and chaotic state of mind."
+        ],
+        "explanation": "'Equanimity' refers to the ability to maintain mental stability and calmness, even when faced with stress, difficulty, or adversity. It is often seen as a sign of emotional intelligence and resilience, allowing someone to handle challenges with poise."
+    },
+    {
+        "question": "What does 'ersatz' mean?",
+        "correct_answer": "A substitute, typically one that is inferior or artificial.",
+        "incorrect_answers": [
+            "A high-quality, original product.",
+            "An authentic version of something.",
+            "A naturally occurring substance."
+        ],
+        "explanation": "'Ersatz' refers to something that is an imitation or substitute, often of lower quality. It is typically used to describe products that are not genuine or authentic, such as ersatz coffee made from a substitute ingredient."
+    },
+    {
+        "question": "What does 'erudite' mean?",
+        "correct_answer": "Having or showing extensive knowledge gained from reading and study.",
+        "incorrect_answers": [
+            "Being unaware of complex concepts.",
+            "Having superficial knowledge on a topic.",
+            "Being uninterested in learning."
+        ],
+        "explanation": "'Erudite' describes someone who is highly educated, well-read, and knowledgeable, especially in academic or intellectual areas. An erudite person typically has a deep understanding of a wide range of topics."
+    },
+    {
+        "question": "What does 'exposition' mean?",
+        "correct_answer": "A comprehensive description or explanation of an idea or concept.",
+        "incorrect_answers": [
+            "A brief summary of an event.",
+            "An argument or debate on a subject.",
+            "A casual presentation without detail."
+        ],
+        "explanation": "'Exposition' refers to a detailed explanation or presentation of information, often used in writing or speeches to introduce a subject or background. In literature, it refers to the part of a story where the setting and characters are introduced."
+    },
+    {
+        "question": "What does 'expurgated' mean?",
+        "correct_answer": "Having been edited or censored to remove content that is considered inappropriate or offensive.",
+        "incorrect_answers": [
+            "Having been embellished or exaggerated.",
+            "Having been altered to add more details.",
+            "Having been left in its raw, original form."
+        ],
+        "explanation": "'Expurgated' refers to the process of removing undesirable or offensive material from a text or work. This could involve censoring explicit content or eliminating sections deemed inappropriate for certain audiences."
+    },
+    {
+        "question": "What does 'extant' mean?",
+        "correct_answer": "Still in existence; surviving, especially from an earlier time.",
+        "incorrect_answers": [
+            "Not yet discovered or known.",
+            "Completely destroyed or lost.",
+            "Existing only in theory or ideas."
+        ],
+        "explanation": "'Extant' refers to something that still exists, particularly something from an earlier period. For example, an extant manuscript is one that has survived over time and is still available today, as opposed to being lost or destroyed."
+    },
+    {
+        "question": "What does 'facetious' mean?",
+        "correct_answer": "Treating serious issues with deliberately inappropriate humor; flippant.",
+        "incorrect_answers": [
+            "Offering deep and thoughtful insight.",
+            "Demonstrating respectful and serious behavior.",
+            "Expressing sincere concern or care."
+        ],
+        "explanation": "'Facetious' refers to humor that is inappropriate for the situation, often lighthearted or playful, but can be seen as disrespectful when addressing serious matters. It involves making jokes or light comments where seriousness is expected."
+    },
+    {
+        "question": "What does 'fastidious' mean?",
+        "correct_answer": "Very attentive to detail, cleanliness, and accuracy; difficult to please.",
+        "incorrect_answers": [
+            "Careless and indifferent to detail.",
+            "Tending to be messy or disorganized.",
+            "Not concerned with precision or perfection."
+        ],
+        "explanation": "'Fastidious' describes someone who is very particular and careful, especially about cleanliness, organization, or the quality of work. A fastidious person tends to be hard to satisfy and expects things to be done perfectly."
+    },
+    {
+        "question": "What does 'florid' mean?",
+        "correct_answer": "Excessively intricate or elaborate, often in a way that seems overdone.",
+        "incorrect_answers": [
+            "Simple and plain in appearance.",
+            "Dark and muted in color.",
+            "Purely functional and without decoration."
+        ],
+        "explanation": "'Florid' refers to something that is overly elaborate, ornate, or detailed. It is often used to describe writing, speech, or artwork that is excessively decorative or showy, sometimes to the point of being gaudy."
+    },
+    {
+        "question": "What does 'freeman' mean?",
+        "correct_answer": "A person who is not a slave or serf and enjoys the privileges and rights of citizenship.",
+        "incorrect_answers": [
+            "A person who is in charge of a group or organization.",
+            "A person who owns land but is not part of a community.",
+            "A person who works without compensation."
+        ],
+        "explanation": "'Freeman' refers to someone who is not enslaved or bound by feudal obligations and enjoys full rights as a citizen. Historically, the term was used to describe individuals who were not serfs or slaves and had legal freedom and autonomy."
+    },
+    {
+        "question": "What does 'hubris' mean?",
+        "correct_answer": "Excessive pride, arrogance, or self-confidence, often leading to downfall.",
+        "incorrect_answers": [
+            "A sense of humility and modesty.",
+            "A deep understanding and respect for others.",
+            "A form of self-deprecation or modest behavior."
+        ],
+        "explanation": "'Hubris' refers to excessive pride or arrogance, often seen as a character flaw that leads to a person's downfall. It originates from Greek tragedies, where characters who displayed hubris would face retribution from the gods for their overconfidence."
+    },
+    {
+        "question": "What does 'waning moon' mean?",
+        "correct_answer": "The phase of the moon when it appears to decrease in size after the full moon.",
+        "incorrect_answers": [
+            "The phase of the moon when it appears to increase in size.",
+            "A phase of the moon that occurs between the new moon and full moon.",
+            "The period when the moon is not visible from Earth."
+        ],
+        "explanation": "The 'waning moon' refers to the phase in which the illuminated part of the moon decreases after the full moon, leading up to the new moon phase. This term describes the period when the moon’s visible surface progressively shrinks."
+    },
+    {
+        "question": "What does 'coterie' mean?",
+        "correct_answer": "A small, exclusive group of people with a common interest or purpose.",
+        "incorrect_answers": [
+            "A large, public assembly or gathering.",
+            "An organization focused on community service.",
+            "A solitary individual working alone."
+        ],
+        "explanation": "'Coterie' refers to a small, often exclusive group of individuals who share a common interest, profession, or goal. It is typically used to describe groups that are somewhat closed off from outsiders and united by shared characteristics."
+    },
+    {
+        "question": "What does 'surcease' mean?",
+        "correct_answer": "The cessation or stopping of something, especially an activity or action.",
+        "incorrect_answers": [
+            "The continuation or extension of something.",
+            "A dramatic increase or escalation in action.",
+            "The beginning or start of something new."
+        ],
+        "explanation": "'Surcease' refers to the act of ceasing or halting an action, event, or process. It is commonly used to describe the end of something, particularly when there is an element of finality or completion involved."
+    },
+    {
+        "question": "What does 'tertiary' mean?",
+        "correct_answer": "Third in rank, importance, or order; the third level in a hierarchy.",
+        "incorrect_answers": [
+            "First in importance or order.",
+            "Second in importance or order.",
+            "Last or least important in a sequence."
+        ],
+        "explanation": "'Tertiary' refers to the third level or rank in a series or hierarchy. In contexts such as education, classification, or medical treatment, tertiary often denotes a third-tier level of importance or development."
+    },
+    {
+        "question": "What does 'supine' mean?",
+        "correct_answer": "Lying on the back, face upward.",
+        "incorrect_answers": [
+            "Lying on the stomach, face downward.",
+            "Sitting upright with posture straight.",
+            "Standing with the head tilted forward."
+        ],
+        "explanation": "'Supine' refers to a position where a person is lying on their back, facing upward. It is the opposite of prone, which refers to lying face down. This term is often used in medical, anatomical, or physical contexts."
+    },
+    {
+        "question": "What does 'maenad' mean?",
+        "correct_answer": "A female follower of Dionysus in Greek mythology, often associated with frenzied, ecstatic behavior.",
+        "incorrect_answers": [
+            "A female philosopher of ancient Greece.",
+            "A revered priestess in Roman mythology.",
+            "A wise, virtuous woman in Greek literature."
+        ],
+        "explanation": "'Maenad' refers to the female followers of Dionysus, the Greek god of wine and revelry, who were often depicted in a state of frenzy or ecstasy, engaging in wild, uncontrolled behavior. The term has come to symbolize unrestrained passion or madness."
+    },
+    {
+        "question": "What does 'inimical' mean?",
+        "correct_answer": "Hostile or unfriendly; harmful or adverse in nature.",
+        "incorrect_answers": [
+            "Friendly and supportive in nature.",
+            "Neutral and indifferent towards others.",
+            "Helpful and beneficial to growth."
+        ],
+        "explanation": "'Inimical' describes something that is hostile, antagonistic, or harmful. It is often used to describe relationships or conditions that are detrimental, either in a literal or figurative sense, such as inimical forces or behaviors."
+    },
+    {
+        "question": "What does 'peremptory' mean?",
+        "correct_answer": "Leaving no opportunity for refusal or debate; imperious or authoritative.",
+        "incorrect_answers": [
+            "Open to negotiation or compromise.",
+            "Showing deference or respect for others' opinions.",
+            "Passive and non-confrontational."
+        ],
+        "explanation": "'Peremptory' refers to an attitude or action that is authoritative and does not allow for disagreement or delay. It can describe a command or directive that is final, unyielding, and expects immediate compliance, often in an overbearing way."
+    },
+    {
+        "question": "What does 'stalwart' mean?",
+        "correct_answer": "Loyal, reliable, and hardworking; resolute and determined.",
+        "incorrect_answers": [
+            "Unreliable or inconsistent in behavior.",
+            "Easily influenced by others.",
+            "Timid and lacking in confidence."
+        ],
+        "explanation": "'Stalwart' describes someone who is unwavering in their commitment, loyal, and reliable. It is often used to praise someone’s strength of character or steadfastness, particularly when they show determination and resolve in difficult situations."
+    },
+    {
+        "question": "What does 'depredation' mean?",
+        "correct_answer": "The act of damaging or plundering something, often involving destruction or robbery.",
+        "incorrect_answers": [
+            "The act of protecting or preserving something.",
+            "A peaceful and constructive activity.",
+            "A form of healing or restoration."
+        ],
+        "explanation": "'Depredation' refers to the act of attacking, damaging, or plundering, often with the intent of causing harm or destruction. It is commonly used to describe the effects of destructive actions, such as looting or ravaging a property."
+    },
+    {
+        "question": "What does 'perfunctory' mean?",
+        "correct_answer": "Done without real interest or effort; superficial and routine.",
+        "incorrect_answers": [
+            "Done with great attention and care.",
+            "Done with enthusiasm and thoroughness.",
+            "Done out of obligation but with deep passion."
+        ],
+        "explanation": "'Perfunctory' describes an action performed with minimal effort or care, often as a formality or out of habit. It suggests that the task is done mechanically, without genuine interest or dedication."
+    },
+    {
+        "question": "What does 'pavane' mean?",
+        "correct_answer": "A slow, graceful dance of the Renaissance period, often performed in a procession.",
+        "incorrect_answers": [
+            "A fast-paced and energetic folk dance.",
+            "A traditional war dance from ancient times.",
+            "A ceremonial speech or chant."
+        ],
+        "explanation": "'Pavane' refers to a slow, elegant dance that was popular during the Renaissance period, often performed at court or in formal settings. The term is also used to describe music written for this type of dance."
+    },
+    {
+        "question": "What does 'callow' mean?",
+        "correct_answer": "Inexperienced and immature; lacking adult sophistication or judgment.",
+        "incorrect_answers": [
+            "Experienced and wise beyond years.",
+            "Foolish and deliberately reckless.",
+            "Wise and thoughtful in behavior."
+        ],
+        "explanation": "'Callow' refers to someone who is young, immature, or lacking in experience. It often describes someone who is still learning or growing and may not yet have developed the skills or understanding of more seasoned individuals."
+    },
+    {
+        "question": "What does 'mercurial' mean?",
+        "correct_answer": "Subject to sudden or unpredictable changes of mood or behavior.",
+        "incorrect_answers": [
+            "Calm and consistently stable in behavior.",
+            "Highly cautious and deliberate in actions.",
+            "Rigid and resistant to change."
+        ],
+        "explanation": "'Mercurial' refers to someone whose mood or behavior can change rapidly and unpredictably, much like the Roman god Mercury, who was known for his quick and changing nature. It suggests volatility or fickleness."
+    },
+    {
+        "question": "What does 'polemical' mean?",
+        "correct_answer": "Relating to or involving strong, controversial arguments or disputes.",
+        "incorrect_answers": [
+            "A neutral and balanced form of discussion.",
+            "An approach based on collaboration and consensus.",
+            "A form of constructive criticism focused on improvement."
+        ],
+        "explanation": "'Polemical' refers to communication or writing that is strongly critical or argumentative, often on controversial or divisive topics. It typically involves heated debate or dispute over specific ideas or ideologies."
+    },
+    {
+        "question": "What does 'incarnadined' mean?",
+        "correct_answer": "Made red, or blood-colored; crimson.",
+        "incorrect_answers": [
+            "Made blue or calm in color.",
+            "Turned to a shade of green.",
+            "Became yellow or pale in appearance."
+        ],
+        "explanation": "'Incarnadined' refers to something that has been turned red or crimson, often used to describe the color of blood or an intense red hue. It is a poetic or literary term for a vibrant, reddish color."
+    },
+    {
+        "question": "What does 'penurious' mean?",
+        "correct_answer": "Extremely poor or lacking in resources, especially money; miserly.",
+        "incorrect_answers": [
+            "Affluent and wealthy, with abundant resources.",
+            "Generous and willing to share resources.",
+            "Fiscally responsible but not necessarily poor."
+        ],
+        "explanation": "'Penurious' describes a state of extreme poverty or lack of financial resources. It can also be used to refer to someone who is extremely frugal or miserly, unwilling to spend money unnecessarily."
+    },
+    {
+        "question": "What does 'lascivious' mean?",
+        "correct_answer": "Driven by lust or sexual desire; lewd or provocative in nature.",
+        "incorrect_answers": [
+            "Chaste and morally upright.",
+            "Purely intellectual and rational in behavior.",
+            "Virtuous and respectful in actions."
+        ],
+        "explanation": "'Lascivious' refers to behavior, thoughts, or actions that are driven by inappropriate or excessive sexual desire. It carries a negative connotation, implying that the behavior is immoral or indecent."
+    },
+    {
+        "question": "What does 'prudent' mean?",
+        "correct_answer": "Wise, careful, and judicious in making decisions or taking actions.",
+        "incorrect_answers": [
+            "Impulsive and rash in decision-making.",
+            "Careless and reckless in behavior.",
+            "Indifferent to the consequences of actions."
+        ],
+        "explanation": "'Prudent' describes someone who is wise, sensible, and cautious, especially when making decisions that may have long-term consequences. A prudent person thinks carefully and avoids unnecessary risks."
+    },
+    {
+        "question": "What does 'scion' mean?",
+        "correct_answer": "A descendant or heir, especially of a noble or wealthy family.",
+        "incorrect_answers": [
+            "A leader of a rebellion or revolution.",
+            "A farmer or person skilled in agriculture.",
+            "A type of plant used for breeding or cultivation."
+        ],
+        "explanation": "'Scion' typically refers to a descendant or heir, especially someone from a prominent family. It can also be used in a botanical context to describe a young shoot or twig from a plant, used for grafting."
+    },
+    {
+        "question": "What does 'pellucid' mean?",
+        "correct_answer": "Clear, transparent, or easily understood.",
+        "incorrect_answers": [
+            "Obscure or difficult to comprehend.",
+            "Dark and opaque in nature.",
+            "Highly detailed or intricate."
+        ],
+        "explanation": "'Pellucid' refers to something that is clear and easy to understand, often used to describe both literal clarity, such as a clear water stream, and figurative clarity, such as a well-explained idea or concept."
+    },
+    {
+        "question": "What does 'sepulchral' mean?",
+        "correct_answer": "Relating to a tomb or burial; gloomy or depressing in tone.",
+        "incorrect_answers": [
+            "Bright and cheerful in atmosphere.",
+            "Sacred and holy in nature.",
+            "Funky and lively in style."
+        ],
+        "explanation": "'Sepulchral' is used to describe anything related to a tomb or grave, and is often used to characterize something dark, somber, or mournful, like a funeral or an ominous, death-like atmosphere."
+    },
+    {
+        "question": "What does 'clangour' mean?",
+        "correct_answer": "A loud, resonant noise, especially one that is harsh or jarring.",
+        "incorrect_answers": [
+            "A soft, soothing melody or sound.",
+            "A muted and distant noise.",
+            "A rhythmic sound of footsteps."
+        ],
+        "explanation": "'Clangour' refers to a loud, harsh, and resonant noise, often associated with metal striking metal or other loud, clanging sounds. It can be used metaphorically to describe an unpleasant or jarring noise."
+    },
+    {
+        "question": "What does 'howdah' mean?",
+        "correct_answer": "A raised platform or carriage on the back of an elephant, often used in Asia or Africa.",
+        "incorrect_answers": [
+            "A type of saddle used by horseback riders.",
+            "A traditional boat used for river transport.",
+            "A type of ceremonial sword or weapon."
+        ],
+        "explanation": "'Howdah' refers to a seat or platform placed on the back of an elephant, often used by royalty or dignitaries for traveling. It was especially common in India and other parts of Asia, providing a raised and secure view."
+    },
+    {
+        "question": "What does 'sagacious' mean?",
+        "correct_answer": "Having or showing good judgment, wisdom, or insight.",
+        "incorrect_answers": [
+            "Quick to act without thought or deliberation.",
+            "Unwilling to take risks or change opinions.",
+            "Deceptively manipulative in behavior."
+        ],
+        "explanation": "'Sagacious' describes someone who is wise and has keen judgment or insight. It refers to individuals who can make sound decisions based on experience, knowledge, and understanding of situations."
+    },
+    {
+        "question": "What does 'waxing moon' mean?",
+        "correct_answer": "A phase of the moon where it appears to grow larger, leading up to a full moon.",
+        "incorrect_answers": [
+            "A phase of the moon where it is shrinking or getting smaller.",
+            "A rare lunar eclipse when the moon becomes invisible.",
+            "A period of complete darkness in the lunar cycle."
+        ],
+        "explanation": "'Waxing moon' refers to the phase of the moon in which the visible illuminated portion is increasing, from new moon to full moon. It is often seen as a time of growth or buildup."
+    },
+    {
+        "question": "What does 'munificent' mean?",
+        "correct_answer": "Very generous or giving, especially with money or resources.",
+        "incorrect_answers": [
+            "Selfish and unwilling to share.",
+            "Reserved in speech or action.",
+            "Overly critical or judgmental."
+        ],
+        "explanation": "'Munificent' describes someone who is extremely generous, especially when giving gifts or resources. It refers to acts of largesse and the willingness to share wealth or resources abundantly."
+    },
+    {
+        "question": "What does 'laconic' mean?",
+        "correct_answer": "Brief and concise in speech or writing, often to the point of being terse.",
+        "incorrect_answers": [
+            "Verbose and overly detailed.",
+            "Unclear or confusing in communication.",
+            "Expressive and elaborate in speech."
+        ],
+        "explanation": "'Laconic' refers to a style of communication that is brief, concise, and to the point. It originates from the Laconians (Spartans), who were known for their succinct and often blunt speech."
+    },
+    {
+        "question": "What does 'toilsome' mean?",
+        "correct_answer": "Requiring a lot of effort, hard work, and persistence, often tedious or exhausting.",
+        "incorrect_answers": [
+            "Effortless and easy to accomplish.",
+            "Requiring quick and efficient action.",
+            "Exciting and full of adventure."
+        ],
+        "explanation": "'Toilsome' describes tasks or work that is laborious, strenuous, and requires a great deal of time and effort. It often refers to activities that are physically demanding and exhausting."
+    },
+    {
+        "question": "What does 'contretemps' mean?",
+        "correct_answer": "An unexpected and unfortunate situation or event, especially a minor dispute or mishap.",
+        "incorrect_answers": [
+            "A formal meeting or gathering for an important event.",
+            "A deliberate act of kindness or charity.",
+            "A victory or triumph in a competition."
+        ],
+        "explanation": "'Contretemps' refers to an unfortunate or awkward situation, often a minor misunderstanding or mishap. It can also describe a brief conflict or disagreement, usually without serious consequences."
+    },
+    {
+        "question": "What does 'supercilious' mean?",
+        "correct_answer": "Behaving or looking as though one thinks they are superior to others; haughty or arrogant.",
+        "incorrect_answers": [
+            "Modest and humble in behavior.",
+            "Friendly and approachable.",
+            "Dutiful and considerate of others' feelings."
+        ],
+        "explanation": "'Supercilious' describes a person who displays an attitude of arrogance or superiority, often manifesting in condescending gestures or behavior. It suggests looking down on others as though they are inferior."
+    },
+    {
+        "question": "What does 'raconteur' mean?",
+        "correct_answer": "A person who is skilled at telling stories, particularly in an engaging and entertaining way.",
+        "incorrect_answers": [
+            "A person who leads large political movements.",
+            "A person who specializes in writing scientific papers.",
+            "A person who creates original artwork or designs."
+        ],
+        "explanation": "'Raconteur' refers to someone who is particularly good at telling stories, often in a charming or captivating manner. The term is typically used to describe people who excel in conversation or storytelling."
+    },
+    {
+        "question": "What does 'parsimony' mean?",
+        "correct_answer": "The quality of being extremely reluctant to spend money or use resources; excessive thriftiness.",
+        "incorrect_answers": [
+            "Generosity and a willingness to share resources freely.",
+            "An attitude of openness and indulgence towards luxury.",
+            "A habit of investing large amounts of money in risky ventures."
+        ],
+        "explanation": "'Parsimony' refers to extreme frugality or stinginess, where a person avoids spending money or using resources unnecessarily. It often has a negative connotation, suggesting an excessive reluctance to part with money."
+    },
+    {
+        "question": "What does 'belligerent' mean?",
+        "correct_answer": "Hostile and aggressive; engaged in or eager for conflict or war.",
+        "incorrect_answers": [
+            "Calm and peaceful, avoiding confrontation.",
+            "Playful and humorous in interactions.",
+            "Uninterested in conflicts and preferring to remain neutral."
+        ],
+        "explanation": "'Belligerent' describes a person or group that is aggressive, combative, or eager for conflict. It can be used to describe attitudes, behavior, or even nations engaged in war or strife."
+    },
+    {
+        "question": "What does 'omniscient' mean?",
+        "correct_answer": "Having complete or unlimited knowledge, awareness, or understanding; all-knowing.",
+        "incorrect_answers": [
+            "Having a limited or incomplete understanding of certain topics.",
+            "Being unable to understand or perceive any information.",
+            "Focusing only on specific areas of knowledge."
+        ],
+        "explanation": "'Omniscient' is a term that refers to possessing all knowledge or complete understanding of all things. It is often used in literature, especially in reference to an omniscient narrator who knows everything about the story and characters."
+    },
+    {
+        "question": "What does 'pithy' mean?",
+        "correct_answer": "Concise and forcefully expressive; brief but meaningful.",
+        "incorrect_answers": [
+            "Long-winded and elaborate in expression.",
+            "Lacking substance or importance.",
+            "Difficult to understand or ambiguous."
+        ],
+        "explanation": "'Pithy' refers to language or communication that is succinct, meaningful, and to the point. It typically conveys significant meaning in just a few words, often with a powerful impact."
+    },
+    {
+        "question": "What does 'garrulous' mean?",
+        "correct_answer": "Excessively talkative, especially about trivial matters.",
+        "incorrect_answers": [
+            "Reserved and quiet in conversation.",
+            "Focused and concise in speech.",
+            "Reluctant to speak or engage with others."
+        ],
+        "explanation": "'Garrulous' describes someone who talks a lot, often excessively, about unimportant or trivial matters. It is usually used in a negative context to imply that someone is unnecessarily verbose."
+    },
+    {
+        "question": "What does 'tacit' mean?",
+        "correct_answer": "Understood or implied without being stated openly; unspoken.",
+        "incorrect_answers": [
+            "Clearly stated or explicitly expressed.",
+            "Open to interpretation or ambiguity.",
+            "Reluctant or hesitant to express feelings."
+        ],
+        "explanation": "'Tacit' refers to something that is understood without being directly communicated. It often refers to unspoken agreements, actions, or assumptions that are made without verbal confirmation."
+    },
+    {
+        "question": "What does 'contrition' mean?",
+        "correct_answer": "The feeling of remorse or guilt for one's actions, especially after committing a wrong.",
+        "incorrect_answers": [
+            "A sense of joy or excitement about one's actions.",
+            "Indifference or lack of concern for others' feelings.",
+            "A deliberate act of defiance or rebellion."
+        ],
+        "explanation": "'Contrition' refers to a sincere feeling of regret and remorse for having done something wrong. It is often linked to asking for forgiveness and expressing a desire to make amends."
+    },
+    {
+        "question": "What does 'terse' mean?",
+        "correct_answer": "Brief and concise, often to the point of being abrupt or curt.",
+        "incorrect_answers": [
+            "Verbose and elaborately detailed.",
+            "Warm and friendly in communication.",
+            "Filled with unnecessary information."
+        ],
+        "explanation": "'Terse' describes language or speech that is short and to the point, often with little to no elaboration. While it can be efficient, it can sometimes come across as blunt or dismissive."
+    },
+    {
+        "question": "What does 'descant' mean?",
+        "correct_answer": "A melodic or ornamental voice or part added above the main melody in music, or a detailed discussion of a subject.",
+        "incorrect_answers": [
+            "The primary theme or melody in a musical composition.",
+            "A vocal line that supports the primary melody.",
+            "A method of harmonizing with the main melody."
+        ],
+        "explanation": "'Descant' has two meanings: in music, it refers to a higher, decorative melody added to the main tune, while in conversation, it can refer to an elaborate or extended discussion on a particular subject."
+    },
+    {
+        "question": "What does 'mnemonics' mean?",
+        "correct_answer": "A system or technique for improving memory, especially through associations or patterns.",
+        "incorrect_answers": [
+            "The process of forgetting information intentionally.",
+            "The method of studying something without taking notes.",
+            "A type of mental disorder that affects memory retention."
+        ],
+        "explanation": "'Mnemonics' are tools or techniques used to aid memory retention, often by creating associations, patterns, or acronyms that make recalling information easier."
+    },
+    {
+        "question": "What does 'arbitrator' mean?",
+        "correct_answer": "A person who is appointed to settle a dispute or conflict, typically in a neutral or unbiased manner.",
+        "incorrect_answers": [
+            "A person who instigates or provokes a conflict.",
+            "A person who enforces the terms of a legal contract.",
+            "A mediator who lacks the authority to make binding decisions."
+        ],
+        "explanation": "'Arbitrator' refers to an individual chosen to resolve a dispute, typically in legal or contractual matters, with the authority to make binding decisions, unlike a mediator who merely facilitates communication."
+    },
+    {
+        "question": "What does 'flippant' mean?",
+        "correct_answer": "Lacking proper respect or seriousness; casual and often disrespectful.",
+        "incorrect_answers": [
+            "Serious and respectful in demeanor.",
+            "Carefully considered and thought out.",
+            "Playful and humorous without being disrespectful."
+        ],
+        "explanation": "'Flippant' describes a tone or attitude that is light-hearted or casual to the point of being inappropriate or disrespectful. It typically refers to remarks or behavior that do not take matters seriously."
+    },
+    {
+        "question": "What does 'eclectic' mean?",
+        "correct_answer": "Deriving ideas, style, or taste from a broad and diverse range of sources.",
+        "incorrect_answers": [
+            "Sticking to a single, traditional style or method.",
+            "Rejecting all ideas or concepts outside of one's own belief system.",
+            "Focusing solely on one narrow area of knowledge."
+        ],
+        "explanation": "'Eclectic' refers to a mix of various influences or sources, often combining different ideas, styles, or approaches from a wide range of areas, rather than adhering to a single tradition or method."
+    },
+    {
+        "question": "What does 'nepotism' mean?",
+        "correct_answer": "The practice of favoring relatives or friends, especially by giving them jobs or advantages.",
+        "incorrect_answers": [
+            "The act of promoting someone based on their merit or achievements.",
+            "A system of giving rewards to all employees equally.",
+            "The promotion of external individuals based on their qualifications."
+        ],
+        "explanation": "'Nepotism' refers to favoritism shown to family members or friends when making decisions about employment or other benefits, often disregarding qualifications or merit."
+    },
+    {
+        "question": "What does 'azure' mean?",
+        "correct_answer": "A bright, clear blue color, often used to describe the sky or sea.",
+        "incorrect_answers": [
+            "A deep greenish-blue color.",
+            "A light purple hue often associated with sunsets.",
+            "A reddish-brown color commonly found in nature."
+        ],
+        "explanation": "'Azure' is a term used to describe a bright, clear blue color, often referring to the sky or the sea on a clear day."
+    },
+    {
+        "question": "What does 'probity' mean?",
+        "correct_answer": "The quality of having strong moral principles, honesty, and integrity.",
+        "incorrect_answers": [
+            "The ability to manipulate situations to one's advantage.",
+            "A casual disregard for rules and conventions.",
+            "A lack of concern for the truth in communication."
+        ],
+        "explanation": "'Probity' refers to a person's adherence to strong moral principles, including honesty, integrity, and uprightness, especially in professional and public life."
+    },
+    {
+        "question": "What does 'omnipotent' mean?",
+        "correct_answer": "Having unlimited power or authority; all-powerful.",
+        "incorrect_answers": [
+            "Having a limited range of influence over specific areas.",
+            "Being morally superior or wise in decision-making.",
+            "Having immense intelligence but not power."
+        ],
+        "explanation": "'Omnipotent' is a term used to describe someone or something that has unlimited power or authority, often used in reference to deities or supreme beings."
+    },
+    {
+        "question": "What does 'obsequious' mean?",
+        "correct_answer": "Excessively eager to please or obey someone, often in a servile or fawning manner.",
+        "incorrect_answers": [
+            "Being independent and self-reliant in decision-making.",
+            "Showing genuine admiration or respect for others.",
+            "Refusing to listen to or follow anyone's instructions."
+        ],
+        "explanation": "'Obsequious' refers to someone who is overly submissive or eager to please others, often to the point of being insincere or self-serving."
+    },
+    {
+        "question": "What does 'willowy' mean?",
+        "correct_answer": "Slim, graceful, and flexible, often used to describe a person's physique.",
+        "incorrect_answers": [
+            "Muscular and stocky in build.",
+            "Short and plump with a round shape.",
+            "Tall but stiff and rigid in posture."
+        ],
+        "explanation": "'Willowy' is used to describe someone who is slender, graceful, and flexible, often in reference to both their physique and movements."
+    },
+    {
+        "question": "What does 'stentorian' mean?",
+        "correct_answer": "Loud, powerful, and imposing in sound or voice.",
+        "incorrect_answers": [
+            "Soft and gentle in tone.",
+            "Mumbled or unclear in speech.",
+            "Quiet and reserved in communication."
+        ],
+        "explanation": "'Stentorian' refers to a voice or sound that is loud, clear, and powerful, often used to describe someone who speaks in a commanding or authoritative manner."
+    },
+    {
+        "question": "What does 'zealot' mean?",
+        "correct_answer": "A person who is fanatically committed to a particular cause, belief, or ideology.",
+        "incorrect_answers": [
+            "A person who is open-minded and tolerant of differing views.",
+            "A person who is indifferent and uninvolved in political or social issues.",
+            "A person who often changes their beliefs based on others' opinions."
+        ],
+        "explanation": "'Zealot' refers to someone who is fervently and sometimes fanatically dedicated to a particular cause, belief, or ideology, often with little regard for other perspectives."
+    },
+    {
+        "question": "What does 'freshet' mean?",
+        "correct_answer": "A sudden flood or surge of water, often caused by heavy rain or melting snow.",
+        "incorrect_answers": [
+            "A steady, predictable flow of water in a river.",
+            "A type of large, turbulent wave in the ocean.",
+            "A small, controlled stream used for irrigation purposes."
+        ],
+        "explanation": "'Freshet' is a term used to describe a sudden and often temporary surge of water in a river or stream, typically due to heavy rainfall or melting snow."
+    },
+    {
+        "question": "What does 'aphorism' mean?",
+        "correct_answer": "A concise, pointed statement that expresses a general truth or principle.",
+        "incorrect_answers": [
+            "A long, detailed explanation of a complex idea.",
+            "A rhetorical question designed to provoke thought.",
+            "A form of humor or sarcasm used to entertain others."
+        ],
+        "explanation": "'Aphorism' refers to a short and often insightful saying or statement that conveys a general truth or principle in a succinct manner."
+    }
+]

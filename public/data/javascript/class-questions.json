@@ -1,0 +1,82 @@
+[
+    {
+        "question": "What is the purpose of a class in JavaScript?",
+        "correct_answer": "A class in JavaScript is a blueprint for creating objects, defining properties and methods that the objects will have.",
+        "incorrect_answers": [
+            "A class in JavaScript is a function that creates a closure for a set of variables.",
+            "A class is used to define variables within a function scope.",
+            "A class in JavaScript is an object that can be instantiated multiple times."
+        ],
+        "explanation": "<p>In JavaScript, a <strong>class</strong> is a blueprint for creating objects that share common properties and methods. Classes are syntactic sugar over JavaScript's prototype-based inheritance, providing a cleaner and more intuitive way to define objects. The class definition itself doesn't create objects; objects are created using the <code>new</code> keyword.</p><pre><code>class Car {\n  constructor(make, model) {\n    this.make = make;\n    this.model = model;\n  }\n  display() {\n    console.log(`${this.make} ${this.model}`);\n  }\n}\nconst myCar = new Car('Toyota', 'Camry');\nmyCar.display();</code></pre>"
+    },
+    {
+        "question": "What are the key differences between using a function constructor and a class constructor in JavaScript?",
+        "correct_answer": "Class constructors are defined using the <code>constructor</code> keyword and allow for cleaner, more intuitive object creation, while function constructors rely on <code>this</code> and the <code>new</code> keyword.",
+        "incorrect_answers": [
+            "Function constructors are used to define methods, while class constructors are used to create objects.",
+            "Class constructors are a part of JavaScript's prototype-based inheritance, while function constructors are not.",
+            "Function constructors don't use the <code>new</code> keyword, while class constructors do."
+        ],
+        "explanation": "<p>Class constructors are introduced using the <strong>constructor</strong> keyword and are part of the modern ES6 class syntax. They provide a more intuitive way to initialize objects with properties. Function constructors, on the other hand, are traditional JavaScript functions that initialize objects using the <code>this</code> keyword and are often used with the <code>new</code> keyword to create instances.</p><pre><code>class Car {\n  constructor(make, model) {\n    this.make = make;\n    this.model = model;\n  }\n}\n\nfunction CarFunc(make, model) {\n  this.make = make;\n  this.model = model;\n}\nconst car1 = new Car('Toyota', 'Camry');\nconst car2 = new CarFunc('Honda', 'Civic');</code></pre>"
+    },
+    {
+        "question": "How does the <code>extends</code> keyword work in JavaScript classes?",
+        "correct_answer": "The <code>extends</code> keyword allows a class to inherit methods and properties from another class, establishing a prototype chain.",
+        "incorrect_answers": [
+            "The <code>extends</code> keyword is used to create a subclass of an object without inheritance.",
+            "The <code>extends</code> keyword allows a class to have multiple constructors.",
+            "The <code>extends</code> keyword creates a static reference to a class."
+        ],
+        "explanation": "<p>The <strong>extends</strong> keyword is used in JavaScript to create a class that inherits from another class, allowing it to access properties and methods of the parent class. This supports the concept of inheritance, where the child class can override or extend the functionality of the parent class.</p><pre><code>class Animal {\n  speak() {\n    console.log('Animal makes a sound');\n  }\n}\nclass Dog extends Animal {\n  speak() {\n    console.log('Dog barks');\n  }\n}\nconst dog = new Dog();\ndog.speak();  // Dog barks</code></pre>"
+    },
+    {
+        "question": "What happens if a method in a subclass overrides a method from its parent class in JavaScript?",
+        "correct_answer": "The subclass's method will be called instead of the parent class's method when invoked, effectively overriding the inherited behavior.",
+        "incorrect_answers": [
+            "The subclass will inherit the parent method but will not be able to call it directly.",
+            "The subclass's method will be ignored, and the parent method will always be used.",
+            "The subclass's method will call the parent method by default."
+        ],
+        "explanation": "<p>When a method in a subclass overrides a method from the parent class, the subclass's method takes precedence. This is a key feature of inheritance and polymorphism in JavaScript. If you want to call the parent method from the subclass, you can use the <code>super</code> keyword.</p><pre><code>class Animal {\n  speak() {\n    console.log('Animal makes a sound');\n  }\n}\nclass Dog extends Animal {\n  speak() {\n    console.log('Dog barks');\n    super.speak();  // Calls parent method\n  }\n}\nconst dog = new Dog();\ndog.speak();  // Dog barks\n                   // Animal makes a sound</code></pre>"
+    },
+    {
+        "question": "What are private class fields in JavaScript, and how do you define them?",
+        "correct_answer": "Private class fields are defined using the <code>#</code> symbol and are only accessible within the class they are defined in.",
+        "incorrect_answers": [
+            "Private fields are defined using <code>private</code> keyword and can be accessed from outside the class.",
+            "Private class fields are simply variables inside the constructor and can be accessed like any other field.",
+            "Private class fields are deprecated and should not be used in modern JavaScript."
+        ],
+        "explanation": "<p>Private class fields, introduced in ES2022, are properties that are only accessible inside the class they are defined in. They are denoted by the <code>#</code> symbol and cannot be accessed or modified from outside the class, providing true encapsulation.</p><pre><code>class Person {\n  #name;\n  constructor(name) {\n    this.#name = name;\n  }\n  getName() {\n    return this.#name;\n  }\n}\nconst person = new Person('Alice');\nconsole.log(person.getName());  // Alice\nconsole.log(person.#name);  // Error: Private field '#name' must be declared in an enclosing class</code></pre>"
+    },
+    {
+        "question": "Why would you use private class fields in JavaScript, and what are their limitations?",
+        "correct_answer": "Private class fields provide true encapsulation, ensuring that class properties cannot be modified directly from outside, thus enforcing better data integrity.",
+        "incorrect_answers": [
+            "Private class fields can be accessed by any class method, but not by any external function.",
+            "Private fields cannot be used in classes with a constructor function.",
+            "Private fields are only used for data storage and cannot have methods attached to them."
+        ],
+        "explanation": "<p>Private class fields are useful for ensuring data encapsulation and integrity. They prevent external code from directly accessing or modifying sensitive class data, which makes your code more secure and maintainable. The key limitation is that private fields can only be accessed inside the class they are defined in, making it impossible to access them outside.</p><pre><code>class BankAccount {\n  #balance;\n  constructor(initialBalance) {\n    this.#balance = initialBalance;\n  }\n  deposit(amount) {\n    this.#balance += amount;\n  }\n  getBalance() {\n    return this.#balance;\n  }\n}\nconst account = new BankAccount(100);\naccount.deposit(50);\nconsole.log(account.getBalance());  // 150\nconsole.log(account.#balance);  // Error</code></pre>"
+    },
+    {
+        "question": "What is the purpose of <code>static</code> methods and fields in a JavaScript class?",
+        "correct_answer": "Static methods and fields belong to the class itself, not to instances of the class, and can be called directly on the class without creating an instance.",
+        "incorrect_answers": [
+            "Static methods can only be used in object instances, not the class itself.",
+            "Static fields are used to define instance properties for objects created from the class.",
+            "Static methods and fields are deprecated and should not be used."
+        ],
+        "explanation": "<p>Static methods and fields are defined using the <strong>static</strong> keyword and are called on the class itself, not on instances. They are useful for utility functions or properties that are shared by all instances of the class. Static members cannot be accessed via instance methods.</p><pre><code>class MathUtils {\n  static add(a, b) {\n    return a + b;\n  }\n}\nconsole.log(MathUtils.add(5, 3));  // 8</code></pre>"
+    },
+    {
+        "question": "Can you explain how static initialization blocks work in JavaScript?",
+        "correct_answer": "Static initialization blocks allow you to initialize static fields or execute logic when a class is first evaluated, before any instances are created.",
+        "incorrect_answers": [
+            "Static initialization blocks are used to initialize instance variables before a class is defined.",
+            "Static initialization blocks only work with methods, not fields.",
+            "Static initialization blocks are deprecated in JavaScript and should be avoided."
+        ],
+        "explanation": "<p>Static initialization blocks are introduced using <strong>static</strong> and allow initialization of static fields or the execution of static code when a class is first evaluated. This makes it possible to set up static properties in a more organized way, especially when complex logic is needed.</p><pre><code>class MyClass {\n  static #value;\n  static {\n    MyClass.#value = 42;\n  }\n  static getValue() {\n    return MyClass.#value;\n  }\n}\nconsole.log(MyClass.getValue());  // 42</code></pre>"
+    }
+]

@@ -1,0 +1,292 @@
+[
+    {
+        "question": "What is the purpose of the `getStaticProps` function in Next.js?",
+        "correct_answer": "To fetch data at build time for static generation",
+        "incorrect_answers": [
+            "To fetch data at runtime for server-side rendering",
+            "To define client-side data fetching logic",
+            "To configure API routes",
+            "To handle routing dynamically"
+        ],
+        "explanation": "<p>The <code>getStaticProps</code> function in Next.js allows you to fetch data at build time. It is used to pre-render static pages with data fetched during the build process.</p><pre><code>export async function getStaticProps() {\n  const data = await fetch('https://api.example.com/data');\n  const json = await data.json();\n\n  return {\n    props: { json }, // Passed to the page as props\n  };\n}</code></pre>"
+    },
+    {
+        "question": "What happens if `getServerSideProps` and `getStaticProps` are both defined in a Next.js page?",
+        "correct_answer": "Next.js throws an error during the build process",
+        "incorrect_answers": [
+            "Only `getStaticProps` is executed",
+            "Only `getServerSideProps` is executed",
+            "The behavior depends on the page's route",
+            "Both functions are executed in sequence"
+        ],
+        "explanation": "<p>Next.js does not allow both <code>getServerSideProps</code> and <code>getStaticProps</code> to be defined on the same page. Doing so will result in a build-time error.</p><pre><code>// This is invalid and will cause an error\nexport async function getStaticProps() {}\nexport async function getServerSideProps() {}</code></pre>"
+    },
+    {
+        "question": "How does `next/image` improve image performance in a Next.js application?",
+        "correct_answer": "It provides automatic image optimization such as resizing and lazy loading",
+        "incorrect_answers": [
+            "It stores images in a Content Delivery Network (CDN) by default",
+            "It converts all images to SVG format",
+            "It preloads all images regardless of their position in the viewport",
+            "It embeds images as base64 strings"
+        ],
+        "explanation": "<p>The <code>next/image</code> component in Next.js optimizes image performance by resizing images based on viewport size, enabling lazy loading, and serving images in modern formats like WebP when supported.</p><pre><code>import Image from 'next/image';\n\nfunction HomePage() {\n  return (\n    <Image src=\"/example.jpg\" width={500} height={300} alt=\"Example\" />\n  );\n}</code></pre>"
+    },
+    {
+        "question": "What is ISR (Incremental Static Regeneration) in Next.js?",
+        "correct_answer": "A method to regenerate static pages at runtime without rebuilding the app",
+        "incorrect_answers": [
+            "A feature to enhance server-side rendering performance",
+            "A way to pre-render pages during the build process only",
+            "A mechanism to handle client-side rendering of pages",
+            "A feature for managing dynamic routing in Next.js"
+        ],
+        "explanation": "<p>ISR allows static pages to be updated at runtime without requiring a full rebuild. You can specify a <code>revalidate</code> interval in <code>getStaticProps</code> to regenerate the page periodically.</p><pre><code>export async function getStaticProps() {\n  return {\n    props: { data },\n    revalidate: 10, // Regenerate the page every 10 seconds\n  };\n}</code></pre>"
+    },
+    {
+        "question": "What is the difference between `getServerSideProps` and `getStaticProps`?",
+        "correct_answer": "getServerSideProps runs on every request, while getStaticProps runs at build time",
+        "incorrect_answers": [
+            "Both run at build time, but getServerSideProps requires more configuration",
+            "getStaticProps supports caching, while getServerSideProps does not",
+            "getServerSideProps works only for API routes",
+            "getStaticProps cannot fetch external data"
+        ],
+        "explanation": "<p><code>getStaticProps</code> is used to fetch data at build time for static generation, while <code>getServerSideProps</code> runs on the server on each request, providing data for server-side rendering.</p><pre><code>// Example of getServerSideProps\nexport async function getServerSideProps(context) {\n  const data = await fetch('https://api.example.com/data');\n  const json = await data.json();\n\n  return {\n    props: { json },\n  };\n}</code></pre>"
+    },
+    {
+        "question": "Which of the following is a valid way to use dynamic routing in Next.js?",
+        "correct_answer": "Use square brackets in the filename, e.g., [id].js",
+        "incorrect_answers": [
+            "Use curly braces in the filename, e.g., {id}.js",
+            "Pass query parameters in the URL",
+            "Define routes explicitly in a configuration file",
+            "Use special comments in the component file"
+        ],
+        "explanation": "<p>In Next.js, dynamic routes are defined using square brackets in the file name. For example, a file named <code>[id].js</code> in the <code>pages</code> directory can handle dynamic routes like <code>/post/1</code>.</p><pre><code>// pages/post/[id].js\nimport { useRouter } from 'next/router';\n\nexport default function Post() {\n  const router = useRouter();\n  const { id } = router.query;\n\n  return <p>Post ID: {id}</p>;\n}</code></pre>"
+    },
+    {
+        "question": "How can you enable TypeScript in a Next.js project?",
+        "correct_answer": "Add a tsconfig.json file in the root of the project",
+        "incorrect_answers": [
+            "Install a TypeScript plugin in the Next.js configuration",
+            "Enable TypeScript support in the next.config.js file",
+            "Use a special flag when running the Next.js development server",
+            "Include .ts files without further configuration"
+        ],
+        "explanation": "<p>To enable TypeScript in a Next.js project, add a <code>tsconfig.json</code> file to the root directory. Next.js will detect the file and provide TypeScript support.</p><pre><code>// Example tsconfig.json\n{\n  \"compilerOptions\": {\n    \"target\": \"es5\",\n    \"module\": \"esnext\",\n    \"jsx\": \"preserve\",\n    \"strict\": true\n  }\n}</code></pre>"
+    },
+    {
+        "question": "What is the default behavior of the `Link` component in Next.js?",
+        "correct_answer": "It performs client-side navigation without a full page reload",
+        "incorrect_answers": [
+            "It always performs server-side navigation",
+            "It navigates directly to an external URL",
+            "It requires additional configuration to work",
+            "It triggers a page reload for internal routes"
+        ],
+        "explanation": "<p>The <code>Link</code> component in Next.js is used for client-side navigation between pages. It does not trigger a full page reload and ensures fast transitions.</p><pre><code>import Link from 'next/link';\n\nfunction Home() {\n  return (\n    <Link href=\"/about\">\n      <a>Go to About Page</a>\n    </Link>\n  );\n}</code></pre>"
+    },
+    {
+        "question": "Which configuration file is used to customize Next.js settings?",
+        "correct_answer": "next.config.js",
+        "incorrect_answers": [
+            "config.js",
+            "settings.json",
+            "package.json",
+            "server.config.js"
+        ],
+        "explanation": "<p>The <code>next.config.js</code> file is used to customize Next.js settings. It can be used to enable features like custom webpack configurations, environment variables, and more.</p><pre><code>// next.config.js\nmodule.exports = {\n  reactStrictMode: true,\n  env: {\n    CUSTOM_VAR: 'value',\n  },\n};</code></pre>"
+    },
+    {
+        "question": "How can you configure environment variables in a Next.js application?",
+        "correct_answer": "By adding them to a .env.local file or directly in next.config.js under the env property.",
+        "incorrect_answers": [
+            "By using a .config file in the root directory.",
+            "By declaring them only in package.json.",
+            "By setting them in a config.js file and importing it.",
+            "By exporting them globally in a component."
+        ],
+        "explanation": "<p>In Next.js, environment variables can be configured by creating a <code>.env.local</code> file for local development or by defining them in the <code>next.config.js</code> file under the <code>env</code> property.</p><pre><code>// .env.local\nNEXT_PUBLIC_API_KEY=your_api_key</code></pre><pre><code>// next.config.js\nmodule.exports = {\n  env: {\n    CUSTOM_VAR: 'value',\n  },\n};</code></pre>"
+    },
+    {
+        "question": "Which lifecycle method is only available in Next.js for data fetching on the server side?",
+        "correct_answer": "getServerSideProps",
+        "incorrect_answers": [
+            "getStaticProps",
+            "getInitialProps",
+            "useEffect",
+            "componentDidMount"
+        ],
+        "explanation": "<p><code>getServerSideProps</code> is a unique lifecycle method in Next.js used for fetching data on each request at runtime. It ensures the server provides fresh data for each request.</p><pre><code>export async function getServerSideProps(context) {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n  return { props: { data } };\n}</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the 'fallback' property in the getStaticPaths function?",
+        "correct_answer": "To determine the behavior when a path is not pre-rendered during build time.",
+        "incorrect_answers": [
+            "To prevent unused paths from being pre-rendered.",
+            "To handle client-side navigation errors.",
+            "To specify fallback styles for static pages.",
+            "To delay static generation until all routes are accessed."
+        ],
+        "explanation": "<p>The <code>fallback</code> property in <code>getStaticPaths</code> determines how Next.js handles paths not pre-rendered at build time.</p><pre><code>// Example\nexport async function getStaticPaths() {\n  return {\n    paths: [\n      { params: { id: '1' } },\n    ],\n    fallback: true, // Enables fallback behavior\n  };\n}</code></pre>"
+    },
+    {
+        "question": "What is the difference between getStaticProps and getServerSideProps?",
+        "correct_answer": "getStaticProps generates pages at build time, while getServerSideProps fetches data at runtime.",
+        "incorrect_answers": [
+            "getStaticProps works only for API routes, and getServerSideProps works for components.",
+            "getStaticProps is asynchronous, while getServerSideProps is synchronous.",
+            "getStaticProps fetches data from the browser, and getServerSideProps fetches from the server.",
+            "getStaticProps is client-side, and getServerSideProps is server-side."
+        ],
+        "explanation": "<p><code>getStaticProps</code> pre-renders pages at build time and is ideal for static content. <code>getServerSideProps</code>, on the other hand, fetches data on each request and is used for dynamic content.</p><pre><code>// Example of getStaticProps\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return { props: { data } };\n}</code></pre><pre><code>// Example of getServerSideProps\nexport async function getServerSideProps() {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return { props: { data } };\n}</code></pre>"
+    },
+    {
+        "question": "What is the default behavior of Next.js' 'Image' component when the layout is set to 'intrinsic'?",
+        "correct_answer": "It adjusts its size based on the image's intrinsic width and height while maintaining aspect ratio.",
+        "incorrect_answers": [
+            "It scales the image to fill the parent container.",
+            "It sets the image size explicitly based on viewport dimensions.",
+            "It crops the image to fit the container size.",
+            "It disables lazy loading by default."
+        ],
+        "explanation": "<p>The <code>Image</code> component in Next.js has a layout mode <code>intrinsic</code>, which adjusts the image size according to its original dimensions while maintaining the aspect ratio.</p><pre><code>import Image from 'next/image';\n\n<Image\n  src=\"/example.jpg\"\n  width={800}\n  height={600}\n  layout=\"intrinsic\"\n  alt=\"Example\"\n/></code></pre>"
+    },
+    {
+        "question": "How can you use middleware in Next.js to rewrite a request URL?",
+        "correct_answer": "By using the NextResponse.rewrite() method in middleware.",
+        "incorrect_answers": [
+            "By modifying the req.url directly in middleware.",
+            "By using the next.config.js rewrite property.",
+            "By overriding the default _middleware.js behavior.",
+            "By setting a custom URL in the response headers."
+        ],
+        "explanation": "<p>In Next.js middleware, you can rewrite a request's URL by using <code>NextResponse.rewrite()</code>. This is useful for routing without changing the displayed URL.</p><pre><code>import { NextResponse } from 'next/server';\n\nexport function middleware(request) {\n  return NextResponse.rewrite(new URL('/new-path', request.url));\n}</code></pre>"
+    },
+    {
+        "question": "What is ISR (Incremental Static Regeneration) in Next.js?",
+        "correct_answer": "ISR allows you to update static pages after they have been deployed by revalidating them in the background.",
+        "incorrect_answers": [
+            "ISR enables client-side rendering for static pages.",
+            "ISR converts static pages into server-side rendered pages on demand.",
+            "ISR provides a way to cache server-side rendered pages.",
+            "ISR is a method for handling API routes dynamically."
+        ],
+        "explanation": "<p>Incremental Static Regeneration (ISR) enables static pages to be updated after the initial build by revalidating the content in the background. This allows for dynamic updates without redeploying the app.</p><pre><code>// Example with ISR\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return {\n    props: { data },\n    revalidate: 10, // Revalidate every 10 seconds\n  };\n}</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the 'getLayout' pattern in Next.js?",
+        "correct_answer": "It allows you to define custom layouts on a per-page basis.",
+        "incorrect_answers": [
+            "It enables nested layouts to be applied globally.",
+            "It is used to optimize image layout properties.",
+            "It provides server-side rendering configuration.",
+            "It modifies the default layout behavior globally."
+        ],
+        "explanation": "<p>The <code>getLayout</code> pattern is a flexible way to define layouts for individual pages in a Next.js application. It is particularly useful when pages require different layouts.</p><pre><code>// Example\nfunction Page() {\n  return <div>Page Content</div>;\n}\n\nPage.getLayout = function getLayout(page) {\n  return (\n    <MainLayout>\n      <SidebarLayout>{page}</SidebarLayout>\n    </MainLayout>\n  );\n};\n\nexport default Page;</code></pre>"
+    },
+    {
+        "question": "How does Next.js handle API route handlers for dynamic paths?",
+        "correct_answer": "By using square brackets in the filename, e.g., [id].js, to define dynamic routes.",
+        "incorrect_answers": [
+            "By using query strings in the URL for API routes.",
+            "By defining route patterns in the next.config.js file.",
+            "By setting up custom server configurations to map routes dynamically.",
+            "By using wildcard imports in the pages/api folder."
+        ],
+        "explanation": "<p>In Next.js, dynamic API routes are handled by creating filenames with square brackets, such as <code>[id].js</code>, in the <code>pages/api</code> folder. This allows you to access dynamic segments in the request.</p><pre><code>// Example: pages/api/[id].js\nexport default function handler(req, res) {\n  const { id } = req.query;\n  res.status(200).json({ id });\n}</code></pre>"
+    },
+    {
+        "question": "What is the primary purpose of the `getServerSideProps` function in Next.js?",
+        "correct_answer": "To fetch data on the server for a page at request time.",
+        "incorrect_answers": [
+            "To fetch data at build time for static pages.",
+            "To pre-render a page with incremental static regeneration.",
+            "To replace client-side data fetching entirely.",
+            "To optimize API routes for serverless functions."
+        ],
+        "explanation": "<p>The <code>getServerSideProps</code> function in Next.js allows you to fetch data on the server at request time. This is particularly useful for pages that need to be rendered with fresh data for each request.</p><pre><code>// Example\nexport async function getServerSideProps(context) {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return { props: { data } };\n}\n\nfunction Page({ data }) {\n  return <div>{data}</div>;\n}\n\nexport default Page;</code></pre>"
+    },
+    {
+        "question": "What happens if you use the 'rewrites' property in next.config.js?",
+        "correct_answer": "It allows you to map an incoming request path to a different destination path without changing the URL.",
+        "incorrect_answers": [
+            "It permanently redirects the user to a new path.",
+            "It modifies the request headers for API routes.",
+            "It sets up server-side middleware for specific paths.",
+            "It changes the basePath configuration globally."
+        ],
+        "explanation": "<p>The <code>rewrites</code> property in <code>next.config.js</code> allows you to rewrite an incoming URL to another destination without altering the visible URL. This is useful for proxying requests or restructuring URLs.</p><pre><code>// Example in next.config.js\nmodule.exports = {\n  async rewrites() {\n    return [\n      {\n        source: '/old-path',\n        destination: '/new-path',\n      },\n    ];\n  },\n};</code></pre>"
+    },
+    {
+        "question": "How does Next.js' `getStaticPaths` function improve performance for dynamic routes?",
+        "correct_answer": "It allows you to pre-generate static pages for specified paths at build time.",
+        "incorrect_answers": [
+            "It fetches data on the client for better caching.",
+            "It enables server-side rendering for dynamic routes.",
+            "It dynamically creates API routes for each path.",
+            "It optimizes client-side rendering for static pages."
+        ],
+        "explanation": "<p>The <code>getStaticPaths</code> function in Next.js is used for dynamic routes to pre-generate pages at build time for specified paths. This ensures better performance by serving pre-built static pages.</p><pre><code>// Example\nexport async function getStaticPaths() {\n  const paths = [{ params: { id: '1' } }, { params: { id: '2' } }];\n  return { paths, fallback: false };\n}\n\nexport async function getStaticProps({ params }) {\n  const data = await fetch(`https://api.example.com/${params.id}`).then(res => res.json());\n  return { props: { data } };\n}</code></pre>"
+    },
+    {
+        "question": "What is the primary difference between `getStaticProps` and `getServerSideProps` in Next.js?",
+        "correct_answer": "`getStaticProps` generates data at build time, while `getServerSideProps` fetches data at request time.",
+        "incorrect_answers": [
+            "`getStaticProps` fetches data only on the client side, while `getServerSideProps` does so on the server.",
+            "`getStaticProps` requires dynamic routing, while `getServerSideProps` does not.",
+            "`getStaticProps` always revalidates data on every request, while `getServerSideProps` caches data.",
+            "`getStaticProps` is for API routes, while `getServerSideProps` is for pages."
+        ],
+        "explanation": "<p><code>getStaticProps</code> fetches data at build time to generate static pages, optimizing for performance, while <code>getServerSideProps</code> fetches fresh data for every request, making it suitable for dynamic content.</p><pre><code>// Example: getStaticProps\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return { props: { data } };\n}\n\n// Example: getServerSideProps\nexport async function getServerSideProps() {\n  const data = await fetch('https://api.example.com/data').then(res => res.json());\n  return { props: { data } };\n}</code></pre>"
+    },
+    {
+        "question": "What does the `getInitialProps` method do in Next.js?",
+        "correct_answer": "It fetches initial props for a page or a custom App or Document.",
+        "incorrect_answers": [
+            "It fetches data for static paths during build time.",
+            "It only works with API routes for data fetching.",
+            "It replaces the need for `getServerSideProps` and `getStaticProps`.",
+            "It initializes server-side middleware for routing."
+        ],
+        "explanation": "<p><code>getInitialProps</code> is a legacy data-fetching method in Next.js, used for server-side rendering or initial client-side rendering. It can be used in custom <code>_app.js</code>, <code>_document.js</code>, or individual pages.</p><pre><code>// Example\nclass Page extends React.Component {\n  static async getInitialProps(ctx) {\n    const res = await fetch('https://api.example.com/data');\n    const data = await res.json();\n    return { data };\n  }\n\n  render() {\n    return <div>{this.props.data}</div>;\n  }\n}\n\nexport default Page;</code></pre>"
+    },
+    {
+        "question": "In Next.js, how does the `Image` component optimize images?",
+        "correct_answer": "By automatically serving responsive, lazy-loaded images with built-in optimization.",
+        "incorrect_answers": [
+            "By embedding the image data directly into the HTML as base64.",
+            "By generating a separate optimized image file for each client request.",
+            "By requiring developers to handle all responsive image logic manually.",
+            "By relying on a third-party library for optimization."
+        ],
+        "explanation": "<p>The Next.js <code>Image</code> component provides built-in optimization by serving images in the appropriate format and resolution based on the user's device. It also enables lazy loading by default to improve performance.</p><pre><code>// Example\nimport Image from 'next/image';\n\nexport default function Page() {\n  return <Image src=\"/example.jpg\" width={500} height={500} alt=\"Example\" />;\n}</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the `next build` command?",
+        "correct_answer": "To generate a production-ready build of the Next.js application.",
+        "incorrect_answers": [
+            "To start the development server with optimized settings.",
+            "To create static HTML exports for all pages.",
+            "To update the Next.js version and dependencies.",
+            "To compile only the client-side JavaScript code."
+        ],
+        "explanation": "<p>The <code>next build</code> command compiles the Next.js application into a production-ready build, optimizing pages, generating static assets, and preparing the app for deployment.</p><pre><code>// Example usage\n$ next build\n// Outputs: .next folder with optimized assets and pages</code></pre>"
+    },
+    {
+        "question": "What is the difference between `next/link` and `next/router` for navigation in Next.js?",
+        "correct_answer": "`next/link` is for declarative navigation, while `next/router` provides programmatic navigation.",
+        "incorrect_answers": [
+            "`next/link` is for client-side routing only, while `next/router` works on both client and server.",
+            "`next/link` requires a button element, while `next/router` requires anchor tags.",
+            "`next/link` is slower than `next/router` due to lazy loading.",
+            "`next/link` is used for API routes, while `next/router` is for pages."
+        ],
+        "explanation": "<p><code>next/link</code> is used for declarative navigation through anchor tags, enabling client-side transitions, while <code>next/router</code> allows programmatic navigation in event handlers or functions.</p><pre><code>// Example: next/link\nimport Link from 'next/link';\nexport default function Page() {\n  return <Link href=\"/about\">Go to About</Link>;\n}\n\n// Example: next/router\nimport { useRouter } from 'next/router';\nexport default function Page() {\n  const router = useRouter();\n  return <button onClick={() => router.push('/about')}>Go to About</button>;\n}</code></pre>"
+    }
+    
+    
+    
+    
+]

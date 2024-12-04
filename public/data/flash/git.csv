@@ -1,0 +1,36 @@
+Question,Answer
+git setup and config, git setup and config
+How do you check the git email config?,git config user.email
+How do you list the current Git configuration?,git config --list
+How do you set asjer@mac.com as email?,git config --global user.email asjer@mac.com
+How do you set colors?,git config --global color.ui true
+How do you set username as: Asjer Querido?,"git config --global user.name ""Asjer Querido"""
+
+Question,Answer
+basic snapshotting, basic snapshotting
+How do you **add** all **changes** from a **subdirectory**?,**git add --all :/** or **git add -A :/**
+"How do you **remove** a **file** **from** the **staging** **area**, but leave the working directory unchanged?",**git reset** file
+How do you **remove a file** with Git?,**git rm** file
+How do you **stop tracking a file** without removing it?,**git rm --cached **file
+How do you **undo the last 2 commits** and changes?,**git reset --hard HEAD^^**
+How do you **unstage a file** from the index?,**git reset **file
+"How do you **reset the staging area** to match the most recent commit, but leaving the working directory unchanged?",**git reset**
+
+Question,Answer
+branching and merging, branching and merging
+How do stash untracked files?,git stash save --inlclude-untracked
+How do you add a new tag with a tagname and a description?,"git tag -a  -m """""
+How do you checkout a tag?,git checkout
+how do you clear all your stashes?,git stash clear
+How do you download remote tags?,git fetch --tags
+How do you get your (most recent) stashed changes back?,git stash apply
+How do you list all your staches?,git stash list
+How do you push new tags to remote?,git push --tags
+How do you show all the tags?,git tag
+How do you show the file diff of a specific stash?,git stash show --patch stash@{}
+How do you stash your work in progress without stashing the staging area?,git stash save --keep-index
+How do you temporarily 'stash' your work in progress to use later and add a stash message?,"git stash save """""
+How do you temporarily 'stash' your work in progress to use later?,git stash save
+How do you create a branch?,git branch
+How do you create- and check out that branch?,git checkout -b
+How do you delete a local branch?,git branch -d

@@ -1,0 +1,156 @@
+[
+    {
+        "question": "How does the <code>async function</code> behave in JavaScript when called?",
+        "correct_answer": "It returns a promise that resolves with the value returned from the function.",
+        "incorrect_answers": [
+            "It immediately returns the result of the function execution.",
+            "It returns a function reference, not a promise.",
+            "It throws an error if there are no <code>await</code> expressions.",
+            "It makes the function execute synchronously."
+        ],
+        "explanation": "<p>An <code>async function</code> is a function that always returns a <code>Promise</code>. If the function returns a value, the <code>Promise</code> resolves with that value. If the function throws an error, the <code>Promise</code> is rejected.</p><pre><code>async function fetchData() {<br>  return 'Data fetched';<br>}<br>fetchData().then(data => console.log(data)); // 'Data fetched'</code></pre>"
+    },
+    {
+        "question": "What happens when an <code>async function</code> contains an error?",
+        "correct_answer": "It returns a rejected promise with the error as the reason.",
+        "incorrect_answers": [
+            "It executes the function synchronously and returns an error message.",
+            "It throws a runtime error that is caught immediately.",
+            "It returns a value of <code>null</code>.",
+            "It executes an error callback automatically."
+        ],
+        "explanation": "<p>If an <code>async function</code> encounters an error (e.g., an uncaught exception), the <code>Promise</code> returned by the function is rejected. You can handle errors in <code>async</code> functions using <code>try</code>/<code>catch</code> blocks or <code>catch()</code> on the promise.</p><pre><code>async function fetchData() {<br>  throw new Error('Failed to fetch');<br>}<br>fetchData().catch(err => console.log(err.message)); // 'Failed to fetch'</code></pre>"
+    },
+    {
+        "question": "What does the <code>function*</code> syntax represent in JavaScript?",
+        "correct_answer": "It defines a generator function, which can yield multiple values over time.",
+        "incorrect_answers": [
+            "It defines a recursive function.",
+            "It defines a function that only returns a single value.",
+            "It defines a function with async behavior.",
+            "It defines a function with a variable number of arguments."
+        ],
+        "explanation": "<p>A <code>function*</code> is a generator function. It uses the <code>yield</code> keyword to return multiple values lazily, one at a time. Each call to <code>next()</code> resumes execution from the last <code>yield</code> point.</p><pre><code>function* countUpTo(max) {<br>  let count = 1;<br>  while (count <= max) {<br>    yield count;<br>    count++;<br>  }<br>}<br>const counter = countUpTo(3);<br>console.log(counter.next().value); // 1<br>console.log(counter.next().value); // 2<br>console.log(counter.next().value); // 3</code></pre>"
+    },
+    {
+        "question": "How does <code>function*</code> differ from <code>async function</code> in JavaScript?",
+        "correct_answer": "A generator function pauses its execution using <code>yield</code>, while an async function returns a promise that resolves or rejects asynchronously.",
+        "incorrect_answers": [
+            "There is no difference between <code>function*</code> and <code>async function</code>.",
+            "A generator function returns a promise, while an async function returns an iterator.",
+            "An async function pauses execution at <code>await</code>, while <code>function*</code> executes synchronously.",
+            "A generator function can only return a promise, while an async function can return multiple values."
+        ],
+        "explanation": "<p><code>function*</code> defines a generator function that can yield multiple values, pausing and resuming its execution. In contrast, <code>async function</code> defines a function that returns a <code>Promise</code>, allowing asynchronous operations with <code>await</code>.</p><pre><code>function* numbers() {<br>  yield 1;<br>  yield 2;<br>}<br>async function fetchData() {<br>  return 'Data fetched';<br>}<br>const gen = numbers();<br>console.log(gen.next().value); // 1<br>fetchData().then(data => console.log(data)); // 'Data fetched'</code></pre>"
+    },
+    {
+        "question": "How does <code>continue</code> work in a loop in JavaScript?",
+        "correct_answer": "It skips the current iteration and moves to the next iteration of the loop.",
+        "incorrect_answers": [
+            "It terminates the loop immediately.",
+            "It jumps to the end of the loop and exits.",
+            "It pauses the loop and waits for a condition to resume.",
+            "It jumps to the next function call in the loop."
+        ],
+        "explanation": "<p><code>continue</code> is used within loops to skip the rest of the code for the current iteration and continue with the next iteration. It can be useful for skipping specific values or conditions during iteration.</p><pre><code>for (let i = 0; i < 5; i++) {<br>  if (i === 2) continue;<br>  console.log(i); // 0, 1, 3, 4<br>}</code></pre>"
+    },
+    {
+        "question": "How would you use the <code>continue</code> statement in a <code>for...in</code> loop?",
+        "correct_answer": "You use it to skip over specific properties of an object during iteration.",
+        "incorrect_answers": [
+            "It will stop the loop and exit immediately.",
+            "It will terminate the loop after a certain number of iterations.",
+            "It will pause the loop and only continue when a condition is met.",
+            "It allows you to access nested properties inside an object."
+        ],
+        "explanation": "<p><code>continue</code> in a <code>for...in</code> loop is useful when you want to skip certain properties in the iteration. For example, you may skip properties that are not needed for the current operation.</p><pre><code>const obj = { a: 1, b: 2, c: 3 };<br>for (let key in obj) {<br>  if (key === 'b') continue;<br>  console.log(key); // 'a' and 'c'<br>}</code></pre>"
+    },
+    {
+        "question": "What is the purpose of the <code>for await...of</code> loop in JavaScript?",
+        "correct_answer": "It is used to iterate over async iterable objects, awaiting the resolution of each promise before moving to the next.",
+        "incorrect_answers": [
+            "It is used to iterate over synchronous values only.",
+            "It is used to await a promise for an entire iteration.",
+            "It is used to iterate over a promise and resolve it before moving to the next iteration.",
+            "It is used to pause and resume asynchronous operations."
+        ],
+        "explanation": "<p>The <code>for await...of</code> loop is used for iterating over async iterables, allowing each promise to resolve before the next iteration. This is especially useful for processing asynchronous data one item at a time.</p><pre><code>async function* fetchData() {<br>  yield fetch('data1.json');<br>  yield fetch('data2.json');<br>}<br>for await (let data of fetchData()) {<br>  console.log(data);<br>}</code></pre>"
+    },
+    {
+        "question": "When would you use <code>for await...of</code> over <code>for...of</code> in JavaScript?",
+        "correct_answer": "You would use it when iterating over async iterables, where each iteration involves an asynchronous operation.",
+        "incorrect_answers": [
+            "You would use <code>for...of</code> when iterating over a promise-based iterable.",
+            "You would use <code>for await...of</code> for synchronous data.",
+            "You would use it when the data does not involve promises.",
+            "You would use it when iterating over a single value."
+        ],
+        "explanation": "<p><code>for await...of</code> is used to iterate over asynchronous data sources, like streams or async iterators. It ensures each promise is awaited before continuing the iteration. If you're working with synchronous data, use <code>for...of</code> instead.</p><pre><code>const asyncNumbers = async function* () {<br>  yield 1;<br>  yield 2;<br>};<br>for await (let num of asyncNumbers()) {<br>  console.log(num);<br>}</code></pre>"
+    },
+    {
+        "question": "How does the <code>for...in</code> loop work in JavaScript?",
+        "correct_answer": "It iterates over the enumerable properties of an object, including its prototype chain.",
+        "incorrect_answers": [
+            "It iterates over the values of an array only.",
+            "It only iterates over the values of an object.",
+            "It stops once it encounters an undefined value.",
+            "It iterates over array indices."
+        ],
+        "explanation": "<p>The <code>for...in</code> loop iterates over the keys (properties) of an object, including those inherited through the prototype chain. It's often used for iterating over objects, not arrays.</p><pre><code>const obj = { a: 1, b: 2 };<br>for (let key in obj) {<br>  console.log(key); // 'a', 'b'<br>}</code></pre>"
+    },
+    {
+        "question": "What is the difference between <code>for...of</code> and <code>for...in</code> loops in JavaScript?",
+        "correct_answer": "<code>for...of</code> iterates over iterable objects (like arrays), while <code>for...in</code> iterates over object properties.",
+        "incorrect_answers": [
+            "<code>for...of</code> iterates over properties of an object, while <code>for...in</code> iterates over array values.",
+            "<code>for...of</code> iterates over all enumerable values in a collection, while <code>for...in</code> does not.",
+            "<code>for...of</code> is for async operations, while <code>for...in</code> is for synchronous ones.",
+            "<code>for...of</code> only works for arrays, while <code>for...in</code> works for objects and arrays."
+        ],
+        "explanation": "<p><code>for...in</code> loops through the enumerable properties of an object, whereas <code>for...of</code> iterates over iterable objects like arrays, strings, and maps, accessing the values themselves instead of the keys.</p><pre><code>const arr = [1, 2, 3];<br>for (let val of arr) {<br>  console.log(val); // 1, 2, 3<br>}<br>const obj = { a: 1, b: 2 };<br>for (let key in obj) {<br>  console.log(key); // 'a', 'b'<br>}</code></pre>"
+    },
+    {
+        "question": "What does the <code>label</code> statement in JavaScript allow you to do?",
+        "correct_answer": "It allows you to define a label for a loop or a block of code, which can be referenced with <code>break</code> or <code>continue</code>.",
+        "incorrect_answers": [
+            "It defines a named function that can be called later.",
+            "It defines a specific index for an array.",
+            "It marks a code section for debugging purposes.",
+            "It creates a label for an object property."
+        ],
+        "explanation": "<p>The <code>label</code> statement in JavaScript is used to give a name to a loop or block of code. You can then use <code>break</code> or <code>continue</code> with the label to exit or skip specific loops.</p><pre><code>outer: for (let i = 0; i < 5; i++) {<br>  for (let j = 0; j < 5; j++) {<br>    if (j === 3) break outer;<br>    console.log(i, j);<br>  }<br>}</code></pre>"
+    },
+    {
+        "question": "When would you use a <code>label</code> with <code>continue</code> or <code>break</code> in JavaScript?",
+        "correct_answer": "When you need to break or continue an outer loop or block of code from an inner loop.",
+        "incorrect_answers": [
+            "When you need to pause the execution of an entire script.",
+            "When you need to define a function that can be reused.",
+            "When you want to optimize loop performance.",
+            "When you need to return multiple values from a function."
+        ],
+        "explanation": "<p><code>label</code> is used to name a loop or block of code. It allows you to target specific loops when using <code>continue</code> or <code>break</code>, enabling control over nested loops.</p><pre><code>outer: for (let i = 0; i < 5; i++) {<br>  for (let j = 0; j < 5; j++) {<br>    if (j === 3) break outer;<br>    console.log(i, j);<br>  }<br>}</code></pre>"
+    },
+    {
+        "question": "How does the <code>try...catch</code> statement work in JavaScript?",
+        "correct_answer": "It allows you to handle exceptions by attempting code in the <code>try</code> block and catching errors in the <code>catch</code> block.",
+        "incorrect_answers": [
+            "It throws an error when there is a problem in the <code>try</code> block.",
+            "It automatically retries the code in the <code>try</code> block multiple times.",
+            "It prevents errors from being thrown.",
+            "It logs the error to the console automatically."
+        ],
+        "explanation": "<p><code>try...catch</code> is used to handle exceptions in JavaScript. The code inside the <code>try</code> block is executed, and if an error occurs, the <code>catch</code> block runs to handle the error. You can also use <code>finally</code> to execute code after both <code>try</code> and <code>catch</code> have run.</p><pre><code>try {<br>  let result = riskyFunction();<br>} catch (error) {<br>  console.error(error);<br>}<br>finally {<br>  console.log('This runs no matter what');<br>}</code></pre>"
+    },
+    {
+        "question": "When would you use <code>try...catch</code> in JavaScript?",
+        "correct_answer": "You would use it when you want to handle potential runtime errors gracefully without stopping the execution of the program.",
+        "incorrect_answers": [
+            "You would use it for defining default values for variables.",
+            "You would use it for creating functions that return values.",
+            "You would use it when you need to iterate over arrays.",
+            "You would use it to declare variables within a block."
+        ],
+        "explanation": "<p><code>try...catch</code> is used to handle runtime errors. It's particularly useful when interacting with external resources like APIs or files, where errors might occur due to issues like network failures or missing data.</p><pre><code>try {<br>  let result = fetchData();<br>} catch (error) {<br>  console.error(error.message);<br>}</code></pre>"
+    }
+]

@@ -1,0 +1,28 @@
+src/
+├── assets/
+│   ├── fonts/
+│   ├── images/
+│   └── scss/
+│       ├── abstracts/
+│       │   ├── _variables.scss
+│       │   ├── _mixins.scss
+│       │   └── _functions.scss
+│       ├── base/
+│       │   ├── _reset.scss
+│       │   ├── _typography.scss
+│       │   └── _global.scss
+│       ├── components/
+│       │   ├── _button.scss
+│       │   └── _card.scss
+│       ├── layout/
+│       │   ├── _header.scss
+│       │   ├── _footer.scss
+│       │   └── _grid.scss
+│       ├── pages/
+│       │   ├── _home.scss
+│       │   └── _about.scss
+│       ├── themes/
+│       │   └── _dark.scss
+│       ├── vendors/
+│       │   └── _bootstrap.scss
+│       └── main.scss

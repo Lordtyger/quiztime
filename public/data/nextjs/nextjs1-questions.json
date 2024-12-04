@@ -1,0 +1,302 @@
+[
+    {
+        "question": "What is the primary purpose of `getStaticProps` in Next.js?",
+        "correct_answer": "To fetch data at build time for static site generation.",
+        "incorrect_answers": [
+            "To fetch data on the client-side after the page loads.",
+            "To dynamically fetch data during every page request on the server.",
+            "To define custom server logic for API routes."
+        ],
+        "explanation": "The `getStaticProps` function in Next.js is used to fetch data during build time, enabling static site generation (SSG). This function is called during the build process, and the data it returns is passed as props to the page. It's best suited for data that doesn't change frequently, like product details or blog posts."
+    },
+    {
+        "question": "In Next.js, how can you generate dynamic routes with `getStaticPaths`?",
+        "correct_answer": "By defining an array of paths that correspond to dynamic route parameters.",
+        "incorrect_answers": [
+            "By using the `useRouter` hook to define paths in the component.",
+            "By creating API routes that return dynamic paths.",
+            "By defining routes directly in the `pages` directory."
+        ],
+        "explanation": "`getStaticPaths` is used alongside `getStaticProps` in Next.js to define which dynamic routes should be statically generated at build time. This is useful for pages like `[id].js`, where you want to pre-render certain dynamic pages. For example:\n```js\nexport async function getStaticPaths() {\n  return {\n    paths: [\n      { params: { id: '1' } },\n      { params: { id: '2' } }\n    ],\n    fallback: false\n  };\n}\n```"
+    },
+    {
+        "question": "What does the `next.config.js` file allow you to configure in a Next.js project?",
+        "correct_answer": "Custom configurations for Webpack, build process, and environment variables.",
+        "incorrect_answers": [
+            "Only server-side logic and API endpoints.",
+            "Styling and CSS configurations exclusively.",
+            "Third-party library dependencies and versions."
+        ],
+        "explanation": "`next.config.js` is the central configuration file in a Next.js project. It allows you to customize the build process, modify the default Webpack configuration, and define environment variables. It can also enable experimental features, configure redirects, and optimize images. For example:\n```js\nmodule.exports = {\n  env: {\n    API_URL: 'https://api.example.com'\n  },\n  images: {\n    domains: ['example.com']\n  }\n};\n```"
+    },
+    {
+        "question": "What is the purpose of the `public` directory in a Next.js project?",
+        "correct_answer": "To store static assets like images and files that can be accessed directly via a URL.",
+        "incorrect_answers": [
+            "To store dynamically generated assets.",
+            "To define server-side API routes.",
+            "To configure public environment variables for the project."
+        ],
+        "explanation": "The `public` directory in Next.js is a special folder used to store static assets that are served directly from the root of the application. For example, an image placed at `public/image.png` can be accessed via `http://yourdomain.com/image.png`. Unlike other assets, files in the `public` directory are not processed by Webpack."
+    },
+    {
+        "question": "What happens if you set `fallback: true` in `getStaticPaths`?",
+        "correct_answer": "New dynamic pages will be generated on the first request and cached for subsequent requests.",
+        "incorrect_answers": [
+            "All undefined routes will result in a 404 error.",
+            "The static generation process will ignore the specified paths.",
+            "Fallback routes will render a default error message."
+        ],
+        "explanation": "When `fallback: true` is set in `getStaticPaths`, Next.js will render a 'fallback' version of the page on the first request to a non-predefined dynamic route. It will then generate the page on the server and cache it for subsequent requests. This is useful for dynamic content where you can't predefine all possible routes during the build process."
+    },
+    {
+        "question": "How can you optimize image loading in Next.js using the `next/image` component?",
+        "correct_answer": "By leveraging automatic resizing, lazy loading, and specifying domains in `next.config.js`.",
+        "incorrect_answers": [
+            "By wrapping all images in a `<LazyLoad>` component.",
+            "By manually compressing images before uploading them.",
+            "By using a third-party library like `react-image-optimizer`."
+        ],
+        "explanation": "Next.js provides the `next/image` component for optimized image handling. It automatically resizes images based on the viewport, uses lazy loading by default, and can serve images from external domains specified in `next.config.js`. Example usage:\n\n```jsx\nimport Image from 'next/image';\n\nexport default function Home() {\n  return (\n    <Image\n      src=\"/example.jpg\"\n      alt=\"Example Image\"\n      width={500}\n      height={300}\n    />\n  );\n}\n```\nIn `next.config.js`, define external domains if needed:\n```js\nmodule.exports = {\n  images: {\n    domains: ['example.com']\n  }\n};\n```"
+    },
+    {
+        "question": "What is the difference between `getServerSideProps` and `getStaticProps` in Next.js?",
+        "correct_answer": "`getServerSideProps` fetches data on every request, while `getStaticProps` fetches data at build time.",
+        "incorrect_answers": [
+            "`getServerSideProps` is used only for API routes, while `getStaticProps` is used for pages.",
+            "`getServerSideProps` fetches data on the client side, while `getStaticProps` fetches data on the server.",
+            "`getServerSideProps` is faster than `getStaticProps` in all scenarios."
+        ],
+        "explanation": "`getServerSideProps` is used to fetch data on every page request, ensuring the most up-to-date content but with a slight performance cost due to server-side rendering. On the other hand, `getStaticProps` fetches data during build time for static generation, making it faster for pages that don't need real-time updates.\n\nExample:\n\n**`getServerSideProps`**\n```jsx\nexport async function getServerSideProps() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n\n  return { props: { data } };\n}\n```\n\n**`getStaticProps`**\n```jsx\nexport async function getStaticProps() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n\n  return { props: { data } };\n}\n```"
+    },
+    {
+        "question": "How does Next.js handle environment variables?",
+        "correct_answer": "Environment variables are defined in `.env` files and exposed to the client using the `NEXT_PUBLIC_` prefix.",
+        "incorrect_answers": [
+            "Environment variables are defined only in `next.config.js`.",
+            "All environment variables are automatically exposed to the client.",
+            "Environment variables can only be defined at runtime and not during the build process."
+        ],
+        "explanation": "In Next.js, environment variables are managed through `.env` files. Variables prefixed with `NEXT_PUBLIC_` are accessible on the client-side, while others are server-side only. For example:\n\n**.env.local**\n```\nAPI_KEY=secret-server-key\nNEXT_PUBLIC_API_URL=https://api.example.com\n```\n\nAccessing environment variables:\n```js\n// Server-side only\nconst apiKey = process.env.API_KEY;\n\n// Client-side\nconst apiUrl = process.env.NEXT_PUBLIC_API_URL;\n```\nEnsure sensitive keys are not exposed to the client by omitting the `NEXT_PUBLIC_` prefix."
+    },
+    {
+        "question": "What is ISR (Incremental Static Regeneration) in Next.js?",
+        "correct_answer": "ISR allows static pages to be updated after the build by revalidating data at specified intervals.",
+        "incorrect_answers": [
+            "ISR is a feature that re-renders the entire application on every request.",
+            "ISR is a mechanism to pre-fetch all possible data during the build process.",
+            "ISR refers to a Next.js feature that only applies to API routes."
+        ],
+        "explanation": "Incremental Static Regeneration (ISR) in Next.js enables static pages to be rebuilt in the background at runtime. This allows for updated content without a full rebuild. The `revalidate` field in `getStaticProps` specifies the interval for revalidation:\n\n```jsx\nexport async function getStaticProps() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n\n  return {\n    props: { data },\n    revalidate: 60, // Revalidate every 60 seconds\n  };\n}\n```\nWith ISR, users get fast, cached pages that can still display near-real-time data updates."
+    },
+    {
+        "question": "How can you create custom error pages in Next.js?",
+        "correct_answer": "By creating `404.js` or `_error.js` files in the `pages` directory.",
+        "incorrect_answers": [
+            "By defining error routes in `next.config.js`.",
+            "By using a third-party error handling library.",
+            "By wrapping all pages in a try-catch block."
+        ],
+        "explanation": "Custom error pages in Next.js are created by defining `404.js` for 404 errors or `_error.js` for general errors. These files are placed in the `pages` directory. Example:\n\n**`pages/404.js`**\n```jsx\nexport default function Custom404() {\n  return <h1>404 - Page Not Found</h1>;\n}\n```\n\n**`pages/_error.js`**\n```jsx\nfunction Error({ statusCode }) {\n  return (\n    <p>\n      {statusCode\n        ? `An error ${statusCode} occurred on server`\n        : 'An error occurred on client'}\n    </p>\n  );\n}\n\nError.getInitialProps = ({ res, err }) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;\n  return { statusCode };\n};\n\nexport default Error;\n```"
+    },
+    {
+        "question": "How can you enable TypeScript support in a new Next.js project?",
+        "correct_answer": "Install TypeScript and its type definitions, then start the development server to generate a `tsconfig.json` file.",
+        "incorrect_answers": [
+            "Install TypeScript, manually create a `tsconfig.json` file, and add custom configurations.",
+            "Use a CLI flag like `--typescript` during project initialization.",
+            "TypeScript is supported out of the box without any setup in Next.js."
+        ],
+        "explanation": "To enable TypeScript in Next.js, install TypeScript and required type definitions:\n\n```bash\nnpm install --save-dev typescript @types/react @types/node\n```\n\nStart the development server:\n```bash\nnpm run dev\n```\nNext.js automatically generates a `tsconfig.json` file with default configurations. You can customize it further if needed."
+    },
+    {
+        "question": "What is the role of the `_document.js` file in Next.js?",
+        "correct_answer": "It is used to customize the HTML and `<head>` structure of the entire application.",
+        "incorrect_answers": [
+            "It is used to fetch data for pages during server-side rendering.",
+            "It defines the client-side routing behavior of the application.",
+            "It is where you configure API endpoints for the application."
+        ],
+        "explanation": "`_document.js` is a special file in Next.js that allows you to customize the structure of the HTML document. This is useful for modifying `<html>` and `<head>` tags globally. Example:\n\n**`pages/_document.js`**\n```jsx\nimport Document, { Html, Head, Main, NextScript } from 'next/document';\n\nclass MyDocument extends Document {\n  render() {\n    return (\n      <Html lang=\"en\">\n        <Head>\n          <link rel=\"stylesheet\" href=\"/styles.css\" />\n        </Head>\n        <body>\n          <Main />\n          <NextScript />\n        </body>\n      </Html>\n    );\n  }\n}\n\nexport default MyDocument;\n```"
+    },
+    {
+        "question": "Which lifecycle method can you use to fetch data for static generation in Next.js?",
+        "correct_answer": "`getStaticProps`",
+        "incorrect_answers": [
+            "`componentDidMount`",
+            "`useEffect`",
+            "`getServerSideProps`"
+        ],
+        "explanation": "`getStaticProps` is a Next.js lifecycle method used to fetch data at build time for static generation. It is especially useful for creating pages with data that doesn't need to change frequently.\n\nExample:\n```jsx\nexport async function getStaticProps() {\n  const res = await fetch('https://api.example.com/data');\n  const data = await res.json();\n\n  return {\n    props: { data } // Will be passed to the page component as props\n  };\n}\n```\nThis method runs at build time and helps optimize performance."
+    },
+    {
+        "question": "How does dynamic routing work in Next.js?",
+        "correct_answer": "Dynamic routes are defined by adding brackets to the file name, like `[id].js`.",
+        "incorrect_answers": [
+            "Dynamic routes are configured in the `next.config.js` file.",
+            "Dynamic routes are defined in a special `routes.js` file.",
+            "Dynamic routes require a third-party library for implementation."
+        ],
+        "explanation": "Next.js supports dynamic routing through the use of bracket syntax in file names. For example, a file named `pages/post/[id].js` maps to routes like `/post/1` or `/post/hello`.\n\n**Example:**\n\n`pages/post/[id].js`\n```jsx\nimport { useRouter } from 'next/router';\n\nconst Post = () => {\n  const router = useRouter();\n  const { id } = router.query;\n\n  return <p>Post ID: {id}</p>;\n};\n\nexport default Post;\n```"
+    },
+    {
+        "question": "What happens if both `getStaticProps` and `getServerSideProps` are defined in a Next.js page?",
+        "correct_answer": "Next.js will throw an error because a page can only define one data-fetching method.",
+        "incorrect_answers": [
+            "Next.js will prioritize `getStaticProps` over `getServerSideProps`.",
+            "Next.js will merge the results of both methods automatically.",
+            "The application will default to client-side rendering for that page."
+        ],
+        "explanation": "A Next.js page cannot have both `getStaticProps` and `getServerSideProps`. Attempting to define both will result in a build-time error. These methods serve different purposes (`getStaticProps` for build-time data fetching, `getServerSideProps` for runtime data fetching), so you must choose one based on your use case."
+    },
+    {
+        "question": "What is the purpose of `getInitialProps` in Next.js, and how does it differ from `getStaticProps` and `getServerSideProps`?",
+        "correct_answer": "`getInitialProps` fetches data for both client and server rendering, but it's considered legacy and should be avoided in favor of newer methods.",
+        "incorrect_answers": [
+            "`getInitialProps` is the only method available for fetching data at build time.",
+            "`getInitialProps` is a client-side-only method for fetching data dynamically.",
+            "`getInitialProps` runs only once during the initial page load."
+        ],
+        "explanation": "`getInitialProps` is a legacy method used for data fetching in both client and server environments. However, it introduces performance trade-offs because it disables static optimization. Next.js recommends using `getStaticProps` or `getServerSideProps` for more modern and optimized data fetching."
+    },
+    {
+        "question": "How does Next.js optimize CSS imports?",
+        "correct_answer": "Next.js automatically extracts CSS imported in JavaScript and bundles it into a single CSS file per page.",
+        "incorrect_answers": [
+            "Next.js inline-styles all CSS into the page's HTML by default.",
+            "Next.js requires a third-party plugin to bundle CSS.",
+            "Next.js does not support CSS imports."
+        ],
+        "explanation": "Next.js supports CSS imports out of the box. When you import CSS files in your JavaScript, Next.js extracts and bundles the CSS into a single file per page for optimized loading. Example:\n\n```jsx\nimport './styles.css';\n\nfunction MyApp({ Component, pageProps }) {\n  return <Component {...pageProps} />;\n}\n\nexport default MyApp;\n```\nThis approach ensures faster page loads and better performance."
+    },
+    {
+        "question": "What does the `next/image` component provide that standard `<img>` tags do not?",
+        "correct_answer": "Automatic image optimization, responsive loading, and support for lazy loading.",
+        "incorrect_answers": [
+            "Support for animated GIFs without additional configuration.",
+            "Direct access to an image CDN with no setup required.",
+            "Automatic conversion of images into WebP format regardless of browser support."
+        ],
+        "explanation": "The `next/image` component offers several advanced features such as automatic image optimization, responsive loading, and lazy loading. It improves performance by optimizing images on-demand and serving them in modern formats like WebP when supported.\n\nExample:\n```jsx\nimport Image from 'next/image';\n\nexport default function Home() {\n  return (\n    <Image\n      src=\"/example.jpg\"\n      alt=\"Example Image\"\n      width={500}\n      height={500}\n    />\n  );\n}\n```"
+    },
+    {
+        "question": "How can you enable custom environment variables in a Next.js application?",
+        "correct_answer": "Define variables in a `.env.local` file prefixed with `NEXT_PUBLIC_` for client-side use.",
+        "incorrect_answers": [
+            "Define variables in `next.config.js` under the `env` property.",
+            "Use `process.env` directly in your components without any prefixes.",
+            "Environment variables are not supported in Next.js."
+        ],
+        "explanation": "Next.js supports environment variables through `.env` files. Variables prefixed with `NEXT_PUBLIC_` are exposed to the client. For example:\n\n**`.env.local`**\n```env\nNEXT_PUBLIC_API_URL=https://api.example.com\n```\n\nAccess it in your component:\n```jsx\nconst apiUrl = process.env.NEXT_PUBLIC_API_URL;\n```\nThis ensures sensitive server-side variables are not exposed."
+    },
+    {
+        "question": "What is the primary use case for the `useRouter` hook in Next.js?",
+        "correct_answer": "To access and manipulate the router object, including query parameters and navigation methods.",
+        "incorrect_answers": [
+            "To fetch data from the server-side during routing.",
+            "To manage application-wide state for the router.",
+            "To implement custom routing logic within API routes."
+        ],
+        "explanation": "The `useRouter` hook provides access to the Next.js router object, enabling features like programmatic navigation and reading query parameters.\n\nExample:\n```jsx\nimport { useRouter } from 'next/router';\n\nexport default function Page() {\n  const router = useRouter();\n  const { id } = router.query;\n\n  const goToHome = () => {\n    router.push('/');\n  };\n\n  return (\n    <div>\n      <p>Page ID: {id}</p>\n      <button onClick={goToHome}>Go Home</button>\n    </div>\n  );\n}\n```"
+    },
+    {
+        "question": "How can you implement incremental static regeneration (ISR) in Next.js?",
+        "correct_answer": "Use the `revalidate` property in `getStaticProps` to specify the time interval for re-generation.",
+        "incorrect_answers": [
+            "Use `getServerSideProps` to enable incremental static regeneration.",
+            "Set a cron job to regenerate static pages manually.",
+            "Incremental static regeneration is enabled by default in Next.js and requires no configuration."
+        ],
+        "explanation": "In Next.js, ISR allows static pages to be regenerated at runtime when a request comes in after the `revalidate` time. This provides the benefits of static generation while keeping data up-to-date.\n\nExample:\n```jsx\nexport async function getStaticProps() {\n  const data = await fetchData();\n\n  return {\n    props: { data },\n    revalidate: 60, // Re-generate the page every 60 seconds\n  };\n}\n```"
+    },
+    {
+        "question": "What happens when a page uses both `getStaticProps` and `getServerSideProps`?",
+        "correct_answer": "It results in a build-time error because only one data-fetching method can be used per page.",
+        "incorrect_answers": [
+            "The page defaults to `getServerSideProps` and ignores `getStaticProps`.",
+            "Both methods are executed, with `getStaticProps` running first.",
+            "Next.js renders a static fallback page before executing `getServerSideProps`."
+        ],
+        "explanation": "In Next.js, you cannot combine `getStaticProps` and `getServerSideProps` in a single page. The framework enforces this restriction to prevent conflicts in the rendering strategy."
+    },
+    {
+        "question": "What is the purpose of the `Middleware` feature in Next.js?",
+        "correct_answer": "To run custom code before a request is completed, enabling features like redirects and rewrites.",
+        "incorrect_answers": [
+            "To manage API requests and handle responses on the server.",
+            "To add global CSS styles to the application.",
+            "To initialize and configure Redux in a Next.js app."
+        ],
+        "explanation": "Middleware in Next.js allows developers to execute code before a request is completed. It can be used to implement authentication, redirects, or conditional routing.\n\nExample:\n```javascript\nimport { NextResponse } from 'next/server';\n\nexport function middleware(req) {\n  if (!req.cookies.auth) {\n    return NextResponse.redirect('/login');\n  }\n}\n```"
+    },
+    {
+        "question": "How does Next.js handle dynamic API routes?",
+        "correct_answer": "Dynamic API routes are defined by adding square brackets in the filename, and the parameter is accessible via `req.query`.",
+        "incorrect_answers": [
+            "Dynamic API routes are handled by defining route configurations in `next.config.js`.",
+            "Dynamic API routes are not supported; only static routes can be used.",
+            "Dynamic API routes require a third-party library for routing."
+        ],
+        "explanation": "Dynamic API routes are defined in the `pages/api` directory using square brackets. For example, a file `pages/api/user/[id].js` handles requests like `/api/user/123`. The parameter can be accessed via `req.query`.\n\nExample:\n```javascript\nexport default function handler(req, res) {\n  const { id } = req.query;\n  res.status(200).json({ userId: id });\n}\n```"
+    },
+    {
+        "question": "How can you define a custom `404` page in Next.js?",
+        "correct_answer": "Create a `pages/404.js` file, which Next.js automatically serves for 404 errors.",
+        "incorrect_answers": [
+            "Define a 404 route in `next.config.js` under the `pages` property.",
+            "Use a third-party library to handle 404 errors.",
+            "Wrap your entire application in an error boundary that catches 404s."
+        ],
+        "explanation": "To define a custom 404 page in Next.js, you create a file named `404.js` in the `pages` directory. This file is automatically rendered for all routes that do not match an existing page.\n\nExample:\n```jsx\nexport default function Custom404() {\n  return <h1>404 - Page Not Found</h1>;\n}\n```"
+    },
+    {
+        "question": "How can you use `next/image` to optimize images in Next.js?",
+        "correct_answer": "By importing the `Image` component and replacing standard `<img>` tags.",
+        "incorrect_answers": [
+            "By using a special `<optimized-img>` tag provided by Next.js.",
+            "By adding the `optimize=true` attribute to `<img>` tags.",
+            "By using a third-party library integrated with Next.js."
+        ],
+        "explanation": "The `next/image` component automatically optimizes images for better performance. For example:\n```jsx\nimport Image from 'next/image';\n\nexport default function Example() {\n  return <Image src=\"/example.jpg\" alt=\"Example\" width={500} height={300} />;\n}\n```\nThis includes features like lazy loading, automatic resizing, and format conversion."
+    },
+    {
+        "question": "What environment variable file is loaded by default in Next.js?",
+        "correct_answer": "`.env.local`",
+        "incorrect_answers": [
+            "`.env`",
+            "`.env.production`",
+            "`.env.development`"
+        ],
+        "explanation": "Next.js automatically loads environment variables from `.env.local` into the application. Other files, such as `.env` or `.env.production`, need explicit configuration."
+    },
+    {
+        "question": "What method should you use to handle headers in API routes?",
+        "correct_answer": "Use the `setHeader` method on the `res` object.",
+        "incorrect_answers": [
+            "Modify headers in `next.config.js`.",
+            "Use the `set-headers` package to define headers.",
+            "Headers are automatically handled by Next.js and cannot be modified."
+        ],
+        "explanation": "In API routes, headers can be set using the `setHeader` method. Example:\n```javascript\nexport default function handler(req, res) {\n  res.setHeader('Content-Type', 'application/json');\n  res.status(200).json({ message: 'Headers set' });\n}\n```"
+    },
+    {
+        "question": "How does `next/link` improve navigation performance?",
+        "correct_answer": "It prefetches linked pages in the background by default.",
+        "incorrect_answers": [
+            "It uses client-side rendering exclusively for linked pages.",
+            "It optimizes the navigation by disabling animations.",
+            "It makes the browser cache all linked assets automatically."
+        ],
+        "explanation": "The `next/link` component in Next.js prefetches the resources for linked pages in the background when the `prefetch` attribute is enabled (default for production builds). Example:\n```jsx\nimport Link from 'next/link';\n\nexport default function Home() {\n  return <Link href=\"/about\">Go to About</Link>;\n}\n```"
+    },
+    {
+        "question": "How can you customize the behavior of the Webpack configuration in Next.js?",
+        "correct_answer": "Modify the `webpack` property in `next.config.js`.",
+        "incorrect_answers": [
+            "Directly edit the Webpack configuration files in the `.next` folder.",
+            "Use the `webpack-cli` tool to overwrite configurations.",
+            "Add a `webpack.config.js` file in the root directory."
+        ],
+        "explanation": "Next.js allows customization of the Webpack configuration using the `webpack` property in `next.config.js`. Example:\n```javascript\nmodule.exports = {\n  webpack: (config) => {\n    // Modify the Webpack config here\n    return config;\n  },\n};\n```"
+    }
+]

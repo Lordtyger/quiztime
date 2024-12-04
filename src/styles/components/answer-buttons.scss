@@ -1,0 +1,42 @@
+.answer-buttons {
+    display: flex;
+    flex-direction: column;
+    div {
+        margin: 8px 0 8px 0;
+        width: 100%;
+        button {
+            background: none;
+            color: inherit;
+            border: none;
+            font: inherit;
+            font-size: 1.2em;
+            cursor: pointer;
+            outline: inherit;
+            text-align: left;
+            // margin: 10px;
+            padding: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+            background-color: #495058;
+            // margin: 0 10px 0 10px;
+            height: auto;
+            &:hover{
+                background-color: #495058;
+            }
+        }
+    }
+
+    .correct-answer {
+        background-color: green;
+        border-color: green;
+    }
+
+    .incorrect-answer {
+        background-color: red;
+        border-color: red;
+    }
+}

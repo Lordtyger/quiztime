@@ -1,0 +1,17 @@
+.question-container {
+
+    font-size: 1.5em;
+    h2 {
+        margin-top: 1em;
+        margin-bottom: 1em;;
+    }
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        @include query (mobile) {
+            flex-direction: column;
+            height: 4em;
+        }
+    }
+}

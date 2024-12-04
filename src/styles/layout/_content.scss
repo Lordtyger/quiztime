@@ -1,0 +1,29 @@
+.App {
+    // display: flex;
+    height: 100vh;
+    // background-color: green;
+    width: 100%;
+    max-width: $tablet;
+    margin: 0 auto;
+}
+.quiz-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1px;
+    width: 100%;
+    // max-width: 650px;
+    height: calc(100% - 1px);
+    // height: auto;
+    color: white;
+    // background-color: yellow;
+
+    @include query (mobile) {
+        width: 100%;
+    }
+
+    @include query (tablet) {
+        width: 100%;
+    }
+}

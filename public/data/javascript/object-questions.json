@@ -1,0 +1,625 @@
+[
+    {
+        "question": "What does `Object.assign({}, {a: 1}, {b: 2});` return?",
+        "correct_answer": "{a: 1, b: 2}",
+        "incorrect_answers": [
+            "{a: 1, b: 1}",
+            "{a: 1, b: undefined}",
+            "{a: undefined, b: 2}",
+            "{a: 1, b: 2, a: 1}"
+        ],
+        "explanation": "<p>The <code>Object.assign()</code> method is used to copy all enumerable own properties from one or more source objects to a target object. It returns the target object. The method performs a shallow copy, meaning that nested objects or arrays are not cloned.</p><pre><code>const target = {};<br>const source = {a: 1, b: 2};<br>Object.assign(target, source);<br>console.log(target); // {a: 1, b: 2}</code></pre>"
+    },
+    {
+        "question": "What is the result of `Object.assign({a: 1}, {a: 2, b: 3});`?",
+        "correct_answer": "{a: 2, b: 3}",
+        "incorrect_answers": [
+            "{a: 1, b: 3}",
+            "{a: 2, b: undefined}",
+            "{a: 1, b: 3, a: 1}",
+            "{a: 1, b: 3}"
+        ],
+        "explanation": "<p>The <code>Object.assign()</code> method copies the properties from the source object to the target. If a property exists in both objects, the property from the source object overwrites the one in the target. In this example, <code>a: 2</code> from the second object overwrites <code>a: 1</code> from the first object.</p><pre><code>const target = {a: 1};<br>const source = {a: 2, b: 3};<br>Object.assign(target, source);<br>console.log(target); // {a: 2, b: 3}</code></pre>"
+    },
+    {
+        "question": "What does `Object.create(null)` return?",
+        "correct_answer": "An object with no prototype.",
+        "incorrect_answers": [
+            "{}",
+            "null",
+            "undefined",
+            "An empty object"
+        ],
+        "explanation": "<p>The <code>Object.create()</code> method creates a new object with the specified prototype object and properties. When called with <code>null</code> as the argument, it creates an object that does not inherit from <code>Object.prototype</code>, meaning it has no prototype methods such as <code>toString()</code>.</p><pre><code>const obj = Object.create(null);<br>console.log(obj); // {}<br>console.log(obj.toString); // undefined</code></pre>"
+    },
+    {
+        "question": "What is the output of `Object.create(Object.prototype)`?",
+        "correct_answer": "An object that inherits from Object.prototype.",
+        "incorrect_answers": [
+            "{}",
+            "null",
+            "undefined",
+            "An object with no prototype"
+        ],
+        "explanation": "<p>When calling <code>Object.create()</code> with <code>Object.prototype</code>, the resulting object will inherit all the properties and methods of <code>Object.prototype</code> (like <code>toString()</code>, <code>hasOwnProperty()</code>, etc.). This is the default behavior when creating objects in JavaScript.</p><pre><code>const obj = Object.create(Object.prototype);<br>console.log(obj instanceof Object); // true</code></pre>"
+    },
+    {
+        "question": "What does `Object.defineProperties({}, {a: {value: 1}, b: {value: 2}});` return?",
+        "correct_answer": "{a: 1, b: 2}",
+        "incorrect_answers": [
+            "{a: 1, b: {value: 2}}",
+            "{a: 1, b: 2, value: 1}",
+            "{a: {value: 1}, b: {value: 2}}",
+            "{}"
+        ],
+        "explanation": "<p>The <code>Object.defineProperties()</code> method is used to define new or modify existing properties directly on an object. It takes two arguments: the object and a descriptor object with properties to be defined. In this case, the properties <code>a</code> and <code>b</code> are defined with values 1 and 2 respectively.</p><pre><code>const obj = {};<br>Object.defineProperties(obj, {<br>  a: {value: 1},<br>  b: {value: 2}<br>});<br>console.log(obj); // {a: 1, b: 2}</code></pre>"
+    },
+    {
+        "question": "What happens when you use `Object.defineProperties()` with a getter method?",
+        "correct_answer": "The getter is defined for the property.",
+        "incorrect_answers": [
+            "An error is thrown.",
+            "The getter method is ignored.",
+            "The property is not defined.",
+            "The getter will throw a type error."
+        ],
+        "explanation": "<p>When defining properties using <code>Object.defineProperties()</code>, a getter method can be defined. This allows for dynamic computation of a property value when it is accessed. The getter method is invoked when the property is read.</p><pre><code>const obj = {};<br>Object.defineProperties(obj, {<br>  a: {<br>    get() { return 'Hello'; }<br>  }<br>});<br>console.log(obj.a); // 'Hello'</code></pre>"
+    },
+    {
+        "question": "What does `Object.entries({a: 1, b: 2});` return?",
+        "correct_answer": "[['a', 1], ['b', 2]]",
+        "incorrect_answers": [
+            "{a: 1, b: 2}",
+            "[['a', 'b'], [1, 2]]",
+            "[1, 2, 'a', 'b']",
+            "[{'a': 1}, {'b': 2}]"
+        ],
+        "explanation": "<p>The <code>Object.entries()</code> method returns an array of a given object's own enumerable string-keyed property pairs. Each pair is represented as an array where the first element is the property name and the second is the property value.</p><pre><code>const obj = {a: 1, b: 2};<br>const entries = Object.entries(obj);<br>console.log(entries); // [['a', 1], ['b', 2]]</code></pre>"
+    },
+    {
+        "question": "How does `Object.entries()` handle inherited properties?",
+        "correct_answer": "Inherited properties are not included.",
+        "incorrect_answers": [
+            "Inherited properties are included.",
+            "An error is thrown.",
+            "Inherited properties are ignored but not excluded.",
+            "Inherited properties are converted to undefined."
+        ],
+        "explanation": "<p><code>Object.entries()</code> only enumerates the object's own properties. Inherited properties (properties that are part of the object's prototype chain) are not included in the resulting array.</p><pre><code>const obj = {a: 1};<br>Object.prototype.b = 2;<br>const entries = Object.entries(obj);<br>console.log(entries); // [['a', 1]]</code></pre>"
+    },
+    {
+        "question": "What happens when you freeze an object using `Object.freeze({a: 1})`?",
+        "correct_answer": "The object is frozen and its properties cannot be modified.",
+        "incorrect_answers": [
+            "The object is deleted.",
+            "The object becomes immutable, including nested objects.",
+            "The object is converted to null.",
+            "An error is thrown."
+        ],
+        "explanation": "<p>The <code>Object.freeze()</code> method freezes an object, preventing new properties from being added, existing properties from being removed, and existing properties from being modified. It only applies to the object's top level properties, and does not affect nested objects (they are still mutable).</p><pre><code>const obj = Object.freeze({a: 1});<br>obj.a = 2;<br>console.log(obj.a); // 1 (no modification allowed)</code></pre>"
+    },
+    {
+        "question": "What is the result of `Object.freeze({a: {b: 1}})` when modifying the nested object?",
+        "correct_answer": "The nested object can still be modified.",
+        "incorrect_answers": [
+            "The entire object is immutable.",
+            "An error is thrown when modifying the nested object.",
+            "The nested object becomes frozen automatically.",
+            "The nested object is deleted."
+        ],
+        "explanation": "<p>While <code>Object.freeze()</code> prevents modifications to the top-level properties of an object, it does not affect nested objects. In the case of nested objects, the nested properties can still be modified unless <code>Object.freeze()</code> is called on them as well.</p><pre><code>const obj = Object.freeze({a: {b: 1}});<br>obj.a.b = 2;<br>console.log(obj.a.b); // 2 (nested object is not frozen)</code></pre>"
+    },
+        {
+            "question": "What does `Object.fromEntries([['a', 1], ['b', 2]]);` return?",
+            "correct_answer": "{a: 1, b: 2}",
+            "incorrect_answers": [
+                "[['a', 1], ['b', 2]]",
+                "{a: ['1'], b: ['2']}",
+                "{a: 1, b: undefined}",
+                "{}"
+            ],
+            "explanation": "<p>The <code>Object.fromEntries()</code> method transforms a list of key-value pairs into an object. It takes an iterable, such as an array of arrays, where each inner array consists of a key and a value. The method then returns a new object with the provided key-value pairs.</p><pre><code>const entries = [['a', 1], ['b', 2]];<br>const obj = Object.fromEntries(entries);<br>console.log(obj); // {a: 1, b: 2}</code></pre>"
+        },
+        {
+            "question": "What does `Object.fromEntries(new Map([['x', 5], ['y', 6]]));` return?",
+            "correct_answer": "{x: 5, y: 6}",
+            "incorrect_answers": [
+                "[['x', 5], ['y', 6]]",
+                "{x: 5, y: 6, x: 5}",
+                "{}",
+                "{x: 5, y: undefined}"
+            ],
+            "explanation": "<p>The <code>Object.fromEntries()</code> method can also accept a <code>Map</code> object as input. It converts the Map's key-value pairs into an object. Each <code>Map</code> entry is converted into a property of the returned object.</p><pre><code>const map = new Map([['x', 5], ['y', 6]]);<br>const obj = Object.fromEntries(map);<br>console.log(obj); // {x: 5, y: 6}</code></pre>"
+        },
+        {
+            "question": "What does `Object.getOwnPropertyDescriptor({a: 1}, 'a');` return?",
+            "correct_answer": "{value: 1, writable: true, enumerable: true, configurable: true}",
+            "incorrect_answers": [
+                "{value: 1, writable: false, enumerable: true, configurable: true}",
+                "{value: 1, writable: true, enumerable: false, configurable: false}",
+                "undefined",
+                "{value: 1}"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertyDescriptor()</code> method returns a descriptor object for a specific property of an object. This descriptor contains information about the property, such as whether it is writable, enumerable, or configurable.</p><pre><code>const obj = {a: 1};<br>const descriptor = Object.getOwnPropertyDescriptor(obj, 'a');<br>console.log(descriptor); // {value: 1, writable: true, enumerable: true, configurable: true}</code></pre>"
+        },
+        {
+            "question": "What would `Object.getOwnPropertyDescriptor({a: 1, b: 2}, 'b');` return?",
+            "correct_answer": "{value: 2, writable: true, enumerable: true, configurable: true}",
+            "incorrect_answers": [
+                "undefined",
+                "{value: 2, writable: false, enumerable: false, configurable: false}",
+                "{value: 2}",
+                "{value: 2, writable: false, enumerable: true, configurable: true}"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertyDescriptor()</code> method returns the descriptor of the specified property in the object. In this case, it retrieves the descriptor for the <code>b</code> property, which is <code>value: 2</code>, and by default, the property is writable, enumerable, and configurable.</p><pre><code>const obj = {a: 1, b: 2};<br>const descriptor = Object.getOwnPropertyDescriptor(obj, 'b');<br>console.log(descriptor); // {value: 2, writable: true, enumerable: true, configurable: true}</code></pre>"
+        },
+        {
+            "question": "How does `Object.getOwnPropertyDescriptors({a: 1, b: 2});` behave?",
+            "correct_answer": "{a: {value: 1, writable: true, enumerable: true, configurable: true}, b: {value: 2, writable: true, enumerable: true, configurable: true}}",
+            "incorrect_answers": [
+                "{a: {value: 1}, b: {value: 2}}",
+                "{a: {value: 1, writable: true}, b: {value: 2}}",
+                "{a: {value: 1, writable: false}, b: {value: 2}}",
+                "{}"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertyDescriptors()</code> method returns an object containing all own property descriptors of an object. This includes information like whether each property is writable, enumerable, and configurable. It’s useful for cloning objects or understanding property descriptors in depth.</p><pre><code>const obj = {a: 1, b: 2};<br>const descriptors = Object.getOwnPropertyDescriptors(obj);<br>console.log(descriptors);<br>// {a: {value: 1, writable: true, enumerable: true, configurable: true}, b: {value: 2, writable: true, enumerable: true, configurable: true}}</code></pre>"
+        },
+        {
+            "question": "What does `Object.getOwnPropertyDescriptors({a: 1, b: 2, c: 'hello'});` return?",
+            "correct_answer": "{a: {value: 1, writable: true, enumerable: true, configurable: true}, b: {value: 2, writable: true, enumerable: true, configurable: true}, c: {value: 'hello', writable: true, enumerable: true, configurable: true}}",
+            "incorrect_answers": [
+                "{a: {value: 1}, b: {value: 2}, c: {value: 'hello'}}",
+                "{}",
+                "{a: {value: 1, writable: false}, b: {value: 2}}",
+                "{a: {value: 1, writable: true}, b: {value: 2}}"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertyDescriptors()</code> method will return an object that contains a descriptor for each property of the input object. Each property’s descriptor includes the <code>value</code>, <code>writable</code>, <code>enumerable</code>, and <code>configurable</code> attributes.</p><pre><code>const obj = {a: 1, b: 2, c: 'hello'};<br>const descriptors = Object.getOwnPropertyDescriptors(obj);<br>console.log(descriptors);<br>// {a: {value: 1, writable: true, enumerable: true, configurable: true}, b: {value: 2, writable: true, enumerable: true, configurable: true}, c: {value: 'hello', writable: true, enumerable: true, configurable: true}}</code></pre>"
+        },
+        {
+            "question": "What does `Object.getOwnPropertyNames({a: 1, b: 2});` return?",
+            "correct_answer": "['a', 'b']",
+            "incorrect_answers": [
+                "['a', 'b', 'toString', 'hasOwnProperty']",
+                "['a', 'b', 'constructor']",
+                "['a', 'b', 'valueOf']",
+                "[]"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertyNames()</code> method returns an array of all own property names (keys) of an object, excluding inherited properties. It will not return properties from the prototype chain but will include non-enumerable properties.</p><pre><code>const obj = {a: 1, b: 2};<br>const keys = Object.getOwnPropertyNames(obj);<br>console.log(keys); // ['a', 'b']</code></pre>"
+        },
+        {
+            "question": "What does `Object.getOwnPropertyNames({a: 1, b: 2, constructor: Function});` return?",
+            "correct_answer": "['a', 'b', 'constructor']",
+            "incorrect_answers": [
+                "['a', 'b']",
+                "['a', 'b', 'valueOf']",
+                "['a', 'b', 'toString']",
+                "['constructor']"
+            ],
+            "explanation": "<p>When using <code>Object.getOwnPropertyNames()</code>, the method returns an array of all properties, including both enumerable and non-enumerable properties. In this case, the property <code>constructor</code> is included because it is a property of the object itself.</p><pre><code>const obj = {a: 1, b: 2, constructor: Function};<br>const keys = Object.getOwnPropertyNames(obj);<br>console.log(keys); // ['a', 'b', 'constructor']</code></pre>"
+        },
+        {
+            "question": "What does `Object.getOwnPropertySymbols({[Symbol('a')]: 1});` return?",
+            "correct_answer": "[Symbol(a)]",
+            "incorrect_answers": [
+                "undefined",
+                "['a']",
+                "['Symbol(a)']",
+                "[1]"
+            ],
+            "explanation": "<p>The <code>Object.getOwnPropertySymbols()</code> method returns an array of all own symbol properties (keys) of the given object. This is useful for working with symbol-based keys that are not enumerable in normal iteration.</p><pre><code>const obj = {[Symbol('a')]: 1};<br>const symbols = Object.getOwnPropertySymbols(obj);<br>console.log(symbols); // [Symbol(a)]</code></pre>"
+        },
+        {
+            "question": "How does `Object.getPrototypeOf({});` behave?",
+            "correct_answer": "Object.prototype",
+            "incorrect_answers": [
+                "null",
+                "undefined",
+                "Object",
+                "Array.prototype"
+            ],
+            "explanation": "<p>The <code>Object.getPrototypeOf()</code> method returns the prototype of the given object. In this case, for an empty object <code>{}</>, the prototype is the <code>Object.prototype</code> object, which contains methods like <code>toString()</code> and <code>hasOwnProperty()</code>.</p><pre><code>const obj = {};<br>const proto = Object.getPrototypeOf(obj);<br>console.log(proto); // Object.prototype</code></pre>"
+        },
+        {
+            "question": "What will `Object.getPrototypeOf([]);` return?",
+            "correct_answer": "Array.prototype",
+            "incorrect_answers": [
+                "Object.prototype",
+                "null",
+                "undefined",
+                "Array"
+            ],
+            "explanation": "<p>The <code>Object.getPrototypeOf()</code> method returns the prototype of the object. For arrays, the prototype is <code>Array.prototype</code>, which contains array-specific methods like <code>push()</code> and <code>map()</code>.</p><pre><code>const arr = [];<br>const proto = Object.getPrototypeOf(arr);<br>console.log(proto); // Array.prototype</code></pre>"
+        },
+     
+            {
+                "question": "How does `Object.groupBy()` work in JavaScript? `Object.groupBy([1, 2, 3], n => n % 2);`",
+                "correct_answer": "{0: [2], 1: [1, 3]}",
+                "incorrect_answers": [
+                    "{1: [1, 3], 0: [2]}",
+                    "{0: [1, 3], 1: [2]}",
+                    "{1: [2], 0: [1, 3]}",
+                    "{}"
+                ],
+                "explanation": "<p>The <code>Object.groupBy()</code> method creates an object where the keys are generated by applying a function to each item in the array. The value for each key is an array containing all items that match that key. This method is useful for categorizing data.</p><pre><code>const numbers = [1, 2, 3];<br>const grouped = Object.groupBy(numbers, n => n % 2);<br>console.log(grouped); // {0: [2], 1: [1, 3]}</code></pre>"
+            },
+            {
+                "question": "What does `Object.groupBy([1, 2, 3, 4], n => n % 2);` return?",
+                "correct_answer": "{0: [2, 4], 1: [1, 3]}",
+                "incorrect_answers": [
+                    "{0: [1, 3], 1: [2, 4]}",
+                    "{1: [1, 2, 3], 0: [4]}",
+                    "{1: [2, 4], 0: [1, 3]}",
+                    "{0: [2], 1: [1, 3, 4]}"
+                ],
+                "explanation": "<p>The <code>Object.groupBy()</code> method groups elements based on the result of the function passed to it. In this case, it groups the numbers based on their modulo with 2 (whether they are even or odd). The result is an object where the keys represent the categories and the values are arrays of matching elements.</p><pre><code>const numbers = [1, 2, 3, 4];<br>const grouped = Object.groupBy(numbers, n => n % 2);<br>console.log(grouped); // {0: [2, 4], 1: [1, 3]}</code></pre>"
+            },
+            {
+                "question": "How does `hasOwn()` work in JavaScript? `obj.hasOwn('key')`?",
+                "correct_answer": "Returns true if the object has a property 'key' as its own property, not inherited.",
+                "incorrect_answers": [
+                    "Returns false if the object has a property 'key'.",
+                    "Returns true if the object has the 'key' property anywhere in its prototype chain.",
+                    "Returns true only for non-enumerable properties.",
+                    "Throws an error."
+                ],
+                "explanation": "<p>The <code>hasOwn()</code> method is used to check whether an object has a specified property as its own property (not inherited). It is similar to <code>hasOwnProperty()</code>, but <code>hasOwn()</code> can be used for objects that support it directly.</p><pre><code>const obj = {key: 'value'};<br>console.log(obj.hasOwn('key')); // true</code></pre>"
+            },
+            {
+                "question": "What is the difference between `obj.hasOwn('key')` and `obj.hasOwnProperty('key')`?",
+                "correct_answer": "The <code>hasOwn</code> method can be used in a more general context while <code>hasOwnProperty</code> is a direct method available from <code>Object.prototype</code>.",
+                "incorrect_answers": [
+                    "They are exactly the same.",
+                    "The <code>hasOwn</code> method checks if the property exists anywhere in the prototype chain.",
+                    "The <code>hasOwn</code> method checks only for non-enumerable properties.",
+                    "The <code>hasOwnProperty</code> method throws an error."
+                ],
+                "explanation": "<p>The <code>hasOwn()</code> method is typically an extension or alias for the <code>hasOwnProperty()</code> method in JavaScript, though the specific behavior may vary depending on the implementation. <code>hasOwnProperty()</code> is a direct method of <code>Object.prototype</code>, while <code>hasOwn()</code> may be more versatile in specific environments.</p><pre><code>const obj = {key: 'value'};<br>console.log(obj.hasOwnProperty('key')); // true</code></pre>"
+            },
+            {
+                "question": "What does `Object.prototype.hasOwnProperty.call(obj, 'key')` do?",
+                "correct_answer": "It safely checks if 'key' is an own property of 'obj', even if the object has a property named 'hasOwnProperty'.",
+                "incorrect_answers": [
+                    "It checks if 'key' is a property of the object's prototype chain.",
+                    "It checks if 'key' exists anywhere in the object.",
+                    "It checks if 'key' is an inherited property.",
+                    "It checks if the 'key' property is enumerable."
+                ],
+                "explanation": "<p><code>Object.prototype.hasOwnProperty.call()</code> is a safe method for checking if an object has a specific property, ensuring that the method works even if the object itself has a property called <code>hasOwnProperty</code> (which could override the default behavior).</p><pre><code>const obj = {hasOwnProperty: 'custom'};<br>console.log(Object.prototype.hasOwnProperty.call(obj, 'key')); // false</code></pre>"
+            },
+            {
+                "question": "What does `Object.is(value1, value2)` do?",
+                "correct_answer": "It determines whether two values are the same value, considering special cases like NaN and -0.",
+                "incorrect_answers": [
+                    "It compares whether two values are of the same type.",
+                    "It compares the reference equality of two objects.",
+                    "It checks if two values are deeply equal.",
+                    "It checks if two values are strictly equal (===)."
+                ],
+                "explanation": "<p>The <code>Object.is()</code> method determines whether two values are the same, considering special cases like NaN (which is equal to itself in this method) and the differences between +0 and -0. It is similar to the strict equality operator <code>===</code> but with these edge cases handled differently.</p><pre><code>console.log(Object.is(NaN, NaN)); // true<br>console.log(Object.is(+0, -0)); // false</code></pre>"
+            },
+            {
+                "question": "What will `Object.is(0, -0)` return?",
+                "correct_answer": "false",
+                "incorrect_answers": [
+                    "true",
+                    "undefined",
+                    "TypeError",
+                    "NaN"
+                ],
+                "explanation": "<p><code>Object.is()</code> treats <code>+0</code> and <code>-0</code> as different values. This method is useful when you need to compare values with precision in cases like this.</p><pre><code>console.log(Object.is(0, -0)); // false</code></pre>"
+            },
+            {
+                "question": "How does `Object.isExtensible(obj)` work in JavaScript?",
+                "correct_answer": "It checks whether new properties can be added to an object.",
+                "incorrect_answers": [
+                    "It checks if the object has frozen properties.",
+                    "It checks if the object can be modified.",
+                    "It checks if the object is sealed.",
+                    "It checks if the object is an instance of Object."
+                ],
+                "explanation": "<p>The <code>Object.isExtensible()</code> method checks if an object is extensible, meaning if new properties can be added to it. By default, all objects are extensible unless <code>Object.preventExtensions()</code> is used.</p><pre><code>const obj = {};<br>console.log(Object.isExtensible(obj)); // true<br>Object.preventExtensions(obj);<br>console.log(Object.isExtensible(obj)); // false</code></pre>"
+            },
+            {
+                "question": "What does `Object.isExtensible(Object.preventExtensions({}));` return?",
+                "correct_answer": "false",
+                "incorrect_answers": [
+                    "true",
+                    "undefined",
+                    "Error",
+                    "null"
+                ],
+                "explanation": "<p>The <code>Object.isExtensible()</code> method returns <code>false</code> if an object has been made non-extensible with <code>Object.preventExtensions()</code>. This means no new properties can be added to the object.</p><pre><code>const obj = {};<br>Object.preventExtensions(obj);<br>console.log(Object.isExtensible(obj)); // false</code></pre>"
+            },
+            {
+                "question": "What will `Object.isFrozen({})` return?",
+                "correct_answer": "false",
+                "incorrect_answers": [
+                    "true",
+                    "undefined",
+                    "Error",
+                    "null"
+                ],
+                "explanation": "<p>The <code>Object.isFrozen()</code> method checks whether an object is frozen, meaning its properties cannot be modified, added, or deleted. An object is not frozen unless <code>Object.freeze()</code> has been called on it.</p><pre><code>const obj = {};<br>console.log(Object.isFrozen(obj)); // false<br>Object.freeze(obj);<br>console.log(Object.isFrozen(obj)); // true</code></pre>"
+            },
+            {
+                "question": "How does `Object.isFrozen(Object.freeze({}))` behave?",
+                "correct_answer": "true",
+                "incorrect_answers": [
+                    "false",
+                    "undefined",
+                    "null",
+                    "Error"
+                ],
+                "explanation": "<p>The <code>Object.isFrozen()</code> method returns <code>true</code> if the object is frozen, meaning no modifications can be made to it. In this case, <code>Object.freeze()</code> is used to freeze the object first.</p><pre><code>const obj = Object.freeze({});<br>console.log(Object.isFrozen(obj)); // true</code></pre>"
+            },
+                {
+                    "question": "How does `isPrototypeOf()` work in JavaScript? `Object.prototype.isPrototypeOf(obj)`",
+                    "correct_answer": "It checks if `Object.prototype` is in the prototype chain of `obj`.",
+                    "incorrect_answers": [
+                        "It checks if `obj` is an instance of `Object`.",
+                        "It checks if `obj` is a property of `Object.prototype`.",
+                        "It checks if `obj` inherits from `Object.prototype` directly.",
+                        "It checks if `obj` is a prototype of `Object`."
+                    ],
+                    "explanation": "<p>The <code>isPrototypeOf()</code> method checks if an object is in the prototype chain of another object. This method returns <code>true</code> if the object on which it is called is a prototype of the provided object. It's commonly used to verify inheritance in prototype chains.</p><pre><code>const obj = {};<br>console.log(Object.prototype.isPrototypeOf(obj)); // true</code></pre>"
+                },
+                {
+                    "question": "How does `isPrototypeOf()` behave when checking `Array.prototype.isPrototypeOf([])`?",
+                    "correct_answer": "It returns true because `Array.prototype` is in the prototype chain of an array.",
+                    "incorrect_answers": [
+                        "It returns false because arrays are not objects.",
+                        "It returns true because arrays are objects.",
+                        "It throws a TypeError.",
+                        "It returns undefined."
+                    ],
+                    "explanation": "<p>The <code>isPrototypeOf()</code> method can be used to check if a prototype exists in the prototype chain of an object. In this case, <code>Array.prototype</code> is indeed a prototype of an array, so the result is <code>true</code>.</p><pre><code>console.log(Array.prototype.isPrototypeOf([])); // true</code></pre>"
+                },
+                {
+                    "question": "What does `Object.isSealed()` return in JavaScript?",
+                    "correct_answer": "It returns true if the object is sealed, meaning properties cannot be added or deleted.",
+                    "incorrect_answers": [
+                        "It returns false if properties cannot be modified.",
+                        "It returns true only if the object is frozen.",
+                        "It returns false if the object has non-enumerable properties.",
+                        "It throws an error."
+                    ],
+                    "explanation": "<p>The <code>Object.isSealed()</code> method checks if an object is sealed. A sealed object cannot have properties added or deleted, and its existing properties cannot be removed. However, the values of the existing properties can still be modified if they are writable.</p><pre><code>const obj = { key: 'value' };<br>Object.seal(obj);<br>console.log(Object.isSealed(obj)); // true</code></pre>"
+                },
+                {
+                    "question": "What is the result of calling `Object.isSealed()` on a plain object with no changes?",
+                    "correct_answer": "false",
+                    "incorrect_answers": [
+                        "true",
+                        "undefined",
+                        "TypeError",
+                        "null"
+                    ],
+                    "explanation": "<p><code>Object.isSealed()</code> returns <code>false</code> for an object that is not sealed. By default, all objects are extensible and not sealed until <code>Object.seal()</code> is called on them.</p><pre><code>const obj = {};<br>console.log(Object.isSealed(obj)); // false</code></pre>"
+                },
+                {
+                    "question": "How does `Object.keys()` work in JavaScript?",
+                    "correct_answer": "It returns an array of an object's own enumerable property names.",
+                    "incorrect_answers": [
+                        "It returns an array of the object's prototype chain.",
+                        "It returns a string of the property names.",
+                        "It returns only non-enumerable property names.",
+                        "It returns an object with key-value pairs."
+                    ],
+                    "explanation": "<p>The <code>Object.keys()</code> method returns an array of the object's own enumerable property names. It does not include properties from the prototype chain or non-enumerable properties.</p><pre><code>const obj = { name: 'John', age: 30 };<br>console.log(Object.keys(obj)); // ['name', 'age']</code></pre>"
+                },
+                {
+                    "question": "What does `Object.keys()` return when called on an object with non-enumerable properties?",
+                    "correct_answer": "It returns only the enumerable properties, excluding non-enumerable ones.",
+                    "incorrect_answers": [
+                        "It returns all properties including non-enumerable ones.",
+                        "It throws an error.",
+                        "It returns an empty array.",
+                        "It returns the prototype chain."
+                    ],
+                    "explanation": "<p><code>Object.keys()</code> only returns the enumerable properties of an object. Non-enumerable properties, even if they exist on the object, will not be included in the result.</p><pre><code>const obj = Object.defineProperty({}, 'hidden', { value: 'secret', enumerable: false });<br>console.log(Object.keys(obj)); // []</code></pre>"
+                },
+                {
+                    "question": "What does `Object.preventExtensions()` do?",
+                    "correct_answer": "It prevents new properties from being added to an object.",
+                    "incorrect_answers": [
+                        "It prevents all modifications to the object.",
+                        "It seals the object.",
+                        "It freezes the object.",
+                        "It prevents the object from being deleted."
+                    ],
+                    "explanation": "<p>The <code>Object.preventExtensions()</code> method prevents new properties from being added to an object, but it does not affect existing properties. Existing properties can still be modified, but no new properties can be added.</p><pre><code>const obj = {};<br>Object.preventExtensions(obj);<br>console.log(Object.isExtensible(obj)); // false</code></pre>"
+                },
+                {
+                    "question": "What is the effect of calling `Object.preventExtensions()` on an object?",
+                    "correct_answer": "It makes the object non-extensible, meaning no new properties can be added.",
+                    "incorrect_answers": [
+                        "It prevents the object from being modified.",
+                        "It makes the object immutable.",
+                        "It adds all properties from the prototype chain.",
+                        "It makes the object sealed."
+                    ],
+                    "explanation": "<p><code>Object.preventExtensions()</code> makes an object non-extensible, meaning no new properties can be added to the object. However, existing properties can still be modified and deleted. It does not affect non-enumerable properties or the existing structure of the object.</p><pre><code>const obj = {};<br>Object.preventExtensions(obj);<br>console.log(Object.isExtensible(obj)); // false</code></pre>"
+                },
+                {
+                    "question": "What does `Object.prototype.propertyIsEnumerable()` check?",
+                    "correct_answer": "It checks if a property is both an own property of the object and enumerable.",
+                    "incorrect_answers": [
+                        "It checks if a property exists on the object's prototype chain.",
+                        "It checks if a property can be modified.",
+                        "It checks if a property is non-enumerable.",
+                        "It checks if a property is writable."
+                    ],
+                    "explanation": "<p>The <code>propertyIsEnumerable()</code> method checks whether a property is both an own property of the object and enumerable. It returns <code>true</code> if the property is enumerable, and <code>false</code> otherwise.</p><pre><code>const obj = { key: 'value' };<br>console.log(obj.propertyIsEnumerable('key')); // true</code></pre>"
+                },
+                {
+                    "question": "What does `Object.prototype.propertyIsEnumerable()` return when checking a non-enumerable property?",
+                    "correct_answer": "false",
+                    "incorrect_answers": [
+                        "true",
+                        "undefined",
+                        "null",
+                        "TypeError"
+                    ],
+                    "explanation": "<p<code>propertyIsEnumerable()</code> returns <code>false</code> for non-enumerable properties. If a property is non-enumerable, it will not show up when iterating through the object using methods like <code>for...in</code> or <code>Object.keys()</code>.</p><pre><code>const obj = Object.defineProperty({}, 'hidden', { value: 'secret', enumerable: false });<br>console.log(obj.propertyIsEnumerable('hidden')); // false</code></pre>"
+                },
+                {
+                    "question": "What does `Object.seal()` do in JavaScript?",
+                    "correct_answer": "It prevents new properties from being added to the object and marks all existing properties as non-configurable.",
+                    "incorrect_answers": [
+                        "It prevents all modifications to the object.",
+                        "It prevents property values from being modified.",
+                        "It makes the object non-extensible.",
+                        "It freezes the object."
+                    ],
+                    "explanation": "<p><code>Object.seal()</code> prevents new properties from being added to the object and marks all existing properties as non-configurable. However, existing properties can still be modified if they are writable.</p><pre><code>const obj = { key: 'value' };<br>Object.seal(obj);<br>console.log(Object.isSealed(obj)); // true</code></pre>"
+                },
+                {
+                    "question": "What is the difference between `Object.freeze()` and `Object.seal()`?",
+                    "correct_answer": "Object.freeze() makes the object immutable (can't modify, add, or delete properties), while Object.seal() prevents property additions and deletes but allows modification of property values.",
+                    "incorrect_answers": [
+                        "Object.freeze() prevents modifications, but Object.seal() allows modifications.",
+                        "Object.freeze() and Object.seal() are the same.",
+                        "Object.seal() is less restrictive than Object.freeze().",
+                        "Object.freeze() prevents object extensions, but Object.seal() does not."
+                    ],
+                    "explanation": "<p><code>Object.freeze()</code> makes an object fully immutable by preventing modifications, additions, or deletions of properties. On the other hand, <code>Object.seal()</code> only prevents additions and deletions but still allows modification of existing property values.</p><pre><code>const obj = { key: 'value' };<br>Object.freeze(obj);<br>obj.key = 'newValue';<br>console.log(obj.key); // 'value' (unchanged)</code></pre>"
+                },
+                {
+                    "question": "What is the effect of calling `Object.setPrototypeOf()`?",
+                    "correct_answer": "It sets the prototype (i.e., the internal [[Prototype]] property) of an object to another object or null.",
+                    "incorrect_answers": [
+                        "It sets an object's constructor.",
+                        "It adds new properties to the object.",
+                        "It prevents prototype chain modification.",
+                        "It removes the prototype from the object."
+                    ],
+                    "explanation": "<p><code>Object.setPrototypeOf()</code> sets the prototype (internal [[Prototype]]) of an object to another object or <code>null</code>. This method is useful for dynamically changing the prototype chain of an object.</p><pre><code>const obj = {};<br>const newPrototype = { greet: () => 'Hello' };<br>Object.setPrototypeOf(obj, newPrototype);<br>console.log(obj.greet()); // 'Hello'</code></pre>"
+                },
+                {
+                    "question": "What happens if you call `Object.setPrototypeOf()` with an object and a function?",
+                    "correct_answer": "It sets the prototype of the object to the function's prototype.",
+                    "incorrect_answers": [
+                        "It sets the function as a property of the object.",
+                        "It throws a TypeError.",
+                        "It removes the object's prototype.",
+                        "It changes the object's constructor."
+                    ],
+                    "explanation": "<p>If you call <code>Object.setPrototypeOf()</code> with an object and a function, the function's prototype is used as the new prototype for the object. This can be useful when you want to change the prototype dynamically.</p><pre><code>const obj = {};<br>function MyConstructor() {}<br>Object.setPrototypeOf(obj, MyConstructor.prototype);<br>console.log(obj instanceof MyConstructor); // true</code></pre>"
+                },
+                
+                    {
+                        "question": "How does `toLocaleString()` behave when called on a Date object in JavaScript?",
+                        "correct_answer": "It converts the Date object to a string, formatted according to the local time zone and locale settings.",
+                        "incorrect_answers": [
+                            "It returns a string in ISO 8601 format.",
+                            "It throws an error when called on a Date object.",
+                            "It formats the date based on the UTC time zone only.",
+                            "It returns the raw timestamp of the Date object."
+                        ],
+                        "explanation": "<p>The <code>toLocaleString()</code> method is used to convert a Date object to a string that represents the date and time, formatted according to the local time zone and locale. It can take optional arguments for locales and formatting options.</p><pre><code>const date = new Date();<br>console.log(date.toLocaleString()); // Example output: '11/19/2024, 5:24:45 PM'</code></pre>"
+                    },
+                    {
+                        "question": "What happens when `toLocaleString()` is called on a number in JavaScript?",
+                        "correct_answer": "It returns a string representing the number, formatted according to the specified locale and options.",
+                        "incorrect_answers": [
+                            "It returns a raw number as a string.",
+                            "It throws an error when called on a number.",
+                            "It formats the number in scientific notation.",
+                            "It returns the number without any formatting."
+                        ],
+                        "explanation": "<p><code>toLocaleString()</code> formats a number according to a specified locale and options. It is often used to display numbers with proper decimal and thousand separators based on the local conventions.</p><pre><code>const num = 1234567.89;<br>console.log(num.toLocaleString('en-US')); // Example output: '1,234,567.89'</code></pre>"
+                    },
+                    {
+                        "question": "What does `toString()` return when called on an object in JavaScript?",
+                        "correct_answer": "It returns a string representation of the object, usually '[object Object]'.",
+                        "incorrect_answers": [
+                            "It throws an error.",
+                            "It returns the object's constructor name.",
+                            "It returns the object's JSON string.",
+                            "It returns the object's keys as a string."
+                        ],
+                        "explanation": "<p>The <code>toString()</code> method returns a string representation of an object. By default, it returns the string '[object Object]'. You can override this method in custom objects to provide a more meaningful string representation.</p><pre><code>const obj = {};<br>console.log(obj.toString()); // '[object Object]'</code></pre>"
+                    },
+                    {
+                        "question": "How can you customize the output of `toString()` for a custom object?",
+                        "correct_answer": "You can override the <code>toString()</code> method within the object to return a custom string.",
+                        "incorrect_answers": [
+                            "You cannot override <code>toString()</code> in custom objects.",
+                            "You can only return the object's class name.",
+                            "You can modify the prototype's <code>toString()</code> method to change its behavior.",
+                            "It returns a string in JSON format by default."
+                        ],
+                        "explanation": "<p>In JavaScript, you can override the <code>toString()</code> method in custom objects to return a more meaningful string. For example, if you're working with a custom class, you can override <code>toString()</code> to return the object's properties as a string.</p><pre><code>class Person {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>  }<br>  toString() {<br>    return `Name: ${this.name}, Age: ${this.age}`;<br>  }<br>}<br>const person = new Person('Alice', 30);<br>console.log(person.toString()); // 'Name: Alice, Age: 30'</code></pre>"
+                    },
+                    {
+                        "question": "What does `valueOf()` return when called on a Date object?",
+                        "correct_answer": "It returns the primitive value of the Date object, which is the number of milliseconds since the Unix epoch.",
+                        "incorrect_answers": [
+                            "It returns a string representation of the Date object.",
+                            "It returns the current date as a string.",
+                            "It throws a TypeError.",
+                            "It returns a formatted date string."
+                        ],
+                        "explanation": "<p>The <code>valueOf()</code> method returns the primitive value of the object, which for a Date object is the number of milliseconds since the Unix epoch. This value is useful for performing arithmetic operations with dates.</p><pre><code>const date = new Date();<br>console.log(date.valueOf()); // Example output: 1637336518725 (milliseconds)</code></pre>"
+                    },
+                    {
+                        "question": "How does `valueOf()` work with custom objects in JavaScript?",
+                        "correct_answer": "You can override the <code>valueOf()</code> method to return a custom primitive value for your object.",
+                        "incorrect_answers": [
+                            "You cannot override <code>valueOf()</code> in custom objects.",
+                            "It returns the object's prototype.",
+                            "It throws an error when called on a custom object.",
+                            "It automatically converts the object to a string."
+                        ],
+                        "explanation": "<p>For custom objects, you can override the <code>valueOf()</code> method to return a custom primitive value. This allows you to define how objects should behave in operations that require a primitive value (e.g., arithmetic operations).</p><pre><code>class Money {<br>  constructor(amount) {<br>    this.amount = amount;<br>  }<br>  valueOf() {<br>    return this.amount;<br>  }<br>}<br>const money = new Money(100);<br>console.log(money + 50); // 150</code></pre>"
+                    },
+                    {
+                        "question": "What does `values()` return when called on an object?",
+                        "correct_answer": "It returns an iterator object that contains the values of the object's enumerable properties.",
+                        "incorrect_answers": [
+                            "It returns an array of the object's keys.",
+                            "It returns a string representation of the object's properties.",
+                            "It returns an array of the object's own properties including non-enumerable ones.",
+                            "It throws an error."
+                        ],
+                        "explanation": "<p>The <code>Object.values()</code> method returns an iterator object that contains the values of the object's own enumerable properties. It does not include properties from the object's prototype chain.</p><pre><code>const obj = { a: 1, b: 2, c: 3 };<br>console.log(Object.values(obj)); // [1, 2, 3]</code></pre>"
+                    },
+                    {
+                        "question": "How does `Object.values()` behave with non-enumerable properties?",
+                        "correct_answer": "It does not include non-enumerable properties in the result.",
+                        "incorrect_answers": [
+                            "It includes non-enumerable properties but marks them as non-writable.",
+                            "It throws an error.",
+                            "It includes both enumerable and non-enumerable properties.",
+                            "It includes the properties from the prototype chain."
+                        ],
+                        "explanation": "<p><code>Object.values()</code> only includes the enumerable properties of an object. Non-enumerable properties will not be included in the returned array.</p><pre><code>const obj = Object.defineProperty({}, 'hidden', { value: 'secret', enumerable: false });<br>console.log(Object.values(obj)); // []</code></pre>"
+                    },
+                    {
+                        "question": "What is the key difference between <code>Object.freeze()</code> and <code>Object.seal()</code> in JavaScript?",
+                        "correct_answer": "Object.freeze() makes an object immutable, while Object.seal() prevents property additions and deletions but allows modification of existing properties.",
+                        "incorrect_answers": [
+                            "Object.freeze() allows property modifications, while Object.seal() makes the object immutable.",
+                            "Object.freeze() only prevents property deletions, while Object.seal() also prevents property modifications.",
+                            "Both methods are identical.",
+                            "Object.freeze() prevents property value modifications, while Object.seal() does not."
+                        ],
+                        "explanation": "<p><code>Object.freeze()</code> makes an object fully immutable. This means that properties cannot be added, deleted, or modified. In contrast, <code>Object.seal()</code> prevents property additions and deletions but allows modification of existing property values.</p><pre><code>const obj = { key: 'value' };<br>Object.freeze(obj);<br>obj.key = 'newValue';<br>console.log(obj.key); // 'value' (unchanged)</code></pre>"
+                    },
+                    {
+                        "question": "What happens when you attempt to modify a sealed object in JavaScript?",
+                        "correct_answer": "You can modify the values of existing properties, but you cannot add or delete properties.",
+                        "incorrect_answers": [
+                            "You cannot modify any properties of a sealed object.",
+                            "The object becomes frozen.",
+                            "It throws a TypeError when you try to modify properties.",
+                            "You can add new properties, but not delete existing ones."
+                        ],
+                        "explanation": "<p><code>Object.seal()</code> allows modification of existing properties but prevents adding new properties or deleting existing ones. It is less restrictive than <code>Object.freeze()</code>, which also prevents modification of property values.</p><pre><code>const obj = { key: 'value' };<br>Object.seal(obj);<br>obj.key = 'newValue';<br>console.log(obj.key); // 'newValue'<br>obj.newKey = 'new';<br>console.log(obj.newKey); // undefined (property can't be added)</code></pre>"
+                    }
+                
+                 
+            
+        
+    
+]
