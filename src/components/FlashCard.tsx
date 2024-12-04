@@ -9,14 +9,7 @@ export default function FlashCard({ card }: { card: [string, string]}) {
     useEffect(() => {
         setShowAnswer(false);
     }, [card]);
-    const xx = `* Lists
-* [ ] todo
-* [x] done
 
-A table:
-
-| a | b |
-| - | - |`
     return (
         <div>
             {

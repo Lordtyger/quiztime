@@ -6,7 +6,7 @@ import { selectStyles } from '../stylesreact/styles';
 import { CheckBox } from './CheckBox';
 
 
-const selectQuestionCount = import.meta.env.VITE_QUESTION_SELECT_COUNTS.split(',') as NumberOfQuestions[];
+const selectQuestionCount = [5,10,20,30,40,50];
 
 export default function StartQuiz() {
     const dispatch = useAppDispatch();
@@ -23,7 +23,7 @@ export default function StartQuiz() {
         }))
     }
     const setNumQuestions = (item: { label: string, value: number }) => {
-        dispatch(setNumberOfQuestions(item.value as NumberOfQuestions));
+        dispatch(setNumberOfQuestions(Number(item.value) as NumberOfQuestions));
     }
     const togglePrioritiseIncorrect = () => {
         dispatch(setPrioritiseIncorrect(!prioritiseIncorrect));

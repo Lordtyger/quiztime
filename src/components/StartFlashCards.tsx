@@ -7,7 +7,7 @@ import { formatCategoryLabel } from '../helpers/misc';
 import { selectStyles } from '../stylesreact/styles';
 import type { NumberOfQuestions } from '../types/quiz';
 
-const selectQuestionCount = import.meta.env.VITE_QUESTION_SELECT_COUNTS.split(',') as NumberOfQuestions[];
+const selectQuestionCount = [5,10,20,30,40,50];
 
 export default function FlashCards() {
     const dispatch = useAppDispatch();

@@ -50,15 +50,14 @@ export function AskQuestions() {
                 questionIndex={questionIndex}
                 pastAnswerAttempt={pastAnswerAttempt}
             />
-
-
-            <AnswerButtons
-                questionAnswers={currentQuestion.questionAnswers}
-                userAnswer={userAnswer}
-                correctAnswer={correctAnswer}
-                handleUserAnswer={handleUserAnswer}
-            />
-
+            {/* <div key={userAnswer}> */}
+                <AnswerButtons
+                    questionAnswers={currentQuestion.questionAnswers}
+                    userAnswer={userAnswer}
+                    correctAnswer={correctAnswer}
+                    handleUserAnswer={handleUserAnswer}
+                />
+            {/* </div> */}
             <div className="control-buttons">
                 <div className='quiz-in-progress-btns'>
                     {currentQuestion?.explanation && userAnswer && (

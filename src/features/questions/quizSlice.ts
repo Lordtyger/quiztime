@@ -117,11 +117,17 @@ export const quizSlice = createSlice({
                 }
             }
 
-            const shuffledQuestions = apiQuestions?.toSorted(() => Math.random() - 0.5) || [];
-            const questions = [
-                ...incorrectAnsweredQuestions,
-                ...shuffledQuestions.slice(0, state.numberOfQuestions - incorrectAnsweredQuestions.length),
-            ];
+            const shuffledQuestions = apiQuestions?.slice().sort(() => Math.random() - 0.5) || [];
+
+            let questions: QuizQuestion[] = [];
+            if (incorrectAnsweredQuestions.length >= state.numberOfQuestions) {
+                questions = incorrectAnsweredQuestions.slice(0, state.numberOfQuestions);
+            } else {
+                questions = [
+                    ...incorrectAnsweredQuestions,
+                    ...shuffledQuestions.slice(0, state.numberOfQuestions - incorrectAnsweredQuestions.length),
+                ];
+            }
 
             state.numberOfQuestions = questions.length;
             state.currentQuestions = questions.map((question) => ({
@@ -221,9 +227,9 @@ export const quizSlice = createSlice({
             return {subject: state.subject.name, category};
         }
     },
-    extraReducers: (builder) => {
-        // Add any extra reducers here if needed
-    },
+    // extraReducers: (builder) => {
+    //     // Add any extra reducers here if needed
+    // },
 });
 const selectQuizState = (state: RootState) => state.quiz;
 export const selectCurrentQuestions = (state: RootState) => selectQuizState(state).currentQuestions;
