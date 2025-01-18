@@ -1,5 +1,7 @@
+@use "variables";
+
 @mixin query($display) {
-    @each $key, $value in $bp {
+    @each $key, $value in variables.$bp {
 
         //  defining max-width
         @if ($display ==$key) {

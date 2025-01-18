@@ -5,7 +5,7 @@ import type { GameType } from "./types/quiz";
 import StartMenu from './components/StartMenu';
 
 const App = () => {
-    const [gameType, setGameType] = useState<GameType>('none');
+    const [gameType, setGameType] = useState<GameType>('quiz');
 
     return (
         <div className="App">

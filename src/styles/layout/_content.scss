@@ -1,9 +1,12 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .App {
     // display: flex;
     height: 100vh;
     // background-color: green;
     width: 100%;
-    max-width: $tablet;
+    max-width: variables.$tablet;
     margin: 0 auto;
 }
 .quiz-content {
@@ -19,11 +22,11 @@
     color: white;
     // background-color: yellow;
 
-    @include query (mobile) {
+    @include mixins.query (mobile) {
         width: 100%;
     }
 
-    @include query (tablet) {
+    @include mixins.query (tablet) {
         width: 100%;
     }
 }

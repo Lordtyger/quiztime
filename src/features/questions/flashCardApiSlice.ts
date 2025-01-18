@@ -28,9 +28,9 @@ export const flashApiSlice = createApi({
 
                 tmp.forEach((topic: string) => {
                     
-                    const itemPart = Papa.parse(topic,{delimiter: ','} ).data.filter((item: unknown): item is string[] => Array.isArray(item) && item[0] !== '');
-
-                    const key = itemPart[0]?.[0].replaceAll(' ', '_').toLowerCase();
+                    const itemPart = Papa.parse(topic,{delimiter: ','} ).data.filter((item: unknown): item is string[] => Array.isArray(item) && item?.[0] !== '');
+                    console.log('itemPart', itemPart);
+                    const key = itemPart[0]?.[0].replace(/ /g, '_').toLowerCase();
                     if (typeof key === 'string') {
                         (parsedData as Record<string, string[][]>)[key] = itemPart.slice(1);
                     }
@@ -49,7 +49,7 @@ export const flashApiSlice = createApi({
                 } catch (err) {
                     console.error(err);
                 }
-            }, providesTags: (result, error) => [{ type: "Flashcards" }],
+            }, providesTags: () => [{ type: "Flashcards" }],
         }),
     }),
 })

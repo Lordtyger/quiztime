@@ -6,7 +6,6 @@ import { setCurrentQuestions } from "../features/questions/quizSlice";
 import {
     selectCategory,
     selectSubject,
-    selectNumberOfQuestions,
     selectQuizReady
 } from "../features/questions/quizSlice";
 import { AskQuestions } from "./AskQuestions";
@@ -16,13 +15,13 @@ export const Questions = () => {
 
     // Selectors
     const currentCatId = useAppSelector(selectCategory);
-    const numberOfQuestions = useAppSelector(selectNumberOfQuestions);
+    // const numberOfQuestions = useAppSelector(selectNumberOfQuestions);
     const quizReady = useAppSelector(selectQuizReady);
     const subject = useAppSelector(selectSubject).id;
 
     console.log('in heree', quizReady);
-    const { data: questionsData, isError: questionsError, isLoading: questionsLoading }
-        = useGetQuestionsQuery({subject, amount: numberOfQuestions, currentCatId});    
+    const { data: questionsData, isLoading: questionsLoading }
+        = useGetQuestionsQuery({subject,  currentCatId});    
 
     useEffect(() => {
         if (questionsData?.length) {
@@ -49,8 +48,8 @@ const LoadingDisplay = () => (
     </div>
 );
 
-const ErrorDisplay = () => (
-    <div>
-        <h1>There was an error!!!</h1>
-    </div>
-);
+// const ErrorDisplay = () => (
+//     <div>
+//         <h1>There was an error!!!</h1>
+//     </div>
+// );

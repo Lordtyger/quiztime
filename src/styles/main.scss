@@ -1,18 +1,18 @@
-@import './abstracts/variables.scss';
-@import './abstracts/mixins.scss';
-@import './base/reset.scss';
-@import './base/globals.scss';
+@use 'abstracts/variables.scss';
+@use 'abstracts/mixins.scss';
+@use 'base/reset.scss';
+@use 'base/globals.scss';
 
-@import './layout/content.scss';
+@use 'layout/content.scss';
 
-@import './components/startMenu.scss';
-@import './components/startQuiz.scss';
-@import './components/checkbox.scss';
-@import './components/question.scss';
-@import './components/answer-buttons.scss';
+@use 'components/startMenu.scss';
+@use 'components/startQuiz.scss';
+@use 'components/checkbox.scss';
+@use 'components/question.scss';
+@use 'components/answer-buttons.scss';
 
 //Pages
-@import './pages/quiz-questions.scss';
+@use 'pages/quiz-questions.scss';
 
 
 

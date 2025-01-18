@@ -1,38 +1,302 @@
-[{
-    "question": "In React, what is the purpose of the `useReducer` hook?",
-    "correct_answer": "To manage complex state logic by using a reducer function.",
-    "incorrect_answers": [
-      "To replace the `useState` hook entirely in functional components.",
-      "To optimize performance by memoizing state updates.",
-      "To handle side effects such as API calls or subscriptions."
-    ],
-    "explanation": "`useReducer` is a React hook used for managing state that involves complex logic, such as multiple sub-values or when the next state depends on the previous one. It provides an alternative to `useState`, particularly in scenarios where state logic becomes difficult to manage. \n\nThe hook takes two arguments: a reducer function and an initial state. The reducer function determines how the state should change in response to actions dispatched by the component. \n\nExample:\n\n```javascript\nimport React, { useReducer } from 'react';\n\nconst initialState = { count: 0 };\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case 'increment':\n      return { count: state.count + 1 };\n    case 'decrement':\n      return { count: state.count - 1 };\n    default:\n      throw new Error('Unknown action');\n  }\n}\n\nfunction Counter() {\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  return (\n    <div>\n      <p>Count: {state.count}</p>\n      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>\n      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>\n    </div>\n  );\n}\n\nexport default Counter;\n```\n\nIn this example, `useReducer` is used to manage a counter with `increment` and `decrement` actions. It is particularly useful when there are multiple actions or complex logic, offering a more structured approach than using multiple `useState` calls."
-  },
+[
     {
-        "question": "What does 'empirical' mean?",
-        "correct_answer": "based on observation or experience rather than theory or pure logic.",
+        "question": "What is the meaning of \"Petrichor\"?",
+        "correct_answer": "The pleasant smell after rain on dry earth.",
         "incorrect_answers": [
-            "related to abstract reasoning or speculation.",
-            "focused on moral or ethical teaching.",
-            "derived from mathematical models or computations."
-        ]
+            "The fresh air after a cold winter evening.",
+            "The sweet aroma of blooming flowers in spring.",
+            "The sharp scent of smoke from a campfire."
+        ],
+        "explanation": "The term refers to the distinct and earthy scent produced when rain falls on dry soil. It originates from the oils released from certain plants and compounds in the soil, which are absorbed by the air and released after precipitation."
     },
     {
-        "question": "What does 'didactic' mean?",
-        "correct_answer": "intended to teach, often with a moral or instructive purpose.",
+        "question": "What is the meaning of \"Susurrus\"?",
+        "correct_answer": "A soft murmuring or whispering sound in nature.",
         "incorrect_answers": [
-            "intended to entertain or amuse.",
-            "focused on scientific observation and experimentation.",
-            "characterized by strict adherence to rules or authority."
-        ]
+            "A loud, chaotic noise disrupting peaceful surroundings.",
+            "A sharp, piercing cry from an animal in distress.",
+            "A deep, resonant boom echoing through the mountains."
+        ],
+        "explanation": "It refers to a gentle, soothing sound, typically associated with whispering or rustling, often found in natural environments."
     },
     {
-        "question": "What does 'austere' mean?",
-        "correct_answer": "severe or strict in manner, attitude, or appearance.",
+        "question": "What is the meaning of 'Mellifluous'?",
+        "correct_answer": "Having a pleasing, smooth, and musical sound quality.",
         "incorrect_answers": [
-            "marked by luxury or extravagant decoration.",
-            "characterized by humor and lightheartedness.",
-            "focused on practical application and utility."
-        ]
+            "Exhibiting a harsh, discordant sound or quality.",
+            "Characterized by a sharp and jarring resonance.",
+            "Producing a low, grating, and unpleasant noise."
+        ],
+        "explanation": "This term describes sounds that are sweet and pleasant to hear, often used in reference to voices or musical notes that flow smoothly and harmoniously."
+    },
+    {
+        "question": "What is the meaning of \"Halcyon\"?",
+        "correct_answer": "A period of calm and peaceful tranquility.",
+        "incorrect_answers": [
+            "A time of intense chaos and struggle.",
+            "An era of continuous conflict and upheaval.",
+            "A phase characterized by great sadness and despair."
+        ],
+        "explanation": "The term refers to a time of peace and happiness, often associated with idyllic or serene moments in life, especially marked by tranquility and calmness."
+    },
+    {
+        "question": "What is the meaning of 'Limerence'?",
+        "correct_answer": "An intense emotional state of romantic infatuation.",
+        "incorrect_answers": [
+            "A temporary feeling of emotional disconnection.",
+            "A deep sense of personal achievement or fulfillment.",
+            "An overwhelming fear of social interaction or rejection."
+        ],
+        "explanation": "This term refers to an involuntary state of intense romantic desire for another person, often accompanied by obsessive thoughts and a longing for reciprocation."
+    },
+    {
+        "question": "What is the meaning of \"Sonder\"?",
+        "correct_answer": "The realization that each stranger has their narrative.",
+        "incorrect_answers": [
+            "The feeling of pleasure in a shared experience.",
+            "The experience of sadness due to lost opportunities.",
+            "The act of communicating with vivid emotional detail."
+        ],
+        "explanation": "It describes the profound awareness that everyone around you has their own complex lives, thoughts, and emotions, which are as rich and intricate as your own."
+    },
+    {
+        "question": "What is the meaning of \"Ineffable\"?",
+        "correct_answer": "Too great or extreme to be expressed in words.",
+        "incorrect_answers": [
+            "Easily describable or explained through common language.",
+            "Having a clear and direct explanation or depiction.",
+            "Being able to articulate thoughts very easily and clearly."
+        ],
+        "explanation": "This term refers to something so extraordinary that it eludes description, often linked to emotions or experiences that surpass the limits of language."
+    },
+    {
+        "question": "What is the meaning of 'Ethereal'?",
+        "correct_answer": "Light and delicate, seemingly otherworldly in nature.",
+        "incorrect_answers": [
+            "Heavy and cumbersome, lacking any lightness whatsoever.",
+            "Mundane and ordinary, very typical of the world.",
+            "Dense and solid, exhibiting substantial weight and mass."
+        ],
+        "explanation": "This term describes something that is extremely delicate and light, often suggesting a celestial or intangible quality, as if not entirely of this world."
+    },
+    {
+        "question": "What is the meaning of \"Serendipity\"?",
+        "correct_answer": "The occurrence of fortunate discoveries by accident.",
+        "incorrect_answers": [
+            "The act of forcefully taking something from someone.",
+            "A state of being intensely focused and driven.",
+            "A condition of extreme frustration and disappointment."
+        ],
+        "explanation": "It refers to the phenomenon of making unexpected and beneficial discoveries, often when not specifically seeking them."
+    },
+    {
+        "question": "What is the meaning of \"Ephemeral\"?",
+        "correct_answer": "Something lasting for a very short duration of time.",
+        "incorrect_answers": [
+            "A condition that persists for a long duration of time.",
+            "A process that is permanent and unchanging by nature.",
+            "A state characterized by reliability and durability over time."
+        ],
+        "explanation": "Describing objects, events, or experiences that are transient, fleeting, or temporary in nature, often emphasizing their brief existence."
+    },
+    {
+        "question": "What is the meaning of \"Saudade\"?",
+        "correct_answer": "A profound emotional state of nostalgic longing.",
+        "incorrect_answers": [
+            "A joyful feeling of connection and community.",
+            "A state of complete physical and mental exhaustion.",
+            "An overwhelming desire for material possessions."
+        ],
+        "explanation": "It describes a deep emotional state of melancholic yearning, often for something or someone that is absent, reflecting a blend of happiness and sadness."
+    },
+    {
+        "question": "What is the meaning of \"Sempiternal\"?",
+        "correct_answer": "Existing forever without beginning or end in time.",
+        "incorrect_answers": [
+            "Fleeting and temporary, lasting only for a moment.",
+            "Occurring repeatedly in cycles, but not eternal.",
+            "Changing consistently, without permanence or stability."
+        ],
+        "explanation": "The term refers to an existence that is everlasting, unchanging, and beyond the confines of time, often associated with concepts of immortality and an infinite duration."
+    },
+    {
+        "question": "What is the meaning of 'Eunoia'?",
+        "correct_answer": "It refers to a state of beautiful thinking.",
+        "incorrect_answers": [
+            "It defines a state of chaotic confusion.",
+            "It indicates a quality of unkindness and malice.",
+            "It describes a condition of overwhelming sorrow and despair."
+        ],
+        "explanation": "The term signifies a state of goodwill or beautiful thinking, often used in a poetic context to denote clarity and harmony in thought."
+    },
+    {
+        "question": "What is the meaning of 'Labyrinthine'?",
+        "correct_answer": "Winding, intricate, and confusing in its complexity.",
+        "incorrect_answers": [
+            "Simple, straightforward, and easily understood in nature.",
+            "Flat, smooth, and lacking in any complex features.",
+            "Clear, direct, and free from any convoluted patterns."
+        ],
+        "explanation": "The term refers to something that is complex and winding, resembling a labyrinth, often implying confusion or difficulty in navigating through it."
+    },
+    {
+        "question": "What is the meaning of 'Nyctophilia'?",
+        "correct_answer": "A love for the darkness or night time.",
+        "incorrect_answers": [
+            "An aversion to large crowds and chaos.",
+            "A fascination with ancient history and artifacts.",
+            "A desire for solitude and peaceful environments."
+        ],
+        "explanation": "The term refers to a strong affection or attraction for nighttime or darkness, often associated with a sense of calm and comfort that darkness brings."
+    },
+    {
+        "question": "What is the meaning of \"Aesthete\"?",
+        "correct_answer": "A person who appreciates and promotes artistic beauty.",
+        "incorrect_answers": [
+            "A person who criticizes artistic expression and beauty.",
+            "A person who avoids all forms of artistic engagement.",
+            "A person indifferent to beauty and artistic values."
+        ],
+        "explanation": "This term refers to an individual with a refined sensitivity to the beauty in art and nature. Typically, such a person has a strong appreciation for aesthetic experiences and often seeks to attain or promote beauty in various forms, such as through art, literature, and design. The concept encompasses an understanding of art's emotional and intellectual dimensions."
+    },
+    {
+        "question": "What is the meaning of \"Amaranthine\"?",
+        "correct_answer": "Everlasting beauty, unfading and eternally vibrant.",
+        "incorrect_answers": [
+            "Temporary beauty, fading and soon forgotten.",
+            "Fading beauty, slowly diminishing and transient.",
+            "Ephemeral beauty, lasting only a brief moment."
+        ],
+        "explanation": "This term refers to something that is undying, timeless, or eternally beautiful, often used in a poetic or metaphorical context."
+    },
+    {
+        "question": "What is the meaning of \"Pluviophile\"?",
+        "correct_answer": "One who loves rainy weather and enjoys rain.",
+        "incorrect_answers": [
+            "A person overwhelmed by storms and lightning strikes.",
+            "An individual who collects raindrops in containers.",
+            "Someone who prefers sunny days and sunshine only."
+        ],
+        "explanation": "This term refers to someone who finds joy in rain and often feels a deep appreciation for the experience of rainy days, finding comfort, beauty, and a sense of peace in the sound and smell of rainfall."
+    },
+    {
+        "question": "What is the meaning of 'Hiraeth'?",
+        "correct_answer": "A deep longing for one's homeland or past.",
+        "incorrect_answers": [
+            "A feeling of intense safety and comfort.",
+            "An overwhelming desire for new experiences abroad.",
+            "A state of blissful ignorance and contentment."
+        ],
+        "explanation": "This term refers to a profound sense of nostalgia for one's homeland or a yearning for the past, often tinged with sadness."
+    },
+    {
+        "question": "What is the meaning of 'Querencia'?",
+        "correct_answer": "A place where one feels safe and at home.",
+        "incorrect_answers": [
+            "A journey taken to find inner peace and clarity.",
+            "A celebration held in honor of friendships and love.",
+            "A status achieved through hard work and dedication."
+        ],
+        "explanation": "The term refers to a physical space or emotional state that provides comfort and security, often associated with a deep affection for a particular place."
+    },
+    {
+        "question": "What is the meaning of \"Akrasia\"?",
+        "correct_answer": "The state of acting against one's better judgment.",
+        "incorrect_answers": [
+            "A feeling of deep relaxation and calmness.",
+            "An intense desire for personal achievement and success.",
+            "The act of delaying or postponing important tasks."
+        ],
+        "explanation": "This term describes a lack of self-control, where individuals act contrary to what they know is best for them."
+    },
+    {
+        "question": "What is the meaning of \"Nocturne\"?",
+        "correct_answer": "A musical composition inspired by the night or evening.",
+        "incorrect_answers": [
+            "A piece written during the morning hours or dawn.",
+            "A film genre focused on daytime outdoor activities.",
+            "A poem reflecting bright sunlight and sunny weather."
+        ],
+        "explanation": "A musical piece often characterized by a serene mood, typically evoking feelings associated with the night. It often features lyrical melodies and is commonly associated with Romantic music."
+    },
+    {
+        "question": "What is the meaning of \"Catharsis\"?",
+        "correct_answer": "Emotional release leading to personal renewal and relief.",
+        "incorrect_answers": [
+            "Emotional suppression leading to internal conflict and stress.",
+            "Mental stimulation causing confusion and anxiety over time.",
+            "Physical exhaustion resulting from overexertion or unbalance."
+        ],
+        "explanation": "A process of releasing strong or repressed emotions, often leading to a sense of relief or rejuvenation."
+    },
+    {
+        "question": "What is the meaning of \"Ataraxia\"?",
+        "correct_answer": "A state of serene calmness and emotional stability.",
+        "incorrect_answers": [
+            "An intense feeling of agitation or emotional turmoil.",
+            "A condition marked by constant anxiety and distress.",
+            "A quality associated with extreme elation and joy."
+        ],
+        "explanation": "This term refers to a tranquil state free from emotional disturbances."
+    },
+    {
+        "question": "What is the meaning of 'Calliopean'?",
+        "correct_answer": "Relating to the muse of epic poetry and eloquence.",
+        "incorrect_answers": [
+            "Describing the spirit of musical harmony and gracefulness.",
+            "Pertaining to a style of humorous and lighthearted storytelling.",
+            "Characterizing a form of tragic and dramatic expression."
+        ],
+        "explanation": "The term refers to attributes associated with the muse Calliope, traditionally known for her influence over epic poetry and the art of eloquent expression."
+    },
+    {
+        "question": "What is the meaning of 'Exulansis'?",
+        "correct_answer": "The tendency to forget one's own experiences.",
+        "incorrect_answers": [
+            "The regret of lost opportunities or chances.",
+            "The act of reminiscing about past events fondly.",
+            "The process of reliving painful memories continually."
+        ],
+        "explanation": "It refers to the phenomenon where individuals forget specific experiences, often as a result of not sharing them or due to the passage of time. This can affect how people recall their own personal histories and narratives."
+    },
+    {
+        "question": "What is the meaning of \"Vellichor\"?",
+        "correct_answer": "The nostalgic sense of old bookstores' unique atmosphere.",
+        "incorrect_answers": [
+            "The pleasant smell of fresh coffee in cafés.",
+            "The feeling of joy during a sunny picnic day.",
+            "The excitement of finding a new adventure novel."
+        ],
+        "explanation": "This term describes the wistfulness felt for the charm of neglected, dusty bookstores, evoking a sense of longing and nostalgia associated with the stories and memories within their walls."
+    },
+    {
+        "question": "What is the meaning of 'Clinomania'?",
+        "correct_answer": "An obsessive desire to remain in bed.",
+        "incorrect_answers": [
+            "A strong inclination to avoid all social contact.",
+            "A compulsive urge to rearrange personal belongings.",
+            "An uncontrollable need for constant movement and travel."
+        ],
+        "explanation": "This term refers to an excessive longing or compulsion to stay in bed, often driven by a need for comfort or a reluctance to engage with the outside world."
+    },
+    {
+        "question": "What is the meaning of \"Deliquescent\"?",
+        "correct_answer": "Becoming liquid through absorption of moisture from air.",
+        "incorrect_answers": [
+            "Transforming into a solid state through condensation.",
+            "Evaporating quickly in high temperature environments.",
+            "Absorbing light and generating heat in reactions."
+        ],
+        "explanation": "This term describes a substance that gradually becomes liquid, often due to the absorption of water vapor from the environment, typically when it is hygroscopic."
+    },
+    {
+        "question": "What is the meaning of \"Orphic\"?",
+        "correct_answer": "Relating to mysticism or possessing a dreamy quality.",
+        "incorrect_answers": [
+            "Pertaining to visual art or beautiful imagery.",
+            "Indicating a scientific proof or mathematical truth.",
+            "Describing a plain and simple style of writing."
+        ],
+        "explanation": "The term describes something that evokes mystery, enchantment, or a connection to esoteric traditions, often relating to the mythical figure Orpheus, associated with music, poetry, and the supernatural."
     }
 ]

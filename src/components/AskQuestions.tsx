@@ -68,15 +68,16 @@ export function AskQuestions() {
                         <button onClick={showNextQuestion}>Next </button>
                     )}
                     {quizFinished && userAnswer && (
-                        <button onClick={() => dispatch(restartQuiz())}>Restart</button>
+                        <button onClick={() => window.location.reload() }>Restart</button>
+                        // <button onClick={() => dispatch(restartQuiz())}>Restart</button>
                     )}
                 </div>
-                <div className='quiz-finished-btns '>
+                {/* <div className='quiz-finished-btns '>
                     {quizFinished && userAnswer && (
                         <button onClick={showNextQuestion}>New Quiz</button>
                     )}
 
-                </div>
+                </div> */}
             </div>
             <Modal
                 showDialog={showDialog}

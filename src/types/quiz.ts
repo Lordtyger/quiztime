@@ -23,6 +23,13 @@ export type Storage = {
         };
     };
 };
+// export type Storage = Record<
+//     string,
+//     Record<
+//         string,
+//         Record<string, boolean>
+//     >
+// >;
 
 // Represents the state of the quiz application
 export interface QuizState {

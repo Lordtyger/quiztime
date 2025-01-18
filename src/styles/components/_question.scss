@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 .question-container {
 
     font-size: 1.5em;
@@ -9,7 +11,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
-        @include query (mobile) {
+        @include mixins.query (mobile) {
             flex-direction: column;
             height: 4em;
         }
