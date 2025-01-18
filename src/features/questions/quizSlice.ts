@@ -14,7 +14,7 @@ const questionSubjects = import.meta.env.VITE_QUIZ_SUBJECTS.split(',').map((item
 const initialState: QuizState = {
     prioritiseIncorrect: true,
     subject: { id: 'words', name: 'words' },
-    numberOfQuestions: 30,
+    numberOfQuestions: 50,
     score: 0,
     userAnswers: {},
     currentQuestionIndex: 0,
