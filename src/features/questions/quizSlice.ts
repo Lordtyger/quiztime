@@ -10,7 +10,7 @@ const questionSubjects = import.meta.env.VITE_QUIZ_SUBJECTS.split(',').map((item
         name: `${item[0].toUpperCase()}${item.slice(1)}`
     }
 });
-
+// why is this not updating on vercel
 const initialState: QuizState = {
     prioritiseIncorrect: true,
     subject: { id: 'words', name: 'words' },
