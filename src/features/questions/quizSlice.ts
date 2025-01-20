@@ -19,39 +19,39 @@ const initialState: QuizState = {
     userAnswers: {},
     currentQuestionIndex: 0,
     category: 'words1',
-    quizStarted: true,
+    quizStarted: false,
     currentQuestions: [],
     categories: {
-        javascript: [
-            { id: 'array', name: "Array" },
-            { id: 'class', name: "Classes" },
-            { id: 'expressionsandoperators', name: "Expression & Operators" },
-            { id: 'map', name: "Map" },
-            { id: 'object', name: "Object" },
-            { id: 'promise', name: "Promise" },
-            { id: 'set', name: "Set" },
-            { id: 'statementsanddeclarations', name: "Statements & Declarations" },
-            { id: 'string', name: "String" },
-            { id: 'functionandmisc', name: "Function & Misc" },
-            { id: 'nextjs', name: "Next.js" },
-        ],
-        nextjs: [
-            { id: 'nextjs1', name: "Next.js one" },
-        ],
+        // javascript: [
+        //     { id: 'array', name: "Array" },
+        //     { id: 'class', name: "Classes" },
+        //     { id: 'expressionsandoperators', name: "Expression & Operators" },
+        //     { id: 'map', name: "Map" },
+        //     { id: 'object', name: "Object" },
+        //     { id: 'promise', name: "Promise" },
+        //     { id: 'set', name: "Set" },
+        //     { id: 'statementsanddeclarations', name: "Statements & Declarations" },
+        //     { id: 'string', name: "String" },
+        //     { id: 'functionandmisc', name: "Function & Misc" },
+        //     { id: 'nextjs', name: "Next.js" },
+        // ],
+        // nextjs: [
+        //     { id: 'nextjs1', name: "Next.js one" },
+        // ],
         words: [
-            { id: 'words1', name: "Words One" },
-            { id: 'words2', name: "Words Two" },
+            { id: 'words1', name: "Easy" },
+            { id: 'words2', name: "Hard" },
         ],
-        flexbox: [
-            { id: 'flex1', name: "Flexbox" },
-        ]
+        // flexbox: [
+        //     { id: 'flex1', name: "Flexbox" },
+        // ]
     },
     storage: {},
     subjects: questionSubjects
 };
 
 function makeAnswersData(correctAnswer: string, incorrectAnswers: string[]) {
-    const answers = [correctAnswer, ...incorrectAnswers].map((answer, index) => {
+    const answers = [correctAnswer, ...incorrectAnswers.slice(0,2)].map((answer, index) => {
         return {
             id: index,
             answer,

@@ -41,7 +41,7 @@ export default function StartQuiz() {
     return (
         <div className='start-quiz'>
             <div className='select-list'>
-                <div>
+                {/* <div>
                     {
                         subjects && subjects.length > 0 && <Select
                             styles={selectStyles}
@@ -50,7 +50,7 @@ export default function StartQuiz() {
                             onChange={(item) => item && selectSub(item)}
                         />
                     }
-                </div>
+                </div> */}
                 <div key={subject.id}>
                     {
                         subjectCategories && subjectCategories.length > 0 && <Select
@@ -61,7 +61,7 @@ export default function StartQuiz() {
                         />
                     }
                 </div>
-                <div>
+                {/* <div>
                     {
                         <Select
                             styles={selectStyles}
@@ -70,15 +70,15 @@ export default function StartQuiz() {
                             onChange={(item) => item && setNumQuestions(item)}
                         />
                     }
-                </div>
+                </div> */}
             </div>
-            <div className='checkbox-container'>
+            {/* <div className='checkbox-container'>
                 <CheckBox
                     label="Prioritise Incorrect past questions"
                     defaultValue={prioritiseIncorrect}
                     onChange={togglePrioritiseIncorrect}
                 />
-            </div>
+            </div> */}
             <div className='start-quiz-button'>
                 {
                     subjectCategories && subjectCategories.length > 0 && <button onClick={startQuiz}>Start Quiz</button>
