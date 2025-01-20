@@ -1,0 +1,112 @@
+[
+    {
+        "question": "What is the meaning of \"ambivalent\"?",
+        "correct_answer": "Having mixed feelings or contradictory ideas about something",
+        "incorrect_answers": [
+            "Exhibiting an intense desire to understand a subject",
+            "Possessing a characteristic that makes it suitable for a role",
+            "Being in a state of continuous change or movement",
+            "Demonstrating keen insight or perceptive understanding"
+        ],
+        "explanation": "This term describes a simultaneous existence of opposing or contradictory attitudes towards a specific issue or object. It reflects a state where an individual feels uncertain or conflicted regarding choices or feelings, highlighting the complexity of human emotions and decision-making processes. For example, she felt ambivalent about moving to another city."
+    },
+    {
+        "question": "What is the meaning of 'benevolent'?",
+        "correct_answer": "Showing kindness and goodwill towards others",
+        "incorrect_answers": [
+            "Exhibiting a tendency to disappear or vanish",
+            "Characterized by a high level of brightness or light",
+            "Relating to the act of growing or developing",
+            "Pertaining to a condition of being sudden or unexpected"
+        ],
+        "explanation": "This term describes a disposition to do good deeds. It implies an active desire to promote the welfare of others. Individuals described by this term often engage in charitable acts or show generosity. They typically prioritize the interests of others and seek to enhance their well-being."
+    },
+    {
+        "question": "What is the meaning of \"candid\"?",
+        "correct_answer": "Honest and straightforward in expression or appearance",
+        "incorrect_answers": [
+            "To lead or direct toward a specific aim or result",
+            "The process of seeking or pursuing knowledge and understanding",
+            "An instance of making something ready or functional",
+            "To provide a specific set of instructions or guidelines"
+        ],
+        "explanation": "This term refers to a quality of being truthful and frank. It indicates an approach that is transparent and direct, often lacking any pretense or disguise. It is often used to describe communication where sincerity is prioritized. For example, her candid remarks were appreciated during the meeting."
+    },
+    {
+        "question": "What is the meaning of 'disparage'?",
+        "correct_answer": "To speak of someone or something in a demeaning way",
+        "incorrect_answers": [
+            "To make a formal request for something needed",
+            "To hold or keep in a designated position",
+            "To exhibit qualities that draw positive attention",
+            "To engage in a prolonged discussion about ideas"
+        ],
+        "explanation": "To disparage means to belittle or talk down to someone or something. It often involves expressing a lack of respect or valuing the subject in a negative way."
+    },
+    {
+        "question": "What is the meaning of \"abstain\"?",
+        "correct_answer": "To choose not to do something voluntarily or intentionally",
+        "incorrect_answers": [
+            "To run swiftly in an athletic competition or event",
+            "To observe or witness a particular event or situation",
+            "To transport goods or people from one place to another",
+            "To understand or grasp the significance of a concept"
+        ],
+        "explanation": "This term refers to the act of deliberately refraining from engaging in a specific activity or behavior. It often implies a conscious choice to avoid participation or consumption, reflecting a personal decision rather than an external compulsion. Individuals may abstain from various actions, such as voting in an election or consuming certain substances, for reasons that can be ethical, health-related, or personal. An example of usage is: \"She decided to abstain from alcohol during the holidays.\""
+    },
+    {
+        "question": "What is the meaning of \"gregarious\"?",
+        "correct_answer": "Fond of company and sociable in nature.",
+        "incorrect_answers": [
+            "Exhibiting qualities of diligent and careful behavior.",
+            "Relating to an extensive and intricate network.",
+            "Characterized by being quiet and reserved in manner.",
+            "Involving a complex system of natural processes."
+        ],
+        "explanation": "This term describes an individual who enjoys being in the company of others and seeks social interaction. It suggests a tendency towards sociability and a preference for group settings. An individual described as gregarious typically thrives in social events and gatherings."
+    },
+    {
+        "question": "What is the meaning of 'mitigate'?",
+        "correct_answer": "To make less severe or serious in effect",
+        "incorrect_answers": [
+            "To strengthen or increase in intensity over time",
+            "To observe and analyze various situations thoroughly",
+            "To declare something as true with certainty",
+            "To remove all obstacles and difficulties permanently"
+        ],
+        "explanation": "To make something less severe, serious, or painful describes a process of reducing negative impact. This can be applied in contexts like risk management, environmental policies, or personal well-being. For example, proper safety measures can mitigate potential accidents."
+    },
+    {
+        "question": "What is the meaning of \"pragmatic\"?",
+        "correct_answer": "Dealing with things sensibly and realistically in practice",
+        "incorrect_answers": [
+            "Representing an effortless control over one's environment",
+            "Characterized by an insatiable desire for exploration",
+            "Expressing a highly regulated and systematic process",
+            "Involving a process of careful measurement and evaluation"
+        ],
+        "explanation": "This term refers to approaches that prioritize practical results over theoretical considerations. It emphasizes effectiveness and usefulness rather than abstract ideas. Typically, the focus is on real-world applications and achievable outcomes. The term is often applied in fields such as business, education, and politics."
+    },
+    {
+        "question": "What is the meaning of 'tenacious'?",
+        "correct_answer": "Holding firmly to something persistent and not yielding easily",
+        "incorrect_answers": [
+            "Exhibiting a condition of extreme heat or dryness",
+            "Possessing qualities that promote rapid growth and reproduction",
+            "Relating to the process of creating intricate designs or patterns",
+            "Describing a state of being clear and easily understood"
+        ],
+        "explanation": "The word refers to a quality of being determined and persistent in maintaining or holding onto something. It often describes individuals who do not easily give up or let go of their goals."
+    },
+    {
+        "question": "What is the meaning of 'venerate'?",
+        "correct_answer": "To regard with great respect and reverence.",
+        "incorrect_answers": [
+            "To exhibit qualities of deception or untrustworthiness.",
+            "To hold a position of superiority over others.",
+            "To cause something to glow or emit light.",
+            "To transform matter into a different form or substance."
+        ],
+        "explanation": "The term signifies a profound respect often accompanied by worship or adoration. It conveys the act of honoring someone or something with devotion and esteem. For example, many cultures venerate their ancestors, showing honor and reverence for their legacy."
+    }
+]

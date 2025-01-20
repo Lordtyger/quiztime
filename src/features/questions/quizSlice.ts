@@ -18,7 +18,7 @@ const initialState: QuizState = {
     score: 0,
     userAnswers: {},
     currentQuestionIndex: 0,
-    category: 'words1',
+    category: 'sat',
     quizStarted: false,
     currentQuestions: [],
     categories: {
@@ -39,8 +39,9 @@ const initialState: QuizState = {
         //     { id: 'nextjs1', name: "Next.js one" },
         // ],
         words: [
-            { id: 'words1', name: "Easy" },
-            { id: 'words2', name: "Hard" },
+            { id: 'sat', name: "Easy" },
+            { id: 'words1', name: "Hard" },
+            { id: 'words2', name: "Harder" },
         ],
         // flexbox: [
         //     { id: 'flex1', name: "Flexbox" },
