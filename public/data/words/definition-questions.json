@@ -1,5 +1,16 @@
 [
     {
+        "correct_answer": "erratic",
+        "difficulty_level": "intermediate",
+        "question": "Characterized by unpredictable and inconsistent behavior or movement in a specific context or situation.",
+        "incorrect_answers": [
+            "obscure",
+            "cryptic",
+            "ambiguous",
+            "elusive"
+        ]
+    },
+    {
         "correct_answer": "benevolent",
         "difficulty_level": "intermediate",
         "question": "Having a disposition to do good and promote the welfare and happiness of others.",
