@@ -3,6 +3,7 @@ export interface  QuizQuestion  {
     correct_answer: string;
     incorrect_answers: string[];
     explanation: string;
+    difficulty_level?: string;
 };
 // export interface QuestionsApiResponse {
 //     results: QuizQuestion[]

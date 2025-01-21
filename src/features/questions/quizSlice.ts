@@ -18,7 +18,7 @@ const initialState: QuizState = {
     score: 0,
     userAnswers: {},
     currentQuestionIndex: 0,
-    category: 'sat',
+    category: 'definition',
     quizStarted: false,
     currentQuestions: [],
     categories: {
@@ -39,6 +39,7 @@ const initialState: QuizState = {
         //     { id: 'nextjs1', name: "Next.js one" },
         // ],
         words: [
+            {id: 'definition', name: "Definition Test" },
             { id: 'sat', name: "Easy" },
             { id: 'words1', name: "Hard" },
             { id: 'words2', name: "Harder" },

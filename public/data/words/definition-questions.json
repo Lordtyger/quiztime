@@ -1,0 +1,167 @@
+[
+    {
+        "correct_answer": "benevolent",
+        "difficulty_level": "intermediate",
+        "question": "Having a disposition to do good and promote the welfare and happiness of others.",
+        "incorrect_answers": [
+            "altruism",
+            "philanthropy",
+            "indifference",
+            "civility"
+        ]
+    },
+    {
+        "correct_answer": "eloquent",
+        "difficulty_level": "intermediate",
+        "question": "Expressing ideas clearly and effectively in speech or writing with persuasive power.",
+        "incorrect_answers": [
+            "verbose",
+            "opaque",
+            "obscure",
+            "terse"
+        ]
+    },
+    {
+        "correct_answer": "pervasive",
+        "difficulty_level": "intermediate",
+        "question": "Spreading widely throughout an area or a group of people in a noticeable way.",
+        "incorrect_answers": [
+            "ambiguous",
+            "tenuous",
+            "incremental",
+            "residual"
+        ]
+    },
+    {
+        "correct_answer": "mitigate",
+        "difficulty_level": "intermediate",
+        "question": "To make something less severe, serious, or painful without removing it completely.",
+        "incorrect_answers": [
+            "exacerbate",
+            "abrogate",
+            "amalgamate",
+            "culminate"
+        ]
+    },
+    {
+        "correct_answer": "capricious",
+        "difficulty_level": "hard",
+        "question": "Characterized by sudden changes in mood or behavior without clear reason or predictable pattern.",
+        "incorrect_answers": [
+            "ephemeral",
+            "erratic",
+            "languid",
+            "anomaly"
+        ]
+    },
+    {
+        "correct_answer": "Eunoia",
+        "difficulty_level": "hard",
+        "question": "It refers to a state of normal mental health or beautiful thinking and well-disposed feelings.",
+        "incorrect_answers": [
+            "Nostalgia",
+            "Zeugma",
+            "Anhedonia",
+            "Liminality"
+        ]
+    },
+    {
+        "correct_answer": "Amaranthine",
+        "difficulty_level": "hard",
+        "question": "Having an enduring and unchanging quality that suggests eternal beauty or the absence of decay.",
+        "incorrect_answers": [
+            "Elucidate",
+            "Ephemeral",
+            "Ostentatious",
+            "Obfuscate"
+        ]
+    },
+    {
+        "correct_answer": "recalcitrant",
+        "difficulty_level": "hard",
+        "question": "Marked by stubborn resistance to authority or control, often refusing to obey what is expected.",
+        "incorrect_answers": [
+            "obdurate",
+            "perfidious",
+            "astigmatism",
+            "obfuscate"
+        ]
+    },
+    {
+        "correct_answer": "ardent",
+        "difficulty_level": "intermediate",
+        "question": "Having or showing intense passion, enthusiasm, or eagerness towards a person, activity, or cause.",
+        "incorrect_answers": [
+            "obscure",
+            "meticulous",
+            "ambivalent",
+            "candid"
+        ]
+    },
+    {
+        "correct_answer": "fickle",
+        "difficulty_level": "intermediate",
+        "question": "Describing someone who is changeable in affection or loyalty often without reason or predictable pattern.",
+        "incorrect_answers": [
+            "zealot",
+            "fiasco",
+            "surreal",
+            "ambivalence"
+        ]
+    },
+    {
+        "correct_answer": "pensive",
+        "difficulty_level": "intermediate",
+        "question": "Engaged in deep or serious thought often with a trace of sadness or reflection.",
+        "incorrect_answers": [
+            "vacation",
+            "disruption",
+            "exploration",
+            "celebration"
+        ]
+    },
+    {
+        "correct_answer": "snooker",
+        "difficulty_level": "intermediate",
+        "question": "It is a cue sport played on a rectangular table with pockets and colored balls.",
+        "incorrect_answers": [
+            "poker",
+            "curling",
+            "fencing",
+            "chess"
+        ]
+    },
+    {
+        "correct_answer": "dog",
+        "difficulty_level": "easy",
+        "question": "A domesticated carnivorous mammal often kept as a pet or used for work or companionship.",
+        "incorrect_answers": [
+            "giraffe",
+            "whistle",
+            "mosaic",
+            "jigsaw"
+        ]
+    },
+    {
+        "correct_answer": "river",
+        "difficulty_level": "intermediate",
+        "question": "A large natural stream of flowing water that typically empties into a sea or ocean.",
+        "incorrect_answers": [
+            "channel",
+            "oasis",
+            "delta",
+            "basin"
+        ]
+    },
+    {
+        "correct_answer": "tree",
+        "difficulty_level": "easy",
+        "question": "A perennial plant with an elongated stem supporting branches and leaves above ground level.",
+        "incorrect_answers": [
+            "boulder",
+            "shelter",
+            "pavement",
+            "scaffold"
+        ]
+    }
+]

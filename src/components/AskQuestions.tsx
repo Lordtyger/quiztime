@@ -15,7 +15,9 @@ export function AskQuestions() {
         correctAnswer,
         userAnswer,
     } = useAppSelector(selectCurrentQuestionData);
-
+    console.log('currentQuestion', currentQuestion);
+    const { difficulty_level } = currentQuestion;
+ 
     const numberOfQuestions = useAppSelector(selectNumberOfQuestions);
     const quizFinished = questionIndex + 1 === numberOfQuestions;
     const userScore = useAppSelector(selectScore);
@@ -44,6 +46,7 @@ export function AskQuestions() {
         <div className='quiz-container'>
             <h1>{subject}: {category}</h1>
             <Question
+                difficulty_level={difficulty_level || ''}
                 questionTxt={currentQuestion.question}
                 userScore={userScore}
                 numberOfQuestions={numberOfQuestions}
@@ -51,12 +54,12 @@ export function AskQuestions() {
                 pastAnswerAttempt={pastAnswerAttempt}
             />
             {/* <div key={userAnswer}> */}
-                <AnswerButtons
-                    questionAnswers={currentQuestion.questionAnswers}
-                    userAnswer={userAnswer}
-                    correctAnswer={correctAnswer}
-                    handleUserAnswer={handleUserAnswer}
-                />
+            <AnswerButtons
+                questionAnswers={currentQuestion.questionAnswers}
+                userAnswer={userAnswer}
+                correctAnswer={correctAnswer}
+                handleUserAnswer={handleUserAnswer}
+            />
             {/* </div> */}
             <div className="control-buttons">
                 <div className='quiz-in-progress-btns'>
@@ -68,7 +71,7 @@ export function AskQuestions() {
                         <button onClick={showNextQuestion}>Next </button>
                     )}
                     {quizFinished && userAnswer && (
-                        <button onClick={() => window.location.reload() }>Restart</button>
+                        <button onClick={() => window.location.reload()}>Restart</button>
                         // <button onClick={() => dispatch(restartQuiz())}>Restart</button>
                     )}
                 </div>
