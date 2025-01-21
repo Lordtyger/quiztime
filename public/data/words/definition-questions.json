@@ -144,7 +144,7 @@
     },
     {
         "correct_answer": "river",
-        "difficulty_level": "intermediate",
+        "difficulty_level": "easy",
         "question": "A large natural stream of flowing water that typically empties into a sea or ocean.",
         "incorrect_answers": [
             "channel",
