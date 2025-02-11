@@ -19,12 +19,11 @@ export default function Question({
     sound: string
     category: string
 }) {
-   console.log('riddlescategorycategorycategorycategorycategory', category);
     return (
         <div className='question-container'>
             <div className='question-header'>
                 
-                {difficulty_level && <span>Level: {difficulty_level}</span>}
+                {/* {difficulty_level && <span>Level: {difficulty_level}</span>} */}
                 <p className='score'>Score: {userScore}</p>
                 <p className='question-count'>Question: {questionIndex + 1} of {numberOfQuestions}</p>
                 <div className='past-answer-attempt'>

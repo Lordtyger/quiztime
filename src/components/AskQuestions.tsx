@@ -48,7 +48,7 @@ export function AskQuestions() {
 
     return (
         <div className='quiz-container'>
-            <h1>{subject}: {category}</h1>
+            {/* <h1>{subject}: {category}</h1> */}
             <Question
                 category={category || ''}
                 difficulty_level={difficulty_level || ''}
