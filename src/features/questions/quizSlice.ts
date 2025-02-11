@@ -24,7 +24,7 @@ const initialState: QuizState = {
     categories: {
         words: [
             { id: 'basic', name: "Basic" },
-            {id: 'definition', name: "Definition Test" },
+            { id: 'definition', name: "Definition Test" },
             { id: 'riddles', name: "Riddles" },
         ],
     },
@@ -32,11 +32,12 @@ const initialState: QuizState = {
     subjects: questionSubjects
 };
 
-function makeAnswersData(correctAnswer: string, incorrectAnswers: string[]) {
-    const answers = [correctAnswer, ...incorrectAnswers.slice(0,2)].map((answer, index) => {
+function makeAnswersData(correctAnswer: string, incorrectAnswers: string[], correctDefinition: string) {
+    const answers = [correctAnswer, ...incorrectAnswers.slice(0, 2)].map((answer, index) => {
         return {
             id: index,
             answer,
+            correctDefinition
         }
     });
 
@@ -45,11 +46,11 @@ function makeAnswersData(correctAnswer: string, incorrectAnswers: string[]) {
 
 function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
     const questionCopy = structuredClone(data)?.slice().sort(() => Math.random() - 0.5) || [];
-  
+
     const category = state?.category || 'definition';
-   console.log('category------:', category)
-    console.log('data------:', data)   
-     const questions = questionCopy?.splice(0,5).map(q => {
+
+    console.log('data------:', data)
+    const questions = questionCopy?.splice(0, 5).map(q => {
         const questionData = {
             // @ts-expect-error ertet
             definition: q.question_data.correct_answer,
@@ -70,9 +71,11 @@ function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
         console.log(q)
         return {
             // @ts-expect-error ertet
+            correct_definition: q.question_data.correct_answer,
+            // @ts-expect-error ertet
             question: questionData[category],
-             // @ts-expect-error ertet
-            correct_answer: correctAnswer[category] ,
+            // @ts-expect-error ertet
+            correct_answer: correctAnswer[category],
             incorrect_answers: [],
             // @ts-expect-error ertet
             explanation: q.ai_definition,
@@ -90,7 +93,7 @@ function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
             // @ts-expect-error ertet
             basic: q.word_name,
             // @ts-expect-error ertet
-            riddles:q.question_data.correct_answer,
+            riddles: q.question_data.correct_answer,
         }
         const incorrectAnswer = {
             // @ts-expect-error ertet
@@ -103,8 +106,8 @@ function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
         return {
             // @ts-expect-error ertet
             definition: definition[category],
-             // @ts-expect-error ertet
-            incorrect_answer: incorrectAnswer[category] ,
+            // @ts-expect-error ertet
+            incorrect_answer: incorrectAnswer[category],
         }
     })?.slice().sort(() => Math.random() - 0.5) || [];
 
@@ -112,7 +115,7 @@ function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
         // @ts-expect-error ertet
         question.incorrect_answers = distractors.splice(0, 2).map(d => d);
     });
- 
+
     return questions;
 }
 
@@ -150,11 +153,11 @@ export const quizSlice = createSlice({
             //     explanation: string;
             //     difficulty_level?: string;
             // };
-          //  console.log('action.payload.questions', action.payload.questions)
-            
+            //  console.log('action.payload.questions', action.payload.questions)
+
             const pastIncorrectAnswers: string[] = [];
             console.log('state.category', state.category)
-           
+
             const apiQuestions: QuizQuestion[] = action.payload.questions ?
                 makeDistractorsRadndomly(action.payload.questions, state)
                 : [];
@@ -176,7 +179,7 @@ export const quizSlice = createSlice({
             //         }
             //     }))
             //     : [];
-            console.log('apiQuestions', apiQuestions)   
+            console.log('apiQuestions', apiQuestions)
             const incorrectAnsweredQuestions: QuizQuestion[] = [];
             const indexOfIncorrectQuestions: number[] = [];
 
@@ -216,7 +219,8 @@ export const quizSlice = createSlice({
             state.numberOfQuestions = questions.length;
             state.currentQuestions = questions.map((question) => ({
                 ...question,
-                questionAnswers: makeAnswersData(question.correct_answer, question.incorrect_answers),
+                // @ts-expect-error ertet
+                questionAnswers: makeAnswersData(question.correct_answer, question.incorrect_answers, question.correct_definition),
             }));
         },
 
@@ -308,7 +312,7 @@ export const quizSlice = createSlice({
         selectSubjectInfo(state) {
             const category = state.categories[state.subject.id].find((category) => category.id === state.category)?.name;
 
-            return {subject: state.subject.name, category};
+            return { subject: state.subject.name, category };
         }
     },
     // extraReducers: (builder) => {

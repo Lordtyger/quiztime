@@ -37,7 +37,7 @@ export default function Question({
             <div className='question-body'>
 
                 { category.toLowerCase() !== 'riddles' && <h2 className='question' dangerouslySetInnerHTML={{ __html: questionTxt }}></h2>}
-                { category.toLowerCase() === 'riddles' && <pre className='riddle' dangerouslySetInnerHTML={{ __html: questionTxt }}></pre>}
+                { category.toLowerCase() === 'riddles' && <div className='riddle-box' dangerouslySetInnerHTML={{ __html: questionTxt }}></div>}
                 <div>{sound && <PlaySound soundUrl={sound} />}</div>
             </div>
             

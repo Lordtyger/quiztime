@@ -45,7 +45,7 @@ export function AskQuestions() {
     useEffect(() => {
         setSoundUrl(currentQuestion.sound);
     }, [currentQuestion]);
-console.log('soundUrl', soundUrl);
+
     return (
         <div className='quiz-container'>
             <h1>{subject}: {category}</h1>
@@ -75,11 +75,13 @@ console.log('soundUrl', soundUrl);
                     )}
 
                     {!quizFinished && userAnswer && (
-                        <button onClick={showNextQuestion}>Next </button>
+                        <button className="next-btn" onClick={showNextQuestion}>Next </button>
                     )}
                     {quizFinished && userAnswer && (
-                        <button onClick={() => window.location.reload()}>Restart</button>
-                        // <button onClick={() => dispatch(restartQuiz())}>Restart</button>
+                        <div className='quiz-finished-btns'>
+                        <button onClick={() => window.location.reload()}>New Quiz</button>
+                        <button onClick={() => dispatch(restartQuiz())}>Replay</button>
+                        </div>
                     )}
                 </div>
                 {/* <div className='quiz-finished-btns '>
