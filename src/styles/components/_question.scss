@@ -3,17 +3,39 @@
 .question-container {
 
     font-size: 1.5em;
-    h2 {
+
+    .question {
         margin-top: 1em;
-        margin-bottom: 1em;;
+        margin-bottom: 1em;
+    }
+    .riddle {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 auto;
+        text-wrap: wrap;
     }
     .question-header {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
+
         @include mixins.query (mobile) {
             flex-direction: column;
-            height: 4em;
+            height: 6em;
+            justify-content: space-between;
         }
+    }
+
+    .question-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .speaker-icon {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
     }
 }

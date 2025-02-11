@@ -1,23 +1,29 @@
 import { FaFaceFrown, FaFaceGrinBeam, FaFaceMeh } from 'react-icons/fa6';
+import PlaySound from './PlaySound';
 export default function Question({
     difficulty_level,
     questionTxt,
     userScore,
     numberOfQuestions,
     questionIndex,
-    pastAnswerAttempt
+    pastAnswerAttempt,
+    sound,
+    category,
 }: {
     difficulty_level: string,
     questionTxt: string
     userScore: number,
     numberOfQuestions: number,
     questionIndex: number,
-    pastAnswerAttempt: boolean | null
+    pastAnswerAttempt: boolean | null,
+    sound: string
+    category: string
 }) {
-
+   console.log('riddlescategorycategorycategorycategorycategory', category);
     return (
         <div className='question-container'>
             <div className='question-header'>
+                
                 {difficulty_level && <span>Level: {difficulty_level}</span>}
                 <p className='score'>Score: {userScore}</p>
                 <p className='question-count'>Question: {questionIndex + 1} of {numberOfQuestions}</p>
@@ -28,7 +34,13 @@ export default function Question({
                 </div>
             </div>
             <hr />
-            <h2 className='question' dangerouslySetInnerHTML={{ __html: questionTxt }}></h2>
+            <div className='question-body'>
+
+                { category.toLowerCase() !== 'riddles' && <h2 className='question' dangerouslySetInnerHTML={{ __html: questionTxt }}></h2>}
+                { category.toLowerCase() === 'riddles' && <pre className='riddle' dangerouslySetInnerHTML={{ __html: questionTxt }}></pre>}
+                <div>{sound && <PlaySound soundUrl={sound} />}</div>
+            </div>
+            
         </div>
     );
 }

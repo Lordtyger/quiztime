@@ -18,35 +18,15 @@ const initialState: QuizState = {
     score: 0,
     userAnswers: {},
     currentQuestionIndex: 0,
-    category: 'definition',
+    category: 'basic',
     quizStarted: false,
     currentQuestions: [],
     categories: {
-        // javascript: [
-        //     { id: 'array', name: "Array" },
-        //     { id: 'class', name: "Classes" },
-        //     { id: 'expressionsandoperators', name: "Expression & Operators" },
-        //     { id: 'map', name: "Map" },
-        //     { id: 'object', name: "Object" },
-        //     { id: 'promise', name: "Promise" },
-        //     { id: 'set', name: "Set" },
-        //     { id: 'statementsanddeclarations', name: "Statements & Declarations" },
-        //     { id: 'string', name: "String" },
-        //     { id: 'functionandmisc', name: "Function & Misc" },
-        //     { id: 'nextjs', name: "Next.js" },
-        // ],
-        // nextjs: [
-        //     { id: 'nextjs1', name: "Next.js one" },
-        // ],
         words: [
+            { id: 'basic', name: "Basic" },
             {id: 'definition', name: "Definition Test" },
-            { id: 'sat', name: "Easy" },
-            { id: 'words1', name: "Hard" },
-            { id: 'words2', name: "Harder" },
+            { id: 'riddles', name: "Riddles" },
         ],
-        // flexbox: [
-        //     { id: 'flex1', name: "Flexbox" },
-        // ]
     },
     storage: {},
     subjects: questionSubjects
@@ -63,6 +43,78 @@ function makeAnswersData(correctAnswer: string, incorrectAnswers: string[]) {
     return answers.sort(() => Math.random() - 0.5);
 }
 
+function makeDistractorsRadndomly(data: QuizQuestion[] | [], state: QuizState) {
+    const questionCopy = structuredClone(data)?.slice().sort(() => Math.random() - 0.5) || [];
+  
+    const category = state?.category || 'definition';
+   console.log('category------:', category)
+    console.log('data------:', data)   
+     const questions = questionCopy?.splice(0,5).map(q => {
+        const questionData = {
+            // @ts-expect-error ertet
+            definition: q.question_data.correct_answer,
+            // @ts-expect-error ertet
+            basic: q.word_name,
+            // @ts-expect-error ertet
+            riddles: q.question_data.riddle,
+        }
+        const correctAnswer = {
+            // @ts-expect-error ertet
+            definition: q.word_name,
+            // @ts-expect-error ertet
+            basic: q.question_data.correct_answer,
+            // @ts-expect-error ertet
+            riddles: q.word_name,
+        }
+
+        console.log(q)
+        return {
+            // @ts-expect-error ertet
+            question: questionData[category],
+             // @ts-expect-error ertet
+            correct_answer: correctAnswer[category] ,
+            incorrect_answers: [],
+            // @ts-expect-error ertet
+            explanation: q.ai_definition,
+            // @ts-expect-error ertet
+            difficulty_level: q.question_data.difficulty,
+            // @ts-expect-error ertet
+            sound: state?.category !== 'definition' && state?.category !== 'riddles' ? q.sound_url : '',
+        }
+    });
+    console.log('questions---', questionCopy)
+    const distractors = questionCopy?.map(q => {
+        const definition = {
+            // @ts-expect-error ertet
+            definition: q.question_data.correct_answer,
+            // @ts-expect-error ertet
+            basic: q.word_name,
+            // @ts-expect-error ertet
+            riddles:q.question_data.correct_answer,
+        }
+        const incorrectAnswer = {
+            // @ts-expect-error ertet
+            definition: q.word_name,
+            // @ts-expect-error ertet
+            basic: q.question_data.correct_answer,
+            // @ts-expect-error ertet
+            riddles: q.word_name,
+        }
+        return {
+            // @ts-expect-error ertet
+            definition: definition[category],
+             // @ts-expect-error ertet
+            incorrect_answer: incorrectAnswer[category] ,
+        }
+    })?.slice().sort(() => Math.random() - 0.5) || [];
+
+    questions.forEach((question) => {
+        // @ts-expect-error ertet
+        question.incorrect_answers = distractors.splice(0, 2).map(d => d);
+    });
+ 
+    return questions;
+}
 
 export const quizSlice = createSlice({
     name: 'quiz',
@@ -91,10 +143,40 @@ export const quizSlice = createSlice({
             state.quizStarted = true;
         },
         setCurrentQuestions(state, action: PayloadAction<{ questions: QuizQuestion[] | undefined }>) {
+            // export interface  QuizQuestion  {
+            //     question: string;
+            //     correct_answer: string;
+            //     incorrect_answers: string[];
+            //     explanation: string;
+            //     difficulty_level?: string;
+            // };
+          //  console.log('action.payload.questions', action.payload.questions)
+            
             const pastIncorrectAnswers: string[] = [];
-            const apiQuestions: QuizQuestion[] = action.payload.questions
-                ? structuredClone(action.payload.questions)
+            console.log('state.category', state.category)
+           
+            const apiQuestions: QuizQuestion[] = action.payload.questions ?
+                makeDistractorsRadndomly(action.payload.questions, state)
                 : [];
+            // apiQuestions= action.payload.questions
+            //     ? structuredClone(action.payload.questions?.map(q => {
+            //         return {
+            //             // @ts-expect-error ertet
+            //             question: state.category === 'definition' ?  q.question_data.riddle: q.name,
+            //              // @ts-expect-error ertet
+            //             correct_answer: state.category === 'definition' ? q.name : q.question_data.correct_answer ,
+            //             // @ts-expect-error ertet
+            //             incorrect_answers: q.question_data.incorrect_answers.map(answers => {
+            //                 return state.category === 'definition' ? answers.word : answers.definition
+            //             }),
+            //             // @ts-expect-error ertet
+            //             explanation: q.ai_definition,
+            //             // @ts-expect-error ertet
+            //             difficulty_level: q.question_data.difficulty
+            //         }
+            //     }))
+            //     : [];
+            console.log('apiQuestions', apiQuestions)   
             const incorrectAnsweredQuestions: QuizQuestion[] = [];
             const indexOfIncorrectQuestions: number[] = [];
 
@@ -288,6 +370,7 @@ export const selectCurrentQuestionData = createSelector(
             currentQuestion,
             correctAnswer: currentQuestion?.correct_answer,
             userAnswer: userAnswers[questionIndex] || null,
+            sound: currentQuestion?.sound
         };
     }
 );

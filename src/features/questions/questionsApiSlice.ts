@@ -26,10 +26,25 @@ export const questionsApiSlice = createApi({
         // }),
 
         getQuestions: build.query<QuestionsApiResponse, {subject:string,  currentCatId:string}>({
-            query: ({currentCatId, subject}) => 
-                `${subject}\\${currentCatId}-questions.json`,
+            query: () => 
+                `words\\data.json`,
             providesTags: () => [{ type: "Questions"}],
         }),
+        // getQuestions: build.query<QuestionsApiResponse, { subject: string, currentCatId: string }>({
+        //     query: () => ({
+        //         url: `http://192.168.1.95:1337/api/words/distractors`,
+        //         method: 'GET',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         mode: 'cors',
+        //         credentials: 'omit', // Test with 'omit' instead of 'include'
+        //     }),
+        //     providesTags: () => [{ type: 'Questions' }],
+        // }),
+
+
+
 
 
         // getGategories: build.query<CategoriesResponse, void>({

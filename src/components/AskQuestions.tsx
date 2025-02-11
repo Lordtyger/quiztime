@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { incrementScore, resetQuiz, restartQuiz, selectCurrentQuestionData, selectNumberOfQuestions, selectScore, selectStorageItem, selectSubjectInfo, setNextQuestion, setStorageItem, setUserAnswer } from '../features/questions/quizSlice';
 import AnswerButtons from './AnswerButtons';
@@ -6,6 +6,7 @@ import Modal from './Modal';
 import Question from './Question';
 
 export function AskQuestions() {
+    const [soundUrl, setSoundUrl] = useState<string >('');
     const [showDialog, setShowDialog] = useState(false);
     const dispatch = useAppDispatch();
 
@@ -41,17 +42,22 @@ export function AskQuestions() {
             dispatch(resetQuiz());
         }
     }
-
+    useEffect(() => {
+        setSoundUrl(currentQuestion.sound);
+    }, [currentQuestion]);
+console.log('soundUrl', soundUrl);
     return (
         <div className='quiz-container'>
             <h1>{subject}: {category}</h1>
             <Question
+                category={category || ''}
                 difficulty_level={difficulty_level || ''}
                 questionTxt={currentQuestion.question}
                 userScore={userScore}
                 numberOfQuestions={numberOfQuestions}
                 questionIndex={questionIndex}
                 pastAnswerAttempt={pastAnswerAttempt}
+                sound={soundUrl}
             />
             {/* <div key={userAnswer}> */}
             <AnswerButtons
@@ -59,6 +65,7 @@ export function AskQuestions() {
                 userAnswer={userAnswer}
                 correctAnswer={correctAnswer}
                 handleUserAnswer={handleUserAnswer}
+                setSoundUrl={setSoundUrl}
             />
             {/* </div> */}
             <div className="control-buttons">

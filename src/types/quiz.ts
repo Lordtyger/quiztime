@@ -8,6 +8,7 @@ export type NumberOfQuestions = 10 | 20 | 30 | 40 | 50;
 export interface Question {
     id: number; // Unique identifier for the answer
     answer: string; // The text of the answer
+    sound?: string; // The sound associated with the answer
 }
 
 // Represents the structure of a current quiz question

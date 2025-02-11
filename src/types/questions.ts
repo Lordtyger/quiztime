@@ -4,6 +4,7 @@ export interface  QuizQuestion  {
     incorrect_answers: string[];
     explanation: string;
     difficulty_level?: string;
+    sound: string;
 };
 // export interface QuestionsApiResponse {
 //     results: QuizQuestion[]

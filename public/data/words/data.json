@@ -1,0 +1,772 @@
+[
+    {
+        "id": 582,
+        "word_name": "gallimaufry",
+        "question_data": {
+            "plural": "gallimaufries",
+            "riddle": "I am a blend that has no single face,\nA tapestry woven from both time and space.\nIn my midst, you'll find both old and new,\nWhat am I, eclectic and askew?",
+            "question": "gallimaufry",
+            "singular": "gallimaufry",
+            "definition": "A diverse mixture of elements or a jumble of items.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A mixture of different things or a hodgepodge.",
+            "example_sentence": "The potluck dinner was a delightful gallimaufry of flavors and cuisines.\nEveryone enjoyed sampling dishes from around the world.",
+            "incorrect_answers": [
+                {
+                    "word": "chimera",
+                    "definition": "A mythological creature made from various animal parts."
+                },
+                {
+                    "word": "collage",
+                    "definition": "A piece of art made from different materials combined."
+                },
+                {
+                    "word": "pastiche",
+                    "definition": "An artistic work that imitates the style of others."
+                },
+                {
+                    "word": "potpourri",
+                    "definition": "A collection of dried petals and herbs for fragrance."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/gallimaufry"
+    },
+    {
+        "id": 593,
+        "word_name": "susurrus",
+        "question_data": {
+            "plural": "susurruses",
+            "riddle": "In the hush of night, I softly weave,\nA soothing whisper that you can perceive.\nWith gentle breaths, I dance through trees,\nWhat am I, carried on a breeze?",
+            "question": "susurrus",
+            "singular": "susurrus",
+            "definition": "A soft, continuous sound resembling whispering or murmuring.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A soft, murmuring or rustling sound often soothing.",
+            "example_sentence": "The susurrus of the leaves created a calming atmosphere in the garden.\n",
+            "incorrect_answers": [
+                {
+                    "word": "brouhaha",
+                    "definition": "A noisy and overexcited reaction to something important."
+                },
+                {
+                    "word": "maelstrom",
+                    "definition": "A powerful whirlpool in a river or a turbulent situation."
+                },
+                {
+                    "word": "gambit",
+                    "definition": "An action or remark intended to gain an advantage."
+                },
+                {
+                    "word": "zeitgeist",
+                    "definition": "The general cultural, intellectual, and social climate of an era."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/susurrus"
+    },
+    {
+        "id": 594,
+        "word_name": "tintinnabulation",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "I echo the laughter of metal in playful dance, a sound so sweet, as if fairies prance. What am I?",
+            "question": "tintinnabulation",
+            "singular": "NA",
+            "definition": "The act or process of producing ringing sounds often associated with bells.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A ringing or tinkling sound like bell chimes",
+            "example_sentence": "The sound of the tinkling glass wind chimes created a gentle tintinnabulation in the breeze.",
+            "incorrect_answers": [
+                {
+                    "word": "susurration",
+                    "definition": "A soft murmuring or whispering sound softly flowing"
+                },
+                {
+                    "word": "heuristics",
+                    "definition": "Techniques for solving problems or approaching learning effectively"
+                },
+                {
+                    "word": "ignominious",
+                    "definition": "Deserving or causing public disgrace or shame always lost"
+                },
+                {
+                    "word": "lithography",
+                    "definition": "A method for printing from a flat surface using oil"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/tintinnabulation"
+    },
+    {
+        "id": 620,
+        "word_name": "verisimilitude",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "I mimic reality yet dwell in fiction's embrace,\nA semblance of truth in an imagined space.\nWhat dances in shadows and plays with light,\nA faithful reflection, elusive and bright?",
+            "question": "verisimilitude",
+            "singular": "verisimilitude",
+            "definition": "The quality or state of appearing to be true or real.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "The appearance of being true or real in art.",
+            "example_sentence": "The film's verisimilitude drew the audience into its world effortlessly.\n",
+            "incorrect_answers": [
+                {
+                    "word": "pastiche",
+                    "definition": "An artistic work that imitates another style."
+                },
+                {
+                    "word": "simulacrum",
+                    "definition": "An image or representation of someone or something."
+                },
+                {
+                    "word": "polemics",
+                    "definition": "The art or practice of engaging in controversy."
+                },
+                {
+                    "word": "threnody",
+                    "definition": "A poem or song expressing sorrow for the dead."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/verisimilitude"
+    },
+    {
+        "id": 623,
+        "word_name": "zeugma",
+        "question_data": {
+            "plural": "zeugmas",
+            "riddle": "I dance between meanings, a twist in the tale. With one foot in love and the other in loss, I bind together what seems to part. Who am I?",
+            "question": "zeugma",
+            "singular": "zeugma",
+            "definition": "A rhetorical device in which a word applies to multiple parts.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A figure of speech using one word to modify others",
+            "example_sentence": "In the sentence 'She broke his heart and his bank', the author uses zeugma.",
+            "incorrect_answers": [
+                {
+                    "word": "synecdoche",
+                    "definition": "A figure of speech where part represents the whole"
+                },
+                {
+                    "word": "anacoluthon",
+                    "definition": "A construction in which a syntactically inconsistent element appears"
+                },
+                {
+                    "word": "paradox",
+                    "definition": "A statement that contradicts itself but may reveal truth"
+                },
+                {
+                    "word": "chiasmus",
+                    "definition": "A rhetorical device where words are repeated in reverse order"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/zeugma"
+    },
+    {
+        "id": 652,
+        "word_name": "encomium",
+        "question_data": {
+            "plural": "encomiums",
+            "riddle": "I am often delivered when great deeds are celebrated,\nSpoken in halls where honor is elevated.\nA tribute I offer, in words that shine,\nTo honor the brave, with a style divine.\nWhat am I?",
+            "question": "encomium",
+            "singular": "encomium",
+            "definition": "A formal expression of high praise, often in speech.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A speech or piece of writing praising someone highly",
+            "example_sentence": "The author's latest book received an encomium from critics around the world.\nHer achievements were celebrated with an encomium at the award ceremony.",
+            "incorrect_answers": [
+                {
+                    "word": "panegyric",
+                    "definition": "A formal public speech praising someone in high regard"
+                },
+                {
+                    "word": "paean",
+                    "definition": "A song or lyric expressing enthusiastic praise for someone"
+                },
+                {
+                    "word": "eulogy",
+                    "definition": "A speech in tribute to someone who has recently died"
+                },
+                {
+                    "word": "accolade",
+                    "definition": "An award or honor granted as a mark of praise"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/encomium"
+    },
+    {
+        "id": 656,
+        "word_name": "grimoire",
+        "question_data": {
+            "plural": "grimoires",
+            "riddle": "In shadows, I hold ancient secrets of power untold, bound in pages with whispers of lore. My words can conjure or protect, yet seldom are they seen by the mundane. What am I?",
+            "question": "grimoire",
+            "singular": "grimoire",
+            "definition": "A book of magic, spells, or rituals used by practitioners.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A book containing magic spells and invocations.",
+            "example_sentence": "She opened her grandmother's ancient grimoire to study spells for healing.\nThe dusty pages were filled with secrets of the arcane.",
+            "incorrect_answers": [
+                {
+                    "word": "treatise",
+                    "definition": "A formal, systematic written discourse on a subject."
+                },
+                {
+                    "word": "codex",
+                    "definition": "An ancient manuscript in book form with bound pages."
+                },
+                {
+                    "word": "incunabulum",
+                    "definition": "A book printed before 1501 in the early printing period."
+                },
+                {
+                    "word": "manuscript",
+                    "definition": "A handwritten or typed document, often unpublished."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/grimoire"
+    },
+    {
+        "id": 714,
+        "word_name": "quixotry",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "In dreams I chase down visions, impossible, yet vivid and bright.\nThough my paths may not be practical, my heart seeks a noble fight.\nWhat am I, wandering in thoughts, where fantasy meets reality's light?",
+            "question": "quixotry",
+            "singular": "quixotry",
+            "definition": "Excessive idealism or romanticism, often manifesting in impractical behavior.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "Idealism or romanticism deemed impractical or unrealistic in behavior.",
+            "example_sentence": "His quixotry led him to embark on futile adventures chasing windmills.\n",
+            "incorrect_answers": [
+                {
+                    "word": "crepuscule",
+                    "definition": "The time of day between sunset and nightfall."
+                },
+                {
+                    "word": "nebulosity",
+                    "definition": "A cloudy or haze-like quality resembling clouds in space."
+                },
+                {
+                    "word": "pulchritude",
+                    "definition": "Beauty that is often strikingly exquisite or appealing."
+                },
+                {
+                    "word": "desuetude",
+                    "definition": "The state of being no longer used or practiced actively."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/quixotry"
+    },
+    {
+        "id": 748,
+        "word_name": "fustian",
+        "question_data": {
+            "plural": "N/A",
+            "riddle": "In words I rise, yet shallow I remain,\nDressed in finery, hiding truth like disdain.\nElevated thoughts may echo like drums,\nYet beneath the surface, only fluff succumbs.",
+            "question": "fustian",
+            "singular": "fustian",
+            "definition": "Fustian refers to a fabric that is coarse and thick, or to grandiose and pompous language lacking substance. It can also denote theatrical styles that are exaggerated or ostentatious.",
+            "difficulty": "hard",
+            "partOfSpeech": "adjective",
+            "correct_answer": "A style of writing that is pompous and pretentious",
+            "example_sentence": "The author's latest novel was criticized for its fustian prose, lacking genuine emotion.\n",
+            "incorrect_answers": [
+                {
+                    "word": "persiflage",
+                    "definition": "Light mockery or banter often used in conversations"
+                },
+                {
+                    "word": "diatribe",
+                    "definition": "A bitter and angry attack against something or someone"
+                },
+                {
+                    "word": "bombast",
+                    "definition": "Impressive but meaningless language used to impress"
+                },
+                {
+                    "word": "apocrypha",
+                    "definition": "Writings of dubious authenticity often excluded from canon"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/fustian"
+    },
+    {
+        "id": 757,
+        "word_name": "quiddity",
+        "question_data": {
+            "plural": "quiddities",
+            "riddle": "I define the essence hidden beneath the surface, what truly makes you unique lies within me. What am I?",
+            "question": "quiddity",
+            "singular": "quiddity",
+            "definition": "The inherent nature of a person or thing; its essence.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "The essential nature or characteristic of something or someone.",
+            "example_sentence": "In discussions of philosophy, one often contemplates the quiddity of existence.\n",
+            "incorrect_answers": [
+                {
+                    "word": "paucity",
+                    "definition": "An insufficient quantity or scarcity of something present."
+                },
+                {
+                    "word": "veracity",
+                    "definition": "Conformity to facts or accuracy in statements made."
+                },
+                {
+                    "word": "serendipity",
+                    "definition": "The occurrence of events by chance in a happy way."
+                },
+                {
+                    "word": "vicissitude",
+                    "definition": "A change of circumstances, typically one that is unwelcome."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/quiddity"
+    },
+    {
+        "id": 771,
+        "word_name": "effulgence",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "I am the glow that greets the dawn, a brilliance that commands attention. What am I that warms the heart yet blinds the eyes?",
+            "question": "effulgence",
+            "singular": "NA",
+            "definition": "The quality or state of being radiant and shining brightly.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A brilliant radiance or light that dazzles the observer",
+            "example_sentence": "The artist captured the effulgence of the sunset in her painting, illuminating the canvas with vibrant colors.\n",
+            "incorrect_answers": [
+                {
+                    "word": "pulchritude",
+                    "definition": "Great physical beauty or appeal that captivates admirers"
+                },
+                {
+                    "word": "ephemerality",
+                    "definition": "The quality of lasting for a very short duration only"
+                },
+                {
+                    "word": "turgidity",
+                    "definition": "The condition of being swollen or distended with water"
+                },
+                {
+                    "word": "abstruseness",
+                    "definition": "The quality of being difficult to understand or comprehend fully"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/effulgence"
+    },
+    {
+        "id": 782,
+        "word_name": "zoetrope",
+        "question_data": {
+            "plural": "zoetropes",
+            "riddle": "I spin to bring still frames alive, with slits that let the light thrive. My circular dance makes stories flow, in faded frames, my wonders show. What am I?",
+            "question": "zoetrope",
+            "singular": "zoetrope",
+            "definition": "A device used to create the illusion of motion through sequential images.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A device for displaying animated sequences through slits",
+            "example_sentence": "The artist displayed her animated films using a brightly lit zoetrope.\nIt fascinated visitors of all ages with its movement.",
+            "incorrect_answers": [
+                {
+                    "word": "argosy",
+                    "definition": "A large ship or a trade vessel with goods"
+                },
+                {
+                    "word": "scumble",
+                    "definition": "To blend colors or tones in a painting gently"
+                },
+                {
+                    "word": "lucubrate",
+                    "definition": "To study or write late into the night hours"
+                },
+                {
+                    "word": "exordium",
+                    "definition": "The beginning part of a discourse or writing"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/zoetrope"
+    },
+    {
+        "id": 799,
+        "word_name": "soliloquy",
+        "question_data": {
+            "plural": "soliloquies",
+            "riddle": "I am a whispered confessional in the theater's light,\nWhere inner thoughts dance in solitary flight.\nNo audience listens, just shadows and air,\nWhat am I, a voice laid bare?",
+            "question": "soliloquy",
+            "singular": "NA",
+            "definition": "A dramatic monologue in which a character speaks thoughts aloud.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A speech where a character speaks thoughts aloud",
+            "example_sentence": "In the play, the character's soliloquy revealed his deepest fears and desires.\n",
+            "incorrect_answers": [
+                {
+                    "word": "epiphany",
+                    "definition": "A sudden realization or insight that changes perspective"
+                },
+                {
+                    "word": "cognomen",
+                    "definition": "A family name or surname in Roman times often indicating lineage"
+                },
+                {
+                    "word": "zeitgeist",
+                    "definition": "The defining spirit or mood of a specific period in history"
+                },
+                {
+                    "word": "palimpsest",
+                    "definition": "A manuscript page that has been scraped clean for reuse"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/soliloquy"
+    },
+    {
+        "id": 808,
+        "word_name": "dithyramb",
+        "question_data": {
+            "plural": "dithyrambs",
+            "riddle": "In ancient times I sang of wine and joy,\nA voice of exuberance, both wild and coy.\nFrom revelry I rise, with passion I flow,\nWhat am I that makes the heart glow?",
+            "question": "dithyramb",
+            "singular": "dithyramb",
+            "definition": "A hymn or poem of ancient Greek origin, celebrating Dionysus, characterized by wild, passionate themes and exuberant expression, often performed in a theatrical setting.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A passionate, often wild lyrical poem or song.",
+            "example_sentence": "The poet's latest work was a stirring dithyramb that captured the audience's imagination and stirred their emotions.\n",
+            "incorrect_answers": [
+                {
+                    "word": "threnody",
+                    "definition": "A song or poem expressing grief or mourning deeply."
+                },
+                {
+                    "word": "panegyric",
+                    "definition": "A public speech or published text praising someone highly."
+                },
+                {
+                    "word": "elegy",
+                    "definition": "A reflective poem lamenting the loss of someone beloved."
+                },
+                {
+                    "word": "terpsichore",
+                    "definition": "The art and act of dance often celebrated in movement."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/dithyramb"
+    },
+    {
+        "id": 812,
+        "word_name": "incunabula",
+        "question_data": {
+            "plural": "incunabula",
+            "riddle": "In a time before modern presses, I was born from type,\nPages of knowledge, treasured and ripe.\nThough old and rare, I hold stories vast,\nWhat am I, a relic of the past?",
+            "question": "incunabula",
+            "singular": "incunabulum",
+            "definition": "Printed works created before 1501, particularly books, often rare.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "Books printed before 1501 from movable type technology",
+            "example_sentence": "The library's collection of incunabula draws history enthusiasts from everywhere.",
+            "incorrect_answers": [
+                {
+                    "word": "antediluvian",
+                    "definition": "Referring to the time before a great flood occurred"
+                },
+                {
+                    "word": "paleography",
+                    "definition": "The study of ancient and historical handwriting styles"
+                },
+                {
+                    "word": "palimpsest",
+                    "definition": "A manuscript page that has been scraped and reused"
+                },
+                {
+                    "word": "manuscript",
+                    "definition": "A document written by hand before modern printing"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/incunabula"
+    },
+    {
+        "id": 833,
+        "word_name": "eucatastrophe",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "I’m a twist in tales where darkness meets delight,\nThe moment when despair gives way to light.\nFrom shadows I rise, with joy I burst,\nWhat brings the ending where happiness is first?",
+            "question": "eucatastrophe",
+            "singular": "NA",
+            "definition": "A term coined by J.R.R. Tolkien referring to a sudden turn of events that leads to a positive resolution in a story, contrasting with catastrophe; it evokes joy and hope amidst despair.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A sudden positive turn in a narrative's events.",
+            "example_sentence": "In the final moments of the story, a eucatastrophe occurs, bringing unexpected hope to the weary heroes.\n",
+            "incorrect_answers": [
+                {
+                    "word": "synchronicity",
+                    "definition": "Meaningful coincidences occurring at the same time."
+                },
+                {
+                    "word": "sonder",
+                    "definition": "Realizing others have lives as vivid as your own."
+                },
+                {
+                    "word": "midrash",
+                    "definition": "Ancient Hebrew texts interpreting biblical stories deeply."
+                },
+                {
+                    "word": "numinous",
+                    "definition": "Experience of a spiritual presence or divine power."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/eucatastrophe"
+    },
+    {
+        "id": 842,
+        "word_name": "oriflamme",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "In battles I wave, a symbol of might,\nA vivid banner that shines bright.\nWith colors that speak of honor and pride,\nIn the midst of chaos, I serve as a guide.\nWhat am I?",
+            "question": "oriflamme",
+            "singular": "NA",
+            "definition": "A banner or standard particularly used by royalty.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A ceremonial flag often used in battle contexts.",
+            "example_sentence": "The knight proudly held the vibrant oriflamme high, inspiring courage in his comrades.\n",
+            "incorrect_answers": [
+                {
+                    "word": "palimpsest",
+                    "definition": "A manuscript whose text has been scraped off."
+                },
+                {
+                    "word": "simulacrum",
+                    "definition": "An image or representation of someone or something."
+                },
+                {
+                    "word": "eidolon",
+                    "definition": "A phantom or idealized representation of reality."
+                },
+                {
+                    "word": "objurgation",
+                    "definition": "A harsh rebuke or severe scolding given out."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/oriflamme"
+    },
+    {
+        "id": 850,
+        "word_name": "whiffler",
+        "question_data": {
+            "plural": "whifflers",
+            "riddle": "I dance between choices, never landing with grace,\nA shadow of certainty in a fickle embrace.\nThough I mingle and sway, my stance is unclear,\nWhat am I, roaming without a frontier?",
+            "question": "whiffler",
+            "singular": "whiffler",
+            "definition": "A person who is indecisive or constantly changes loyalties.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "One who vacillates between options or indecisively wavers.",
+            "example_sentence": "She was known as a whiffler, never settling on any firm decision regarding her career.\nHer patterns of indecision often left her friends puzzled.",
+            "incorrect_answers": [
+                {
+                    "word": "pettifogger",
+                    "definition": "A lawyer who engages in trickery and minor legal disputes."
+                },
+                {
+                    "word": "quidnunc",
+                    "definition": "Someone who is overly curious about current events and gossip."
+                },
+                {
+                    "word": "sycophant",
+                    "definition": "A person who flatters others for personal gain and recognition."
+                },
+                {
+                    "word": "mountebank",
+                    "definition": "A flamboyant deceiver or fraud who sells quack medicines."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/whiffler"
+    },
+    {
+        "id": 877,
+        "word_name": "discobolus",
+        "question_data": {
+            "plural": "NA",
+            "riddle": "I capture motion yet stand still, a moment frozen in grace.\nA figure poised, ready to unleash, in ancient games I find my place.\nWhat am I?",
+            "question": "discobolus",
+            "singular": "NA",
+            "definition": "A representation of a male athlete throwing a discus.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "An ancient Greek sculpture of a discus thrower.",
+            "example_sentence": "The museum featured a stunning replica of the discobolus.\nArt historians admired its grace and athleticism.",
+            "incorrect_answers": [
+                {
+                    "word": "xenolith",
+                    "definition": "A rock fragment foreign to the main mass."
+                },
+                {
+                    "word": "syzygy",
+                    "definition": "A nearly straight-line configuration of celestial bodies."
+                },
+                {
+                    "word": "echinus",
+                    "definition": "A spiny, sea-dwelling creature related to sea urchins."
+                },
+                {
+                    "word": "peristyle",
+                    "definition": "A continuous row of columns surrounding a space."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/discobolus"
+    },
+    {
+        "id": 900,
+        "word_name": "paraprosdokian",
+        "question_data": {
+            "plural": "paraprosdokians",
+            "riddle": "I twist the tongue and bend the mind,\nExpectations shift as punchlines unwind.\nIn clever jest, I make you think twice,\nWhat am I, a humorous surprise?",
+            "question": "paraprosdokian",
+            "singular": "paraprosdokian",
+            "definition": "A rhetorical device where the latter part is unexpected.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A figure of speech with unexpected or humorous endings.",
+            "example_sentence": "The comedian’s best joke relied on a clever paraprosdokian that left the audience laughing.\n",
+            "incorrect_answers": [
+                {
+                    "word": "syzygy",
+                    "definition": "An alignment of celestial bodies in a straight line."
+                },
+                {
+                    "word": "hapaxlegomenon",
+                    "definition": "A word appearing only once in a context or corpus."
+                },
+                {
+                    "word": "limerence",
+                    "definition": "Intense romantic desire or infatuation with another person."
+                },
+                {
+                    "word": "sesquipedalian",
+                    "definition": "Characterized by long words or the use of lengthy terms."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/paraprosdokian"
+    },
+    {
+        "id": 903,
+        "word_name": "tatterdemalion",
+        "question_data": {
+            "plural": "tatterdemalions",
+            "riddle": "Dressed in tatters, I roam the street,\nWith a look that’s rough, but can’t be beat.\nMy clothes are rags, my hair a mess,\nYet stories I hold, if you dare to guess.\nWhat am I?",
+            "question": "tatterdemalion",
+            "singular": "tatterdemalion",
+            "definition": "A person, often too shabby, wearing ragged clothing that appears neglectful.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "A person dressed in ragged, tattered clothing and appearance.",
+            "example_sentence": "The once proud gentleman had become a tatterdemalion, wandering the streets aimlessly.\n",
+            "incorrect_answers": [
+                {
+                    "word": "quidnunc",
+                    "definition": "A person who is eager to hear gossip or news."
+                },
+                {
+                    "word": "flibbertigibbet",
+                    "definition": "A frivolous person who is excessively talkative and silly."
+                },
+                {
+                    "word": "troglodyte",
+                    "definition": "A person who lives in a cave or is reclusive."
+                },
+                {
+                    "word": "hobbledehoy",
+                    "definition": "An awkward, clumsy youth in their adolescent phase."
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/tatterdemalion"
+    },
+    {
+        "id": 916,
+        "word_name": "hagiography",
+        "question_data": {
+            "plural": "hagiographies",
+            "riddle": "In the realm of reverence, I tell tales of the blessed,\nLives adorned with virtue, a spiritual quest.\nWith pages that glow in sacred light,\nWhat am I, documenting the holy's flight?",
+            "question": "hagiography",
+            "singular": "hagiography",
+            "definition": "A biography that treats its subject as a saint or holy person.",
+            "difficulty": "hard",
+            "partOfSpeech": "noun",
+            "correct_answer": "Writings about the lives of saints or revered figures",
+            "example_sentence": "The author specialized in writing a detailed hagiography of saints.",
+            "incorrect_answers": [
+                {
+                    "word": "paleography",
+                    "definition": "The study of ancient handwriting styles and inscriptions"
+                },
+                {
+                    "word": "holography",
+                    "definition": "A photographic method that captures three-dimensional images"
+                },
+                {
+                    "word": "numismatics",
+                    "definition": "The study or collection of currency, especially coins and tokens"
+                },
+                {
+                    "word": "phenomenology",
+                    "definition": "The philosophical study of conscious experience and perception"
+                }
+            ]
+        },
+        "category_name": "Art and Literature",
+        "sound_url": "https://wordquiz.s3.us-east-1.amazonaws.com/hagiography"
+    }
+]

@@ -19,23 +19,22 @@ export const Questions = () => {
     const quizReady = useAppSelector(selectQuizReady);
     const subject = useAppSelector(selectSubject).id;
 
-    console.log('in heree', quizReady);
     const { data: questionsData, isLoading: questionsLoading }
-        = useGetQuestionsQuery({subject,  currentCatId});    
+        = useGetQuestionsQuery({ subject, currentCatId });
 
     useEffect(() => {
         if (questionsData?.length) {
-            dispatch(setCurrentQuestions({questions: questionsData}));
+            dispatch(setCurrentQuestions({ questions: questionsData }));
         }
     }, [questionsData, dispatch]);
 
-    if (questionsLoading ) {
+    if (questionsLoading) {
         return <LoadingDisplay />
     }
 
     if (quizReady) {
         return (
-        <AskQuestions/>
+            <AskQuestions />
         )
     }
 
