@@ -13,7 +13,8 @@ const PlaySound = ({ soundUrl }: { soundUrl: string }) => {
 
     const playSound = async () => {
         if (audioRef.current) {
-            const audioContext = new (window.AudioContext || window.AudioContext)();
+            {/* @ts-expect-error ertet */}
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             if (audioContext.state === "suspended") {
                 await audioContext.resume(); // Wakes up the audio engine
             }
