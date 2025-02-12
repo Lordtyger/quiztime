@@ -1,27 +1,35 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaVolumeHigh } from "react-icons/fa6";
 
 const PlaySound = ({ soundUrl }: { soundUrl: string }) => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         if (soundUrl) {
-            audioRef.current = new Audio(soundUrl);
-            audioRef.current.preload = "auto"; // Ensure it's preloaded
+            const audio = new Audio(soundUrl);
+            audio.preload = "auto";
+            audio.oncanplaythrough = () => setIsLoaded(true); // Ensure it's fully loaded
+            audioRef.current = audio;
+        }
+
+        // Create AudioContext once (Safari Fix)
+        if (!audioContext) {
+            {/* @ts-expect-error ertet */}
+            setAudioContext(new (window.AudioContext || window.webkitAudioContext)());
         }
     }, [soundUrl]);
 
-    const playSound = async () => {
-        if (audioRef.current) {
-            {/* @ts-expect-error ertet */}
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioContext.state === "suspended") {
-                await audioContext.resume(); // Wakes up the audio engine
-            }
+    const playSound = () => {
+        if (!audioRef.current || !isLoaded) return;
 
-            audioRef.current.currentTime = 0.05; // Prevent crackle at 0s
-            audioRef.current.play().catch(err => console.error("Audio play error:", err));
+        if (audioContext && audioContext.state === "suspended") {
+            audioContext.resume(); // Wake up AudioContext
         }
+
+        audioRef.current.currentTime = 0.05; // Prevent crackle at start
+        audioRef.current.play().catch(err => console.error("Audio play error:", err));
     };
 
     return (
